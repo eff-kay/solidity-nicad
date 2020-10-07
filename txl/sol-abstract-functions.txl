@@ -21,8 +21,10 @@ end define
 
 redefine FunctionDefinition
     % Input form 
-    [function_header]  [NL]
-    [function_body]    [NL]
+    [function_header] 
+  	'{ [NL] [IN]
+ 	    [Statement*] [EX]
+	'} 
 end define
 
 define potential_clone

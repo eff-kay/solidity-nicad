@@ -15,14 +15,12 @@ define function_header
     [opt OptionalReturnBlock] 
 end define
 
-define function_body
-    [FunctionInternalEndBlock]
-end define
-
 redefine FunctionDefinition
     % Input form 
-    [function_header]  [NL]
-    [function_body]    [NL]
+    [function_header] 
+  	'{ [NL] [IN]
+ 	    [Statement*] [EX]
+	'} 
 end define
 
 define potential_clone

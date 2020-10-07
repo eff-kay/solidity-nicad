@@ -655,17 +655,19 @@ define ExpressionList
 end define
 
 define AssemblyBlock
-    '{ [AssemblyStatement*] '}
+    '{ [NL] [IN]
+        [AssemblyStatement*] [EX] 
+    '} [NL]
 end define
 
 define AssemblyStatement
-       [AssemblyFunctionDefinition]
-    |  [AssemblyVariableDeclaration]
-    |  [AssemblyAssignment]
-    |  [AssemblyIf]
-    |  [AssemblyExpression]
-    |  [AssemblySwitch]
-    |  [AssemblyForLoop]
+       [AssemblyFunctionDefinition] 
+    |  [AssemblyVariableDeclaration] [NL]
+    |  [AssemblyAssignment] [NL]
+    |  [AssemblyIf] 
+    |  [AssemblyFunctionCall] [NL]
+    |  [AssemblySwitch] 
+    |  [AssemblyForLoop] 
     |  [AssemblyBreakContinue] | [AssemblyBlock] 
 end define
 
@@ -679,7 +681,7 @@ define OptionlInlineAssembly
 end define
 
 define AssemblyVariableDeclaration
-    'let [AssemblyIdentifierList] [opt OptionalAssemblyVaribale]
+    'let [AssemblyIdentifierList] [opt OptionalAssemblyVaribale] 
 end define 
 
 define OptionalAssemblyVaribale
@@ -687,7 +689,7 @@ define OptionalAssemblyVaribale
 end define
 
 define AssemblyAssignment
-    [AssemblyIdentifierList] ':= [AssemblyExpression]
+    [AssemblyIdentifierList] ':= [AssemblyExpression] 
 end define
 
 define AssemblyExpression
@@ -695,11 +697,19 @@ define AssemblyExpression
 end define
 
 define AssemblyIf
-    'if [AssemblyExpression] [AssemblyBlock]
+    'if [AssemblyIfConditions] [AssemblyBlock]
+end define
+
+define AssemblyIfConditions
+    [id] | [Literal]
 end define
 
 define AssemblySwitch
-    'switch [AssemblyExpression] [InlineAssemblySwitch]
+    'switch [AssemblySwitchConditions] [NL] [InlineAssemblySwitch]
+end define
+
+define AssemblySwitchConditions
+  [id] | [Literal] 
 end define
 
 define InlineAssemblySwitch
@@ -727,7 +737,7 @@ define AssemblyBreakContinue
 end define
 
 define AssemblyFunctionCall
-    [id] '( [opt InlineOptinonalAssemblyFunctionCall] ')
+    [id]'( [opt InlineOptinonalAssemblyFunctionCall] ') 
 end define
 
 define InlineOptinonalAssemblyFunctionCall
