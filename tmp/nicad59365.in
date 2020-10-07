@@ -1,0 +1,102 @@
+<source file="systems/robust/c/hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname/hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname/hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname/hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname/foo.c.ifdefed" startline="1" endline="33">
+main () {
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+}
+</source>
+<source file="systems/robust/c/hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname/hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname/hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname/bar.c.ifdefed" startline="1" endline="33">
+main () {
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+}
+</source>
+<source file="systems/robust/c/hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname/hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname_hugelnghumungousdirectoryname/blat.c.ifdefed" startline="1" endline="33">
+main () {
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+}
+</source>

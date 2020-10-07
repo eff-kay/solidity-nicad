@@ -1,0 +1,3142 @@
+<source file="systems/swift/boltmobile/Bolt_Mobile/AppCoordinator.swift" startline="1" endline="60">
+import UIKit
+import Bugsnag
+import IQKeyboardManagerSwift
+
+class AppCoordinator {
+    let navigationController : UINavigationController
+    let mainCoordinator : MainCoordinator
+    init (appDelegate : UIApplicationDelegate) {
+        guard let window : UIWindow = appDelegate.window? ? nil else {
+            fatalError ("The App Delegate didn't have a window")
+        }
+        navigationController = StoryboardScene.Main.initialScene.instantiate ()
+        mainCoordinator = MainCoordinator (window : window, navController : navigationController)
+        setUpBugsnag ()
+        BoltAnalytics.initializeAnalytics ()
+        UserDefaults.registerBoltMobileDefaults ()
+        UserDefaults.registerBoltMobileUserInformationDefaults ()
+        setUpAppearance ()
+        setUpKeyboardManager ()
+        start (window : window)
+    }
+
+    private func setUpBugsnag () {
+        Bugsnag.start (withApiKey : Constants.Bugsnag.Key)
+    }
+
+    private func setUpAppearance () {
+        UINavigationBar.appearance ().backgroundColor = UIColor.white
+        UINavigationBar.appearance ().isTranslucent = false
+        UINavigationBar.appearance ().tintColor = UIColor (named : .boltMobileBlueLabel)
+        UINavigationBar.appearance ().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor (named : .boltMobileBlueLabel)]
+    }
+
+    private func setUpKeyboardManager () {
+        IQKeyboardManager.shared.enable = true
+    }
+
+    func start (window : UIWindow) {
+        window.rootViewController = navigationController
+        mainCoordinator.start ()
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/ContactReviewDetailViewController.swift" startline="1" endline="73">
+import UIKit
+
+class ContactReviewDetailViewController : UIViewController {
+    @IBOutlet private var locationImageView : UIImageView?
+    @IBOutlet private var addressLabel : UILabel?
+    @IBOutlet private var phoneButton : UIButton?
+    @IBOutlet private var internetButton : UIButton?
+    @IBOutlet private var emailButton : UIButton?
+    var didLoad : (() - > ())?
+    var hours : (() - > ())?
+    var phoneLocation : (() - > ())?
+    var goToWebsite : (() - > ())?
+    var emailLocation : (() - > ())?
+    var reviewFacebook : (() - > ())?
+    var reviewGoogle : (() - > ())?
+    var getDirections : (() - > ())?
+
+    override func viewDidLoad () {
+        super.viewDidLoad ()
+        didLoad? ()
+    }
+
+    func configureView (storeLocation : StoreLocation) {
+        locationImageView?.image = UIImage (named : storeLocation.picture)
+        addressLabel?.text = storeLocation.address
+        phoneButton?.setTitle (storeLocation.phone, for : .normal)
+        internetButton?.setTitle (storeLocation.website, for : .normal)
+        emailButton?.setTitle (storeLocation.email, for : .normal)
+    }
+
+    @IBAction private func hoursTapped (_ sender : UIButton?) {
+        hours? ()
+    }
+
+    @IBAction private func phoneCallTapped (_ sender : UIButton?) {
+        phoneLocation? ()
+    }
+
+    @IBAction private func websiteTapped (_ sender : UIButton?) {
+        goToWebsite? ()
+    }
+
+    @IBAction private func emailTapped (_ sender : UIButton?) {
+        emailLocation? ()
+    }
+
+    @IBAction private func facebookReviewTapped (_ sender : UIButton?) {
+        reviewFacebook? ()
+    }
+
+    @IBAction private func googleReviewTapped (_ sender : UIButton?) {
+        reviewGoogle? ()
+    }
+
+    @IBAction private func getDirectionsTapped (_ sender : UIButton?) {
+        getDirections? ()
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/PhoneService.swift" startline="1" endline="21">
+import UIKit
+
+class PhoneService {
+
+    class func makeCall (fromViewController : UIViewController, phoneNumber : String) {
+        if let supportNumberURL = URL (string : "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL (supportNumberURL) {
+            UIApplication.shared.open (supportNumberURL, options : [:], completionHandler : nil)
+        } else {
+            UIAlertController.showAlert (title : nil, message : L10n.callFailureMessage, inViewController : fromViewController)
+        }
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/UIAlertController+BoltMobile.swift" startline="1" endline="21">
+import UIKit
+
+extension UIAlertController {
+
+    class func showAlert (title : String?, message : String?, inViewController : UIViewController) {
+        let alertController = UIAlertController (title : title, message : message, preferredStyle : .alert)
+        let ok = UIAlertAction (title : L10n.alertActionOkButtonTitle, style : .cancel, handler : nil)
+        alertController.addAction (ok)
+        inViewController.present (alertController, animated : true, completion : nil)
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/ReferralsInformationViewController.swift" startline="1" endline="49">
+import UIKit
+enum ReferralsInformationPresentationStyle : Int {
+    case present
+    case push
+}
+struct ReferralsInformationViewControllerViewData {
+    let presentationStyle : ReferralsInformationPresentationStyle
+}
+
+class ReferralsInformationViewController : UIViewController {
+    @IBOutlet private var getStartedButton : UIButton?
+    var dismiss : (() - > ())?
+    var getStarted : (() - > ())?
+    var viewData : ReferralsInformationViewControllerViewData?
+
+    override func viewDidLoad () {
+        configureView ()
+    }
+
+    private func configureView () {
+        if let viewData = viewData, viewData.presentationStyle==.present {
+            getStartedButton?.isHidden = true
+            navigationItem.rightBarButtonItem = UIBarButtonItem (barButtonSystemItem : .done, target : self, action : #selector (doneButtonTapped (_ :)))
+        }
+    }
+
+    @IBAction private func doneButtonTapped (_ sender : UIBarButtonItem?) {
+        dismiss? ()
+    }
+
+    @IBAction private func getStartedTapped (_ sender : UIButton?) {
+        getStarted? ()
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/BoltAnalytics.swift" startline="1" endline="56">
+import Foundation
+import Firebase
+enum ScreenName : String {
+    case Welcome
+    case HomeScreen
+    case Referrals
+    case Coupons
+    case ContactReview
+    case AskExpert
+    case DeviceUpgrade
+    case BookAppointment
+}
+enum Action : String {
+    case GetStartedTapped
+    case SubmitReferralTapped
+    case RedeemBoltBucksTapped
+    case IndividualCouponTapped
+    case LocationDetailsViewed
+    case PhoneTapped
+    case WebsiteTapped
+    case EmailTapped
+    case ReviewFacebookTapped
+    case ReviewGoogleTapped
+    case UpgradeMessageTapped
+}
+
+class BoltAnalytics {
+
+    class func initializeAnalytics () {
+        FirebaseApp.configure ()
+    }
+
+    class func trackScreenWithName (screenName : ScreenName) {
+        Analytics.setScreenName (screenName.rawValue, screenClass : nil)
+    }
+
+    class func trackEvent (category : ScreenName, action : Action, label : String?) {
+        var parameters = [String : Any] ()
+        parameters ["action"] = action.rawValue
+        if let label = label {
+            parameters ["label"] = label
+        }
+        Analytics.logEvent (category.rawValue, parameters : parameters)
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/EmailService.swift" startline="1" endline="52">
+import UIKit
+import MessageUI
+
+class EmailService : NSObject {
+    let navigationController : UINavigationController
+    init (navController : UINavigationController) {
+        navigationController = navController
+    }
+
+    func sendEmail (toAddress : String, subject : String, messageBody : String, presentVC : UIViewController, failureMessage : String) {
+        if MFMailComposeViewController.canSendMail () {
+            let composeVC = MFMailComposeViewController ()
+            composeVC.mailComposeDelegate = self
+            composeVC.setToRecipients ([toAddress])
+            composeVC.setSubject (subject)
+            composeVC.setMessageBody (messageBody, isHTML : false)
+            presentVC.present (composeVC, animated : true, completion : nil)
+        } else {
+            UIAlertController.showAlert (title : nil, message : failureMessage, inViewController : presentVC)
+        }
+    }
+}
+
+extension EmailService : MFMailComposeViewControllerDelegate {
+
+    func mailComposeController (_ controller : MFMailComposeViewController, didFinishWith result : MFMailComposeResult, error : Error?) {
+        if let topViewController = navigationController.topViewController {
+            controller.dismiss (animated : true, completion : {
+                switch result {
+                    case.sent :
+                        UIAlertController.showAlert (title : nil, message : L10n.emailSentMessage, inViewController : topViewController)
+                    default :
+                        UIAlertController.showAlert (title : nil, message : L10n.emailNotSendMessage, inViewController : topViewController)
+                }
+            })
+        } else {
+            controller.dismiss (animated : true, completion : nil)
+        }
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/ContactReviewViewController.swift" startline="1" endline="127">
+import UIKit
+import MapKit
+
+class StoreLocationAnnotation : NSObject, MKAnnotation {
+    let storeLocation : StoreLocation
+    init (storeLocation : StoreLocation) {
+        self.storeLocation = storeLocation
+    }
+    var coordinate : CLLocationCoordinate2D {
+        return storeLocation.coordinate
+    }
+}
+
+class ContactReviewViewController : UIViewController, MKMapViewDelegate {
+    @IBOutlet weak var mapView : MKMapView!
+    let locationManager = CLLocationManager ()
+    let LocationPinIdentifier = "Location_Pin_Identifier"
+    var didLoad : (() - > ())?
+    var showStoreLocation : ((StoreLocation) - > ())?
+    var didUpdateUserLocation : Bool = false
+
+    override func viewDidLoad () {
+        super.viewDidLoad ()
+        didLoad? ()
+    }
+
+    func setUpLocationManager () {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization ()
+    }
+
+    func loadStoreLocations (locations : [StoreLocation]) {
+        mapView.showsUserLocation = true
+        var annotations = [StoreLocationAnnotation] ()
+        for storeLocation in locations {
+            let locationAnnotation = StoreLocationAnnotation (storeLocation : storeLocation)
+            annotations.append (locationAnnotation)
+        }
+        mapView.addAnnotations (annotations as [MKAnnotation])
+        zoomMapFitAnnotations (mapView : mapView)
+    }
+
+    private func zoomMapFitAnnotations (mapView : MKMapView) {
+        var zoomRect = MKMapRect.null
+        for annotation in mapView.annotations {
+            let annotationPoint = MKMapPoint (annotation.coordinate)
+            let pointRect = MKMapRect (x : annotationPoint.x, y : annotationPoint.y, width : 0, height : 0)
+            if (zoomRect.isNull) {
+                zoomRect = pointRect
+            } else {
+                zoomRect = zoomRect.union (pointRect)
+            }
+        }
+        let customEdgePadding = UIEdgeInsets (top : 50, left : 100, bottom : 50, right : 100)
+        mapView.setVisibleMapRect (zoomRect, edgePadding : customEdgePadding, animated : true)
+    }
+
+    func mapView (_ mapView : MKMapView, didUpdate userLocation : MKUserLocation) {
+        if didUpdateUserLocation {
+            return
+        }
+        didUpdateUserLocation = true
+    }
+
+    func mapView (_ mapView : MKMapView, viewFor annotation : MKAnnotation) - > MKAnnotationView? {
+        if annotation is StoreLocationAnnotation {
+            let pin = MKAnnotationView (annotation : annotation, reuseIdentifier : LocationPinIdentifier)
+            let annotationImage = Asset.Store.pin.image
+            pin.image = annotationImage
+            pin.centerOffset = CGPoint (x : 0, y : - (annotationImage.size.height / 2))
+            return pin
+        } else {
+            return nil
+        }
+    }
+
+    func mapView (_ mapView : MKMapView, didSelect view : MKAnnotationView) {
+        if let annotation = view.annotation as? StoreLocationAnnotation {
+            showStoreLocation? (annotation.storeLocation)
+            self.mapView.deselectAnnotation (annotation, animated : false)
+        }
+    }
+}
+
+extension ContactReviewViewController : CLLocationManagerDelegate {
+
+    func locationManager (_ manager : CLLocationManager, didChangeAuthorization status : CLAuthorizationStatus) {
+        if status==.authorizedWhenInUse {
+            locationManager.requestLocation ()
+        } else if status==.denied {
+            if let annotations = mapView?.annotations {
+                mapView?.showAnnotations (annotations, animated : true)
+            }
+        }
+    }
+
+    func locationManager (_ manager : CLLocationManager, didUpdateLocations locations : [CLLocation]) {
+    }
+
+    func locationManager (_ manager : CLLocationManager, didFailWithError error : Error) {
+        if let annotations = mapView?.annotations {
+            mapView?.showAnnotations (annotations, animated : true)
+        }
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/BoltError.swift" startline="1" endline="36">
+import Foundation
+public enum BoltError : Swift.Error {
+    case requestFailed (String?)
+    case dataMapping (String?)
+    case moyaError (String?)
+    case internetNotReachable
+    case missingToken
+    case verificationFailed (String?)
+    case invalidUser
+}
+
+extension BoltError : LocalizedError {
+    public var errorDescription : String? {
+        switch self {
+            case.requestFailed (let message),.dataMapping (let message),.moyaError (let message),.verificationFailed (let message) :
+                return message
+            case.internetNotReachable :
+                return L10n.internetNotReachableError
+            case.missingToken :
+                return L10n.verificationMissingToken
+            case.invalidUser :
+                return L10n.verificationInvalidUserMessage
+        }
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/BoltAPIs.swift" startline="1" endline="251">
+import Moya
+#if USE_PRODUCTION
+    fileprivate let BaseURL = URL (string : "https://bolt-live.appspot.com/api/v1")!
+#else
+    fileprivate let BaseURL = URL (string : "https://bolt-beta.appspot.com/api/v1")!
+#endif
+enum ReferralService {
+    case getBalance (userToken : String, phoneNumber : String)
+    case refer (userToken : String, userName : String, userPhone : String, userEmail : String, referName : String, referPhone : String, referEmail : String?)
+    case redeem (userToken : String, phoneNumber : String, email : String)
+    case login (userFirstName : String, userLastName : String, userEmail : String, userPhone : String)
+    case updateUser (userToken : String, userFirstName : String, userLastName : String, userEmail : String, userPhone : String)
+    case verifyPhoneNumber (userToken : String, code : Int)
+    case resendCode (userToken : String)
+}
+enum PushNotificationService {
+    case registerPushNotifications (deviceToken : String, deviceType : Int)
+}
+enum CouponService {
+    case getCoupons
+}
+
+extension ReferralService : TargetType {
+    var baseURL : URL {
+        return BaseURL
+    }
+    var path : String {
+        switch self {
+            case.getBalance :
+                return "/balance/"
+            case.refer :
+                return "/refer/"
+            case.redeem :
+                return "/redeem/"
+            case.login :
+                return "/login/"
+            case.updateUser :
+                return "/update_user/"
+            case.verifyPhoneNumber :
+                return "/verify/"
+            case.resendCode :
+                return "/resend_code/"
+        }
+    }
+    var method : Moya.Method {
+        switch self {
+            case.getBalance,.refer,.redeem,.login,.updateUser,.verifyPhoneNumber,.resendCode :
+                return .get
+        }
+    }
+    var sampleData : Data {
+        switch self {
+            case.getBalance :
+                return "{\"token\":\"15--5fa624b2c8ed8190ee337fdf64676e5ce1b8d543\", \"phone\": \"1234567890\"}".data (using : String.Encoding.utf8)!
+            case.refer :
+                return
+"{\"token\":\"15--5fa624b2c8ed8190ee337fdf64676e5ce1b8d543\", \"referrer_name\":\"Referrer Name\", \"referrer_phone\":\"1234567890\", \"referrer_email\":\"test@test.com\", \"referred_name\":\"Referred Name\", \"referred_phone\":\"1112223333\", \"referred_email\":\"test2@test.com\"}"
+                .data (using : String.Encoding.utf8)!
+            case.redeem :
+                return "{\"token\":\"15--5fa624b2c8ed8190ee337fdf64676e5ce1b8d543\", \"phone\":\"1234567890\", \"email\":\"test@test.com\"}".data (using : String.Encoding.utf8)!
+            case.login :
+                return "{\"first_name\":\"First Name\", \"last_name\":\"Last Name\", \"email\":\"test@test.com\", \"phone\":\"1112223333\"}".data (using : String.Encoding.utf8)!
+            case.updateUser :
+                return "{\"token\":\"15--5fa624b2c8ed8190ee337fdf64676e5ce1b8d543\", \"first_name\":\"First Name\", \"last_name\":\"Last Name\", \"email\":\"test@test.com\", \"phone\":\"1112223333\"}".data (using : String.Encoding.utf8)!
+            case.verifyPhoneNumber :
+                return "{\"token\":\"15--5fa624b2c8ed8190ee337fdf64676e5ce1b8d543\", \"code\":\"1234\"}".data (using : String.Encoding.utf8)!
+            case.resendCode :
+                return "{\"token\":\"15--5fa624b2c8ed8190ee337fdf64676e5ce1b8d543\"}".data (using : String.Encoding.utf8)!
+        }
+    }
+    var task : Task {
+        switch self {
+            case.getBalance (let userToken, let phoneNumber) :
+                return .requestParameters (parameters : ["token" : userToken, "phone" : phoneNumber], encoding : URLEncoding.default)
+            case.refer (let userToken, let userName, let userPhone, let userEmail, let referName, let referPhone, let referEmail) :
+                var parameters : [String : String] = ["token" : userToken, "referrer_name" : userName, "referrer_phone" : userPhone, "referrer_email" : userEmail, "referred_name" : referName, "referred_phone" : referPhone]
+                if let referEmail = referEmail {
+                    parameters ["referred_email"] = referEmail
+                }
+                return .requestParameters (parameters : parameters, encoding : URLEncoding.default)
+            case.redeem (let userToken, let phoneNumber, let email) :
+                return .requestParameters (parameters : ["token" : userToken, "phone" : phoneNumber, "email" : email], encoding : URLEncoding.default)
+            case.login (let userFirstName, let userLastName, let userEmail, let userPhone) :
+                return .requestParameters (parameters : ["first_name" : userFirstName, "last_name" : userLastName, "email" : userEmail, "phone" : userPhone], encoding : URLEncoding.default)
+            case.updateUser (let userToken, let userFirstName, let userLastName, let userEmail, let userPhone) :
+                return .requestParameters (parameters : ["token" : userToken, "first_name" : userFirstName, "last_name" : userLastName, "email" : userEmail, "phone" : userPhone], encoding : URLEncoding.default)
+            case.verifyPhoneNumber (let userToken, let code) :
+                return .requestParameters (parameters : ["token" : userToken, "code" : code], encoding : URLEncoding.default)
+            case.resendCode (let userToken) :
+                return .requestParameters (parameters : ["token" : userToken], encoding : URLEncoding.default)
+        }
+    }
+    var headers : [String : String]? {
+        switch self {
+            case.getBalance,.refer,.redeem,.login,.updateUser,.verifyPhoneNumber,.resendCode :
+                return nil
+        }
+    }
+}
+
+extension PushNotificationService : TargetType {
+    var baseURL : URL {
+        return BaseURL
+    }
+    var path : String {
+        switch self {
+            case.registerPushNotifications :
+                return "/register/"
+        }
+    }
+    var method : Moya.Method {
+        switch self {
+            case.registerPushNotifications :
+                return .get
+        }
+    }
+    var sampleData : Data {
+        switch self {
+            case.registerPushNotifications :
+                return "{\"device_token\":\"test\", \"device_type\":1}".data (using : String.Encoding.utf8)!
+        }
+    }
+    var task : Task {
+        switch self {
+            case.registerPushNotifications (let deviceToken, let deviceType) :
+                return .requestParameters (parameters : ["device_token" : deviceToken, "device_type" : deviceType], encoding : URLEncoding.default)
+        }
+    }
+    var headers : [String : String]? {
+        switch self {
+            case.registerPushNotifications :
+                return nil
+        }
+    }
+}
+
+extension CouponService : TargetType {
+    var baseURL : URL {
+        return URL (string : "https://boltmobile.ca/_app")!
+    }
+    var path : String {
+        switch self {
+            case.getCoupons :
+                return "/coupons.xml"
+        }
+    }
+    var method : Moya.Method {
+        switch self {
+            case.getCoupons :
+                return .get
+        }
+    }
+    var sampleData : Data {
+        switch self {
+            case.getCoupons :
+                return "{}".data (using : String.Encoding.utf8)!
+        }
+    }
+    var task : Task {
+        switch self {
+            case.getCoupons :
+                return .requestPlain
+        }
+    }
+    var headers : [String : String]? {
+        switch self {
+            case.getCoupons :
+                return nil
+        }
+    }
+}
+
+extension Moya.Response {
+
+    func boltData () throws - > Moya.Response {
+        let decoder = JSONDecoder ()
+        do {
+            let boltResponse = try decoder.decode (BoltResponse.self, from : self.data)
+            if boltResponse.success {
+                return self
+            } else {
+                throw BoltError.requestFailed (boltResponse.message)
+            }
+        } catch {
+            if self.statusCode == 403 {
+                throw BoltError.requestFailed (error.localizedDescription)
+            } else {
+                throw BoltError.requestFailed (L10n.requestFailedProblemDecoding + "\n" + error.localizedDescription)
+            }
+        }
+    }
+
+    func phoneVerificationSuccess () throws - > Bool {
+        let decoder = JSONDecoder ()
+        do {
+            let boltResponse = try decoder.decode (BoltResponse.self, from : self.data)
+            if boltResponse.success {
+                return boltResponse.success
+            } else {
+                throw BoltError.verificationFailed (boltResponse.message)
+            }
+        } catch {
+            if self.statusCode == 403 {
+                throw BoltError.requestFailed (error.localizedDescription)
+            } else {
+                throw BoltError.requestFailed (L10n.requestFailedProblemDecoding + "\n" + error.localizedDescription)
+            }
+        }
+    }
+
+    func pushNotificationSuccess () throws - > Bool {
+        let decoder = JSONDecoder ()
+        do {
+            let boltResponse = try decoder.decode (BoltResponse.self, from : self.data)
+            return boltResponse.success
+        } catch {
+            print (error)
+            throw BoltError.requestFailed (L10n.requestFailedProblemDecoding)
+        }
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/WelcomeViewController.swift" startline="1" endline="33">
+import UIKit
+
+class WelcomeViewController : UIViewController {
+    var getStarted : (() - > ())?
+    override var prefersStatusBarHidden : Bool {
+        return true
+    }
+
+    override func viewDidLoad () {
+        super.viewDidLoad ()
+    }
+
+    override func viewWillAppear (_ animated : Bool) {
+        super.viewWillAppear (animated)
+        navigationController?.setNavigationBarHidden (true, animated : false)
+    }
+
+    @IBAction private func getStartedTapped () {
+        getStarted? ()
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/ReferralsViewController.swift" startline="1" endline="57">
+import UIKit
+
+class ReferralsViewController : UIViewController {
+    @IBOutlet private var balanceLabel : UILabel?
+    @IBOutlet private var divider : UIView? {
+        didSet {
+            divider?.backgroundColor = UIColor (named : .boltMobileDarkBlue)
+        }
+    }
+    var viewInfo : (() - > ())?
+    var newReferral : (() - > ())?
+    var redeem : (() - > ())?
+    var editInfo : (() - > ())?
+    var didAppear : (() - > ())?
+
+    override func viewDidLoad () {
+        navigationItem.rightBarButtonItem = UIBarButtonItem (image : Asset.infoBarButton.image, style : .plain, target : self, action : #selector (infoBarButtonTapped (_ :)))
+    }
+
+    override func viewDidAppear (_ animated : Bool) {
+        super.viewDidAppear (animated)
+        didAppear? ()
+    }
+
+    func setBalance (balance : String) {
+        balanceLabel?.text = balance
+    }
+
+    @IBAction private func infoBarButtonTapped (_ sender : UIButton?) {
+        viewInfo? ()
+    }
+
+    @IBAction private func newReferralTapped (_ sender : UIButton?) {
+        newReferral? ()
+    }
+
+    @IBAction private func redeemMyBoltbucks (_ sender : UIButton?) {
+        redeem? ()
+    }
+
+    @IBAction private func editMyInfoTapped (_ sender : UIButton?) {
+        editInfo? ()
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/UserDefaults+BoltMobileUserInformation.swift" startline="1" endline="66">
+import Foundation
+
+extension UserDefaults {
+
+    class func registerBoltMobileUserInformationDefaults () {
+        standard.register (defaults : [Constants.UserDefaultsKey.UserFirstName : "", Constants.UserDefaultsKey.UserLastName : "", Constants.UserDefaultsKey.UserEmail : "", Constants.UserDefaultsKey.UserPhoneNumber : "", Constants.UserDefaultsKey.UserToken
+          : ""])
+    }
+    class var userFirstName : String? {
+        get {
+            return standard.string (forKey : Constants.UserDefaultsKey.UserFirstName)
+        }
+        set {
+            standard.set (newValue, forKey : Constants.UserDefaultsKey.UserFirstName)
+        }
+    }
+    class var userLastName : String? {
+        get {
+            return standard.string (forKey : Constants.UserDefaultsKey.UserLastName)
+        }
+        set {
+            standard.set (newValue, forKey : Constants.UserDefaultsKey.UserLastName)
+        }
+    }
+    class var userEmail : String? {
+        get {
+            return standard.string (forKey : Constants.UserDefaultsKey.UserEmail)
+        }
+        set {
+            standard.set (newValue, forKey : Constants.UserDefaultsKey.UserEmail)
+        }
+    }
+    class var userPhoneNumber : String? {
+        get {
+            return standard.string (forKey : Constants.UserDefaultsKey.UserPhoneNumber)
+        }
+        set {
+            standard.set (newValue, forKey : Constants.UserDefaultsKey.UserPhoneNumber)
+        }
+    }
+    class var userToken : String? {
+        get {
+            return standard.string (forKey : Constants.UserDefaultsKey.UserToken)
+        }
+        set {
+            standard.set (newValue, forKey : Constants.UserDefaultsKey.UserToken)
+        }
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/String+BoltMobileValidation.swift" startline="1" endline="25">
+import Foundation
+
+extension String {
+
+    func isValidEmail () - > Bool {
+        let emailValidationRegex : String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailPredicate = NSPredicate (format : "SELF MATCHES %@", emailValidationRegex)
+        return emailPredicate.evaluate (with : self)
+    }
+
+    func isValidPhoneNumber () - > Bool {
+        let phoneValidationRegex : String = "[0-9]{10}"
+        let phonePredicate = NSPredicate (format : "SELF MATCHES %@", phoneValidationRegex)
+        return phonePredicate.evaluate (with : self)
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/HomeViewController.swift" startline="1" endline="59">
+import UIKit
+
+class HomeViewController : UIViewController {
+    var myReferrals : (() - > ())?
+    var coupons : (() - > ())?
+    var contactReview : (() - > ())?
+    var askExpert : (() - > ())?
+    var deviceUpgrade : (() - > ())?
+    var bookAppointment : (() - > ())?
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
+
+    override func viewWillAppear (_ animated : Bool) {
+        super.viewWillAppear (animated)
+        navigationController?.setNavigationBarHidden (true, animated : true)
+    }
+
+    override func viewWillDisappear (_ animated : Bool) {
+        super.viewWillDisappear (animated)
+        navigationController?.setNavigationBarHidden (false, animated : false)
+    }
+
+    @IBAction private func myReferralsTapped (_ sender : UIButton?) {
+        myReferrals? ()
+    }
+
+    @IBAction private func couponsTapped (_ sender : UIButton?) {
+        coupons? ()
+    }
+
+    @IBAction private func contactReviewTapped (_ sender : UIButton?) {
+        contactReview? ()
+    }
+
+    @IBAction private func askExpertTapped (_ sender : UIButton?) {
+        askExpert? ()
+    }
+
+    @IBAction private func deviceUpgradeTapped (_ sender : UIButton?) {
+        deviceUpgrade? ()
+    }
+
+    @IBAction private func bookAppointmentTapped (_ sender : UIButton?) {
+        bookAppointment? ()
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/UIButton+BoltMobile.swift" startline="1" endline="34">
+import UIKit
+
+extension UIButton {
+
+    func alignImageAndTitleVertically (padding : CGFloat = 6.0) {
+        if let imageSize = imageView?.frame.size, let titleSize = titleLabel?.frame.size {
+            let totalHeight = imageSize.height+
+            titleSize.height+
+            padding
+            self.imageEdgeInsets = UIEdgeInsets (top : - (totalHeight - imageSize.height), left : 0, bottom : 0, right : - titleSize.width)
+            self.titleEdgeInsets = UIEdgeInsets (top : 0, left : - imageSize.width, bottom : - (totalHeight - titleSize.height), right : 0)
+        }
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/CouponDetailViewController.swift" startline="1" endline="39">
+import UIKit
+
+class CouponDetailViewController : UIViewController {
+    @IBOutlet private var couponImageView : UIImageView?
+    @IBOutlet private var errorLabel : UILabel?
+    var redeemCoupon : (() - > ())?
+    var coupon : Coupon?
+
+    override func viewWillAppear (_ animated : Bool) {
+        super.viewWillAppear (animated)
+        setUpView ()
+    }
+
+    func setUpView () {
+        if let coupon = coupon {
+            couponImageView?.image = coupon.couponImage
+            errorLabel?.isHidden = true
+        } else {
+            errorLabel?.isHidden = false
+        }
+    }
+
+    @IBAction private func redeemCouponTapped (_ sender : UIButton?) {
+        redeemCoupon? ()
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/Storyboards.swift" startline="1" endline="106">
+import Foundation
+import UIKit
+internal protocol StoryboardType {
+    static var storyboardName : String {get}
+}
+
+internal extension StoryboardType {
+    static var storyboard : UIStoryboard {
+        let name = self.storyboardName
+        return UIStoryboard (name : name, bundle : Bundle (for : BundleToken.self))
+    }
+}
+internal struct SceneType <T : Any> {
+    internal let storyboard : StoryboardType.Type
+    internal let identifier : String
+
+    internal func instantiate () - > T {
+        let identifier = self.identifier
+        guard let controller = storyboard.storyboard.instantiateViewController (withIdentifier : identifier) as? T else {
+            fatalError ("ViewController '\(identifier)' is not of the expected class \(T.self).")
+        }
+        return controller
+    }
+}
+internal struct InitialSceneType <T : Any> {
+    internal let storyboard : StoryboardType.Type
+
+    internal func instantiate () - > T {
+        guard let controller = storyboard.storyboard.instantiateInitialViewController () as? T else {
+            fatalError ("ViewController is not of the expected class \(T.self).")
+        }
+        return controller
+    }
+}
+internal protocol SegueType : RawRepresentable {
+}
+
+internal extension UIViewController {
+
+    func perform <S : SegueType> (segue : S, sender : Any? = nil) where S.RawValue == String {
+        let identifier = segue.rawValue
+        performSegue (withIdentifier : identifier, sender : sender)
+    }
+}
+internal enum StoryboardScene {
+    internal enum LaunchScreen : StoryboardType {
+        internal static let storyboardName = "LaunchScreen"
+        internal static let initialScene = InitialSceneType <UIViewController> (storyboard : LaunchScreen.self)
+    }
+    internal enum Main : StoryboardType {
+        internal static let storyboardName = "Main"
+        internal static let initialScene = InitialSceneType <UINavigationController> (storyboard : Main.self)
+        internal static let askLocationVC = SceneType <Bolt_Mobile.AskLocationViewController> (storyboard : Main.self, identifier : "AskLocationVC")
+        internal static let askExpertVC = SceneType <Bolt_Mobile.AskExpertViewController> (storyboard : Main.self, identifier : "askExpertVC")
+        internal static let bookAppointmentVC = SceneType <Bolt_Mobile.BookAppointmentViewController> (storyboard : Main.self, identifier : "bookAppointmentVC")
+        internal static let contactReviewDetailVC = SceneType <Bolt_Mobile.ContactReviewDetailViewController> (storyboard : Main.self, identifier : "contactReviewDetailVC")
+        internal static let contactReviewVC = SceneType <Bolt_Mobile.ContactReviewViewController> (storyboard : Main.self, identifier : "contactReviewVC")
+        internal static let couponDetailVC = SceneType <Bolt_Mobile.CouponDetailViewController> (storyboard : Main.self, identifier : "couponDetailVC")
+        internal static let couponsVC = SceneType <Bolt_Mobile.CouponsViewController> (storyboard : Main.self, identifier : "couponsVC")
+        internal static let deviceUpgradeVC = SceneType <Bolt_Mobile.DeviceUpgradeViewController> (storyboard : Main.self, identifier : "deviceUpgradeVC")
+        internal static let homeVC = SceneType <Bolt_Mobile.HomeViewController> (storyboard : Main.self, identifier : "homeVC")
+        internal static let welcomeVC = SceneType <Bolt_Mobile.WelcomeViewController> (storyboard : Main.self, identifier : "welcomeVC")
+    }
+    internal enum Referrals : StoryboardType {
+        internal static let storyboardName = "Referrals"
+        internal static let phoneNumberVerificationVC = SceneType <Bolt_Mobile.PhoneNumberVerificationViewController> (storyboard : Referrals.self, identifier : "phoneNumberVerificationVC")
+        internal static let redeemCodeVC = SceneType <Bolt_Mobile.RedeemCodeViewController> (storyboard : Referrals.self, identifier : "redeemCodeVC")
+        internal static let referralsContactVC = SceneType <Bolt_Mobile.ReferralsContactViewController> (storyboard : Referrals.self, identifier : "referralsContactVC")
+        internal static let referralsInformationVC = SceneType <Bolt_Mobile.ReferralsInformationViewController> (storyboard : Referrals.self, identifier : "referralsInformationVC")
+        internal static let referralsVC = SceneType <Bolt_Mobile.ReferralsViewController> (storyboard : Referrals.self, identifier : "referralsVC")
+    }
+}
+internal enum StoryboardSegue {
+}
+
+private final class BundleToken {
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/ReferralsContactViewController.swift" startline="1" endline="179">
+import UIKit
+import IQKeyboardManagerSwift
+enum ReferralsContactViewType {
+    case UserInfoPush
+    case UserInfoPresent
+    case ReferralInfo
+}
+struct ReferralsContactViewData {
+    let firstName : String
+    let lastName : String
+    let email : String
+    let phoneNumber : String
+}
+
+class ReferralsContactViewController : UIViewController {
+    var viewType : ReferralsContactViewType?
+    var viewData : ReferralsContactViewData?
+    var returnKeyHandler : IQKeyboardReturnKeyHandler?
+    @IBOutlet private var subtitle : UILabel?
+    @IBOutlet private var firstNameTextField : UITextField?
+    @IBOutlet private var lastNameTextField : UITextField?
+    @IBOutlet private var emailTextField : UITextField?
+    @IBOutlet private var phoneNumberTextField : UITextField?
+    @IBOutlet private var button : UIButton?
+    var submitUserInfo : ((_ firstName : String, _ lastName : String, _ email : String, _ phoneNumber : String) - > ())?
+    var submitReferralInfo : ((_ firstName : String, _ lastName : String, _ email : String?, _ phoneNumber : String) - > ())?
+
+    override func viewDidLoad () {
+        super.viewDidLoad ()
+        phoneNumberTextField?.keyboardType = .numberPad
+        returnKeyHandler = IQKeyboardReturnKeyHandler (controller : self)
+    }
+
+    override func viewWillAppear (_ animated : Bool) {
+        super.viewWillAppear (animated)
+        setUpView ()
+    }
+    deinit {
+        returnKeyHandler = nil
+    }
+
+    @IBAction private func dismissButtonTapped (_ sender : UIButton?) {
+        self.dismiss (animated : true, completion : nil)
+    }
+
+    func setUpView () {
+        guard let viewType = viewType else {
+            return
+        }
+        switch viewType {
+            case.UserInfoPresent :
+                navigationItem.leftBarButtonItem = UIBarButtonItem (image : Asset.xIcon.image, style : .plain, target : self, action : #selector (dismissButtonTapped (_ :)))
+                setUpUserInfo ()
+            case.UserInfoPush :
+                setUpUserInfo ()
+            case.ReferralInfo :
+                setUpReferralsInfo ()
+        }
+    }
+
+    func setUpUserInfo () {
+        subtitle?.text = L10n.yourUserInformationSubtitle
+        firstNameTextField?.placeholder = L10n.yourFirstNamePlaceholder
+        lastNameTextField?.placeholder = L10n.yourLastNamePlaceholder
+        emailTextField?.placeholder = L10n.yourEmailPlaceholder
+        phoneNumberTextField?.placeholder = L10n.yourPhoneNumberPlaceholder
+        firstNameTextField?.text = viewData?.firstName??
+        ""
+        lastNameTextField?.text = viewData?.lastName??
+        ""
+        emailTextField?.text = viewData?.email??
+        ""
+        phoneNumberTextField?.text = viewData?.phoneNumber??
+        ""
+        button?.setTitle (L10n.yourButtonTitle, for : .normal)
+    }
+
+    func setUpReferralsInfo () {
+        subtitle?.text = L10n.referralsSubtitle
+        firstNameTextField?.placeholder = L10n.referralFirstNamePlaceholder
+        lastNameTextField?.placeholder = L10n.referralLastNamePlaceholder
+        emailTextField?.placeholder = L10n.referralEmailPlaceholder
+        phoneNumberTextField?.placeholder = L10n.referralPhoneNumberPlaceholder
+        firstNameTextField?.text = ""
+        lastNameTextField?.text = ""
+        emailTextField?.text = ""
+        phoneNumberTextField?.text = ""
+        button?.setTitle (L10n.referralButtonTitle, for : .normal)
+    }
+
+    @IBAction private func submitTapped (_ sender : UIButton?) {
+        guard let viewType = viewType else {
+            return
+        }
+        switch viewType {
+            case.UserInfoPush,.UserInfoPresent :
+                validateAndSubmitUserInfo ()
+            case.ReferralInfo :
+                validateAndSubmitReferralInfo ()
+        }
+    }
+
+    private func validateAndSubmitUserInfo () {
+        guard let firstName = firstNameTextField?.text?.trimmingCharacters (in : .whitespaces), firstName.count > 0 else {
+            UIAlertController.showAlert (title : L10n.invalidEntryTitle, message : L10n.invalidFirstName, inViewController : self)
+            return
+        }
+        guard let lastName = lastNameTextField?.text?.trimmingCharacters (in : .whitespaces), lastName.count > 0 else {
+            UIAlertController.showAlert (title : L10n.invalidEntryTitle, message : L10n.invalidLastName, inViewController : self)
+            return
+        }
+        guard let email = emailTextField?.text?.trimmingCharacters (in : .whitespaces), email.isValidEmail () else {
+            UIAlertController.showAlert (title : L10n.invalidEntryTitle, message : L10n.invalidEmail, inViewController : self)
+            return
+        }
+        guard let phoneNumber = phoneNumberTextField?.text?.trimmingCharacters (in : .whitespaces), phoneNumber.isValidPhoneNumber () else {
+            UIAlertController.showAlert (title : L10n.invalidEntryTitle, message : L10n.invalidPhoneNumber, inViewController : self)
+            return
+        }
+        submitUserInfo? (firstName, lastName, email, phoneNumber)
+    }
+
+    private func validateAndSubmitReferralInfo () {
+        guard let firstName = firstNameTextField?.text?.trimmingCharacters (in : .whitespaces), firstName.count > 0 else {
+            UIAlertController.showAlert (title : L10n.invalidEntryTitle, message : L10n.invalidFirstName, inViewController : self)
+            return
+        }
+        guard let lastName = lastNameTextField?.text?.trimmingCharacters (in : .whitespaces), lastName.count > 0 else {
+            UIAlertController.showAlert (title : L10n.invalidEntryTitle, message : L10n.invalidLastName, inViewController : self)
+            return
+        }
+        guard let phoneNumber = phoneNumberTextField?.text?.trimmingCharacters (in : .whitespaces), phoneNumber.isValidPhoneNumber () else {
+            UIAlertController.showAlert (title : L10n.invalidEntryTitle, message : L10n.invalidPhoneNumber, inViewController : self)
+            return
+        }
+        if let email = emailTextField?.text?.trimmingCharacters (in : .whitespaces), email.count > 0 {
+            if email.isValidEmail () {
+                submitReferralInfo? (firstName, lastName, email, phoneNumber)
+                return
+            } else {
+                UIAlertController.showAlert (title : L10n.invalidEntryTitle, message : L10n.invalidEmail, inViewController : self)
+                return
+            }
+        } else {
+            submitReferralInfo? (firstName, lastName, nil, phoneNumber)
+            return
+        }
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/DeviceUpgradeViewController.swift" startline="1" endline="30">
+import UIKit
+
+class DeviceUpgradeViewController : UIViewController {
+    var checkForUpgrade : (() - > ())?
+    var browsePhones : (() - > ())?
+    var shopAccessories : (() - > ())?
+
+    @IBAction private func checkForUpgradeTapped () {
+        checkForUpgrade? ()
+    }
+
+    @IBAction private func browsePhonesTapped () {
+        browsePhones? ()
+    }
+
+    @IBAction private func shopAccessoriesTapped () {
+        shopAccessories? ()
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/ViewControllerBackgroundVideo.swift" startline="1" endline="80">
+import Foundation
+import UIKit
+import AVFoundation
+
+@IBDesignable class ViewControllerBackgroundVideo : NSObject {
+    private var avplayer : AVPlayer?
+    private var backgroundVideoURL : URL?
+    @IBOutlet private weak var viewController : UIViewController?
+    @IBInspectable var backgroundVideoName : String? {
+        didSet {
+            if let backgroundVideoName = backgroundVideoName {
+                backgroundVideoURL = Bundle.main.url (forResource : backgroundVideoName, withExtension : "mp4")
+            }
+        }
+    }
+    deinit {
+        NotificationCenter.default.removeObserver (self, name : NSNotification.Name.AVPlayerItemDidPlayToEndTime, object : nil)
+        NotificationCenter.default.removeObserver (self, name : UIApplication.didBecomeActiveNotification, object : nil)
+        NotificationCenter.default.removeObserver (self, name : UIApplication.willResignActiveNotification, object : nil)
+    }
+
+    override func awakeFromNib () {
+        if avplayer == nil {
+            guard let view = viewController?.view, let videoURL = backgroundVideoURL else {
+                return
+            }
+            let avAsset = AVAsset (url : videoURL)
+            let avPlayerItem = AVPlayerItem (asset : avAsset)
+            let moviePlayerView = UIView ()
+            avplayer = AVPlayer (playerItem : avPlayerItem)
+            let avPlayerLayer = AVPlayerLayer (player : avplayer)
+            avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            avPlayerLayer.frame = UIScreen.main.bounds
+            moviePlayerView.layer.addSublayer (avPlayerLayer)
+            view.insertSubview (moviePlayerView, at : 0)
+            avplayer?.seek (to : CMTime.zero)
+            avplayer?.volume = 0.0
+            avplayer?.actionAtItemEnd = .none
+            NotificationCenter.default.addObserver (self, selector : #selector (ViewControllerBackgroundVideo.playerItemDidReachEnd (notification :)), name : NSNotification.Name.AVPlayerItemDidPlayToEndTime, object : avplayer?.currentItem)
+            NotificationCenter.default.addObserver (self, selector : #selector (ViewControllerBackgroundVideo.playerStartPlaying), name : UIApplication.didBecomeActiveNotification, object : nil)
+            NotificationCenter.default.addObserver (self, selector : #selector (ViewControllerBackgroundVideo.playerPausePlaying), name : UIApplication.willResignActiveNotification, object : nil)
+            avplayer?.play ()
+        }
+    }
+
+    @objc func playerItemDidReachEnd (notification : NSNotification) {
+        let avPlayerItem = notification.object as! AVPlayerItem
+        avPlayerItem.seek (to : CMTime.zero)
+    }
+
+    @objc func playerStartPlaying () {
+        avplayer?.play ()
+    }
+
+    @objc func playerPausePlaying () {
+        avplayer?.pause ()
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/MainCoordinator.swift" startline="1" endline="399">
+import UIKit
+import MapKit
+import UserNotifications
+import MessageUI
+import KeychainAccess
+import NVActivityIndicatorView
+struct StoreLocation {
+    let hoursURL : String
+    let title : String
+    let picture : String
+    let address : String
+    let phone : String
+    let website : String
+    let email : String
+    let facebook : String
+    let google : String
+    let coordinate : CLLocationCoordinate2D
+    init (data : Dictionary <String, Any>) {
+        self.hoursURL = data ["hoursURL"] as? String??
+        ""
+        self.title = data ["title"] as? String??
+        ""
+        self.picture = data ["picture"] as? String??
+        ""
+        self.address = data ["address"] as? String??
+        ""
+        self.phone = data ["phone"] as? String??
+        ""
+        self.website = data ["website"] as? String??
+        ""
+        self.email = data ["email"] as? String??
+        ""
+        self.facebook = data ["facebook"] as? String??
+        ""
+        self.google = data ["google"] as? String??
+        ""
+        self.coordinate = CLLocationCoordinate2DMake (data ["latitude"] as! CLLocationDegrees, data ["longitude"] as! CLLocationDegrees)
+    }
+}
+
+class MainCoordinator : NSObject {
+    let mainWindow : UIWindow
+    let navigationController : UINavigationController
+    let referralsCoordinator : ReferralsCoordinator
+    let messageService : MessageService
+    var deviceUpgradeVC : DeviceUpgradeViewController?
+    init (window : UIWindow, navController : UINavigationController) {
+        mainWindow = window
+        navigationController = navController
+        messageService = MessageService (navController : navigationController, type : .upgrade)
+        referralsCoordinator = ReferralsCoordinator (navController : navigationController)
+    }
+
+    func start () {
+        navigationController.delegate = self
+        navigationController.modalPresentationStyle = .fullScreen
+        if let hasSeenWelcomeVideo = UserDefaults.hasSeenWelcomeVC, hasSeenWelcomeVideo {
+            moveToHomeVC ()
+        } else {
+            moveToWelcomeVC ()
+        }
+    }
+
+    private func moveToWelcomeVC () {
+        let welcomeViewController = StoryboardScene.Main.welcomeVC.instantiate ()
+        welcomeViewController.getStarted = {
+            BoltAnalytics.trackEvent (category : .Welcome, action : .GetStartedTapped, label : nil)
+            self.moveToHomeVC ()
+        }
+        navigationController.setViewControllers ([welcomeViewController], animated : true)
+        UserDefaults.hasSeenWelcomeVC = true
+    }
+
+    private func moveToHomeVC () {
+        let homeVC = StoryboardScene.Main.homeVC.instantiate ()
+        homeVC.navigationItem.backBarButtonItem = UIBarButtonItem (title : "", style : .plain, target : nil, action : nil)
+        homeVC.myReferrals = {
+            self.referralsCoordinator.start ()
+        }
+        homeVC.coupons = {
+            self.moveToCouponsVC ()
+        }
+        homeVC.contactReview = {
+            [unowned self] in self.moveToContactReviewVC ()
+        }
+        homeVC.askExpert = {
+            self.moveToAskExpertVC ()
+        }
+        homeVC.deviceUpgrade = {
+            self.moveToDeviceUpgradeVC ()
+        }
+        homeVC.bookAppointment = {
+            [unowned self] in self.moveToBookAppointmentVC ()
+        }
+        if navigationController.viewControllers.count > 0 {
+            navigationController.pushViewController (homeVC, animated : true)
+        } else {
+            navigationController.setViewControllers ([homeVC], animated : true)
+        }
+        registerPushNotifications ()
+    }
+
+    private func registerPushNotifications () {
+        UNUserNotificationCenter.current ().requestAuthorization (options : [ .alert, .badge, .sound]) {
+            (granted, error) in guard granted else {
+                return
+            }
+            self.getNotificationSettings ()
+        }
+    }
+
+    private func getNotificationSettings () {
+        UNUserNotificationCenter.current ().getNotificationSettings {
+            (settings) in guard settings.authorizationStatus==.authorized else {
+                return
+            }
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications ()
+            }
+        }
+    }
+
+    private func moveToBookAppointmentVC () {
+        let bookAppointmentViewController = StoryboardScene.Main.bookAppointmentVC.instantiate ()
+        bookAppointmentViewController.title = L10n.bookAppointmentTitle
+        bookAppointmentViewController.navigationItem.backBarButtonItem = UIBarButtonItem (title : "", style : .plain, target : nil, action : nil)
+        bookAppointmentViewController.goBack = {
+            self.navigationController.popViewController (animated : true)
+        }
+        navigationController.pushViewController (bookAppointmentViewController, animated : true)
+        BoltAnalytics.trackScreenWithName (screenName : .BookAppointment)
+    }
+
+    private func moveToContactReviewVC () {
+        let contactReviewViewController = StoryboardScene.Main.contactReviewVC.instantiate ()
+        contactReviewViewController.title = L10n.contactReviewTitle
+        contactReviewViewController.navigationItem.backBarButtonItem = UIBarButtonItem (title : "", style : .plain, target : nil, action : nil)
+        contactReviewViewController.didLoad = {
+            [unowned self] in contactReviewViewController.loadStoreLocations (locations : self.loadStore ())
+            contactReviewViewController.setUpLocationManager ()
+        }
+        contactReviewViewController.showStoreLocation = {
+            [unowned self] (storeLocation) in self.moveToContactReviewDetailVC (storeLocation : storeLocation)
+        }
+        navigationController.pushViewController (contactReviewViewController, animated : true)
+        BoltAnalytics.trackScreenWithName (screenName : .ContactReview)
+    }
+
+    private func moveToContactReviewDetailVC (storeLocation : StoreLocation) {
+        let contactReviewDetailViewController = StoryboardScene.Main.contactReviewDetailVC.instantiate ()
+        contactReviewDetailViewController.title = storeLocation.title
+        BoltAnalytics.trackEvent (category : .ContactReview, action : .LocationDetailsViewed, label : storeLocation.title)
+        let emailService = EmailService (navController : navigationController)
+        contactReviewDetailViewController.didLoad = {
+            contactReviewDetailViewController.configureView (storeLocation : storeLocation)
+        }
+        contactReviewDetailViewController.hours = {
+            WebsiteService.openWebsite (fromViewController : contactReviewDetailViewController, urlString : storeLocation.hoursURL)
+        }
+        contactReviewDetailViewController.phoneLocation = {
+            BoltAnalytics.trackEvent (category : .ContactReview, action : .PhoneTapped, label : storeLocation.title)
+            PhoneService.makeCall (fromViewController : contactReviewDetailViewController, phoneNumber : storeLocation.phone)
+        }
+        contactReviewDetailViewController.goToWebsite = {
+            BoltAnalytics.trackEvent (category : .ContactReview, action : .WebsiteTapped, label : storeLocation.title)
+            WebsiteService.openWebsite (fromViewController : contactReviewDetailViewController, urlString : "https://\(storeLocation.website)")
+        }
+        contactReviewDetailViewController.emailLocation = {
+            BoltAnalytics.trackEvent (category : .ContactReview, action : .EmailTapped, label : storeLocation.title)
+            emailService.sendEmail (toAddress : storeLocation.email, subject : L10n.locationEmailSubject, messageBody : L10n.locationEmailBody, presentVC : contactReviewDetailViewController, failureMessage : L10n.locationEmailFailureMessage)
+        }
+        contactReviewDetailViewController.reviewFacebook = {
+            BoltAnalytics.trackEvent (category : .ContactReview, action : .ReviewFacebookTapped, label : storeLocation.title)
+            WebsiteService.openWebsite (fromViewController : contactReviewDetailViewController, urlString : storeLocation.facebook)
+        }
+        contactReviewDetailViewController.reviewGoogle = {
+            BoltAnalytics.trackEvent (category : .ContactReview, action : .ReviewGoogleTapped, label : storeLocation.title)
+            WebsiteService.openWebsite (fromViewController : contactReviewDetailViewController, urlString : storeLocation.google)
+        }
+        contactReviewDetailViewController.getDirections = {
+            let storePlacemark = MKPlacemark (coordinate : storeLocation.coordinate)
+            let storeMapItem = MKMapItem (placemark : storePlacemark)
+            storeMapItem.name = storeLocation.title
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDefault]
+            storeMapItem.openInMaps (launchOptions : launchOptions)
+        }
+        navigationController.pushViewController (contactReviewDetailViewController, animated : true)
+    }
+
+    private func loadStore () - > [StoreLocation] {
+        if let path = Bundle.main.path (forResource : Constants.Location.filename, ofType : "plist") {
+            let arrayRoot = NSArray (contentsOfFile : path)
+            if let array = arrayRoot as? [Dictionary <String, Any>] {
+                var storeLocations = [StoreLocation] ()
+                for item in array {
+                    let storeLocation = StoreLocation (data : item)
+                    storeLocations.append (storeLocation)
+                }
+                return storeLocations
+            } else {
+                print ("can not load file")
+            }
+        } else {
+            print ("no file find")
+        }
+        return [StoreLocation] ()
+    }
+
+    private func moveToAskExpertVC () {
+        let askExpertVC = StoryboardScene.Main.askExpertVC.instantiate ()
+        askExpertVC.title = L10n.askExpertTitle
+        askExpertVC.navigationItem.backBarButtonItem = UIBarButtonItem (title : "", style : .plain, target : nil, action : nil)
+        askExpertVC.loctionSelected = {
+            location in self.moveToAskLocation (location : location)
+        }
+        navigationController.pushViewController (askExpertVC, animated : true)
+    }
+
+    private func moveToAskLocation (location : Location) {
+        let askLocationVC = StoryboardScene.Main.askLocationVC.instantiate ()
+        let enclosingNav = UINavigationController (rootViewController : askLocationVC)
+        enclosingNav.modalPresentationStyle = .fullScreen
+        let emailService = EmailService (navController : enclosingNav)
+        switch location {
+            case.circle :
+                askLocationVC.title = L10n.circleDriveTitle
+            case.eightStreet :
+                askLocationVC.title = L10n.eightStreetTitle
+            case.attridge :
+                askLocationVC.title = L10n.attridgeTitle
+            case.rosewood :
+                askLocationVC.title = L10n.rosewoodTitle
+        }
+        askLocationVC.emailLocation = {
+            BoltAnalytics.trackEvent (category : .AskExpert, action : .EmailTapped, label : location.rawValue)
+            switch location {
+                case.circle :
+                    emailService.sendEmail (toAddress : Constants.AskExpert.CircleEmail, subject : L10n.emailSubject, messageBody : L10n.emailBody, presentVC : askLocationVC, failureMessage : L10n.emailFailureMessage)
+                case.eightStreet :
+                    emailService.sendEmail (toAddress : Constants.AskExpert.EightStreetEmail, subject : L10n.emailSubject, messageBody : L10n.emailBody, presentVC : askLocationVC, failureMessage : L10n.emailFailureMessage)
+                case.attridge :
+                    emailService.sendEmail (toAddress : Constants.AskExpert.AttridgeEmail, subject : L10n.emailSubject, messageBody : L10n.emailBody, presentVC : askLocationVC, failureMessage : L10n.emailFailureMessage)
+                case.rosewood :
+                    emailService.sendEmail (toAddress : Constants.AskExpert.RosewoodEmail, subject : L10n.emailSubject, messageBody : L10n.emailBody, presentVC : askLocationVC, failureMessage : L10n.emailFailureMessage)
+            }
+        }
+        askLocationVC.phoneLocation = {
+            BoltAnalytics.trackEvent (category : .AskExpert, action : .PhoneTapped, label : location.rawValue)
+            switch location {
+                case.circle :
+                    PhoneService.makeCall (fromViewController : askLocationVC, phoneNumber : Constants.AskExpert.CirclePhoneNumber)
+                case.eightStreet :
+                    PhoneService.makeCall (fromViewController : askLocationVC, phoneNumber : Constants.AskExpert.EightStreetPhoneNumber)
+                case.attridge :
+                    PhoneService.makeCall (fromViewController : askLocationVC, phoneNumber : Constants.AskExpert.AttridgePhoneNumber)
+                case.rosewood :
+                    PhoneService.makeCall (fromViewController : askLocationVC, phoneNumber : Constants.AskExpert.RosewoodPhoneNumber)
+            }
+        }
+        navigationController.present (enclosingNav, animated : true, completion : nil)
+    }
+
+    private func moveToDeviceUpgradeVC () {
+        let deviceUpgradeVC = StoryboardScene.Main.deviceUpgradeVC.instantiate ()
+        deviceUpgradeVC.title = L10n.deviceUpgradeTitle
+        deviceUpgradeVC.navigationItem.backBarButtonItem = UIBarButtonItem (title : "", style : .plain, target : nil, action : nil)
+        deviceUpgradeVC.checkForUpgrade = {
+            BoltAnalytics.trackEvent (category : .DeviceUpgrade, action : .UpgradeMessageTapped, label : nil)
+            self.messageService.sendMessage (toPhoneNumberString : Constants.DeviceUpgrade.UpgradeNumber, messageBody : L10n.upgradeMessageBody, presentVC : deviceUpgradeVC)
+        }
+        deviceUpgradeVC.browsePhones = {
+            WebsiteService.openWebsite (fromViewController : deviceUpgradeVC, urlString : Constants.DeviceUpgrade.BrowsePhonesURLString)
+        }
+        deviceUpgradeVC.shopAccessories = {
+            WebsiteService.openWebsite (fromViewController : deviceUpgradeVC, urlString : Constants.DeviceUpgrade.ShopAccessoriesURLString)
+        }
+        self.deviceUpgradeVC = deviceUpgradeVC
+        navigationController.pushViewController (deviceUpgradeVC, animated : true)
+    }
+
+    private func moveToCouponsVC () {
+        let couponsVC = StoryboardScene.Main.couponsVC.instantiate ()
+        couponsVC.title = L10n.couponsTitle
+        couponsVC.navigationItem.backBarButtonItem = UIBarButtonItem (title : "", style : .plain, target : nil, action : nil)
+        let couponsDataProvider = CouponsDataProvider ()
+        var internalCoupons : Coupons? = nil
+        couponsVC.willAppear = {
+            NVActivityIndicatorPresenter.sharedInstance.startAnimating (Constants.ActivityIndicator.activityData)
+            couponsDataProvider.getCoupons {
+                (result) in NVActivityIndicatorPresenter.sharedInstance.stopAnimating ()
+                switch result {
+                    case let.success (coupons) :
+                        internalCoupons = coupons
+                        couponsVC.coupons = internalCoupons
+                        couponsVC.reloadTableView ()
+                    case let.failure (error) :
+                        UIAlertController.showAlert (title : nil, message : error.localizedDescription, inViewController : couponsVC)
+                }
+            }
+        }
+        couponsVC.saveCouponImageAtIndex = {
+            index, image in internalCoupons?.allCoupons [index].couponImage = image
+        }
+        couponsVC.getCouponAtIndex = {
+            couponIndex in BoltAnalytics.trackEvent (category : .Coupons, action : .IndividualCouponTapped, label : nil)
+            if internalCoupons?.allCoupons [couponIndex].couponImage! = nil {
+                if let coupon = internalCoupons?.allCoupons [couponIndex] {
+                    self.moveToCouponDetailVC (coupon : coupon)
+                }
+            } else {
+                UIAlertController.showAlert (title : nil, message : L10n.couponErrorMessage, inViewController : couponsVC)
+            }
+        }
+        navigationController.pushViewController (couponsVC, animated : true)
+        BoltAnalytics.trackScreenWithName (screenName : .Coupons)
+    }
+
+    private func moveToCouponDetailVC (coupon : Coupon) {
+        let couponDetailVC = StoryboardScene.Main.couponDetailVC.instantiate ()
+        couponDetailVC.title = L10n.couponDetailTitle
+        couponDetailVC.navigationItem.backBarButtonItem = UIBarButtonItem (title : "", style : .plain, target : nil, action : nil)
+        couponDetailVC.coupon = coupon
+        couponDetailVC.redeemCoupon = {
+            if let couponID = coupon.couponID {
+                let alertController = UIAlertController (title : L10n.couponOneTimeUseTitle, message : L10n.couponOneTimeUseDescription, preferredStyle : .alert)
+                let noAction = UIAlertAction (title : L10n.alertActionNoButtonTitle, style : .cancel, handler : nil)
+                let yesAction = UIAlertAction (title : L10n.alertActionYesButtonTitle, style : .default, handler : {
+                    (_) in let keychain = Keychain (service : Constants.Keychain.Service)
+                    keychain.useCoupon (id : couponID)
+                    self.navigationController.popViewController (animated : true)
+                })
+                alertController.addAction (noAction)
+                alertController.addAction (yesAction)
+                couponDetailVC.present (alertController, animated : true, completion : nil)
+            } else {
+                self.navigationController.popViewController (animated : true)
+            }
+        }
+        navigationController.pushViewController (couponDetailVC, animated : true)
+    }
+}
+
+extension MainCoordinator : UINavigationControllerDelegate {
+
+    func navigationController (_ navigationController : UINavigationController, willShow viewController : UIViewController, animated : Bool) {
+        if let bookAppointmentViewController = viewController as? BookAppointmentViewController {
+            bookAppointmentViewController.loadBookingWebpage ()
+        }
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/CouponsViewController.swift" startline="1" endline="104">
+import UIKit
+
+class CouponsViewController : UIViewController {
+    @IBOutlet private var tableView : UITableView?
+    var coupons : Coupons?
+    var willAppear : (() - > ())?
+    var saveCouponImageAtIndex : ((_ index : Int, _ image : UIImage) - > ())?
+    var getCouponAtIndex : ((Int) - > ())?
+
+    override func viewDidLoad () {
+        tableView?.estimatedRowHeight = 275
+        tableView?.rowHeight = UITableView.automaticDimension
+    }
+
+    override func viewWillAppear (_ animated : Bool) {
+        super.viewWillAppear (animated)
+        willAppear? ()
+    }
+
+    func reloadTableView () {
+        self.tableView?.reloadData ()
+    }
+}
+
+extension CouponsViewController : UITableViewDataSource {
+
+    func numberOfSections (in tableView : UITableView) - > Int {
+        return 1
+    }
+
+    func tableView (_ tableView : UITableView, numberOfRowsInSection section : Int) - > Int {
+        guard let coupons = coupons else {
+            return 0
+        }
+        return coupons.allCoupons.count
+    }
+
+    func tableView (_ tableView : UITableView, cellForRowAt indexPath : IndexPath) - > UITableViewCell {
+        guard let couponForCell = coupons?.allCoupons [indexPath.row], let couponCell = tableView.dequeueReusableCell (withIdentifier : Constants.Coupons.CouponCellIdentifier, for : indexPath) as? CouponTableViewCell else {
+            return UITableViewCell.defaultCell ()
+        }
+        couponCell.clearCell ()
+        if let couponImage = couponForCell.couponImage {
+            couponCell.configureCell (couponImage : couponImage)
+        } else {
+            DispatchQueue.global (qos : .background).async {
+                if let imageURL = URL (string : couponForCell.couponImageURLString) {
+                    var imageData : Data? = nil
+                    do {
+                        imageData = try Data (contentsOf : imageURL)
+                    } catch {
+                        DispatchQueue.main.async {
+                            couponCell.configureCell (couponImage : nil)
+                        }
+                    }
+                    if let imageData = imageData, let couponImage = UIImage (data : imageData) {
+                        DispatchQueue.main.async {
+                            self.coupons?.allCoupons [indexPath.row].couponImage = couponImage
+                            self.saveCouponImageAtIndex? (indexPath.row, couponImage)
+                            couponCell.configureCell (couponImage : couponImage)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            couponCell.configureCell (couponImage : nil)
+                        }
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        couponCell.configureCell (couponImage : nil)
+                    }
+                }
+            }
+        }
+        couponCell.getCoupon = {
+            self.getCouponAtIndex? (indexPath.row)
+        }
+        return couponCell
+    }
+}
+
+extension CouponsViewController : UITableViewDelegate {
+
+    func tableView (_ tableView : UITableView, didSelectRowAt indexPath : IndexPath) {
+        tableView.deselectRow (at : indexPath, animated : true)
+        getCouponAtIndex? (indexPath.row)
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/PhoneNumberVerificationViewController.swift" startline="1" endline="35">
+import UIKit
+
+class PhoneNumberVerificationViewController : UIViewController {
+    @IBOutlet private var codeTextField : UITextField?
+    var submitCode : ((String) - > ())?
+    var resendCode : (() - > ())?
+
+    override func viewDidLoad () {
+        super.viewDidLoad ()
+    }
+
+    @IBAction private func submitTapped (_ sender : UIButton?) {
+        if let code = codeTextField?.text {
+            submitCode? (code)
+        } else {
+            UIAlertController.showAlert (title : nil, message : L10n.verificationInvalidCodeMessage, inViewController : self)
+        }
+    }
+
+    @IBAction private func resendCodeTapped (_ sender : UIButton?) {
+        resendCode? ()
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/AskExpertViewController.swift" startline="1" endline="40">
+import UIKit
+enum Location : String {
+    case circle
+    case eightStreet
+    case attridge
+    case rosewood
+}
+
+class AskExpertViewController : UIViewController {
+    var loctionSelected : ((Location) - > ())?
+
+    override func viewDidLoad () {
+        super.viewDidLoad ()
+    }
+
+    @IBAction private func circleTapped (_ sender : UIButton?) {
+        loctionSelected? ( .circle)
+    }
+
+    @IBAction private func eightStreetTapped (_ sender : UIButton?) {
+        loctionSelected? ( .eightStreet)
+    }
+
+    @IBAction private func attridgeTapped (_ sender : UIButton?) {
+        loctionSelected? ( .attridge)
+    }
+
+    @IBAction private func rosewoodTapped (_ sender : UIButton?) {
+        loctionSelected? ( .rosewood)
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/MessageService.swift" startline="1" endline="58">
+import UIKit
+import MessageUI
+enum TextType {
+    case upgrade
+    case referral
+}
+
+class MessageService : NSObject {
+    let navigationController : UINavigationController
+    let textType : TextType
+    init (navController : UINavigationController, type : TextType) {
+        navigationController = navController
+        textType = type
+    }
+
+    func sendMessage (toPhoneNumberString : String, messageBody : String, presentVC : UIViewController) {
+        if MFMessageComposeViewController.canSendText () {
+            let composeVC = MFMessageComposeViewController ()
+            composeVC.body = messageBody
+            composeVC.recipients = [toPhoneNumberString]
+            composeVC.messageComposeDelegate = self
+            presentVC.present (composeVC, animated : true, completion : nil)
+        } else {
+            UIAlertController.showAlert (title : nil, message : L10n.textFailureMessage, inViewController : presentVC)
+        }
+    }
+}
+
+extension MessageService : MFMessageComposeViewControllerDelegate {
+
+    func messageComposeViewController (_ controller : MFMessageComposeViewController, didFinishWith result : MessageComposeResult) {
+        if let topViewController = navigationController.topViewController {
+            controller.dismiss (animated : true, completion : {
+                switch result {
+                    case.sent :
+                        if self.textType==.upgrade {
+                            UIAlertController.showAlert (title : nil, message : L10n.textSentMessage, inViewController : topViewController)
+                        }
+                    default :
+                        UIAlertController.showAlert (title : nil, message : L10n.textNotSentMessage, inViewController : topViewController)
+                }
+            })
+        } else {
+            controller.dismiss (animated : true, completion : nil)
+        }
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/AskLocationViewController.swift" startline="1" endline="33">
+import UIKit
+
+class AskLocationViewController : UIViewController {
+    var emailLocation : (() - > ())?
+    var phoneLocation : (() - > ())?
+
+    override func viewDidLoad () {
+        super.viewDidLoad ()
+        navigationItem.leftBarButtonItem = UIBarButtonItem (image : Asset.xIcon.image, style : .plain, target : self, action : #selector (dismissButtonTapped (_ :)))
+    }
+
+    @IBAction private func dismissButtonTapped (_ sender : UIButton?) {
+        self.dismiss (animated : true, completion : nil)
+    }
+
+    @IBAction private func emailTapped (_ sender : UIButton?) {
+        emailLocation? ()
+    }
+
+    @IBAction private func phoneTapped (_ sender : UIButton?) {
+        phoneLocation? ()
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/UITextField+Designable.swift" startline="1" endline="95">
+import UIKit
+
+@IBDesignable class LightBlueBorderTextField : UITextField {
+
+    override func placeholderRect (forBounds bounds : CGRect) - > CGRect {
+        return bounds.insetBy (dx : 20, dy : 0)
+    }
+
+    override func textRect (forBounds bounds : CGRect) - > CGRect {
+        return bounds.insetBy (dx : 20, dy : 0)
+    }
+
+    override func editingRect (forBounds bounds : CGRect) - > CGRect {
+        return bounds.insetBy (dx : 20, dy : 0)
+    }
+
+    func commonInit () {
+        borderStyle = .none
+        textColor = UIColor (named : .boltMobileBlueLabel)
+        layer.borderColor = UIColor (named : .boltMobileLightBlueLabel).cgColor
+        layer.borderWidth = 1.0
+    }
+    override init (frame : CGRect) {
+        super.init (frame : frame)
+        commonInit ()
+    }
+    required init? (coder aDecoder : NSCoder) {
+        super.init (coder : aDecoder)
+        commonInit ()
+    }
+
+    override func prepareForInterfaceBuilder () {
+        super.prepareForInterfaceBuilder ()
+        commonInit ()
+    }
+}
+
+@IBDesignable class VerificationCodeTextField : UITextField {
+
+    override func placeholderRect (forBounds bounds : CGRect) - > CGRect {
+        return bounds.insetBy (dx : 20, dy : 0)
+    }
+
+    override func textRect (forBounds bounds : CGRect) - > CGRect {
+        return bounds.insetBy (dx : 20, dy : 0)
+    }
+
+    override func editingRect (forBounds bounds : CGRect) - > CGRect {
+        return bounds.insetBy (dx : 20, dy : 0)
+    }
+
+    override func canPerformAction (_ action : Selector, withSender sender : Any?) - > Bool {
+        if action == #selector (UIResponderStandardEditActions.paste (_ :)) {
+            return false
+        }
+        return super.canPerformAction (action, withSender : sender)
+    }
+
+    func commonInit () {
+        borderStyle = .none
+        textColor = UIColor (named : .boltMobileBlueLabel)
+        layer.borderColor = UIColor (named : .boltMobileLightBlueLabel).cgColor
+        layer.borderWidth = 1.0
+        keyboardType = .numberPad
+    }
+    override init (frame : CGRect) {
+        super.init (frame : frame)
+        commonInit ()
+    }
+    required init? (coder aDecoder : NSCoder) {
+        super.init (coder : aDecoder)
+        commonInit ()
+    }
+
+    override func prepareForInterfaceBuilder () {
+        super.prepareForInterfaceBuilder ()
+        commonInit ()
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/Images.swift" startline="1" endline="140">
+#if os (OSX)
+    import AppKit.NSImage
+    internal typealias AssetColorTypeAlias = NSColor
+    internal typealias Image = NSImage
+#elseif os (iOS)
+    || os (tvOS)||
+    os (watchOS)
+    import UIKit.UIImage
+    internal typealias AssetColorTypeAlias = UIColor
+    internal typealias Image = UIImage
+#endif
+@available (*, deprecated, renamed : "ImageAsset") internal typealias AssetType = ImageAsset
+internal struct ImageAsset {
+    internal fileprivate (set) var name : String
+    internal var image : Image {
+        let bundle = Bundle (for : BundleToken.self)
+        #if os (iOS)
+            || os (tvOS)
+            let image = Image (named : name, in : bundle, compatibleWith : nil)
+        #elseif os (OSX)
+            let image = bundle.image (forResource : NSImage.Name (name))
+        #elseif os (watchOS)
+            let image = Image (named : name)
+        #endif
+        guard let result = image else {
+            fatalError ("Unable to load image named \(name).")
+        }
+        return result
+    }
+}
+internal struct ColorAsset {
+    internal fileprivate (set) var name : String
+    @available (iOS 11.0, tvOS 11.0, watchOS 4.0, OSX 10.13, *) internal var color : AssetColorTypeAlias {
+        return AssetColorTypeAlias (asset : self)
+    }
+}
+internal enum Asset {
+    internal enum Store {
+        internal static let attridgeLocation = ImageAsset (name : "attridge-location")
+        internal static let circleDriveLocation = ImageAsset (name : "circle-drive-location")
+        internal static let clockIcon = ImageAsset (name : "clock-icon")
+        internal static let eightStreetLocation = ImageAsset (name : "eight_street_location")
+        internal static let facebookIcon = ImageAsset (name : "facebook-icon")
+        internal static let googleIcon = ImageAsset (name : "google-icon")
+        internal static let internetIcon = ImageAsset (name : "internet-icon")
+        internal static let mailIcon = ImageAsset (name : "mail-icon")
+        internal static let phoneIcon = ImageAsset (name : "phone-icon")
+        internal static let pin = ImageAsset (name : "pin")
+        internal static let tweedLaneLocation = ImageAsset (name : "tweed-lane-location")
+    }
+    internal static let askExpertIcon = ImageAsset (name : "ask_expert_icon")
+    internal static let boltIcon = ImageAsset (name : "bolt_icon")
+    internal static let boltLogo = ImageAsset (name : "bolt_logo")
+    internal static let boltLogoDark = ImageAsset (name : "bolt_logo_dark")
+    internal static let bookAppointmentIcon = ImageAsset (name : "book_appointment_icon")
+    internal static let contactIcon = ImageAsset (name : "contact_icon")
+    internal static let couponIcon = ImageAsset (name : "coupon_icon")
+    internal static let deviceUpgradeIcon = ImageAsset (name : "device_upgrade_icon")
+    internal static let home = ImageAsset (name : "home")
+    internal static let infoBarButton = ImageAsset (name : "info_bar_button")
+    internal static let referralsIcon = ImageAsset (name : "referrals_icon")
+    internal static let sasktelLogo = ImageAsset (name : "sasktel_logo")
+    internal static let xIcon = ImageAsset (name : "x_icon")
+    internal static let allColors : [ColorAsset] = []
+    internal static let allImages : [ImageAsset] = [Store.attridgeLocation, Store.circleDriveLocation, Store.clockIcon, Store.eightStreetLocation, Store.facebookIcon, Store.googleIcon, Store.internetIcon, Store.mailIcon, Store.phoneIcon, Store.pin, Store.
+      tweedLaneLocation, askExpertIcon, boltIcon, boltLogo, boltLogoDark, bookAppointmentIcon, contactIcon, couponIcon, deviceUpgradeIcon, home, infoBarButton, referralsIcon, sasktelLogo, xIcon,]
+    @available (*, deprecated, renamed : "allImages") internal static let allValues : [AssetType] = allImages
+}
+
+internal extension Image {
+    @available (iOS 1.0, tvOS 1.0, watchOS 1.0, *)@available (OSX, deprecated, message : "This initializer is unsafe on macOS, please use the ImageAsset.image property") convenience init! (asset : ImageAsset) {
+        #if os (iOS)
+            || os (tvOS)
+            let bundle = Bundle (for : BundleToken.self)
+            self.init (named : asset.name, in : bundle, compatibleWith : nil)
+        #elseif os (OSX)
+            self.init (named : NSImage.Name (asset.name))
+        #elseif os (watchOS)
+            self.init (named : asset.name)
+        #endif
+    }
+}
+
+internal extension AssetColorTypeAlias {
+    @available (iOS 11.0, tvOS 11.0, watchOS 4.0, OSX 10.13, *) convenience init! (asset : ColorAsset) {
+        let bundle = Bundle (for : BundleToken.self)
+        #if os (iOS)
+            || os (tvOS)
+            self.init (named : asset.name, in : bundle, compatibleWith : nil)
+        #elseif os (OSX)
+            self.init (named : NSColor.Name (asset.name), bundle : bundle)
+        #elseif os (watchOS)
+            self.init (named : asset.name)
+        #endif
+    }
+}
+
+private final class BundleToken {
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/ReferralsCoordinator.swift" startline="1" endline="319">
+import UIKit
+import NVActivityIndicatorView
+enum ViewDisplayType {
+    case Push
+    case Present
+}
+
+class ReferralsCoordinator {
+    let navigationController : UINavigationController
+    let dataProvider : ReferralsDataProvider
+    let messageService : MessageService
+    init (navController : UINavigationController) {
+        navigationController = navController
+        dataProvider = ReferralsDataProvider ()
+        messageService = MessageService (navController : navigationController, type : .referral)
+    }
+
+    func start () {
+        if let seenReferralsInformation = UserDefaults.hasSeenReferralsInstructions, seenReferralsInformation {
+            moveToReferralsVC ()
+        } else {
+            moveToReferralsInformationVC (viewData : ReferralsInformationViewControllerViewData (presentationStyle : .push))
+        }
+    }
+
+    func moveToReferralsInformationVC (viewData : ReferralsInformationViewControllerViewData) {
+        let referralsInformationVC = StoryboardScene.Referrals.referralsInformationVC.instantiate ()
+        referralsInformationVC.title = L10n.referralInformationTitle
+        referralsInformationVC.navigationItem.backBarButtonItem = UIBarButtonItem (title : "", style : .plain, target : nil, action : nil)
+        referralsInformationVC.viewData = viewData
+        referralsInformationVC.getStarted = {
+            self.moveToReferralsContactVC (viewType : .UserInfoPush)
+        }
+        referralsInformationVC.dismiss = {
+            referralsInformationVC.dismiss (animated : true, completion : nil)
+        }
+        switch viewData.presentationStyle {
+            case.push :
+                navigationController.pushViewController (referralsInformationVC, animated : true)
+            case.present :
+                let enclosingNav = UINavigationController (rootViewController : referralsInformationVC)
+                navigationController.present (enclosingNav, animated : true, completion : nil)
+        }
+    }
+
+    func moveToReferralsVC () {
+        let referralsVC = StoryboardScene.Referrals.referralsVC.instantiate ()
+        referralsVC.title = L10n.referralRedeemTitle
+        referralsVC.navigationItem.backBarButtonItem = UIBarButtonItem (title : "", style : .plain, target : nil, action : nil)
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating (Constants.ActivityIndicator.activityData)
+        referralsVC.didAppear = {
+            if let phoneNumber = UserDefaults.userPhoneNumber {
+                self.dataProvider.getBalance (phoneNumber : phoneNumber, completion : {
+                    (result) in NVActivityIndicatorPresenter.sharedInstance.stopAnimating ()
+                    switch result {
+                        case let.success (balance) :
+                            referralsVC.setBalance (balance : "$\(balance)")
+                        case let.failure (error) :
+                            switch error {
+                                case.invalidUser :
+                                    self.kickUser (message : error.localizedDescription, vcToPresentOn : referralsVC)
+                                default :
+                                    UIAlertController.showAlert (title : nil, message : error.localizedDescription, inViewController : referralsVC)
+                            }
+                    }
+                })
+            }
+        }
+        referralsVC.viewInfo = {
+            self.moveToReferralsInformationVC (viewData : ReferralsInformationViewControllerViewData (presentationStyle : .present))
+        }
+        referralsVC.newReferral = {
+            self.moveToReferralsContactVC (viewType : .ReferralInfo)
+        }
+        referralsVC.redeem = {
+            BoltAnalytics.trackEvent (category : .Referrals, action : .RedeemBoltBucksTapped, label : nil)
+            if let userPhoneNumber = UserDefaults.userPhoneNumber, let userEmail = UserDefaults.userEmail {
+                NVActivityIndicatorPresenter.sharedInstance.startAnimating (Constants.ActivityIndicator.activityData)
+                self.dataProvider.redeem (userPhoneNumber : userPhoneNumber, userEmail : userEmail, completion : {
+                    (result) in NVActivityIndicatorPresenter.sharedInstance.stopAnimating ()
+                    switch result {
+                        case let.success (redeemCode) :
+                            self.moveToRedeemCodeViewController (code : redeemCode)
+                        case let.failure (error) :
+                            switch error {
+                                case.invalidUser :
+                                    self.kickUser (message : error.localizedDescription, vcToPresentOn : referralsVC)
+                                default :
+                                    UIAlertController.showAlert (title : nil, message : error.localizedDescription, inViewController : referralsVC)
+                            }
+                    }
+                })
+            } else {
+                UIAlertController.showAlert (title : nil, message : L10n.referralErrorMessage, inViewController : referralsVC)
+            }
+        }
+        referralsVC.editInfo = {
+            self.moveToReferralsContactVC (viewType : .UserInfoPresent)
+        }
+        for index in navigationController.viewControllers.indices {
+            if navigationController.viewControllers [index] is HomeViewController {
+                navigationController.popToViewController (navigationController.viewControllers [index], animated : false)
+                break
+            }
+        }
+        navigationController.pushViewController (referralsVC, animated : true)
+    }
+
+    func moveToRedeemCodeViewController (code : String) {
+        let redeemCodeViewController = StoryboardScene.Referrals.redeemCodeVC.instantiate ()
+        redeemCodeViewController.code = code
+        let enclosingNav = UINavigationController (rootViewController : redeemCodeViewController)
+        enclosingNav.navigationBar.barTintColor = UIColor (named : .boltMobileDarkBlue)
+        enclosingNav.navigationBar.tintColor = UIColor.white
+        navigationController.present (enclosingNav, animated : true, completion : nil)
+    }
+
+    func moveToReferralsContactVC (viewType : ReferralsContactViewType) {
+        let referralsContactVC = StoryboardScene.Referrals.referralsContactVC.instantiate ()
+        referralsContactVC.navigationItem.backBarButtonItem = UIBarButtonItem (title : "", style : .plain, target : nil, action : nil)
+        referralsContactVC.viewType = viewType
+        let enclosingNav = UINavigationController (rootViewController : referralsContactVC)
+        switch viewType {
+            case.UserInfoPush,.UserInfoPresent :
+                referralsContactVC.title = L10n.referralsUserInformationTitle
+                if let firstName = UserDefaults.userFirstName, let lastName = UserDefaults.userLastName, let email = UserDefaults.userEmail, let phoneNumber = UserDefaults.userPhoneNumber {
+                    referralsContactVC.viewData = ReferralsContactViewData (firstName : firstName, lastName : lastName, email : email, phoneNumber : phoneNumber)
+                } else {
+                    referralsContactVC.viewData = nil
+                }
+                referralsContactVC.submitUserInfo = {
+                    firstName, lastName, email, phoneNumber in NVActivityIndicatorPresenter.sharedInstance.startAnimating (Constants.ActivityIndicator.activityData)
+                    if viewType==.UserInfoPush {
+                        self.dataProvider.login (userFirstName : firstName, userLastName : lastName, userEmail : email, userPhone : phoneNumber, completion : {
+                            (result) in NVActivityIndicatorPresenter.sharedInstance.stopAnimating ()
+                            switch result {
+                                case let.success (token) :
+                                    UserDefaults.userToken = token
+                                    UserDefaults.userFirstName = firstName
+                                    UserDefaults.userLastName = lastName
+                                    UserDefaults.userEmail = email
+                                    UserDefaults.userPhoneNumber = phoneNumber
+                                    UserDefaults.hasSeenReferralsInstructions = true
+                                    self.moveToPhoneNumberVerificationVC (viewType : .Push, presentedNavigationController : nil)
+                                case let.failure (error) :
+                                    UIAlertController.showAlert (title : nil, message : error.localizedDescription, inViewController : referralsContactVC)
+                            }
+                        })
+                    } else if viewType==.UserInfoPresent {
+                        self.dataProvider.updateUser (userFirstName : firstName, userLastName : lastName, userEmail : email, userPhone : phoneNumber, completion : {
+                            (result) in NVActivityIndicatorPresenter.sharedInstance.stopAnimating ()
+                            switch result {
+                                case let.success (token) :
+                                    UserDefaults.userToken = token
+                                    UserDefaults.userFirstName = firstName
+                                    UserDefaults.userLastName = lastName
+                                    UserDefaults.userEmail = email
+                                    UserDefaults.hasSeenReferralsInstructions = true
+                                    if let oldPhoneNumber = UserDefaults.userPhoneNumber, oldPhoneNumber == phoneNumber {
+                                        UserDefaults.userPhoneNumber = phoneNumber
+                                        referralsContactVC.dismiss (animated : true, completion : nil)
+                                    } else {
+                                        UserDefaults.userPhoneNumber = phoneNumber
+                                        self.moveToPhoneNumberVerificationVC (viewType : .Present, presentedNavigationController : enclosingNav)
+                                    }
+                                case let.failure (error) :
+                                    switch error {
+                                        case.invalidUser :
+                                            self.kickUser (message : error.localizedDescription, vcToPresentOn : referralsContactVC)
+                                        default :
+                                            UIAlertController.showAlert (title : nil, message : error.localizedDescription, inViewController : referralsContactVC)
+                                    }
+                            }
+                        })
+                    }
+                }
+            case.ReferralInfo :
+                referralsContactVC.title = L10n.referralsTitle
+                referralsContactVC.viewData = nil
+                referralsContactVC.submitReferralInfo = {
+                    firstName, lastName, email, phoneNumber in BoltAnalytics.trackEvent (category : .Referrals, action : .SubmitReferralTapped, label : nil)
+                    if let userFirstName = UserDefaults.userFirstName, let userLastName = UserDefaults.userLastName, let userEmail = UserDefaults.userEmail, let userPhone = UserDefaults.userPhoneNumber {
+                        NVActivityIndicatorPresenter.sharedInstance.startAnimating (Constants.ActivityIndicator.activityData)
+                        self.dataProvider.refer (userFirstName : userFirstName, userLastName : userLastName, userEmail : userEmail, userPhone : userPhone, referFirstName : firstName, referLastName : lastName, referEmail : email, referPhone : phoneNumber,
+                          completion : {
+                            (result) in NVActivityIndicatorPresenter.sharedInstance.stopAnimating ()
+                            switch result {
+                                case.success (let referralCode) :
+                                    self.messageService.sendMessage (toPhoneNumberString : phoneNumber, messageBody : L10n.referralSentMessageBody (referralCode), presentVC : referralsContactVC)
+                                case let.failure (error) :
+                                    switch error {
+                                        case.invalidUser :
+                                            self.kickUser (message : error.localizedDescription, vcToPresentOn : referralsContactVC)
+                                        default :
+                                            UIAlertController.showAlert (title : nil, message : error.localizedDescription, inViewController : referralsContactVC)
+                                    }
+                            }
+                        })
+                    } else {
+                        UIAlertController.showAlert (title : nil, message : L10n.referralErrorMessage, inViewController : referralsContactVC)
+                    }
+                }
+        }
+        switch viewType {
+            case.UserInfoPush,.ReferralInfo :
+                navigationController.pushViewController (referralsContactVC, animated : true)
+            case.UserInfoPresent :
+                navigationController.present (enclosingNav, animated : true, completion : nil)
+        }
+    }
+
+    func moveToPhoneNumberVerificationVC (viewType : ViewDisplayType, presentedNavigationController : UINavigationController?) {
+        let phoneNumberVerificationVC = StoryboardScene.Referrals.phoneNumberVerificationVC.instantiate ()
+        phoneNumberVerificationVC.navigationItem.backBarButtonItem = UIBarButtonItem (title : "", style : .plain, target : nil, action : nil)
+        phoneNumberVerificationVC.title = L10n.verificationTitle
+        phoneNumberVerificationVC.submitCode = {
+            code in if let codeInt = Int (code) {
+                NVActivityIndicatorPresenter.sharedInstance.startAnimating (Constants.ActivityIndicator.activityData)
+                self.dataProvider.verifyPhoneNumber (code : codeInt, completion : {
+                    (result) in NVActivityIndicatorPresenter.sharedInstance.stopAnimating ()
+                    switch result {
+                        case.success (_) :
+                            switch viewType {
+                                case.Push :
+                                    self.moveToReferralsVC ()
+                                case.Present :
+                                    phoneNumberVerificationVC.dismiss (animated : true, completion : nil)
+                            }
+                        case let.failure (error) :
+                            switch error {
+                                case.invalidUser :
+                                    self.kickUser (message : error.localizedDescription, vcToPresentOn : phoneNumberVerificationVC)
+                                default :
+                                    UIAlertController.showAlert (title : nil, message : error.localizedDescription, inViewController : phoneNumberVerificationVC)
+                            }
+                    }
+                })
+            } else {
+                UIAlertController.showAlert (title : nil, message : L10n.verificationInvalidCodeMessage, inViewController : phoneNumberVerificationVC)
+            }
+        }
+        phoneNumberVerificationVC.resendCode = {
+            self.dataProvider.resendCode (completion : {
+                (result) in switch result {
+                    case.success (_) :
+                        UIAlertController.showAlert (title : nil, message : L10n.verificationResendCodeSuccessMessage, inViewController : phoneNumberVerificationVC)
+                    case let.failure (error) :
+                        switch error {
+                            case.invalidUser :
+                                self.kickUser (message : error.localizedDescription, vcToPresentOn : phoneNumberVerificationVC)
+                            default :
+                                UIAlertController.showAlert (title : nil, message : L10n.verificationResendCodeFailureMessage + "\n\(error.localizedDescription)", inViewController : phoneNumberVerificationVC)
+                        }
+                }
+            })
+        }
+        switch viewType {
+            case.Push :
+                navigationController.pushViewController (phoneNumberVerificationVC, animated : true)
+            case.Present :
+                if let presentedNavigationController = presentedNavigationController {
+                    presentedNavigationController.pushViewController (phoneNumberVerificationVC, animated : true)
+                }
+        }
+    }
+
+    func kickUser (message : String, vcToPresentOn : UIViewController) {
+        let alertController = UIAlertController (title : nil, message : message, preferredStyle : .alert)
+        let okAction = UIAlertAction (title : L10n.alertActionOkButtonTitle, style : .cancel) {
+            (_) in UserDefaults.userToken = ""
+            UserDefaults.userFirstName = ""
+            UserDefaults.userLastName = ""
+            UserDefaults.userEmail = ""
+            UserDefaults.userPhoneNumber = ""
+            UserDefaults.hasSeenReferralsInstructions = false
+            self.navigationController.popToRootViewController (animated : true)
+        }
+        alertController.addAction (okAction)
+        vcToPresentOn.present (alertController, animated : true, completion : nil)
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/KeychainAccess+BoltMobile.swift" startline="1" endline="52">
+import Foundation
+import KeychainAccess
+
+extension Keychain {
+    struct UsedCoupons : Codable {
+        var usedCoupons : [String]
+    }
+
+    func useCoupon (id : String) {
+        var usedCoupons = allCoupons ()
+        usedCoupons.append (id)
+        let data = NSKeyedArchiver.archivedData (withRootObject : usedCoupons)
+        do {
+            try self.set (data, key : Constants.Keychain.UsedCouponsKey)
+        } catch {
+            print (error)
+        }
+    }
+
+    func isCouponUsed (id : String) - > Bool {
+        let usedCoupons = allCoupons ()
+        if usedCoupons.contains (id) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    private func allCoupons () - > [String] {
+        do {
+            if let data = try self.getData (Constants.Keychain.UsedCouponsKey), let coupons = NSKeyedUnarchiver.unarchiveObject (with : data) as? [String] {
+                return coupons
+            } else {
+                return []
+            }
+        } catch {
+            print (error)
+            return []
+        }
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/ReferralsDataProvider.swift" startline="1" endline="336">
+import Foundation
+import Moya
+import enum Result.Result
+import Alamofire
+public typealias ReferralsCompletion = (_ result : Result <String, BoltError>) - > Void
+public typealias VerificationCompletion = (_ result : Result <Bool, BoltError>) - > Void
+struct Balance : Codable {
+    enum CodingKeys : String, CodingKey {
+        case balance
+    }
+    let balance : String
+    init (from decoder : Decoder) throws {
+        let values = try decoder.container (keyedBy : CodingKeys.self)
+        let balanceCents = try values.decode (Int.self, forKey : .balance)
+        let balanceDollars : Double = Double (balanceCents)/
+        100.00
+        balance = String (format : "%.2f", balanceDollars)
+    }
+}
+struct BalanceResponse : Codable {
+    let data : Balance
+}
+struct Refer : Codable {
+    enum CodingKeys : String, CodingKey {
+        case referralCode = "referral_code"
+    }
+    let referralCode : String
+}
+struct ReferResponse : Decodable {
+    let data : Refer
+}
+struct RedeemCode : Codable {
+    enum CodingKeys : String, CodingKey {
+        case redeemCode = "code"
+    }
+    let redeemCode : String
+}
+struct RedeemResponse : Decodable {
+    let data : RedeemCode
+}
+struct LoginUpdate : Codable {
+    enum CodingKeys : String, CodingKey {
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case email
+        case phone
+        case token
+    }
+    let firstName : String
+    let lastName : String
+    let email : String
+    let phone : String
+    let token : String
+}
+struct LoginUpdateResponse : Decodable {
+    let data : LoginUpdate
+}
+
+class ReferralsDataProvider {
+    let provider = MoyaProvider <ReferralService> ()
+    let reachabilityManager = NetworkReachabilityManager ()
+
+    func getBalance (phoneNumber : String, completion :@escaping ReferralsCompletion) {
+        if reachabilityManager?.networkReachabilityStatus==.notReachable {
+            completion ( .failure ( .internetNotReachable))
+            return
+        }
+        guard let userToken = UserDefaults.userToken, userToken! = "" else {
+            completion ( .failure ( .missingToken))
+            return
+        }
+        provider.request ( .getBalance (userToken : userToken, phoneNumber : phoneNumber)) {
+            (result) in switch result {
+                case let.success (moyaResponse) :
+                    do {
+                        if moyaResponse.isValidUser () {
+                            let response = try moyaResponse.boltData ()
+                            let balanceResponse = try response.mapBalance ()
+                            completion ( .success (balanceResponse.data.balance))
+                        } else {
+                            completion ( .failure ( .invalidUser))
+                        }
+                    } catch {
+                        completion ( .failure ( .dataMapping (error.localizedDescription)))
+                    }
+                case let.failure (error) :
+                    completion ( .failure ( .moyaError (error.localizedDescription)))
+            }
+        }
+    }
+
+    func refer (userFirstName : String, userLastName : String, userEmail : String, userPhone : String, referFirstName : String, referLastName : String, referEmail : String?, referPhone : String, completion :@escaping ReferralsCompletion) {
+        if reachabilityManager?.networkReachabilityStatus==.notReachable {
+            completion ( .failure ( .internetNotReachable))
+            return
+        }
+        guard let userToken = UserDefaults.userToken, userToken! = "" else {
+            completion ( .failure ( .missingToken))
+            return
+        }
+        let userName = userFirstName+
+        " "+
+        userLastName
+        let referName = referFirstName+
+        " "+
+        referLastName
+        provider.request ( .refer (userToken : userToken, userName : userName, userPhone : userPhone, userEmail : userEmail, referName : referName, referPhone : referPhone, referEmail : referEmail)) {
+            (result) in switch result {
+                case let.success (moyaResponse) :
+                    do {
+                        if moyaResponse.isValidUser () {
+                            let response = try moyaResponse.boltData ()
+                            let referResponse = try response.mapRefer ()
+                            completion ( .success (referResponse.data.referralCode))
+                        } else {
+                            completion ( .failure ( .invalidUser))
+                        }
+                    } catch {
+                        completion ( .failure ( .dataMapping (error.localizedDescription)))
+                    }
+                case let.failure (error) :
+                    completion ( .failure ( .dataMapping (error.localizedDescription)))
+            }
+        }
+    }
+
+    func redeem (userPhoneNumber : String, userEmail : String, completion :@escaping ReferralsCompletion) {
+        if reachabilityManager?.networkReachabilityStatus==.notReachable {
+            completion ( .failure ( .internetNotReachable))
+            return
+        }
+        guard let userToken = UserDefaults.userToken, userToken! = "" else {
+            completion ( .failure ( .missingToken))
+            return
+        }
+        provider.request ( .redeem (userToken : userToken, phoneNumber : userPhoneNumber, email : userEmail)) {
+            (result) in switch result {
+                case let.success (moyaResponse) :
+                    do {
+                        if moyaResponse.isValidUser () {
+                            let response = try moyaResponse.boltData ()
+                            let redeemResponse = try response.mapRedeem ()
+                            completion ( .success (redeemResponse.data.redeemCode))
+                        } else {
+                            completion ( .failure ( .invalidUser))
+                        }
+                    } catch {
+                        completion ( .failure ( .dataMapping (error.localizedDescription)))
+                    }
+                case let.failure (error) :
+                    completion ( .failure ( .dataMapping (error.localizedDescription)))
+            }
+        }
+    }
+
+    func login (userFirstName : String, userLastName : String, userEmail : String, userPhone : String, completion :@escaping ReferralsCompletion) {
+        if reachabilityManager?.networkReachabilityStatus==.notReachable {
+            completion ( .failure ( .internetNotReachable))
+            return
+        }
+        provider.request ( .login (userFirstName : userFirstName, userLastName : userLastName, userEmail : userEmail, userPhone : userPhone)) {
+            (result) in switch result {
+                case let.success (moyaResponse) :
+                    do {
+                        let response = try moyaResponse.boltData ()
+                        let loginResponse = try response.mapLoginUpdate ()
+                        completion ( .success (loginResponse.data.token))
+                    } catch {
+                        completion ( .failure ( .dataMapping (error.localizedDescription)))
+                    }
+                case let.failure (error) :
+                    completion ( .failure ( .dataMapping (error.localizedDescription)))
+            }
+        }
+    }
+
+    func updateUser (userFirstName : String, userLastName : String, userEmail : String, userPhone : String, completion :@escaping ReferralsCompletion) {
+        if reachabilityManager?.networkReachabilityStatus==.notReachable {
+            completion ( .failure ( .internetNotReachable))
+            return
+        }
+        guard let userToken = UserDefaults.userToken, userToken! = "" else {
+            completion ( .failure ( .missingToken))
+            return
+        }
+        provider.request ( .updateUser (userToken : userToken, userFirstName : userFirstName, userLastName : userLastName, userEmail : userEmail, userPhone : userPhone)) {
+            (result) in switch result {
+                case let.success (moyaResponse) :
+                    do {
+                        if moyaResponse.isValidUser () {
+                            let response = try moyaResponse.boltData ()
+                            let updateResponse = try response.mapLoginUpdate ()
+                            completion ( .success (updateResponse.data.token))
+                        } else {
+                            completion ( .failure ( .invalidUser))
+                        }
+                    } catch {
+                        completion ( .failure ( .dataMapping (error.localizedDescription)))
+                    }
+                case let.failure (error) :
+                    completion ( .failure ( .dataMapping (error.localizedDescription)))
+            }
+        }
+    }
+
+    func verifyPhoneNumber (code : Int, completion :@escaping VerificationCompletion) {
+        if reachabilityManager?.networkReachabilityStatus==.notReachable {
+            completion ( .failure ( .internetNotReachable))
+        }
+        guard let userToken = UserDefaults.userToken, userToken! = "" else {
+            completion ( .failure ( .missingToken))
+            return
+        }
+        provider.request ( .verifyPhoneNumber (userToken : userToken, code : code)) {
+            (result) in switch result {
+                case let.success (moyaResponse) :
+                    do {
+                        if moyaResponse.isValidUser () {
+                            let phoneVerified = try moyaResponse.phoneVerificationSuccess ()
+                            completion ( .success (phoneVerified))
+                        } else {
+                            completion ( .failure ( .invalidUser))
+                        }
+                    } catch {
+                        completion ( .failure ( .dataMapping (error.localizedDescription)))
+                    }
+                case let.failure (error) :
+                    completion ( .failure ( .dataMapping (error.localizedDescription)))
+            }
+        }
+    }
+
+    func resendCode (completion :@escaping VerificationCompletion) {
+        if reachabilityManager?.networkReachabilityStatus==.notReachable {
+            completion ( .failure ( .internetNotReachable))
+        }
+        guard let userToken = UserDefaults.userToken, userToken! = "" else {
+            completion ( .failure ( .missingToken))
+            return
+        }
+        provider.request ( .resendCode (userToken : userToken)) {
+            (result) in switch result {
+                case let.success (moyaResponse) :
+                    do {
+                        if moyaResponse.isValidUser () {
+                            let codeSent = try moyaResponse.phoneVerificationSuccess ()
+                            completion ( .success (codeSent))
+                        } else {
+                            completion ( .failure ( .invalidUser))
+                        }
+                    } catch {
+                        completion ( .failure ( .dataMapping (error.localizedDescription)))
+                    }
+                case let.failure (error) :
+                    completion ( .failure ( .dataMapping (error.localizedDescription)))
+            }
+        }
+    }
+}
+
+fileprivate extension Moya.Response {
+
+    func isValidUser () - > Bool {
+        if self.statusCode == 401 {
+            return false
+        } else {
+            return true
+        }
+    }
+
+    func mapBalance () throws - > BalanceResponse {
+        let decoder = JSONDecoder ()
+        do {
+            let balanceData = try decoder.decode (BalanceResponse.self, from : self.data)
+            return balanceData
+        } catch {
+            print (error)
+            throw BoltError.dataMapping (L10n.balanceDataMappingFailed)
+        }
+    }
+
+    func mapRefer () throws - > ReferResponse {
+        let decoder = JSONDecoder ()
+        do {
+            let referData = try decoder.decode (ReferResponse.self, from : self.data)
+            return referData
+        } catch {
+            print (error)
+            throw BoltError.dataMapping (L10n.referralDataMappingFailed)
+        }
+    }
+
+    func mapRedeem () throws - > RedeemResponse {
+        let decoder = JSONDecoder ()
+        do {
+            let redeemData = try decoder.decode (RedeemResponse.self, from : self.data)
+            return redeemData
+        } catch {
+            print (error)
+            throw BoltError.dataMapping (L10n.redeemDataMappingFailed)
+        }
+    }
+
+    func mapLoginUpdate () throws - > LoginUpdateResponse {
+        let decoder = JSONDecoder ()
+        do {
+            let loginUpdateData = try decoder.decode (LoginUpdateResponse.self, from : self.data)
+            return loginUpdateData
+        } catch {
+            print (error)
+            throw BoltError.dataMapping (L10n.loginUpdateDataMappingFailed)
+        }
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/BookAppointmentViewController.swift" startline="1" endline="68">
+import UIKit
+import WebKit
+import NVActivityIndicatorView
+
+class BookAppointmentViewController : UIViewController {
+    var goBack : (() - > ())?
+    var webView : WKWebView!
+
+    override func loadView () {
+        let webConfiguration = WKWebViewConfiguration ()
+        webView = WKWebView (frame : .zero, configuration : webConfiguration)
+        webView.navigationDelegate = self
+        view = webView
+    }
+
+    func loadBookingWebpage () {
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating (Constants.ActivityIndicator.activityData)
+        if let url = URL (string : Constants.BookAppointment.AppointmentBookingURLString) {
+            let request = URLRequest (url : url)
+            webView.load (request)
+        }
+    }
+}
+
+extension BookAppointmentViewController : WKNavigationDelegate {
+
+    func webView (_ webView : WKWebView, didFinish navigation : WKNavigation!) {
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating ()
+    }
+
+    func webView (_ webView : WKWebView, didFail navigation : WKNavigation!, withError error : Error) {
+        handleFailedToLoad ()
+    }
+
+    func webView (_ webView : WKWebView, didFailProvisionalNavigation navigation : WKNavigation!, withError error : Error) {
+        handleFailedToLoad ()
+    }
+
+    func handleFailedToLoad () {
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating ()
+        let alertController = UIAlertController (title : nil, message : L10n.unableToLoadMessage, preferredStyle : .alert)
+        let backAction = UIAlertAction (title : L10n.alertBackTitle, style : .cancel) {
+            (_) in self.goBack? ()
+        }
+        let tryAgainAction = UIAlertAction (title : L10n.alertTryAgainTitle, style : .default) {
+            (_) in self.loadBookingWebpage ()
+        }
+        alertController.addAction (backAction)
+        alertController.addAction (tryAgainAction)
+        present (alertController, animated : true, completion : nil)
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/RedeemCodeViewController.swift" startline="1" endline="35">
+import UIKit
+
+class RedeemCodeViewController : UIViewController {
+    @IBOutlet private var codeLabel : UILabel?
+    var code : String?
+
+    override func viewDidLoad () {
+        super.viewDidLoad ()
+        navigationItem.leftBarButtonItem = UIBarButtonItem (image : Asset.xIcon.image, style : .plain, target : self, action : #selector (dismissButtonTapped (_ :)))
+        navigationController?.navigationBar.barStyle = .black
+    }
+
+    override func viewWillAppear (_ animated : Bool) {
+        if let code = code {
+            codeLabel?.text = code
+        } else {
+            codeLabel?.text = L10n.referralRedeemErrorGettingCode
+        }
+    }
+
+    @IBAction private func dismissButtonTapped (_ sender : UIButton?) {
+        self.dismiss (animated : true, completion : nil)
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/AppDelegate.swift" startline="1" endline="88">
+import UIKit
+
+@UIApplicationMain class AppDelegate : UIResponder, UIApplicationDelegate {
+    var window : UIWindow?
+    var appCoordinator : AppCoordinator?
+
+    func application (_ application : UIApplication, didFinishLaunchingWithOptions launchOptions : [UIApplication.LaunchOptionsKey : Any]?) - > Bool {
+        appCoordinator = AppCoordinator (appDelegate : self)
+        return true
+    }
+
+    func applicationWillResignActive (_ application : UIApplication) {
+    }
+
+    func applicationDidEnterBackground (_ application : UIApplication) {
+    }
+
+    func applicationWillEnterForeground (_ application : UIApplication) {
+    }
+
+    func applicationDidBecomeActive (_ application : UIApplication) {
+    }
+
+    func applicationWillTerminate (_ application : UIApplication) {
+    }
+
+    func application (_ application : UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken : Data) {
+        let tokenParts = deviceToken.map {
+            data - > String in return String (format : "%02.2hhx", data)
+        }
+        let token = tokenParts.joined ()
+        print ("TOKEN: \(token)")
+        let dataProvider = PushNotificationDataProvider ()
+        dataProvider.registerPushNotifications (deviceToken : token) {
+            (result) in switch result {
+                case let.success (registrationSuccessful) :
+                    print ("Successfully registered for push notifications: \(registrationSuccessful)")
+                case let.failure (error) :
+                    print (error.localizedDescription)
+            }
+        }
+    }
+
+    func application (_ application : UIApplication, didFailToRegisterForRemoteNotificationsWithError error : Error) {
+        print ("Failed to register for push notifications: \(error.localizedDescription)")
+    }
+
+    func application (_ application : UIApplication, didReceiveRemoteNotification userInfo : [AnyHashable : Any], fetchCompletionHandler completionHandler :@escaping (UIBackgroundFetchResult) - > Void) {
+        guard var currentViewController : UIViewController = UIApplication.shared.keyWindow?.rootViewController else {
+            return
+        }
+        while currentViewController.presentedViewController! = nil {
+            if let current = currentViewController.presentedViewController {
+                currentViewController = current
+            }
+        }
+        if let aps = userInfo ["aps"] as? [String : Any], let alert = aps ["alert"] as? [String : String], let title = alert ["title"], let body = alert ["body"] {
+            UIAlertController.showAlert (title : title, message : body, inViewController : currentViewController)
+        }
+        completionHandler ( .noData)
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/Colors.swift" startline="1" endline="70">
+#if os (OSX)
+    import AppKit.NSColor
+    internal typealias Color = NSColor
+#elseif os (iOS)
+    || os (tvOS)||
+    os (watchOS)
+    import UIKit.UIColor
+    internal typealias Color = UIColor
+#endif
+
+internal extension Color {
+    convenience init (rgbaValue : UInt32) {
+        let red = CGFloat ((rgbaValue> > 24) & 0xff)/
+        255.0
+        let green = CGFloat ((rgbaValue> > 16) & 0xff)/
+        255.0
+        let blue = CGFloat ((rgbaValue> > 8) & 0xff)/
+        255.0
+        let alpha = CGFloat ((rgbaValue) & 0xff)/
+        255.0
+        self.init (red : red, green : green, blue : blue, alpha : alpha)
+    }
+}
+internal struct ColorName {
+    internal let rgbaValue : UInt32
+    internal var color : Color {
+        return Color (named : self)
+    }
+    internal static let boltMobileBlueLabel = ColorName (rgbaValue : 0x053866ff)
+    internal static let boltMobileDarkBlue = ColorName (rgbaValue : 0x001744ff)
+    internal static let boltMobileGradientDark = ColorName (rgbaValue : 0x001644ff)
+    internal static let boltMobileGradientLight = ColorName (rgbaValue : 0x11a0d8ff)
+    internal static let boltMobileHomeBackgroundColour = ColorName (rgbaValue : 0xeaeff2ff)
+    internal static let boltMobileHomeButtonText = ColorName (rgbaValue : 0x001644ff)
+    internal static let boltMobileHomeGradientDark = ColorName (rgbaValue : 0xe8e8e8ff)
+    internal static let boltMobileHomeGradientLight = ColorName (rgbaValue : 0xeaeff2ff)
+    internal static let boltMobileHomeShadowColour = ColorName (rgbaValue : 0x085386ff)
+    internal static let boltMobileLightBlueLabel = ColorName (rgbaValue : 0x11a0d8ff)
+}
+
+internal extension Color {
+    convenience init (named color : ColorName) {
+        self.init (rgbaValue : color.rgbaValue)
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/UITableViewCell+BoltMobile.swift" startline="1" endline="18">
+import UIKit
+
+extension UITableViewCell {
+
+    static func defaultCell () - > UITableViewCell {
+        let cell = UITableViewCell (style : .default, reuseIdentifier : Constants.UI.DefaultCellIdentifier)
+        cell.textLabel?.text = "Error"
+        return cell
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/UserDefaults+BoltMobile.swift" startline="1" endline="36">
+import Foundation
+
+extension UserDefaults {
+
+    class func registerBoltMobileDefaults () {
+        standard.register (defaults : [Constants.UserDefaultsKey.SeenReferralsInstructions : false, Constants.UserDefaultsKey.SeenWelcomeVC : false])
+    }
+    class var hasSeenReferralsInstructions : Bool? {
+        get {
+            return standard.bool (forKey : Constants.UserDefaultsKey.SeenReferralsInstructions)
+        }
+        set {
+            standard.set (newValue, forKey : Constants.UserDefaultsKey.SeenReferralsInstructions)
+        }
+    }
+    class var hasSeenWelcomeVC : Bool? {
+        get {
+            return standard.bool (forKey : Constants.UserDefaultsKey.SeenWelcomeVC)
+        }
+        set {
+            standard.set (newValue, forKey : Constants.UserDefaultsKey.SeenWelcomeVC)
+        }
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/BoltResponse.swift" startline="1" endline="28">
+import Foundation
+
+class BoltResponse : Decodable {
+    enum CodingKeys : String, CodingKey {
+        case message
+        case success
+    }
+    let message : String
+    let success : Bool
+    required init (from decoder : Decoder) throws {
+        let values = try decoder.container (keyedBy : CodingKeys.self)
+        message = try values.decode (String.self, forKey : .message)
+        let successInt = try values.decode (Int.self, forKey : .success)
+        success = successInt==
+        1
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/UILabel+Designable.swift" startline="1" endline="261">
+import UIKit
+
+@IBDesignable class WelcomeScreenLabel : UILabel {
+
+    func commonInit () {
+        text = L10n.welcomeText
+        textColor = UIColor.white
+        font = UIFont.boldSystemFont (ofSize : 22)
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize (width : 0.0, height : 2.0)
+        layer.shadowRadius = 3.0
+        layer.shadowOpacity = 0.5
+        layer.masksToBounds = false
+        layer.shouldRasterize = true
+    }
+    override init (frame : CGRect) {
+        super.init (frame : frame)
+        commonInit ()
+    }
+    required init? (coder aDecoder : NSCoder) {
+        super.init (coder : aDecoder)
+        commonInit ()
+    }
+
+    override func prepareForInterfaceBuilder () {
+        super.prepareForInterfaceBuilder ()
+        commonInit ()
+    }
+}
+
+@IBDesignable class Blue15Label : UILabel {
+
+    func commonInit () {
+        textColor = UIColor (named : .boltMobileBlueLabel)
+        font = UIFont.systemFont (ofSize : 15)
+    }
+    override init (frame : CGRect) {
+        super.init (frame : frame)
+        commonInit ()
+    }
+    required init? (coder aDecoder : NSCoder) {
+        super.init (coder : aDecoder)
+        commonInit ()
+    }
+
+    override func prepareForInterfaceBuilder () {
+        super.prepareForInterfaceBuilder ()
+        commonInit ()
+    }
+}
+
+@IBDesignable class Blue17Label : UILabel {
+
+    func commonInit () {
+        textColor = UIColor (named : .boltMobileBlueLabel)
+        font = UIFont.systemFont (ofSize : 17)
+    }
+    override init (frame : CGRect) {
+        super.init (frame : frame)
+        commonInit ()
+    }
+    required init? (coder aDecoder : NSCoder) {
+        super.init (coder : aDecoder)
+        commonInit ()
+    }
+
+    override func prepareForInterfaceBuilder () {
+        super.prepareForInterfaceBuilder ()
+        commonInit ()
+    }
+}
+
+@IBDesignable class BoldBlue17Label : UILabel {
+
+    func commonInit () {
+        textColor = UIColor (named : .boltMobileBlueLabel)
+        font = UIFont.boldSystemFont (ofSize : 17)
+    }
+    override init (frame : CGRect) {
+        super.init (frame : frame)
+        commonInit ()
+    }
+    required init? (coder aDecoder : NSCoder) {
+        super.init (coder : aDecoder)
+        commonInit ()
+    }
+
+    override func prepareForInterfaceBuilder () {
+        super.prepareForInterfaceBuilder ()
+        commonInit ()
+    }
+}
+
+@IBDesignable class BoldBlue22Label : UILabel {
+
+    func commonInit () {
+        textColor = UIColor (named : .boltMobileBlueLabel)
+        font = UIFont.boldSystemFont (ofSize : 22)
+    }
+    override init (frame : CGRect) {
+        super.init (frame : frame)
+        commonInit ()
+    }
+    required init? (coder aDecoder : NSCoder) {
+        super.init (coder : aDecoder)
+        commonInit ()
+    }
+
+    override func prepareForInterfaceBuilder () {
+        super.prepareForInterfaceBuilder ()
+        commonInit ()
+    }
+}
+
+@IBDesignable class BoldLightBlue15Label : UILabel {
+
+    func commonInit () {
+        textColor = UIColor (named : .boltMobileLightBlueLabel)
+        font = UIFont.boldSystemFont (ofSize : 15)
+    }
+    override init (frame : CGRect) {
+        super.init (frame : frame)
+        commonInit ()
+    }
+    required init? (coder aDecoder : NSCoder) {
+        super.init (coder : aDecoder)
+        commonInit ()
+    }
+
+    override func prepareForInterfaceBuilder () {
+        super.prepareForInterfaceBuilder ()
+        commonInit ()
+    }
+}
+
+@IBDesignable class BoldBlue15Label : UILabel {
+
+    func commonInit () {
+        textColor = UIColor (named : .boltMobileBlueLabel)
+        font = UIFont.boldSystemFont (ofSize : 15)
+    }
+    override init (frame : CGRect) {
+        super.init (frame : frame)
+        commonInit ()
+    }
+    required init? (coder aDecoder : NSCoder) {
+        super.init (coder : aDecoder)
+        commonInit ()
+    }
+
+    override func prepareForInterfaceBuilder () {
+        super.prepareForInterfaceBuilder ()
+        commonInit ()
+    }
+}
+
+@IBDesignable class BoldBlue30Label : UILabel {
+
+    func commonInit () {
+        textColor = UIColor (named : .boltMobileBlueLabel)
+        font = UIFont.boldSystemFont (ofSize : 30)
+    }
+    override init (frame : CGRect) {
+        super.init (frame : frame)
+        commonInit ()
+    }
+    required init? (coder aDecoder : NSCoder) {
+        super.init (coder : aDecoder)
+        commonInit ()
+    }
+
+    override func prepareForInterfaceBuilder () {
+        super.prepareForInterfaceBuilder ()
+        commonInit ()
+    }
+}
+
+@IBDesignable class BoldBlue40Label : UILabel {
+
+    func commonInit () {
+        textColor = UIColor (named : .boltMobileBlueLabel)
+        font = UIFont.boldSystemFont (ofSize : 40)
+    }
+    override init (frame : CGRect) {
+        super.init (frame : frame)
+        commonInit ()
+    }
+    required init? (coder aDecoder : NSCoder) {
+        super.init (coder : aDecoder)
+        commonInit ()
+    }
+
+    override func prepareForInterfaceBuilder () {
+        super.prepareForInterfaceBuilder ()
+        commonInit ()
+    }
+}
+
+@IBDesignable class BoldLightBlue50Label : UILabel {
+
+    func commonInit () {
+        textColor = UIColor (named : .boltMobileLightBlueLabel)
+        font = UIFont.boldSystemFont (ofSize : 50)
+    }
+    override init (frame : CGRect) {
+        super.init (frame : frame)
+        commonInit ()
+    }
+    required init? (coder aDecoder : NSCoder) {
+        super.init (coder : aDecoder)
+        commonInit ()
+    }
+
+    override func prepareForInterfaceBuilder () {
+        super.prepareForInterfaceBuilder ()
+        commonInit ()
+    }
+}
+
+@IBDesignable class WhiteLabel : UILabel {
+
+    func commonInit () {
+        textColor = UIColor.white
+    }
+    override init (frame : CGRect) {
+        super.init (frame : frame)
+        commonInit ()
+    }
+    required init? (coder aDecoder : NSCoder) {
+        super.init (coder : aDecoder)
+        commonInit ()
+    }
+
+    override func prepareForInterfaceBuilder () {
+        super.prepareForInterfaceBuilder ()
+        commonInit ()
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_Mobile/CAGradientLayer+BoltMobile.swift" startline="1" endline="47">
+import UIKit
+enum GradientDirection : Int {
+    case horizontal
+    case diagonal
+}
+
+extension CAGradientLayer {
+    convenience init (frame : CGRect, colors : [UIColor], gradientDirection : GradientDirection) {
+        self.init ()
+        self.frame = frame
+        self.colors = []
+        for color in colors {
+            self.colors?.append (color.cgColor)
+        }
+        startPoint = CGPoint (x : 0, y : 0)
+        switch gradientDirection {
+            case.horizontal :
+                endPoint = CGPoint (x : 1, y : 0)
+            case.diagonal :
+                endPoint = CGPoint (x : 1, y : 1)
+        }
+    }
+
+    func createGradientImage () - > UIImage? {
+        var image : UIImage? = nil
+        UIGraphicsBeginImageContext (bounds.size)
+        if let context = UIGraphicsGetCurrentContext () {
+            render (in : context)
+            image = UIGraphicsGetImageFromCurrentImageContext ()
+        }
+        UIGraphicsEndImageContext ()
+        return image
+    }
+}
+
+</source>
+<source file="systems/swift/boltmobile/Bolt_MobileTests/Bolt_MobileTests.swift" startline="1" endline="37">
+import XCTest
+@testable import Bolt_Mobile
+
+class Bolt_MobileTests : XCTestCase {
+
+    override func setUp () {
+        super.setUp ()
+    }
+
+    override func tearDown () {
+        super.tearDown ()
+    }
+
+    func testExample () {
+    }
+
+    func testPerformanceExample () {
+        self.measure {
+        }
+    }
+}
+
+</source>

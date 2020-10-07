@@ -1,0 +1,68 @@
+<source file="systems/robust/c/dir with spaces/dir with spaces/dir with spaces/foo with spaces.c.ifdefed" startline="1" endline="33">
+main () {
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+}
+</source>
+<source file="systems/robust/c/dir with spaces/bar with spaces.c.ifdefed" startline="1" endline="33">
+main () {
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone1 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone2 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+    clone3 ();
+}
+</source>

@@ -1,0 +1,833 @@
+<source file="systems/py/Django/trunk/django/conf/urls/defaults.py.pyindent" startline="36" endline="42">
+INDENT
+    if isinstance(view, basestring) :
+    INDENT
+        if not view :
+        INDENT
+            raise ImproperlyConfigured('Empty URL pattern view name not permitted (for pattern %r)' % regex)
+        DEDENT
+        if prefix :
+        INDENT
+            view = prefix + '.' + view
+        DEDENT
+    DEDENT
+    return RegexURLPattern(regex, view, kwargs, name)
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/django/conf/urls/defaults.py.pyindent" startline="37" endline="40">
+INDENT
+    if not view :
+    INDENT
+        raise ImproperlyConfigured('Empty URL pattern view name not permitted (for pattern %r)' % regex)
+    DEDENT
+    if prefix :
+    INDENT
+        view = prefix + '.' + view
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/django/conf/urls/defaults.py.pyindent" startline="38" endline="38">
+INDENT
+    raise ImproperlyConfigured('Empty URL pattern view name not permitted (for pattern %r)' % regex)
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/django/conf/urls/defaults.py.pyindent" startline="40" endline="40">
+INDENT
+    view = prefix + '.' + view
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="123" endline="123">
+INDENT
+    set
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="125" endline="127">
+INDENT
+    from sets import Set as set
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="147" endline="159">
+INDENT
+    from django.conf import settings
+    dirs = set()
+    if 'django.template.loaders.filesystem.load_template_source' in settings.TEMPLATE_LOADERS :
+    INDENT
+        dirs.update(map(unicode, settings.TEMPLATE_DIRS))
+    DEDENT
+    if 'django.template.loaders.app_directories.load_template_source' in settings.TEMPLATE_LOADERS :
+    INDENT
+        from django.template.loaders.app_directories import app_template_dirs
+        dirs.update(app_template_dirs)
+    DEDENT
+    return dirs
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="153" endline="154">
+INDENT
+    dirs.update(map(unicode, settings.TEMPLATE_DIRS))
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="156" endline="157">
+INDENT
+    from django.template.loaders.app_directories import app_template_dirs
+    dirs.update(app_template_dirs)
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="161" endline="168">
+INDENT
+    return Template(filename,
+        [filename [len(d) + 1 :] for d in root_dirs if filename.startswith(d)])
+
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="170" endline="234">
+INDENT
+    def __init__(self, absolute_filename, relative_filenames) :
+    INDENT
+        self.absolute_filename, self.relative_filenames = absolute_filename, relative_filenames
+    DEDENT
+    def content(self) :
+    INDENT
+        try :
+        INDENT
+            return self._content
+        DEDENT
+        except AttributeError :
+        INDENT
+            fd = open(self.absolute_filename)
+            content = fd.read().decode(TEMPLATE_ENCODING)
+            fd.close()
+            self._content = content
+            return content
+        DEDENT
+    DEDENT
+    content = property(content)
+    def post_form_info(self) :
+    INDENT
+        matches = []
+        for ln, line in enumerate(self.content.split("\n")) :
+        INDENT
+            m = _POST_FORM_RE.search(line)
+            if m is not None :
+            INDENT
+                matches.append((ln + 1, _TOKEN_RE.search(line) is not None))
+            DEDENT
+        DEDENT
+        return matches
+    DEDENT
+    def includes_template(self, t) :
+    INDENT
+        for r in t.relative_filenames :
+        INDENT
+            if re.search(r'\{%\s*include\s+"' + re.escape(r) + r'"\s*%\}', self.content) :
+            INDENT
+                return True
+            DEDENT
+        DEDENT
+        return False
+    DEDENT
+    def related_templates(self) :
+    INDENT
+        try :
+        INDENT
+            return self._related_templates
+        DEDENT
+        except AttributeError :
+        INDENT
+            pass
+        DEDENT
+        retval = set([self])
+        for r in self.relative_filenames :
+        INDENT
+            for t in self.all_templates :
+            INDENT
+                if t.includes_template(self) :
+                INDENT
+                    retval = retval.union(t.related_templates())
+                DEDENT
+            DEDENT
+        DEDENT
+        self._related_templates = retval
+        return retval
+    DEDENT
+    def __repr__(self) :
+    INDENT
+        return repr(self.absolute_filename)
+    DEDENT
+    def __eq__(self, other) :
+    INDENT
+        return self.absolute_filename == other.absolute_filename
+    DEDENT
+    def __hash__(self) :
+    INDENT
+        return hash(self.absolute_filename)
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="171" endline="172">
+INDENT
+    self.absolute_filename, self.relative_filenames = absolute_filename, relative_filenames
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="174" endline="181">
+INDENT
+    try :
+    INDENT
+        return self._content
+    DEDENT
+    except AttributeError :
+    INDENT
+        fd = open(self.absolute_filename)
+        content = fd.read().decode(TEMPLATE_ENCODING)
+        fd.close()
+        self._content = content
+        return content
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="175" endline="175">
+INDENT
+    return self._content
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="177" endline="181">
+INDENT
+    fd = open(self.absolute_filename)
+    content = fd.read().decode(TEMPLATE_ENCODING)
+    fd.close()
+    self._content = content
+    return content
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="185" endline="195">
+INDENT
+    matches = []
+    for ln, line in enumerate(self.content.split("\n")) :
+    INDENT
+        m = _POST_FORM_RE.search(line)
+        if m is not None :
+        INDENT
+            matches.append((ln + 1, _TOKEN_RE.search(line) is not None))
+        DEDENT
+    DEDENT
+    return matches
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="191" endline="193">
+INDENT
+    m = _POST_FORM_RE.search(line)
+    if m is not None :
+    INDENT
+        matches.append((ln + 1, _TOKEN_RE.search(line) is not None))
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="193" endline="193">
+INDENT
+    matches.append((ln + 1, _TOKEN_RE.search(line) is not None))
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="197" endline="204">
+INDENT
+    for r in t.relative_filenames :
+    INDENT
+        if re.search(r'\{%\s*include\s+"' + re.escape(r) + r'"\s*%\}', self.content) :
+        INDENT
+            return True
+        DEDENT
+    DEDENT
+    return False
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="201" endline="202">
+INDENT
+    if re.search(r'\{%\s*include\s+"' + re.escape(r) + r'"\s*%\}', self.content) :
+    INDENT
+        return True
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="202" endline="202">
+INDENT
+    return True
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="206" endline="225">
+INDENT
+    try :
+    INDENT
+        return self._related_templates
+    DEDENT
+    except AttributeError :
+    INDENT
+        pass
+    DEDENT
+    retval = set([self])
+    for r in self.relative_filenames :
+    INDENT
+        for t in self.all_templates :
+        INDENT
+            if t.includes_template(self) :
+            INDENT
+                retval = retval.union(t.related_templates())
+            DEDENT
+        DEDENT
+    DEDENT
+    self._related_templates = retval
+    return retval
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="211" endline="211">
+INDENT
+    return self._related_templates
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="213" endline="214">
+INDENT
+    pass
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="217" endline="222">
+INDENT
+    for t in self.all_templates :
+    INDENT
+        if t.includes_template(self) :
+        INDENT
+            retval = retval.union(t.related_templates())
+        DEDENT
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="218" endline="222">
+INDENT
+    if t.includes_template(self) :
+    INDENT
+        retval = retval.union(t.related_templates())
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="219" endline="222">
+INDENT
+    retval = retval.union(t.related_templates())
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="227" endline="228">
+INDENT
+    return repr(self.absolute_filename)
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="230" endline="231">
+INDENT
+    return self.absolute_filename == other.absolute_filename
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="233" endline="234">
+INDENT
+    return hash(self.absolute_filename)
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="236" endline="250">
+INDENT
+    templates = set()
+    for root in dirs :
+    INDENT
+        for (dirpath, dirnames, filenames) in os.walk(root) :
+        INDENT
+            for f in filenames :
+            INDENT
+                if len([True for e in TEMPLATE_EXTENSIONS if f.endswith(e)]) > 0 :
+                INDENT
+                    t = make_template_info(os.path.join(dirpath, f), dirs)
+                    t.all_templates = templates
+                    templates.add(t)
+                DEDENT
+            DEDENT
+        DEDENT
+    DEDENT
+    return templates
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="242" endline="248">
+INDENT
+    for (dirpath, dirnames, filenames) in os.walk(root) :
+    INDENT
+        for f in filenames :
+        INDENT
+            if len([True for e in TEMPLATE_EXTENSIONS if f.endswith(e)]) > 0 :
+            INDENT
+                t = make_template_info(os.path.join(dirpath, f), dirs)
+                t.all_templates = templates
+                templates.add(t)
+            DEDENT
+        DEDENT
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="243" endline="248">
+INDENT
+    for f in filenames :
+    INDENT
+        if len([True for e in TEMPLATE_EXTENSIONS if f.endswith(e)]) > 0 :
+        INDENT
+            t = make_template_info(os.path.join(dirpath, f), dirs)
+            t.all_templates = templates
+            templates.add(t)
+        DEDENT
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="244" endline="248">
+INDENT
+    if len([True for e in TEMPLATE_EXTENSIONS if f.endswith(e)]) > 0 :
+    INDENT
+        t = make_template_info(os.path.join(dirpath, f), dirs)
+        t.all_templates = templates
+        templates.add(t)
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="245" endline="248">
+INDENT
+    t = make_template_info(os.path.join(dirpath, f), dirs)
+    t.all_templates = templates
+    templates.add(t)
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="252" endline="267">
+INDENT
+    retval = []
+    for p in paths :
+    INDENT
+        for (dirpath, dirnames, filenames) in os.walk(p) :
+        INDENT
+            for f in filenames :
+            INDENT
+                if len([True for e in PYTHON_SOURCE_EXTENSIONS if f.endswith(e)]) > 0 :
+                INDENT
+                    fn = os.path.join(dirpath, f)
+                    fd = open(fn)
+                    content = [l.decode(PYTHON_ENCODING) for l in fd.readlines()]
+                    fd.close()
+                    retval.append((fn, content))
+                DEDENT
+            DEDENT
+        DEDENT
+    DEDENT
+    return retval
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="258" endline="265">
+INDENT
+    for (dirpath, dirnames, filenames) in os.walk(p) :
+    INDENT
+        for f in filenames :
+        INDENT
+            if len([True for e in PYTHON_SOURCE_EXTENSIONS if f.endswith(e)]) > 0 :
+            INDENT
+                fn = os.path.join(dirpath, f)
+                fd = open(fn)
+                content = [l.decode(PYTHON_ENCODING) for l in fd.readlines()]
+                fd.close()
+                retval.append((fn, content))
+            DEDENT
+        DEDENT
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="259" endline="265">
+INDENT
+    for f in filenames :
+    INDENT
+        if len([True for e in PYTHON_SOURCE_EXTENSIONS if f.endswith(e)]) > 0 :
+        INDENT
+            fn = os.path.join(dirpath, f)
+            fd = open(fn)
+            content = [l.decode(PYTHON_ENCODING) for l in fd.readlines()]
+            fd.close()
+            retval.append((fn, content))
+        DEDENT
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="260" endline="265">
+INDENT
+    if len([True for e in PYTHON_SOURCE_EXTENSIONS if f.endswith(e)]) > 0 :
+    INDENT
+        fn = os.path.join(dirpath, f)
+        fd = open(fn)
+        content = [l.decode(PYTHON_ENCODING) for l in fd.readlines()]
+        fd.close()
+        retval.append((fn, content))
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="261" endline="265">
+INDENT
+    fn = os.path.join(dirpath, f)
+    fd = open(fn)
+    content = [l.decode(PYTHON_ENCODING) for l in fd.readlines()]
+    fd.close()
+    retval.append((fn, content))
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="269" endline="280">
+INDENT
+    retval = []
+    for tn in template_names :
+    INDENT
+        retval.extend(search_python(python_code, tn))
+    DEDENT
+    retval = list(set(retval))
+    retval.sort()
+    return retval
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="276" endline="276">
+INDENT
+    retval.extend(search_python(python_code, tn))
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="282" endline="293">
+INDENT
+    retval = []
+    for fn, content in python_code :
+    INDENT
+        for ln, line in enumerate(content) :
+        INDENT
+            if ((u'"%s"' % template_name) in line) or ((u"'%s'" % template_name) in line) :
+            INDENT
+                retval.append((fn, ln + 1))
+            DEDENT
+        DEDENT
+    DEDENT
+    return retval
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="289" endline="291">
+INDENT
+    for ln, line in enumerate(content) :
+    INDENT
+        if ((u'"%s"' % template_name) in line) or ((u"'%s'" % template_name) in line) :
+        INDENT
+            retval.append((fn, ln + 1))
+        DEDENT
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="290" endline="291">
+INDENT
+    if ((u'"%s"' % template_name) in line) or ((u"'%s'" % template_name) in line) :
+    INDENT
+        retval.append((fn, ln + 1))
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="291" endline="291">
+INDENT
+    retval.append((fn, ln + 1))
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="295" endline="333">
+INDENT
+    template_dirs = get_template_dirs()
+    templates = get_templates(template_dirs)
+    python_code = get_python_code(pythonpaths)
+    for t in templates :
+    INDENT
+        form_matches = t.post_form_info()
+        num_post_forms = len(form_matches)
+        form_lines_without_token = [ln for (ln, has_token) in form_matches if not has_token]
+        if num_post_forms == 0 :
+        INDENT
+            continue
+        DEDENT
+        to_search = [rf for rt in t.related_templates() for rf in rt.relative_filenames]
+        found = search_python_list(python_code, to_search)
+
+        print t.absolute_filename
+        for r in t.relative_filenames :
+        INDENT
+            print u"  AKA %s" % r
+        DEDENT
+        print u"  POST forms: %s" % num_post_forms
+        print u"  With token: %s" % (num_post_forms - len(form_lines_without_token))
+        if form_lines_without_token :
+        INDENT
+            print u"  Without token:"
+            for ln in form_lines_without_token :
+            INDENT
+                print "%s:%d:" % (t.absolute_filename, ln)
+            DEDENT
+        DEDENT
+        print
+        print u"  Searching for:"
+        for r in to_search :
+        INDENT
+            print u"    " + r
+        DEDENT
+        print
+        print u"  Found:"
+        if len(found) == 0 :
+        INDENT
+            print "    Nothing"
+        DEDENT
+        else :
+        INDENT
+            for fn, ln in found :
+            INDENT
+                print "%s:%d:" % (fn, ln)
+            DEDENT
+        DEDENT
+        print
+        print "----"
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="299" endline="333">
+INDENT
+    form_matches = t.post_form_info()
+    num_post_forms = len(form_matches)
+    form_lines_without_token = [ln for (ln, has_token) in form_matches if not has_token]
+    if num_post_forms == 0 :
+    INDENT
+        continue
+    DEDENT
+    to_search = [rf for rt in t.related_templates() for rf in rt.relative_filenames]
+    found = search_python_list(python_code, to_search)
+
+    print t.absolute_filename
+    for r in t.relative_filenames :
+    INDENT
+        print u"  AKA %s" % r
+    DEDENT
+    print u"  POST forms: %s" % num_post_forms
+    print u"  With token: %s" % (num_post_forms - len(form_lines_without_token))
+    if form_lines_without_token :
+    INDENT
+        print u"  Without token:"
+        for ln in form_lines_without_token :
+        INDENT
+            print "%s:%d:" % (t.absolute_filename, ln)
+        DEDENT
+    DEDENT
+    print
+    print u"  Searching for:"
+    for r in to_search :
+    INDENT
+        print u"    " + r
+    DEDENT
+    print
+    print u"  Found:"
+    if len(found) == 0 :
+    INDENT
+        print "    Nothing"
+    DEDENT
+    else :
+    INDENT
+        for fn, ln in found :
+        INDENT
+            print "%s:%d:" % (fn, ln)
+        DEDENT
+    DEDENT
+    print
+    print "----"
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="304" endline="304">
+INDENT
+    continue
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="311" endline="311">
+INDENT
+    print u"  AKA %s" % r
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="315" endline="317">
+INDENT
+    print u"  Without token:"
+    for ln in form_lines_without_token :
+    INDENT
+        print "%s:%d:" % (t.absolute_filename, ln)
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="317" endline="317">
+INDENT
+    print "%s:%d:" % (t.absolute_filename, ln)
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="321" endline="321">
+INDENT
+    print u"    " + r
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="325" endline="325">
+INDENT
+    print "    Nothing"
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="327" endline="329">
+INDENT
+    for fn, ln in found :
+    INDENT
+        print "%s:%d:" % (fn, ln)
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="328" endline="329">
+INDENT
+    print "%s:%d:" % (fn, ln)
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="335" endline="367">
+INDENT
+    args = list(sys.argv [1 :])
+    if len(args) > 0 :
+    INDENT
+        if args [0] in ['--help', '-h', '-?', '--usage'] :
+        INDENT
+            print USAGE
+            sys.exit(0)
+        DEDENT
+        else :
+        INDENT
+            if args [0].startswith('--settings=') :
+            INDENT
+                module = args [0] [len('--settings=') :]
+                os.environ ["DJANGO_SETTINGS_MODULE"] = module
+                args = args [1 :]
+            DEDENT
+            if args [0].startswith('-') :
+            INDENT
+                print "Unknown option: %s" % args [0]
+                print USAGE
+                sys.exit(1)
+            DEDENT
+            pythonpaths = args
+            if os.environ.get("DJANGO_SETTINGS_MODULE", None) is None :
+            INDENT
+                print "You need to set DJANGO_SETTINGS_MODULE or use the '--settings' parameter"
+                sys.exit(1)
+            DEDENT
+            if len(pythonpaths) == 0 :
+            INDENT
+                print "Unrecognised command: %s" % command
+                print USAGE
+                sys.exit(1)
+            DEDENT
+            main(pythonpaths)
+        DEDENT
+    DEDENT
+    else :
+    INDENT
+        print USAGE
+        sys.exit(0)
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="338" endline="363">
+INDENT
+    if args [0] in ['--help', '-h', '-?', '--usage'] :
+    INDENT
+        print USAGE
+        sys.exit(0)
+    DEDENT
+    else :
+    INDENT
+        if args [0].startswith('--settings=') :
+        INDENT
+            module = args [0] [len('--settings=') :]
+            os.environ ["DJANGO_SETTINGS_MODULE"] = module
+            args = args [1 :]
+        DEDENT
+        if args [0].startswith('-') :
+        INDENT
+            print "Unknown option: %s" % args [0]
+            print USAGE
+            sys.exit(1)
+        DEDENT
+        pythonpaths = args
+        if os.environ.get("DJANGO_SETTINGS_MODULE", None) is None :
+        INDENT
+            print "You need to set DJANGO_SETTINGS_MODULE or use the '--settings' parameter"
+            sys.exit(1)
+        DEDENT
+        if len(pythonpaths) == 0 :
+        INDENT
+            print "Unrecognised command: %s" % command
+            print USAGE
+            sys.exit(1)
+        DEDENT
+        main(pythonpaths)
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="339" endline="340">
+INDENT
+    print USAGE
+    sys.exit(0)
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="342" endline="363">
+INDENT
+    if args [0].startswith('--settings=') :
+    INDENT
+        module = args [0] [len('--settings=') :]
+        os.environ ["DJANGO_SETTINGS_MODULE"] = module
+        args = args [1 :]
+    DEDENT
+    if args [0].startswith('-') :
+    INDENT
+        print "Unknown option: %s" % args [0]
+        print USAGE
+        sys.exit(1)
+    DEDENT
+    pythonpaths = args
+    if os.environ.get("DJANGO_SETTINGS_MODULE", None) is None :
+    INDENT
+        print "You need to set DJANGO_SETTINGS_MODULE or use the '--settings' parameter"
+        sys.exit(1)
+    DEDENT
+    if len(pythonpaths) == 0 :
+    INDENT
+        print "Unrecognised command: %s" % command
+        print USAGE
+        sys.exit(1)
+    DEDENT
+    main(pythonpaths)
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="343" endline="346">
+INDENT
+    module = args [0] [len('--settings=') :]
+    os.environ ["DJANGO_SETTINGS_MODULE"] = module
+    args = args [1 :]
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="348" endline="351">
+INDENT
+    print "Unknown option: %s" % args [0]
+    print USAGE
+    sys.exit(1)
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="355" endline="356">
+INDENT
+    print "You need to set DJANGO_SETTINGS_MODULE or use the '--settings' parameter"
+    sys.exit(1)
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="358" endline="361">
+INDENT
+    print "Unrecognised command: %s" % command
+    print USAGE
+    sys.exit(1)
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="365" endline="367">
+INDENT
+    print USAGE
+    sys.exit(0)
+DEDENT
+</source>

@@ -1,0 +1,936 @@
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstSynchronizedDictionary.cs.ifdefed" startline="230" endline="232">
+{
+    return Wrapped.PartialMatch (key);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstSynchronizedDictionary.cs.ifdefed" startline="241" endline="243">
+{
+    return Wrapped.PartialMatch (key, wildChar);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstSynchronizedDictionary.cs.ifdefed" startline="252" endline="254">
+{
+    return Wrapped.NearNeighbors (key, distance);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="9" endline="11">
+{
+    innerHash = new Hashtable ();
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="13" endline="15">
+{
+    innerHash = new Hashtable (original.innerHash);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="17" endline="19">
+{
+    innerHash = new Hashtable (dictionary);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="21" endline="23">
+{
+    innerHash = new Hashtable (capacity);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="25" endline="27">
+{
+    innerHash = new Hashtable (dictionary, loadFactor);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="29" endline="31">
+{
+    innerHash = new Hashtable (codeProvider, comparer);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="33" endline="35">
+{
+    innerHash = new Hashtable (capacity, loadFactor);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="37" endline="39">
+{
+    innerHash = new Hashtable (dictionary, codeProvider, comparer);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="41" endline="43">
+{
+    innerHash = new Hashtable (capacity, codeProvider, comparer);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="45" endline="47">
+{
+    innerHash = new Hashtable (dictionary, loadFactor, codeProvider, comparer);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="49" endline="51">
+{
+    innerHash = new Hashtable (capacity, loadFactor, codeProvider, comparer);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="55" endline="57">
+{
+    return new TstDictionariesEnumerator (this);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="59" endline="61">
+{
+    return new TstDictionariesEnumerator (this);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="63" endline="65">
+{
+    return GetEnumerator ();
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="67" endline="69">
+{
+    innerHash.Remove (key);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="71" endline="73">
+{
+    Remove ((string) key);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="75" endline="77">
+{
+    return innerHash.Contains (key);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="79" endline="81">
+{
+    return Contains ((string) key);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="83" endline="85">
+{
+    innerHash.Clear ();
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="87" endline="89">
+{
+    innerHash.Add (key, value);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="91" endline="93">
+{
+    Add ((string) key, (TstDictionary) value);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="96" endline="98">
+{
+    return innerHash.IsReadOnly;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="102" endline="104">
+{
+    return (TstDictionary) innerHash [key];
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="105" endline="107">
+{
+    innerHash [key] = value;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="111" endline="113">
+{
+    return this [(string) key];
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="114" endline="116">
+{
+    this [(string) key] = (TstDictionary) value;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="120" endline="122">
+{
+    return innerHash.Values;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="126" endline="128">
+{
+    return innerHash.Keys;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="132" endline="134">
+{
+    return innerHash.IsFixedSize;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="139" endline="141">
+{
+    innerHash.CopyTo (array, index);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="144" endline="146">
+{
+    return innerHash.IsSynchronized;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="150" endline="152">
+{
+    return innerHash.Count;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="156" endline="158">
+{
+    return innerHash.SyncRoot;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="163" endline="168">
+{
+    TstDictionaries clone = new TstDictionaries ();
+    clone.innerHash = (Hashtable) innerHash.Clone ();
+    return clone;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="170" endline="172">
+{
+    return Clone ();
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="176" endline="178">
+{
+    return innerHash.ContainsKey (key);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="180" endline="182">
+{
+    return innerHash.ContainsValue (value);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="184" endline="189">
+{
+    TstDictionaries sync = new TstDictionaries ();
+    sync.innerHash = Hashtable.Synchronized (nonSync.innerHash);
+    return sync;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="193" endline="195">
+{
+    return innerHash;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="202" endline="204">
+{
+    innerEnumerator = enumerable.InnerHash.GetEnumerator ();
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="208" endline="210">
+{
+    return (string) innerEnumerator.Key;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="214" endline="216">
+{
+    return Key;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="220" endline="222">
+{
+    return (TstDictionary) innerEnumerator.Value;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="226" endline="228">
+{
+    return Value;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="232" endline="234">
+{
+    return innerEnumerator.Entry;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="239" endline="241">
+{
+    innerEnumerator.Reset ();
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="243" endline="245">
+{
+    return innerEnumerator.MoveNext ();
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaries.cs.ifdefed" startline="248" endline="250">
+{
+    return innerEnumerator.Current;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaryEntryEventArgs.cs.ifdefed" startline="47" endline="49">
+{
+    this.entry = entry;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionaryEntryEventArgs.cs.ifdefed" startline="56" endline="58">
+{
+    return entry;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="77" endline="80">
+{
+    root = null;
+    version = 0;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="87" endline="92">
+{
+    if (root == null)
+        throw new ArgumentNullException ("root is null");
+
+    this.root = root;
+    this.version = 0;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="100" endline="102">
+{
+    return root;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="115" endline="117">
+{
+    return version;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="132" endline="138">
+{
+    IEnumerator en = this.GetEnumerator ();
+    int n = 0;
+    while (en.MoveNext ())
+        ++ n;
+
+    return n;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="151" endline="153">
+{
+    return false;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="165" endline="167">
+{
+    return this;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="180" endline="182">
+{
+    return false;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="195" endline="197">
+{
+    return false;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="209" endline="216">
+{
+    StringCollection keys = new StringCollection ();
+    TstDictionaryEnumerator en = GetEnumerator ();
+    while (en.MoveNext ())
+        keys.Add (en.Key);
+
+    return keys;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="228" endline="234">
+{
+    ArrayList values = new ArrayList ();
+    foreach (DictionaryEntry de in this)
+        values.Add (de.Value);
+
+    return values;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="242" endline="244">
+{
+    return new TstDictionary (Root.Clone () as TstDictionaryEntry);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="255" endline="259">
+{
+    if (table == null)
+        throw new ArgumentNullException ("table");
+
+    return new TstSynchronizedDictionary (table);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="288" endline="306">
+{
+    if (array == null)
+        throw new ArgumentNullException ("array");
+
+    if (arrayIndex < 0)
+        throw new ArgumentOutOfRangeException ("index is negative");
+
+    if (array.Rank > 1)
+        throw new ArgumentException ("array is multi-dimensional");
+
+    if (arrayIndex >= array.Length)
+        throw new ArgumentException ("index >= array.Length");
+
+    int i = arrayIndex;
+    foreach (Object de in this) {
+        if (i > array.Length)
+            throw new ArgumentException ("The number of elements in the source ICollection is greater than the available space from index to the end of the destination array.");
+
+        array.SetValue (de, i ++);
+    }
+
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="300" endline="305">
+{
+    if (i > array.Length)
+        throw new ArgumentException ("The number of elements in the source ICollection is greater than the available space from index to the end of the destination array.");
+
+    array.SetValue (de, i ++);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="334" endline="342">
+{
+    if (key == null)
+        throw new ArgumentNullException ("key");
+
+    TstDictionaryEntry de = Find (key);
+    if (de == null)
+        return null;
+    else
+        return de.Value;
+
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="344" endline="363">
+{
+    if (key == null)
+        throw new ArgumentNullException ("key");
+
+    if (key.Length == 0)
+        throw new ArgumentException ("key is an empty string");
+
+    if (IsReadOnly)
+        throw new NotSupportedException ("read-only dictionary");
+
+    ++ version;
+    TstDictionaryEntry de = Find (key);
+    if (de == null)
+        Add (key, value);
+    else {
+        if (IsFixedSize)
+            throw new NotSupportedException ("fixed-size dictionary");
+
+        de.Value = value;
+    }
+
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="358" endline="362">
+{
+    if (IsFixedSize)
+        throw new NotSupportedException ("fixed-size dictionary");
+
+    de.Value = value;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="381" endline="435">
+{
+    if (key == null)
+        throw new ArgumentNullException ("key is null");
+
+    if (key.Length == 0)
+        throw new ArgumentException ("trying to add empty key");
+
+    if (IsReadOnly)
+        throw new NotSupportedException ("dictionary is read-only");
+
+    if (IsFixedSize)
+        throw new NotSupportedException ("dictionary has fixed size");
+
+    ++ version;
+    if (Root == null)
+        root = new TstDictionaryEntry (null, key [0]);
+
+    TstDictionaryEntry p = Root;
+    int i = 0;
+    char c;
+    while (i < key.Length) {
+        c = key [i];
+        if (c < p.SplitChar) {
+            if (p.LowChild == null)
+                p.LowChild = new TstDictionaryEntry (p, c);
+
+            p = p.LowChild;
+            continue;
+        }
+
+        if (c > p.SplitChar) {
+            if (p.HighChild == null)
+                p.HighChild = new TstDictionaryEntry (p, c);
+
+            p = p.HighChild;
+            continue;
+        }
+        else {
+            ++ i;
+            if (i == key.Length) {
+                if (p.IsKey)
+                    throw new ArgumentException ("key already in dictionary");
+
+                break;
+            }
+
+            if (p.EqChild == null)
+                p.EqChild = new TstDictionaryEntry (p, key [i]);
+
+            p = p.EqChild;
+        }
+
+    }
+
+    p.IsKey = true;
+    p.Key = key;
+    p.Value = value;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="402" endline="431">
+{
+    c = key [i];
+    if (c < p.SplitChar) {
+        if (p.LowChild == null)
+            p.LowChild = new TstDictionaryEntry (p, c);
+
+        p = p.LowChild;
+        continue;
+    }
+
+    if (c > p.SplitChar) {
+        if (p.HighChild == null)
+            p.HighChild = new TstDictionaryEntry (p, c);
+
+        p = p.HighChild;
+        continue;
+    }
+    else {
+        ++ i;
+        if (i == key.Length) {
+            if (p.IsKey)
+                throw new ArgumentException ("key already in dictionary");
+
+            break;
+        }
+
+        if (p.EqChild == null)
+            p.EqChild = new TstDictionaryEntry (p, key [i]);
+
+        p = p.EqChild;
+    }
+
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="405" endline="410">
+{
+    if (p.LowChild == null)
+        p.LowChild = new TstDictionaryEntry (p, c);
+
+    p = p.LowChild;
+    continue;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="412" endline="417">
+{
+    if (p.HighChild == null)
+        p.HighChild = new TstDictionaryEntry (p, c);
+
+    p = p.HighChild;
+    continue;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="419" endline="430">
+{
+    ++ i;
+    if (i == key.Length) {
+        if (p.IsKey)
+            throw new ArgumentException ("key already in dictionary");
+
+        break;
+    }
+
+    if (p.EqChild == null)
+        p.EqChild = new TstDictionaryEntry (p, key [i]);
+
+    p = p.EqChild;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="422" endline="426">
+{
+    if (p.IsKey)
+        throw new ArgumentException ("key already in dictionary");
+
+    break;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="448" endline="479">
+{
+    if (key == null)
+        throw new ArgumentNullException ("key is null");
+
+    if (key.Length == 0)
+        throw new ArgumentException ("key length cannot be 0");
+
+    if (IsReadOnly)
+        throw new NotSupportedException ("dictionary is read-only");
+
+    if (IsFixedSize)
+        throw new NotSupportedException ("dictionary has fixed size");
+
+    ++ version;
+    TstDictionaryEntry p = Find (key);
+    if (p == null)
+        return;
+
+    p.IsKey = false;
+    p.Key = null;
+    while (! p.IsKey && ! p.HasChildren && p.Parent != null) {
+        if (p.IsLowChild)
+            p.Parent.LowChild = null;
+        else if (p.IsHighChild)
+            p.Parent.HighChild = null;
+        else
+            p.Parent.EqChild = null;
+
+        p = p.Parent;
+    }
+
+    if (! p.IsKey && ! p.HasChildren && p == root)
+        root = null;
+
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="467" endline="475">
+{
+    if (p.IsLowChild)
+        p.Parent.LowChild = null;
+    else if (p.IsHighChild)
+        p.Parent.HighChild = null;
+    else
+        p.Parent.EqChild = null;
+
+    p = p.Parent;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="486" endline="492">
+{
+    if (IsReadOnly)
+        throw new NotSupportedException ("dictionary is read-only");
+
+    ++ version;
+    root = null;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="507" endline="509">
+{
+    return ContainsKey (key);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="524" endline="529">
+{
+    if (key == null)
+        throw new ArgumentNullException ("key");
+
+    TstDictionaryEntry de = Find (key);
+    return de != null && de.IsKey;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="539" endline="544">
+{
+    foreach (DictionaryEntry de in this)
+        if (de.Value == value)
+            return true;
+
+    return false;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="551" endline="553">
+{
+    return new TstDictionaryEnumerator (this);
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="560" endline="562">
+{
+    return this.GetEnumerator ();
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="570" endline="599">
+{
+    if (key == null)
+        throw new ArgumentNullException ("key");
+
+    int n = key.Length;
+    if (n == 0)
+        return null;
+
+    TstDictionaryEntry p = Root;
+    int index = 0;
+    char c;
+    while (index < n && p != null) {
+        c = key [index];
+        if (c < p.SplitChar)
+            p = p.LowChild;
+        else if (c > p.SplitChar)
+            p = p.HighChild;
+        else {
+            if (index == n - 1)
+                return p;
+            else {
+                ++ index;
+                p = p.EqChild;
+            }
+
+        }
+
+    }
+
+    return p;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="581" endline="597">
+{
+    c = key [index];
+    if (c < p.SplitChar)
+        p = p.LowChild;
+    else if (c > p.SplitChar)
+        p = p.HighChild;
+    else {
+        if (index == n - 1)
+            return p;
+        else {
+            ++ index;
+            p = p.EqChild;
+        }
+
+    }
+
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="588" endline="596">
+{
+    if (index == n - 1)
+        return p;
+    else {
+        ++ index;
+        p = p.EqChild;
+    }
+
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="592" endline="595">
+{
+    ++ index;
+    p = p.EqChild;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="608" endline="610">
+{
+    return PartialMatch (key, '*');
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="630" endline="639">
+{
+    if (key == null)
+        throw new ArgumentNullException ("key");
+
+    if (key.Length == 0)
+        throw new ArgumentException ("key is empty");
+
+    ArrayList matches = new ArrayList ();
+    PartialMatchSearch (Root, key, 0, wildChar, matches);
+    return matches;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="656" endline="674">
+{
+    if (p == null)
+        return;
+
+    char c = key [index];
+    if (c == wildChar || c < p.SplitChar)
+        PartialMatchSearch (p.LowChild, key, index, wildChar, matches);
+
+    if (c == wildChar || c == p.SplitChar) {
+        if (index < key.Length - 1)
+            PartialMatchSearch (p.EqChild, key, index + 1, wildChar, matches);
+        else if (p.IsKey)
+            matches.Add (new DictionaryEntry (p.Key, p.Value));
+
+    }
+
+    if (c == wildChar || c > p.SplitChar)
+        PartialMatchSearch (p.HighChild, key, index, wildChar, matches);
+
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="665" endline="670">
+{
+    if (index < key.Length - 1)
+        PartialMatchSearch (p.EqChild, key, index + 1, wildChar, matches);
+    else if (p.IsKey)
+        matches.Add (new DictionaryEntry (p.Key, p.Value));
+
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="699" endline="708">
+{
+    if (key == null)
+        throw new ArgumentNullException ("key");
+
+    if (distance < 0)
+        throw new ArgumentException ("dist is negative");
+
+    ArrayList matches = new ArrayList ();
+    NearNeighborsSearch (Root, key, 0, distance, matches);
+    return matches;
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="725" endline="766">
+{
+    if (p == null || dist < 0)
+        return;
+
+    char c = key [index];
+    if (dist > 0 || c < p.SplitChar)
+        NearNeighborsSearch (p.LowChild, key, index, dist, matches);
+
+    if ((p.IsKey) && ((key.Length - index) <= dist)) {
+        matches.Add (new DictionaryEntry (p.Key, p.Value));
+    }
+    else {
+        int localIndex = index;
+        if (localIndex != key.Length - 1)
+            ++ localIndex;
+
+        int localDist = dist;
+        if (c != p.SplitChar)
+            -- localDist;
+
+        NearNeighborsSearch (p.EqChild, key, localIndex, localDist, matches);
+    }
+
+    if (dist > 0 || c > p.SplitChar)
+        NearNeighborsSearch (p.HighChild, key, index, dist, matches);
+
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="741" endline="743">
+{
+    matches.Add (new DictionaryEntry (p.Key, p.Value));
+}
+
+</source>
+<source file="systems/cs/RssBandit1.5.0.17sources/NewsComponents/Collections/Tst/TstDictionary.cs.ifdefed" startline="746" endline="761">
+{
+    int localIndex = index;
+    if (localIndex != key.Length - 1)
+        ++ localIndex;
+
+    int localDist = dist;
+    if (c != p.SplitChar)
+        -- localDist;
+
+    NearNeighborsSearch (p.EqChild, key, localIndex, localDist, matches);
+}
+
+</source>

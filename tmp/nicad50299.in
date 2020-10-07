@@ -1,0 +1,1249 @@
+<source file="systems/py/Django/trunk/django/conf/locale/ka/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/ka/formats.py.pyindent" startline="1" endline="42">
+DATE_FORMAT = 'l, j F, Y'
+TIME_FORMAT = 'h:i:s a'
+DATETIME_FORMAT = 'j F, Y h:i:s a'
+YEAR_MONTH_FORMAT = 'F, Y'
+MONTH_DAY_FORMAT = 'j F'
+SHORT_DATE_FORMAT = 'j.M.Y'
+SHORT_DATETIME_FORMAT = 'j.M.Y H:i:s'
+FIRST_DAY_OF_WEEK = 1
+DATE_INPUT_FORMATS = (
+    '%Y-%m-%d', '%m/%d/%Y', '%m/%d/%y',
+    '%d %b %Y', '%d %b, %Y', '%d %b. %Y',
+    '%d %B %Y', '%d %B, %Y',
+    '%d.%m.%Y', '%d.%m.%y',
+    )
+TIME_INPUT_FORMATS = (
+    '%H:%M:%S',
+    '%H:%M',
+    )
+DATETIME_INPUT_FORMATS = (
+    '%Y-%m-%d %H:%M:%S',
+    '%Y-%m-%d %H:%M',
+    '%Y-%m-%d',
+    '%d.%m.%Y %H:%M:%S',
+    '%d.%m.%Y %H:%M',
+    '%d.%m.%Y',
+    '%d.%m.%y %H:%M:%S',
+    '%d.%m.%y %H:%M',
+    '%d.%m.%y',
+    '%m/%d/%Y %H:%M:%S',
+    '%m/%d/%Y %H:%M',
+    '%m/%d/%Y',
+    '%m/%d/%y %H:%M:%S',
+    '%m/%d/%y %H:%M',
+    '%m/%d/%y',
+    )
+DECIMAL_SEPARATOR = '.'
+THOUSAND_SEPARATOR = " "
+NUMBER_GROUPING = 3
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/de/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/de/formats.py.pyindent" startline="1" endline="32">
+DATE_FORMAT = 'j. F Y'
+TIME_FORMAT = 'H:i:s'
+DATETIME_FORMAT = 'j. F Y H:i:s'
+YEAR_MONTH_FORMAT = 'F Y'
+MONTH_DAY_FORMAT = 'j. F'
+SHORT_DATE_FORMAT = 'd.m.Y'
+SHORT_DATETIME_FORMAT = 'd.m.Y H:i:s'
+FIRST_DAY_OF_WEEK = 1
+DATE_INPUT_FORMATS = (
+    '%d.%m.%Y', '%d.%m.%y',
+    '%Y-%m-%d', '%y-%m-%d',
+    '%d. %B %Y', '%d. %b. %Y',
+    )
+TIME_INPUT_FORMATS = (
+    '%H:%M:%S',
+    '%H:%M',
+    )
+DATETIME_INPUT_FORMATS = (
+    '%d.%m.%Y %H:%M:%S',
+    '%d.%m.%Y %H:%M',
+    '%d.%m.%Y',
+    '%Y-%m-%d %H:%M:%S',
+    '%Y-%m-%d %H:%M',
+    '%Y-%m-%d',
+    )
+DECIMAL_SEPARATOR = ','
+THOUSAND_SEPARATOR = '.'
+NUMBER_GROUPING = 3
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/ko/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/ko/formats.py.pyindent" startline="1" endline="44">
+DATE_FORMAT = 'Y년 n월 j일'
+TIME_FORMAT = 'A g:i:s'
+DATETIME_FORMAT = 'Y년 n월 j일 g:i:s A'
+YEAR_MONTH_FORMAT = 'Y년 F월'
+MONTH_DAY_FORMAT = 'F월 j일'
+SHORT_DATE_FORMAT = 'Y-n-j.'
+SHORT_DATETIME_FORMAT = 'Y-n-j H:i'
+DATE_INPUT_FORMATS = (
+    '%Y-%m-%d', '%m/%d/%Y', '%m/%d/%y',
+    '%b %d %Y', '%b %d, %Y',
+    '%d %b %Y', '%d %b, %Y',
+    '%B %d %Y', '%B %d, %Y',
+    '%d %B %Y', '%d %B, %Y',
+    '%Y년 %m월 %d일',
+    )
+TIME_INPUT_FORMATS = (
+    '%H:%M:%S',
+    '%H:%M',
+    '%H시 %M분 %S초',
+    '%H시 %M분',
+    )
+DATETIME_INPUT_FORMATS = (
+    '%Y-%m-%d %H:%M:%S',
+    '%Y-%m-%d %H:%M',
+    '%Y-%m-%d',
+    '%m/%d/%Y %H:%M:%S',
+    '%m/%d/%Y %H:%M',
+    '%m/%d/%Y',
+    '%m/%d/%y %H:%M:%S',
+    '%m/%d/%y %H:%M',
+    '%m/%d/%y',
+    '%Y년 %m월 %d일 %H시 %M분 %S초',
+    '%Y년 %m월 %d일 %H시 %M분',
+    )
+DECIMAL_SEPARATOR = '.'
+THOUSAND_SEPARATOR = ','
+NUMBER_GROUPING = 3
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/fi/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/fi/formats.py.pyindent" startline="1" endline="18">
+DATE_FORMAT = 'j. F Y'
+TIME_FORMAT = 'G.i.s'
+YEAR_MONTH_FORMAT = 'F Y'
+MONTH_DAY_FORMAT = 'j. F'
+SHORT_DATE_FORMAT = 'j.n.Y'
+
+DECIMAL_SEPARATOR = ','
+THOUSAND_SEPARATOR = ' '
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/sr_Latn/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/sr_Latn/formats.py.pyindent" startline="1" endline="44">
+DATE_FORMAT = 'j. F Y.'
+TIME_FORMAT = 'H:i'
+DATETIME_FORMAT = 'j. F Y. H:i'
+YEAR_MONTH_FORMAT = 'F Y.'
+MONTH_DAY_FORMAT = 'j. F'
+SHORT_DATE_FORMAT = 'j.m.Y.'
+SHORT_DATETIME_FORMAT = 'j.m.Y. H:i'
+FIRST_DAY_OF_WEEK = 1
+DATE_INPUT_FORMATS = (
+    '%Y-%m-%d',
+    '%d.%m.%Y.', '%d.%m.%y.',
+    '%d. %m. %Y.', '%d. %m. %y.',
+    '%d. %b %y.', '%d. %B %y.',
+    '%d. %b \'%y.', '%d. %B \'%y.',
+    '%d. %b %Y.', '%d. %B %Y.',
+    )
+TIME_INPUT_FORMATS = (
+    '%H:%M:%S',
+    '%H:%M',
+    )
+DATETIME_INPUT_FORMATS = (
+    '%Y-%m-%d %H:%M:%S',
+    '%Y-%m-%d %H:%M',
+    '%Y-%m-%d',
+    '%d.%m.%Y. %H:%M:%S',
+    '%d.%m.%Y. %H:%M',
+    '%d.%m.%Y.',
+    '%d.%m.%y. %H:%M:%S',
+    '%d.%m.%y. %H:%M',
+    '%d.%m.%y.',
+    '%d. %m. %Y. %H:%M:%S',
+    '%d. %m. %Y. %H:%M',
+    '%d. %m. %Y.',
+    '%d. %m. %y. %H:%M:%S',
+    '%d. %m. %y. %H:%M',
+    '%d. %m. %y.',
+    )
+DECIMAL_SEPARATOR = '.'
+THOUSAND_SEPARATOR = ','
+NUMBER_GROUPING = 3
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/fr/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/fr/formats.py.pyindent" startline="1" endline="18">
+DATE_FORMAT = 'j F Y'
+TIME_FORMAT = 'H:i:s'
+DATETIME_FORMAT = 'j F Y H:i:s'
+YEAR_MONTH_FORMAT = 'F Y'
+MONTH_DAY_FORMAT = 'j F'
+SHORT_DATE_FORMAT = 'j M Y'
+SHORT_DATETIME_FORMAT = 'j M Y H:i:s'
+
+DECIMAL_SEPARATOR = ','
+THOUSAND_SEPARATOR = ' '
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/es/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/es/formats.py.pyindent" startline="1" endline="30">
+DATE_FORMAT = 'j \de F \de Y'
+TIME_FORMAT = 'H:i:s'
+DATETIME_FORMAT = 'j \de F \de Y \a \l\a\s H:i'
+YEAR_MONTH_FORMAT = 'F \de Y'
+MONTH_DAY_FORMAT = 'j \de F'
+SHORT_DATE_FORMAT = 'd/m/Y'
+SHORT_DATETIME_FORMAT = 'd/m/Y H:i'
+FIRST_DAY_OF_WEEK = 1
+DATE_INPUT_FORMATS = (
+    '%d/%m/%Y', '%d/%m/%y')
+TIME_INPUT_FORMATS = (
+    '%H:%M:%S', '%H:%M')
+DATETIME_INPUT_FORMATS = (
+    '%d/%m/%Y %H:%M:%S',
+    '%d/%m/%Y %H:%M',
+    '%d/%m/%y %H:%M:%S',
+    '%d/%m/%y %H:%M',
+    )
+DECIMAL_SEPARATOR = ','
+THOUSAND_SEPARATOR = '.'
+NUMBER_GROUPING = 3
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/et/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/et/formats.py.pyindent" startline="1" endline="18">
+DATE_FORMAT = 'j F Y'
+TIME_FORMAT = 'G:i:s'
+
+MONTH_DAY_FORMAT = 'j F'
+SHORT_DATE_FORMAT = 'd.m.Y'
+
+DECIMAL_SEPARATOR = ','
+THOUSAND_SEPARATOR = ' '
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/en/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/en/formats.py.pyindent" startline="1" endline="38">
+DATE_FORMAT = 'N j, Y'
+TIME_FORMAT = 'P'
+DATETIME_FORMAT = 'N j, Y, P'
+YEAR_MONTH_FORMAT = 'F Y'
+MONTH_DAY_FORMAT = 'F j'
+SHORT_DATE_FORMAT = 'm/d/Y'
+SHORT_DATETIME_FORMAT = 'm/d/Y P'
+FIRST_DAY_OF_WEEK = 0
+DATE_INPUT_FORMATS = (
+    '%Y-%m-%d', '%m/%d/%Y', '%m/%d/%y',
+    '%b %d %Y', '%b %d, %Y',
+    '%d %b %Y', '%d %b, %Y',
+    '%B %d %Y', '%B %d, %Y',
+    '%d %B %Y', '%d %B, %Y',
+    )
+TIME_INPUT_FORMATS = (
+    '%H:%M:%S',
+    '%H:%M',
+    )
+DATETIME_INPUT_FORMATS = (
+    '%Y-%m-%d %H:%M:%S',
+    '%Y-%m-%d %H:%M',
+    '%Y-%m-%d',
+    '%m/%d/%Y %H:%M:%S',
+    '%m/%d/%Y %H:%M',
+    '%m/%d/%Y',
+    '%m/%d/%y %H:%M:%S',
+    '%m/%d/%y %H:%M',
+    '%m/%d/%y',
+    )
+DECIMAL_SEPARATOR = '.'
+THOUSAND_SEPARATOR = ','
+NUMBER_GROUPING = 3
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/fa/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/fa/formats.py.pyindent" startline="1" endline="18">
+DATE_FORMAT = 'j F Y'
+TIME_FORMAT = 'G:i:s'
+DATETIME_FORMAT = 'j F Y، ساعت G:i:s'
+YEAR_MONTH_FORMAT = 'F Y'
+MONTH_DAY_FORMAT = 'j F'
+SHORT_DATE_FORMAT = 'Y/n/j'
+SHORT_DATETIME_FORMAT = 'Y/n/j،‏ G:i:s'
+
+DECIMAL_SEPARATOR = ','
+THOUSAND_SEPARATOR = '.'
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/lt/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/lt/formats.py.pyindent" startline="1" endline="18">
+DATE_FORMAT = 'Y \m. F j \d.'
+TIME_FORMAT = 'H:i:s'
+
+SHORT_DATE_FORMAT = 'Y.m.d'
+
+DECIMAL_SEPARATOR = ','
+THOUSAND_SEPARATOR = '.'
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/cy/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/cy/formats.py.pyindent" startline="1" endline="18">
+DATE_FORMAT = 'd F Y'
+TIME_FORMAT = 'g:i:s A'
+
+SHORT_DATE_FORMAT = 'j M Y'
+
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/eu/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/eu/formats.py.pyindent" startline="1" endline="18">
+DATE_FORMAT = 'Yeko M\re\n d\a'
+TIME_FORMAT = 'H:i:s'
+
+SHORT_DATE_FORMAT = 'Y M j'
+
+DECIMAL_SEPARATOR = ','
+THOUSAND_SEPARATOR = '.'
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/ta/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/ta/formats.py.pyindent" startline="1" endline="18">
+DATE_FORMAT = 'j F, Y'
+TIME_FORMAT = 'g:i:s A'
+
+MONTH_DAY_FORMAT = 'j F'
+SHORT_DATE_FORMAT = 'j M, Y'
+
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/th/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/th/formats.py.pyindent" startline="1" endline="18">
+DATE_FORMAT = 'j F Y'
+TIME_FORMAT = 'G:i:s'
+DATETIME_FORMAT = 'j F Y, G:i:s'
+YEAR_MONTH_FORMAT = 'F Y'
+MONTH_DAY_FORMAT = 'j F'
+SHORT_DATE_FORMAT = 'j M Y'
+SHORT_DATETIME_FORMAT = 'j M Y, G:i:s'
+
+DECIMAL_SEPARATOR = '.'
+THOUSAND_SEPARATOR = ','
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/tr/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/locale/tr/formats.py.pyindent" startline="1" endline="18">
+DATE_FORMAT = 'd F Y'
+TIME_FORMAT = 'H:i:s'
+YEAR_MONTH_FORMAT = 'F Y'
+MONTH_DAY_FORMAT = 'd F'
+SHORT_DATE_FORMAT = 'd M Y'
+
+DECIMAL_SEPARATOR = ','
+THOUSAND_SEPARATOR = '.'
+</source>
+<source file="systems/py/Django/trunk/django/conf/__init__.py.pyindent" startline="1" endline="136">
+import os
+import re
+import time
+from django.conf import global_settings
+from django.utils.functional import LazyObject
+from django.utils import importlib
+ENVIRONMENT_VARIABLE = "DJANGO_SETTINGS_MODULE"
+class LazySettings(LazyObject) :
+INDENT
+    def _setup(self) :
+    INDENT
+        try :
+        INDENT
+            settings_module = os.environ [ENVIRONMENT_VARIABLE]
+            if not settings_module :
+            INDENT
+                raise KeyError
+            DEDENT
+        DEDENT
+        except KeyError :
+        INDENT
+            raise ImportError("Settings cannot be imported, because environment variable %s is undefined." % ENVIRONMENT_VARIABLE)
+        DEDENT
+        self._wrapped = Settings(settings_module)
+    DEDENT
+    def configure(self, default_settings = global_settings, ** options) :
+    INDENT
+        if self._wrapped ! = None :
+        INDENT
+            raise RuntimeError, 'Settings already configured.'
+        DEDENT
+        holder = UserSettingsHolder(default_settings)
+        for name, value in options.items() :
+        INDENT
+            setattr(holder, name, value)
+        DEDENT
+        self._wrapped = holder
+    DEDENT
+    def configured(self) :
+    INDENT
+        return bool(self._wrapped)
+    DEDENT
+    configured = property(configured)
+DEDENT
+class Settings(object) :
+INDENT
+    def __init__(self, settings_module) :
+    INDENT
+        for setting in dir(global_settings) :
+        INDENT
+            if setting == setting.upper() :
+            INDENT
+                setattr(self, setting, getattr(global_settings, setting))
+
+            DEDENT
+        DEDENT
+        self.SETTINGS_MODULE = settings_module
+        try :
+        INDENT
+            mod = importlib.import_module(self.SETTINGS_MODULE)
+        DEDENT
+        except ImportError, e :
+        INDENT
+            raise ImportError, "Could not import settings '%s' (Is it on sys.path? Does it have syntax errors?): %s" % (self.SETTINGS_MODULE, e)
+        DEDENT
+        tuple_settings = ("INSTALLED_APPS", "TEMPLATE_DIRS")
+        for setting in dir(mod) :
+        INDENT
+            if setting == setting.upper() :
+            INDENT
+                setting_value = getattr(mod, setting)
+                if setting in tuple_settings and type(setting_value) == str :
+                INDENT
+                    setting_value = (setting_value,)
+                DEDENT
+                setattr(self, setting, setting_value)
+
+            DEDENT
+        DEDENT
+        new_installed_apps = []
+        for app in self.INSTALLED_APPS :
+        INDENT
+            if app.endswith('.*') :
+            INDENT
+                app_mod = importlib.import_module(app [: - 2])
+                appdir = os.path.dirname(app_mod.__file__)
+                app_subdirs = os.listdir(appdir)
+                app_subdirs.sort()
+                name_pattern = re.compile(r'[a-zA-Z]\w*')
+                for d in app_subdirs :
+                INDENT
+                    if name_pattern.match(d) and os.path.isdir(os.path.join(appdir, d)) :
+                    INDENT
+                        new_installed_apps.append('%s.%s' % (app [: - 2], d))
+                    DEDENT
+                DEDENT
+            DEDENT
+            else :
+            INDENT
+                new_installed_apps.append(app)
+            DEDENT
+        DEDENT
+        self.INSTALLED_APPS = new_installed_apps
+        if hasattr(time, 'tzset') :
+        INDENT
+            os.environ ['TZ'] = self.TIME_ZONE
+            time.tzset()
+        DEDENT
+    DEDENT
+DEDENT
+class UserSettingsHolder(object) :
+INDENT
+    SETTINGS_MODULE = None
+    def __init__(self, default_settings) :
+    INDENT
+        self.default_settings = default_settings
+    DEDENT
+    def __getattr__(self, name) :
+    INDENT
+        return getattr(self.default_settings, name)
+    DEDENT
+    def __dir__(self) :
+    INDENT
+        return self.__dict__.keys() + dir(self.default_settings)
+
+    DEDENT
+    __members__ = property(lambda self : self.__dir__())
+DEDENT
+settings = LazySettings()
+</source>
+<source file="systems/py/Django/trunk/django/conf/global_settings.py.pyindent" startline="1" endline="509">
+gettext_noop = lambda s : s
+
+DEBUG = False
+TEMPLATE_DEBUG = False
+
+DEBUG_PROPAGATE_EXCEPTIONS = False
+
+USE_ETAGS = False
+
+ADMINS = ()
+
+INTERNAL_IPS = ()
+
+TIME_ZONE = 'America/Chicago'
+
+LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = (
+    ('ar', gettext_noop('Arabic')),
+    ('bn', gettext_noop('Bengali')),
+    ('bg', gettext_noop('Bulgarian')),
+    ('ca', gettext_noop('Catalan')),
+    ('cs', gettext_noop('Czech')),
+    ('cy', gettext_noop('Welsh')),
+    ('da', gettext_noop('Danish')),
+    ('de', gettext_noop('German')),
+    ('el', gettext_noop('Greek')),
+    ('en', gettext_noop('English')),
+    ('es', gettext_noop('Spanish')),
+    ('et', gettext_noop('Estonian')),
+    ('es-ar', gettext_noop('Argentinean Spanish')),
+    ('eu', gettext_noop('Basque')),
+    ('fa', gettext_noop('Persian')),
+    ('fi', gettext_noop('Finnish')),
+    ('fr', gettext_noop('French')),
+    ('ga', gettext_noop('Irish')),
+    ('gl', gettext_noop('Galician')),
+    ('hu', gettext_noop('Hungarian')),
+    ('he', gettext_noop('Hebrew')),
+    ('hi', gettext_noop('Hindi')),
+    ('hr', gettext_noop('Croatian')),
+    ('is', gettext_noop('Icelandic')),
+    ('it', gettext_noop('Italian')),
+    ('ja', gettext_noop('Japanese')),
+    ('ka', gettext_noop('Georgian')),
+    ('ko', gettext_noop('Korean')),
+    ('km', gettext_noop('Khmer')),
+    ('kn', gettext_noop('Kannada')),
+    ('lv', gettext_noop('Latvian')),
+    ('lt', gettext_noop('Lithuanian')),
+    ('mk', gettext_noop('Macedonian')),
+    ('nl', gettext_noop('Dutch')),
+    ('no', gettext_noop('Norwegian')),
+    ('pl', gettext_noop('Polish')),
+    ('pt', gettext_noop('Portuguese')),
+    ('pt-br', gettext_noop('Brazilian Portuguese')),
+    ('ro', gettext_noop('Romanian')),
+    ('ru', gettext_noop('Russian')),
+    ('sk', gettext_noop('Slovak')),
+    ('sl', gettext_noop('Slovenian')),
+    ('sr', gettext_noop('Serbian')),
+    ('sr-latn', gettext_noop('Serbian Latin')),
+    ('sv', gettext_noop('Swedish')),
+    ('ta', gettext_noop('Tamil')),
+    ('te', gettext_noop('Telugu')),
+    ('th', gettext_noop('Thai')),
+    ('tr', gettext_noop('Turkish')),
+    ('uk', gettext_noop('Ukrainian')),
+    ('zh-cn', gettext_noop('Simplified Chinese')),
+    ('zh-tw', gettext_noop('Traditional Chinese')),
+    )
+
+LANGUAGES_BIDI = ("he", "ar", "fa")
+
+USE_I18N = True
+LOCALE_PATHS = ()
+LANGUAGE_COOKIE_NAME = 'django_language'
+
+USE_L10N = False
+
+MANAGERS = ADMINS
+
+DEFAULT_CONTENT_TYPE = 'text/html'
+DEFAULT_CHARSET = 'utf-8'
+
+FILE_CHARSET = 'utf-8'
+
+SERVER_EMAIL = 'root@localhost'
+
+SEND_BROKEN_LINK_EMAILS = False
+
+DATABASE_ENGINE = ''
+DATABASE_NAME = ''
+DATABASE_USER = ''
+DATABASE_PASSWORD = ''
+DATABASE_HOST = ''
+DATABASE_PORT = ''
+DATABASE_OPTIONS = {}
+DATABASES = {
+    }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'localhost'
+
+EMAIL_PORT = 25
+
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+
+INSTALLED_APPS = ()
+
+TEMPLATE_DIRS = ()
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    )
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.contrib.messages.context_processors.messages',
+    )
+
+TEMPLATE_STRING_IF_INVALID = ''
+
+ADMIN_MEDIA_PREFIX = '/media/'
+
+DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+
+EMAIL_SUBJECT_PREFIX = '[Django] '
+
+APPEND_SLASH = True
+
+PREPEND_WWW = False
+
+FORCE_SCRIPT_NAME = None
+
+DISALLOWED_USER_AGENTS = ()
+ABSOLUTE_URL_OVERRIDES = {}
+
+ALLOWED_INCLUDE_ROOTS = ()
+
+ADMIN_FOR = ()
+
+IGNORABLE_404_STARTS = ('/cgi-bin/', '/_vti_bin', '/_vti_inf')
+IGNORABLE_404_ENDS = ('mail.pl', 'mailform.pl', 'mail.cgi', 'mailform.cgi', 'favicon.ico', '.php')
+
+SECRET_KEY = ''
+
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+
+MEDIA_ROOT = ''
+
+MEDIA_URL = ''
+
+FILE_UPLOAD_HANDLERS = (
+    'django.core.files.uploadhandler.MemoryFileUploadHandler',
+    'django.core.files.uploadhandler.TemporaryFileUploadHandler',
+    )
+
+FILE_UPLOAD_MAX_MEMORY_SIZE = 2621440
+
+FILE_UPLOAD_TEMP_DIR = None
+
+FILE_UPLOAD_PERMISSIONS = None
+
+FORMAT_MODULE_PATH = None
+
+DATE_FORMAT = 'N j, Y'
+
+DATETIME_FORMAT = 'N j, Y, P'
+
+TIME_FORMAT = 'P'
+
+YEAR_MONTH_FORMAT = 'F Y'
+
+MONTH_DAY_FORMAT = 'F j'
+
+SHORT_DATE_FORMAT = 'm/d/Y'
+
+SHORT_DATETIME_FORMAT = 'm/d/Y P'
+
+DATE_INPUT_FORMATS = (
+    '%Y-%m-%d', '%m/%d/%Y', '%m/%d/%y',
+    '%b %d %Y', '%b %d, %Y',
+    '%d %b %Y', '%d %b, %Y',
+    '%B %d %Y', '%B %d, %Y',
+    '%d %B %Y', '%d %B, %Y',
+    )
+
+TIME_INPUT_FORMATS = (
+    '%H:%M:%S',
+    '%H:%M',
+    )
+
+DATETIME_INPUT_FORMATS = (
+    '%Y-%m-%d %H:%M:%S',
+    '%Y-%m-%d %H:%M',
+    '%Y-%m-%d',
+    '%m/%d/%Y %H:%M:%S',
+    '%m/%d/%Y %H:%M',
+    '%m/%d/%Y',
+    '%m/%d/%y %H:%M:%S',
+    '%m/%d/%y %H:%M',
+    '%m/%d/%y',
+    )
+
+FIRST_DAY_OF_WEEK = 0
+
+DECIMAL_SEPARATOR = '.'
+
+USE_THOUSAND_SEPARATOR = False
+
+NUMBER_GROUPING = 0
+
+THOUSAND_SEPARATOR = ','
+
+TRANSACTIONS_MANAGED = False
+
+from django import get_version
+URL_VALIDATOR_USER_AGENT = "Django/%s (http://www.djangoproject.com)" % get_version()
+
+DEFAULT_TABLESPACE = ''
+DEFAULT_INDEX_TABLESPACE = ''
+
+MIDDLEWARE_CLASSES = (
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    )
+
+SESSION_COOKIE_NAME = 'sessionid'
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 7 * 2
+SESSION_COOKIE_DOMAIN = None
+SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_PATH = '/'
+SESSION_SAVE_EVERY_REQUEST = False
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_FILE_PATH = None
+
+CACHE_BACKEND = 'locmem://'
+CACHE_MIDDLEWARE_KEY_PREFIX = ''
+CACHE_MIDDLEWARE_SECONDS = 600
+
+COMMENTS_ALLOW_PROFANITIES = False
+
+PROFANITIES_LIST = ('asshat', 'asshead', 'asshole', 'cunt', 'fuck', 'gook', 'nigger', 'shit')
+
+COMMENTS_BANNED_USERS_GROUP = None
+
+COMMENTS_MODERATORS_GROUP = None
+
+COMMENTS_SKETCHY_USERS_GROUP = None
+
+COMMENTS_FIRST_FEW = 0
+
+BANNED_IPS = ()
+
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
+LOGIN_URL = '/accounts/login/'
+LOGOUT_URL = '/accounts/logout/'
+LOGIN_REDIRECT_URL = '/accounts/profile/'
+
+PASSWORD_RESET_TIMEOUT_DAYS = 3
+
+CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
+
+CSRF_COOKIE_NAME = 'csrftoken'
+CSRF_COOKIE_DOMAIN = None
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.user_messages.LegacyFallbackStorage'
+
+TEST_RUNNER = 'django.test.simple.run_tests'
+
+TEST_DATABASE_NAME = None
+
+TEST_DATABASE_CHARSET = None
+TEST_DATABASE_COLLATION = None
+
+FIXTURE_DIRS = ()
+</source>
+<source file="systems/py/Django/trunk/django/conf/app_template/models.py.pyindent" startline="1" endline="3">
+from django.db import models
+</source>
+<source file="systems/py/Django/trunk/django/conf/app_template/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/app_template/tests.py.pyindent" startline="1" endline="23">
+from django.test import TestCase
+class SimpleTest(TestCase) :
+INDENT
+    def test_basic_addition(self) :
+    INDENT
+        self.failUnlessEqual(1 + 1, 2)
+    DEDENT
+DEDENT
+__test__ = {"doctest" : """
+Another way to test that 1 + 1 is equal to 2.
+
+>>> 1 + 1 == 2
+True
+"""}
+</source>
+<source file="systems/py/Django/trunk/django/conf/app_template/views.py.pyindent" startline="1" endline="1">
+</source>
+<source file="systems/py/Django/trunk/django/conf/project_template/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/project_template/settings.py.pyindent" startline="1" endline="86">
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+ADMINS = (
+    )
+MANAGERS = ADMINS
+DATABASES = {
+    'default' : {
+        'ENGINE' : 'django.db.backends.',
+        'NAME' : '',
+        'USER' : '',
+        'PASSWORD' : '',
+        'HOST' : '',
+        'PORT' : '',
+        }}
+
+TIME_ZONE = 'America/Chicago'
+
+LANGUAGE_CODE = 'en-us'
+SITE_ID = 1
+
+USE_I18N = True
+
+MEDIA_ROOT = ''
+
+MEDIA_URL = ''
+
+ADMIN_MEDIA_PREFIX = '/media/'
+
+SECRET_KEY = ''
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    )
+MIDDLEWARE_CLASSES = (
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    )
+ROOT_URLCONF = '{{ project_name }}.urls'
+TEMPLATE_DIRS = (
+    )
+INSTALLED_APPS = (
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    )
+</source>
+<source file="systems/py/Django/trunk/django/conf/project_template/manage.py.pyindent" startline="1" endline="12">
+from django.core.management import execute_manager
+try :
+INDENT
+    import settings
+DEDENT
+except ImportError :
+INDENT
+    import sys
+    sys.stderr.write("Error: Can't find the file 'settings.py' in the directory containing %r. It appears you've customized things.\nYou'll have to run django-admin.py, passing it your settings module.\n(If the file settings.py does indeed exist, it's causing an ImportError somehow.)\n" % __file__)
+    sys.exit(1)
+DEDENT
+if __name__ == "__main__" :
+INDENT
+    execute_manager(settings)
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/django/conf/project_template/urls.py.pyindent" startline="1" endline="17">
+from django.conf.urls.defaults import *
+urlpatterns = patterns('',
+    )
+</source>
+<source file="systems/py/Django/trunk/django/conf/urls/__init__.py.pyindent" startline="1" endline="0">
+</source>
+<source file="systems/py/Django/trunk/django/conf/urls/defaults.py.pyindent" startline="1" endline="43">
+from django.core.urlresolvers import RegexURLPattern, RegexURLResolver
+from django.core.exceptions import ImproperlyConfigured
+__all__ = ['handler404', 'handler500', 'include', 'patterns', 'url']
+handler404 = 'django.views.defaults.page_not_found'
+handler500 = 'django.views.defaults.server_error'
+def include(arg, namespace = None, app_name = None) :
+INDENT
+    if isinstance(arg, tuple) :
+    INDENT
+        if namespace :
+        INDENT
+            raise ImproperlyConfigured('Cannot override the namespace for a dynamic module that provides a namespace')
+        DEDENT
+        urlconf_module, app_name, namespace = arg
+    DEDENT
+    else :
+    INDENT
+        urlconf_module = arg
+    DEDENT
+    return (urlconf_module, app_name, namespace)
+DEDENT
+def patterns(prefix, * args) :
+INDENT
+    pattern_list = []
+    for t in args :
+    INDENT
+        if isinstance(t, (list, tuple)) :
+        INDENT
+            t = url(prefix = prefix, * t)
+        DEDENT
+        elif isinstance(t, RegexURLPattern) :
+        INDENT
+            t.add_prefix(prefix)
+        DEDENT
+        pattern_list.append(t)
+    DEDENT
+    return pattern_list
+DEDENT
+def url(regex, view, kwargs = None, name = None, prefix = '') :
+INDENT
+    if isinstance(view, (list, tuple)) :
+    INDENT
+        urlconf_module, app_name, namespace = view
+        return RegexURLResolver(regex, urlconf_module, kwargs, app_name = app_name, namespace = namespace)
+    DEDENT
+    else :
+    INDENT
+        if isinstance(view, basestring) :
+        INDENT
+            if not view :
+            INDENT
+                raise ImproperlyConfigured('Empty URL pattern view name not permitted (for pattern %r)' % regex)
+            DEDENT
+            if prefix :
+            INDENT
+                view = prefix + '.' + view
+            DEDENT
+        DEDENT
+        return RegexURLPattern(regex, view, kwargs, name)
+    DEDENT
+DEDENT
+</source>
+<source file="systems/py/Django/trunk/django/conf/urls/i18n.py.pyindent" startline="1" endline="5">
+from django.conf.urls.defaults import *
+urlpatterns = patterns('',
+    (r'^setlang/$', 'django.views.i18n.set_language'),
+    )
+</source>
+<source file="systems/py/Django/trunk/django/conf/urls/shortcut.py.pyindent" startline="1" endline="5">
+from django.conf.urls.defaults import *
+urlpatterns = patterns('django.views',
+    (r'^(?P<content_type_id>\d+)/(?P<object_id>.*)/$', 'defaults.shortcut'),
+    )
+</source>
+<source file="systems/py/Django/trunk/extras/csrf_migration_helper.py.pyindent" startline="1" endline="368">
+TEMPLATE_EXTENSIONS = [
+    ".html",
+    ".htm",
+    ]
+PYTHON_SOURCE_EXTENSIONS = [
+    ".py",
+    ]
+TEMPLATE_ENCODING = "UTF-8"
+PYTHON_ENCODING = "UTF-8"
+
+import os
+import sys
+import re
+try :
+INDENT
+    set
+DEDENT
+except NameError :
+INDENT
+    from sets import Set as set
+DEDENT
+USAGE = """
+This tool helps to locate forms that need CSRF tokens added and the
+corresponding view code.  This processing is NOT fool proof, and you should read
+the help contained in the script itself.  Also, this script may need configuring
+(by editing the script) before use.
+
+Usage:
+
+python csrf_migration_helper.py [--settings=path.to.your.settings] /path/to/python/code [more paths...]
+
+  Paths can be specified as relative paths.
+
+  With no arguments, this help is printed.
+"""
+_POST_FORM_RE = re.compile(r'(<form\W[^>]*\bmethod\s*=\s*(\'|"|)POST(\'|"|)\b[^>]*>)', re.IGNORECASE)
+_TOKEN_RE = re.compile('\{% csrf_token')
+def get_template_dirs() :
+INDENT
+    from django.conf import settings
+    dirs = set()
+    if 'django.template.loaders.filesystem.load_template_source' in settings.TEMPLATE_LOADERS :
+    INDENT
+        dirs.update(map(unicode, settings.TEMPLATE_DIRS))
+    DEDENT
+    if 'django.template.loaders.app_directories.load_template_source' in settings.TEMPLATE_LOADERS :
+    INDENT
+        from django.template.loaders.app_directories import app_template_dirs
+        dirs.update(app_template_dirs)
+    DEDENT
+    return dirs
+DEDENT
+def make_template_info(filename, root_dirs) :
+INDENT
+    return Template(filename,
+        [filename [len(d) + 1 :] for d in root_dirs if filename.startswith(d)])
+
+DEDENT
+class Template(object) :
+INDENT
+    def __init__(self, absolute_filename, relative_filenames) :
+    INDENT
+        self.absolute_filename, self.relative_filenames = absolute_filename, relative_filenames
+    DEDENT
+    def content(self) :
+    INDENT
+        try :
+        INDENT
+            return self._content
+        DEDENT
+        except AttributeError :
+        INDENT
+            fd = open(self.absolute_filename)
+            content = fd.read().decode(TEMPLATE_ENCODING)
+            fd.close()
+            self._content = content
+            return content
+        DEDENT
+    DEDENT
+    content = property(content)
+    def post_form_info(self) :
+    INDENT
+        matches = []
+        for ln, line in enumerate(self.content.split("\n")) :
+        INDENT
+            m = _POST_FORM_RE.search(line)
+            if m is not None :
+            INDENT
+                matches.append((ln + 1, _TOKEN_RE.search(line) is not None))
+            DEDENT
+        DEDENT
+        return matches
+    DEDENT
+    def includes_template(self, t) :
+    INDENT
+        for r in t.relative_filenames :
+        INDENT
+            if re.search(r'\{%\s*include\s+"' + re.escape(r) + r'"\s*%\}', self.content) :
+            INDENT
+                return True
+            DEDENT
+        DEDENT
+        return False
+    DEDENT
+    def related_templates(self) :
+    INDENT
+        try :
+        INDENT
+            return self._related_templates
+        DEDENT
+        except AttributeError :
+        INDENT
+            pass
+        DEDENT
+        retval = set([self])
+        for r in self.relative_filenames :
+        INDENT
+            for t in self.all_templates :
+            INDENT
+                if t.includes_template(self) :
+                INDENT
+                    retval = retval.union(t.related_templates())
+                DEDENT
+            DEDENT
+        DEDENT
+        self._related_templates = retval
+        return retval
+    DEDENT
+    def __repr__(self) :
+    INDENT
+        return repr(self.absolute_filename)
+    DEDENT
+    def __eq__(self, other) :
+    INDENT
+        return self.absolute_filename == other.absolute_filename
+    DEDENT
+    def __hash__(self) :
+    INDENT
+        return hash(self.absolute_filename)
+    DEDENT
+DEDENT
+def get_templates(dirs) :
+INDENT
+    templates = set()
+    for root in dirs :
+    INDENT
+        for (dirpath, dirnames, filenames) in os.walk(root) :
+        INDENT
+            for f in filenames :
+            INDENT
+                if len([True for e in TEMPLATE_EXTENSIONS if f.endswith(e)]) > 0 :
+                INDENT
+                    t = make_template_info(os.path.join(dirpath, f), dirs)
+                    t.all_templates = templates
+                    templates.add(t)
+                DEDENT
+            DEDENT
+        DEDENT
+    DEDENT
+    return templates
+DEDENT
+def get_python_code(paths) :
+INDENT
+    retval = []
+    for p in paths :
+    INDENT
+        for (dirpath, dirnames, filenames) in os.walk(p) :
+        INDENT
+            for f in filenames :
+            INDENT
+                if len([True for e in PYTHON_SOURCE_EXTENSIONS if f.endswith(e)]) > 0 :
+                INDENT
+                    fn = os.path.join(dirpath, f)
+                    fd = open(fn)
+                    content = [l.decode(PYTHON_ENCODING) for l in fd.readlines()]
+                    fd.close()
+                    retval.append((fn, content))
+                DEDENT
+            DEDENT
+        DEDENT
+    DEDENT
+    return retval
+DEDENT
+def search_python_list(python_code, template_names) :
+INDENT
+    retval = []
+    for tn in template_names :
+    INDENT
+        retval.extend(search_python(python_code, tn))
+    DEDENT
+    retval = list(set(retval))
+    retval.sort()
+    return retval
+DEDENT
+def search_python(python_code, template_name) :
+INDENT
+    retval = []
+    for fn, content in python_code :
+    INDENT
+        for ln, line in enumerate(content) :
+        INDENT
+            if ((u'"%s"' % template_name) in line) or ((u"'%s'" % template_name) in line) :
+            INDENT
+                retval.append((fn, ln + 1))
+            DEDENT
+        DEDENT
+    DEDENT
+    return retval
+DEDENT
+def main(pythonpaths) :
+INDENT
+    template_dirs = get_template_dirs()
+    templates = get_templates(template_dirs)
+    python_code = get_python_code(pythonpaths)
+    for t in templates :
+    INDENT
+        form_matches = t.post_form_info()
+        num_post_forms = len(form_matches)
+        form_lines_without_token = [ln for (ln, has_token) in form_matches if not has_token]
+        if num_post_forms == 0 :
+        INDENT
+            continue
+        DEDENT
+        to_search = [rf for rt in t.related_templates() for rf in rt.relative_filenames]
+        found = search_python_list(python_code, to_search)
+
+        print t.absolute_filename
+        for r in t.relative_filenames :
+        INDENT
+            print u"  AKA %s" % r
+        DEDENT
+        print u"  POST forms: %s" % num_post_forms
+        print u"  With token: %s" % (num_post_forms - len(form_lines_without_token))
+        if form_lines_without_token :
+        INDENT
+            print u"  Without token:"
+            for ln in form_lines_without_token :
+            INDENT
+                print "%s:%d:" % (t.absolute_filename, ln)
+            DEDENT
+        DEDENT
+        print
+        print u"  Searching for:"
+        for r in to_search :
+        INDENT
+            print u"    " + r
+        DEDENT
+        print
+        print u"  Found:"
+        if len(found) == 0 :
+        INDENT
+            print "    Nothing"
+        DEDENT
+        else :
+        INDENT
+            for fn, ln in found :
+            INDENT
+                print "%s:%d:" % (fn, ln)
+            DEDENT
+        DEDENT
+        print
+        print "----"
+    DEDENT
+DEDENT
+if __name__ == '__main__' :
+INDENT
+    args = list(sys.argv [1 :])
+    if len(args) > 0 :
+    INDENT
+        if args [0] in ['--help', '-h', '-?', '--usage'] :
+        INDENT
+            print USAGE
+            sys.exit(0)
+        DEDENT
+        else :
+        INDENT
+            if args [0].startswith('--settings=') :
+            INDENT
+                module = args [0] [len('--settings=') :]
+                os.environ ["DJANGO_SETTINGS_MODULE"] = module
+                args = args [1 :]
+            DEDENT
+            if args [0].startswith('-') :
+            INDENT
+                print "Unknown option: %s" % args [0]
+                print USAGE
+                sys.exit(1)
+            DEDENT
+            pythonpaths = args
+            if os.environ.get("DJANGO_SETTINGS_MODULE", None) is None :
+            INDENT
+                print "You need to set DJANGO_SETTINGS_MODULE or use the '--settings' parameter"
+                sys.exit(1)
+            DEDENT
+            if len(pythonpaths) == 0 :
+            INDENT
+                print "Unrecognised command: %s" % command
+                print USAGE
+                sys.exit(1)
+            DEDENT
+            main(pythonpaths)
+        DEDENT
+    DEDENT
+    else :
+    INDENT
+        print USAGE
+        sys.exit(0)
+    DEDENT
+DEDENT
+</source>

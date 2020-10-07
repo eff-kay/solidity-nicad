@@ -1,0 +1,2207 @@
+<source file="systems/php/phpBB3/includes/acm/acm_wincache.php" startline="51" endline="57">
+function _read ($var)
+{
+    $success = false;
+    $result = wincache_ucache_get ($this -> key_prefix . $var, $success);
+    return ($success) ? $result : false;
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_wincache.php" startline="68" endline="71">
+function _write ($var, $data, $ttl = 2592000)
+{
+    return wincache_ucache_set ($this -> key_prefix . $var, $data, $ttl);
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_wincache.php" startline="80" endline="83">
+function _delete ($var)
+{
+    return wincache_ucache_delete ($this -> key_prefix . $var);
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_redis.php" startline="48" endline="78">
+function acm ()
+{
+    parent :: acm_memory ();
+    $this -> redis = new Redis ();
+    $this -> redis -> connect (PHPBB_ACM_REDIS_HOST, PHPBB_ACM_REDIS_PORT);
+    if (defined ('PHPBB_ACM_REDIS_PASSWORD'))
+        {
+            if (! $this -> redis -> auth (PHPBB_ACM_REDIS_PASSWORD))
+                {
+                    global $acm_type;
+                    trigger_error ("Incorrect password for the ACM module $acm_type.", E_USER_ERROR);
+                }
+        }
+    $this -> redis -> setOption (Redis :: OPT_SERIALIZER, Redis :: SERIALIZER_PHP);
+    $this -> redis -> setOption (Redis :: OPT_PREFIX, $this -> key_prefix);
+    if (defined ('PHPBB_ACM_REDIS_DB'))
+        {
+            if (! $this -> redis -> select (PHPBB_ACM_REDIS_DB))
+                {
+                    global $acm_type;
+                    trigger_error ("Incorrect database for the ACM module $acm_type.", E_USER_ERROR);
+                }
+        }
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_redis.php" startline="85" endline="90">
+function unload ()
+{
+    parent :: unload ();
+    $this -> redis -> close ();
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_redis.php" startline="97" endline="102">
+function purge ()
+{
+    $this -> redis -> flushDB ();
+    parent :: purge ();
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_redis.php" startline="111" endline="114">
+function _read ($var)
+{
+    return $this -> redis -> get ($var);
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_redis.php" startline="125" endline="128">
+function _write ($var, $data, $ttl = 2592000)
+{
+    return $this -> redis -> setex ($var, $ttl, $data);
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_redis.php" startline="137" endline="144">
+function _delete ($var)
+{
+    if ($this -> redis -> delete ($var) > 0)
+        {
+            return true;
+        }
+    return false;
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_eaccelerator.php" startline="42" endline="52">
+function purge ()
+{
+    foreach (eaccelerator_list_keys () as $var)
+    {
+        eaccelerator_rm (substr ($var ['name'], 1));
+    }
+    parent :: purge ();
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_eaccelerator.php" startline="59" endline="64">
+function tidy ()
+{
+    eaccelerator_gc ();
+    set_config ('cache_last_gc', time (), true);
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_eaccelerator.php" startline="73" endline="89">
+function _read ($var)
+{
+    $result = eaccelerator_get ($this -> key_prefix . $var);
+    if ($result === null)
+        {
+            return false;
+        }
+    if (is_string ($result) && strpos ($result, $this -> serialize_header . 'O:') === 0)
+        {
+            $result = unserialize (substr ($result, strlen ($this -> serialize_header)));
+        }
+    return $result;
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_eaccelerator.php" startline="100" endline="106">
+function _write ($var, $data, $ttl = 2592000)
+{
+    $data = (is_object ($data)) ? $this -> serialize_header . serialize ($data) : $data;
+    return eaccelerator_put ($this -> key_prefix . $var, $data, $ttl);
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_eaccelerator.php" startline="115" endline="118">
+function _delete ($var)
+{
+    return eaccelerator_rm ($this -> key_prefix . $var);
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="36" endline="40">
+function acm ()
+{
+    global $phpbb_root_path;
+    $this -> cache_dir = $phpbb_root_path . 'cache/';
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="45" endline="48">
+function load ()
+{
+    return $this -> _read ('data_global');
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="53" endline="65">
+function unload ()
+{
+    $this -> save ();
+    unset ($this -> vars);
+    unset ($this -> var_expires);
+    unset ($this -> sql_rowset);
+    unset ($this -> sql_row_pointer);
+    $this -> vars = array ();
+    $this -> var_expires = array ();
+    $this -> sql_rowset = array ();
+    $this -> sql_row_pointer = array ();
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="70" endline="100">
+function save ()
+{
+    if (! $this -> is_modified)
+        {
+            return;
+        }
+    global $phpEx;
+    if (! $this -> _write ('data_global'))
+        {
+            if (! function_exists ('phpbb_is_writable'))
+                {
+                    global $phpbb_root_path;
+                    include ($phpbb_root_path . 'includes/functions.' . $phpEx);
+                }
+            if (! phpbb_is_writable ($this -> cache_dir))
+                {
+                    die ('Fatal: ' . $this -> cache_dir . ' is NOT writable.');
+                    exit;
+                }
+            die ('Fatal: Not able to open ' . $this -> cache_dir . 'data_global.' . $phpEx);
+            exit;
+        }
+    $this -> is_modified = false;
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="105" endline="162">
+function tidy ()
+{
+    global $phpEx;
+    $dir = @ opendir ($this -> cache_dir);
+    if (! $dir)
+        {
+            return;
+        }
+    $time = time ();
+    while (($entry = readdir ($dir)) !== false)
+    {
+        if (! preg_match ('/^(sql_|data_(?!global))/', $entry))
+            {
+                continue;
+            }
+        if (! ($handle = @ fopen ($this -> cache_dir . $entry, 'rb')))
+            {
+                continue;
+            }
+        fgets ($handle);
+        $expires = (int) fgets ($handle);
+        fclose ($handle);
+        if ($time >= $expires)
+            {
+                $this -> remove_file ($this -> cache_dir . $entry);
+            }
+    }
+    closedir ($dir);
+    if (file_exists ($this -> cache_dir . 'data_global.' . $phpEx))
+        {
+            if (! sizeof ($this -> vars))
+                {
+                    $this -> load ();
+                }
+            foreach ($this -> var_expires as $var_name => $expires)
+            {
+                if ($time >= $expires)
+                    {
+                        $this -> destroy ($var_name);
+                    }
+            }
+        }
+    set_config ('cache_last_gc', time (), true);
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="167" endline="184">
+function get ($var_name)
+{
+    if ($var_name [0] == '_')
+        {
+            global $phpEx;
+            if (! $this -> _exists ($var_name))
+                {
+                    return false;
+                }
+            return $this -> _read ('data' . $var_name);
+        }
+    else
+        {
+            return ($this -> _exists ($var_name)) ? $this -> vars [$var_name] : false;
+        }
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="189" endline="201">
+function put ($var_name, $var, $ttl = 31536000)
+{
+    if ($var_name [0] == '_')
+        {
+            $this -> _write ('data' . $var_name, $var, time () + $ttl);
+        }
+    else
+        {
+            $this -> vars [$var_name] = $var;
+            $this -> var_expires [$var_name] = time () + $ttl;
+            $this -> is_modified = true;
+        }
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="206" endline="238">
+function purge ()
+{
+    $dir = @ opendir ($this -> cache_dir);
+    if (! $dir)
+        {
+            return;
+        }
+    while (($entry = readdir ($dir)) !== false)
+    {
+        if (strpos ($entry, 'sql_') !== 0 && strpos ($entry, 'data_') !== 0 && strpos ($entry, 'ctpl_') !== 0 && strpos ($entry, 'tpl_') !== 0)
+            {
+                continue;
+            }
+        $this -> remove_file ($this -> cache_dir . $entry);
+    }
+    closedir ($dir);
+    unset ($this -> vars);
+    unset ($this -> var_expires);
+    unset ($this -> sql_rowset);
+    unset ($this -> sql_row_pointer);
+    $this -> vars = array ();
+    $this -> var_expires = array ();
+    $this -> sql_rowset = array ();
+    $this -> sql_row_pointer = array ();
+    $this -> is_modified = false;
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="243" endline="317">
+function destroy ($var_name, $table = '')
+{
+    global $phpEx;
+    if ($var_name == 'sql' && ! empty ($table))
+        {
+            if (! is_array ($table))
+                {
+                    $table = array (
+                        $table);
+                }
+            $dir = @ opendir ($this -> cache_dir);
+            if (! $dir)
+                {
+                    return;
+                }
+            while (($entry = readdir ($dir)) !== false)
+            {
+                if (strpos ($entry, 'sql_') !== 0)
+                    {
+                        continue;
+                    }
+                if (! ($handle = @ fopen ($this -> cache_dir . $entry, 'rb')))
+                    {
+                        continue;
+                    }
+                fgets ($handle);
+                fgets ($handle);
+                $query = substr (fgets ($handle), 0, - 1);
+                fclose ($handle);
+                foreach ($table as $check_table)
+                {
+                    if (strpos ($query, $check_table) !== false)
+                        {
+                            $this -> remove_file ($this -> cache_dir . $entry);
+                            break;
+                        }
+                }
+            }
+            closedir ($dir);
+            return;
+        }
+    if (! $this -> _exists ($var_name))
+        {
+            return;
+        }
+    if ($var_name [0] == '_')
+        {
+            $this -> remove_file ($this -> cache_dir . 'data' . $var_name . ".$phpEx", true);
+        }
+    else
+        if (isset ($this -> vars [$var_name]))
+            {
+                $this -> is_modified = true;
+                unset ($this -> vars [$var_name]);
+                unset ($this -> var_expires [$var_name]);
+                $this -> save ();
+            }
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="322" endline="343">
+function _exists ($var_name)
+{
+    if ($var_name [0] == '_')
+        {
+            global $phpEx;
+            return file_exists ($this -> cache_dir . 'data' . $var_name . ".$phpEx");
+        }
+    else
+        {
+            if (! sizeof ($this -> vars))
+                {
+                    $this -> load ();
+                }
+            if (! isset ($this -> var_expires [$var_name]))
+                {
+                    return false;
+                }
+            return (time () > $this -> var_expires [$var_name]) ? false : isset ($this -> vars [$var_name]);
+        }
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="348" endline="363">
+function sql_load ($query)
+{
+    $query = preg_replace ('/[\n\r\s\t]+/', ' ', $query);
+    if (($rowset = $this -> _read ('sql_' . md5 ($query))) === false)
+        {
+            return false;
+        }
+    $query_id = sizeof ($this -> sql_rowset);
+    $this -> sql_rowset [$query_id] = $rowset;
+    $this -> sql_row_pointer [$query_id] = 0;
+    return $query_id;
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="368" endline="389">
+function sql_save ($query, & $query_result, $ttl)
+{
+    global $db;
+    $query = preg_replace ('/[\n\r\s\t]+/', ' ', $query);
+    $query_id = sizeof ($this -> sql_rowset);
+    $this -> sql_rowset [$query_id] = array ();
+    $this -> sql_row_pointer [$query_id] = 0;
+    while ($row = $db -> sql_fetchrow ($query_result))
+    {
+        $this -> sql_rowset [$query_id] [] = $row;
+    }
+    $db -> sql_freeresult ($query_result);
+    if ($this -> _write ('sql_' . md5 ($query), $this -> sql_rowset [$query_id], $ttl + time (), $query))
+        {
+            $query_result = $query_id;
+        }
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="394" endline="397">
+function sql_exists ($query_id)
+{
+    return isset ($this -> sql_rowset [$query_id]);
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="402" endline="410">
+function sql_fetchrow ($query_id)
+{
+    if ($this -> sql_row_pointer [$query_id] < sizeof ($this -> sql_rowset [$query_id]))
+        {
+            return $this -> sql_rowset [$query_id] [$this -> sql_row_pointer [$query_id] ++];
+        }
+    return false;
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="415" endline="423">
+function sql_fetchfield ($query_id, $field)
+{
+    if ($this -> sql_row_pointer [$query_id] < sizeof ($this -> sql_rowset [$query_id]))
+        {
+            return (isset ($this -> sql_rowset [$query_id] [$this -> sql_row_pointer [$query_id]] [$field])) ? $this -> sql_rowset [$query_id] [$this -> sql_row_pointer [$query_id] ++] [$field] : false;
+        }
+    return false;
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="428" endline="437">
+function sql_rowseek ($rownum, $query_id)
+{
+    if ($rownum >= sizeof ($this -> sql_rowset [$query_id]))
+        {
+            return false;
+        }
+    $this -> sql_row_pointer [$query_id] = $rownum;
+    return true;
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="442" endline="453">
+function sql_freeresult ($query_id)
+{
+    if (! isset ($this -> sql_rowset [$query_id]))
+        {
+            return false;
+        }
+    unset ($this -> sql_rowset [$query_id]);
+    unset ($this -> sql_row_pointer [$query_id]);
+    return true;
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="462" endline="613">
+function _read ($filename)
+{
+    global $phpEx;
+    $file = "{$this->cache_dir}$filename.$phpEx";
+    $type = substr ($filename, 0, strpos ($filename, '_'));
+    if (! file_exists ($file))
+        {
+            return false;
+        }
+    if (! ($handle = @ fopen ($file, 'rb')))
+        {
+            return false;
+        }
+    fgets ($handle);
+    if ($filename == 'data_global')
+        {
+            $this -> vars = $this -> var_expires = array ();
+            $time = time ();
+            while (($expires = (int) fgets ($handle)) && ! feof ($handle))
+            {
+                $bytes = substr (fgets ($handle), 0, - 1);
+                if (! is_numeric ($bytes) || ($bytes = (int) $bytes) === 0)
+                    {
+                        fclose ($handle);
+                        $this -> vars = $this -> var_expires = array ();
+                        $this -> is_modified = false;
+                        $this -> remove_file ($file);
+                        return false;
+                    }
+                if ($time >= $expires)
+                    {
+                        fseek ($handle, $bytes, SEEK_CUR);
+                        continue;
+                    }
+                $var_name = substr (fgets ($handle), 0, - 1);
+                $data = fread ($handle, $bytes - strlen ($var_name));
+                $data = @ unserialize ($data);
+                if ($data !== false)
+                    {
+                        $this -> vars [$var_name] = $data;
+                        $this -> var_expires [$var_name] = $expires;
+                    }
+                fgets ($handle);
+            }
+            fclose ($handle);
+            $this -> is_modified = false;
+            return true;
+        }
+    else
+        {
+            $data = false;
+            $line = 0;
+            while (($buffer = fgets ($handle)) && ! feof ($handle))
+            {
+                $buffer = substr ($buffer, 0, - 1);
+                if (! is_numeric ($buffer))
+                    {
+                        break;
+                    }
+                if ($line == 0)
+                    {
+                        $expires = (int) $buffer;
+                        if (time () >= $expires)
+                            {
+                                break;
+                            }
+                        if ($type == 'sql')
+                            {
+                                fgets ($handle);
+                            }
+                    }
+                else
+                    if ($line == 1)
+                        {
+                            $bytes = (int) $buffer;
+                            if (! $bytes)
+                                {
+                                    break;
+                                }
+                            $data = fread ($handle, $bytes);
+                            fread ($handle, 1);
+                            if (! feof ($handle))
+                                {
+                                    $data = false;
+                                }
+                            break;
+                        }
+                    else
+                        {
+                            break;
+                        }
+                $line ++;
+            }
+            fclose ($handle);
+            $data = ($data !== false) ? @ unserialize ($data) : $data;
+            if ($data === false)
+                {
+                    $this -> remove_file ($file);
+                    return false;
+                }
+            return $data;
+        }
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="644" endline="709">
+function _write ($filename, $data = null, $expires = 0, $query = '')
+{
+    global $phpEx;
+    $file = "{$this->cache_dir}$filename.$phpEx";
+    if ($handle = @ fopen ($file, 'wb'))
+        {
+            @ flock ($handle, LOCK_EX);
+            fwrite ($handle, '<' . '?php exit; ?' . '>');
+            if ($filename == 'data_global')
+                {
+                    foreach ($this -> vars as $var => $data)
+                    {
+                        if (strpos ($var, "\r") !== false || strpos ($var, "\n") !== false)
+                            {
+                                continue;
+                            }
+                        $data = serialize ($data);
+                        fwrite ($handle, "\n" . $this -> var_expires [$var] . "\n");
+                        fwrite ($handle, strlen ($data . $var) . "\n");
+                        fwrite ($handle, $var . "\n");
+                        fwrite ($handle, $data);
+                    }
+                }
+            else
+                {
+                    fwrite ($handle, "\n" . $expires . "\n");
+                    if (strpos ($filename, 'sql_') === 0)
+                        {
+                            fwrite ($handle, $query . "\n");
+                        }
+                    $data = serialize ($data);
+                    fwrite ($handle, strlen ($data) . "\n");
+                    fwrite ($handle, $data);
+                }
+            @ flock ($handle, LOCK_UN);
+            fclose ($handle);
+            if (! function_exists ('phpbb_chmod'))
+                {
+                    global $phpbb_root_path;
+                    include ($phpbb_root_path . 'includes/functions.' . $phpEx);
+                }
+            phpbb_chmod ($file, CHMOD_READ | CHMOD_WRITE);
+            return true;
+        }
+    return false;
+}
+</source>
+<source file="systems/php/phpBB3/includes/acm/acm_file.php" startline="714" endline="729">
+function remove_file ($filename, $check = false)
+{
+    if (! function_exists ('phpbb_is_writable'))
+        {
+            global $phpbb_root_path, $phpEx;
+            include ($phpbb_root_path . 'includes/functions.' . $phpEx);
+        }
+    if ($check && ! phpbb_is_writable ($this -> cache_dir))
+        {
+            trigger_error ('Unable to remove files within ' . $this -> cache_dir . '. Please check directory permissions.', E_USER_ERROR);
+        }
+    return @ unlink ($filename);
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="263" endline="266">
+function _module__url ($mode, & $module_row)
+{
+    return extra_url ();
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="268" endline="277">
+function _module_notes_url ($mode, & $module_row)
+{
+    if ($mode == 'front')
+        {
+            return '';
+        }
+    global $user_id;
+    return ($user_id) ? "&amp;u=$user_id" : '';
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="279" endline="303">
+function _module_warn_url ($mode, & $module_row)
+{
+    if ($mode == 'front' || $mode == 'list')
+        {
+            global $forum_id;
+            return ($forum_id) ? "&amp;f=$forum_id" : '';
+        }
+    if ($mode == 'warn_post')
+        {
+            global $forum_id, $post_id;
+            $url_extra = ($forum_id) ? "&amp;f=$forum_id" : '';
+            $url_extra .= ($post_id) ? "&amp;p=$post_id" : '';
+            return $url_extra;
+        }
+    else
+        {
+            global $user_id;
+            return ($user_id) ? "&amp;u=$user_id" : '';
+        }
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="305" endline="308">
+function _module_main_url ($mode, & $module_row)
+{
+    return extra_url ();
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="310" endline="313">
+function _module_logs_url ($mode, & $module_row)
+{
+    return extra_url ();
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="315" endline="318">
+function _module_ban_url ($mode, & $module_row)
+{
+    return extra_url ();
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="320" endline="323">
+function _module_queue_url ($mode, & $module_row)
+{
+    return extra_url ();
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="325" endline="328">
+function _module_reports_url ($mode, & $module_row)
+{
+    return extra_url ();
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="330" endline="342">
+function extra_url ()
+{
+    global $forum_id, $topic_id, $post_id, $report_id, $user_id;
+    $url_extra = '';
+    $url_extra .= ($forum_id) ? "&amp;f=$forum_id" : '';
+    $url_extra .= ($topic_id) ? "&amp;t=$topic_id" : '';
+    $url_extra .= ($post_id) ? "&amp;p=$post_id" : '';
+    $url_extra .= ($user_id) ? "&amp;u=$user_id" : '';
+    $url_extra .= ($report_id) ? "&amp;r=$report_id" : '';
+    return $url_extra;
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="347" endline="437">
+function get_topic_data ($topic_ids, $acl_list = false, $read_tracking = false)
+{
+    global $auth, $db, $config, $user;
+    static $rowset = array ();
+    $topics = array ();
+    if (! sizeof ($topic_ids))
+        {
+            return array ();
+        }
+    if (! $read_tracking)
+        {
+            $cache_topic_ids = array_intersect ($topic_ids, array_keys ($rowset));
+            $topic_ids = array_diff ($topic_ids, array_keys ($rowset));
+        }
+    else
+        {
+            $cache_topic_ids = array ();
+        }
+    if (sizeof ($topic_ids))
+        {
+            $sql_array = array (
+                'SELECT' => 't.*, f.*',
+                'FROM' => array (
+                    TOPICS_TABLE => 't',),
+                'LEFT_JOIN' => array (
+                    array (
+                        'FROM' => array (
+                            FORUMS_TABLE => 'f'),
+                        'ON' => 'f.forum_id = t.forum_id')),
+                'WHERE' => $db -> sql_in_set ('t.topic_id', $topic_ids));
+            if ($read_tracking && $config ['load_db_lastread'])
+                {
+                    $sql_array ['SELECT'] .= ', tt.mark_time, ft.mark_time as forum_mark_time';
+                    $sql_array ['LEFT_JOIN'] [] = array (
+                        'FROM' => array (
+                            TOPICS_TRACK_TABLE => 'tt'),
+                        'ON' => 'tt.user_id = ' . $user -> data ['user_id'] . ' AND t.topic_id = tt.topic_id');
+                    $sql_array ['LEFT_JOIN'] [] = array (
+                        'FROM' => array (
+                            FORUMS_TRACK_TABLE => 'ft'),
+                        'ON' => 'ft.user_id = ' . $user -> data ['user_id'] . ' AND t.forum_id = ft.forum_id');
+                }
+            $sql = $db -> sql_build_query ('SELECT', $sql_array);
+            $result = $db -> sql_query ($sql);
+            while ($row = $db -> sql_fetchrow ($result))
+            {
+                if (! $row ['forum_id'])
+                    {
+                        $row ['forum_id'] = request_var ('f', 0);
+                    }
+                $rowset [$row ['topic_id']] = $row;
+                if ($acl_list && ! $auth -> acl_gets ($acl_list, $row ['forum_id']))
+                    {
+                        continue;
+                    }
+                $topics [$row ['topic_id']] = $row;
+            }
+            $db -> sql_freeresult ($result);
+        }
+    foreach ($cache_topic_ids as $id)
+    {
+        if (! $acl_list || $auth -> acl_gets ($acl_list, $rowset [$id] ['forum_id']))
+            {
+                $topics [$id] = $rowset [$id];
+            }
+    }
+    return $topics;
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="442" endline="517">
+function get_post_data ($post_ids, $acl_list = false, $read_tracking = false)
+{
+    global $db, $auth, $config, $user;
+    $rowset = array ();
+    if (! sizeof ($post_ids))
+        {
+            return array ();
+        }
+    $sql_array = array (
+        'SELECT' => 'p.*, u.*, t.*, f.*',
+        'FROM' => array (
+            USERS_TABLE => 'u',
+            POSTS_TABLE => 'p',
+            TOPICS_TABLE => 't',),
+        'LEFT_JOIN' => array (
+            array (
+                'FROM' => array (
+                    FORUMS_TABLE => 'f'),
+                'ON' => 'f.forum_id = t.forum_id')),
+        'WHERE' => $db -> sql_in_set ('p.post_id', $post_ids) . '
+			AND u.user_id = p.poster_id
+			AND t.topic_id = p.topic_id',);
+    if ($read_tracking && $config ['load_db_lastread'])
+        {
+            $sql_array ['SELECT'] .= ', tt.mark_time, ft.mark_time as forum_mark_time';
+            $sql_array ['LEFT_JOIN'] [] = array (
+                'FROM' => array (
+                    TOPICS_TRACK_TABLE => 'tt'),
+                'ON' => 'tt.user_id = ' . $user -> data ['user_id'] . ' AND t.topic_id = tt.topic_id');
+            $sql_array ['LEFT_JOIN'] [] = array (
+                'FROM' => array (
+                    FORUMS_TRACK_TABLE => 'ft'),
+                'ON' => 'ft.user_id = ' . $user -> data ['user_id'] . ' AND t.forum_id = ft.forum_id');
+        }
+    $sql = $db -> sql_build_query ('SELECT', $sql_array);
+    $result = $db -> sql_query ($sql);
+    unset ($sql_array);
+    while ($row = $db -> sql_fetchrow ($result))
+    {
+        if (! $row ['forum_id'])
+            {
+                $row ['forum_id'] = request_var ('f', 0);
+            }
+        if ($acl_list && ! $auth -> acl_gets ($acl_list, $row ['forum_id']))
+            {
+                continue;
+            }
+        if (! $row ['post_approved'] && ! $auth -> acl_get ('m_approve', $row ['forum_id']))
+            {
+                continue;
+            }
+        $rowset [$row ['post_id']] = $row;
+    }
+    $db -> sql_freeresult ($result);
+    return $rowset;
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="522" endline="571">
+function get_forum_data ($forum_id, $acl_list = 'f_list', $read_tracking = false)
+{
+    global $auth, $db, $user, $config;
+    $rowset = array ();
+    if (! is_array ($forum_id))
+        {
+            $forum_id = array (
+                $forum_id);
+        }
+    if (! sizeof ($forum_id))
+        {
+            return array ();
+        }
+    if ($read_tracking && $config ['load_db_lastread'])
+        {
+            $read_tracking_join = ' LEFT JOIN ' . FORUMS_TRACK_TABLE . ' ft ON (ft.user_id = ' . $user -> data ['user_id'] . '
+			AND ft.forum_id = f.forum_id)';
+            $read_tracking_select = ', ft.mark_time';
+        }
+    else
+        {
+            $read_tracking_join = $read_tracking_select = '';
+        }
+    $sql = "SELECT f.* $read_tracking_select
+		FROM " . FORUMS_TABLE . " f$read_tracking_join
+		WHERE " . $db -> sql_in_set ('f.forum_id', $forum_id);
+    $result = $db -> sql_query ($sql);
+    while ($row = $db -> sql_fetchrow ($result))
+    {
+        if ($acl_list && ! $auth -> acl_gets ($acl_list, $row ['forum_id']))
+            {
+                continue;
+            }
+        if ($auth -> acl_get ('m_approve', $row ['forum_id']))
+            {
+                $row ['forum_topics'] = $row ['forum_topics_real'];
+            }
+        $rowset [$row ['forum_id']] = $row;
+    }
+    $db -> sql_freeresult ($result);
+    return $rowset;
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="576" endline="610">
+function get_pm_data ($pm_ids)
+{
+    global $db, $auth, $config, $user;
+    $rowset = array ();
+    if (! sizeof ($pm_ids))
+        {
+            return array ();
+        }
+    $sql_array = array (
+        'SELECT' => 'p.*, u.*',
+        'FROM' => array (
+            USERS_TABLE => 'u',
+            PRIVMSGS_TABLE => 'p',),
+        'WHERE' => $db -> sql_in_set ('p.msg_id', $pm_ids) . '
+			AND u.user_id = p.author_id',);
+    $sql = $db -> sql_build_query ('SELECT', $sql_array);
+    $result = $db -> sql_query ($sql);
+    unset ($sql_array);
+    while ($row = $db -> sql_fetchrow ($result))
+    {
+        $rowset [$row ['msg_id']] = $row;
+    }
+    $db -> sql_freeresult ($result);
+    return $rowset;
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="620" endline="829">
+function mcp_sorting ($mode, & $sort_days, & $sort_key, & $sort_dir, & $sort_by_sql, & $sort_order_sql, & $total, $forum_id = 0, $topic_id = 0, $where_sql = 'WHERE')
+{
+    global $db, $user, $auth, $template;
+    $sort_days = request_var ('st', 0);
+    $min_time = ($sort_days) ? time () - ($sort_days * 86400) : 0;
+    switch ($mode)
+    {
+        case 'viewforum' :
+            $type = 'topics';
+            $default_key = 't';
+            $default_dir = 'd';
+            $sql = 'SELECT COUNT(topic_id) AS total
+				FROM ' . TOPICS_TABLE . "
+				$where_sql forum_id = $forum_id
+					AND topic_type NOT IN (" . POST_ANNOUNCE . ', ' . POST_GLOBAL . ")
+					AND topic_last_post_time >= $min_time";
+            if (! $auth -> acl_get ('m_approve', $forum_id))
+                {
+                    $sql .= 'AND topic_approved = 1';
+                }
+            break;
+        case 'viewtopic' :
+            $type = 'posts';
+            $default_key = 't';
+            $default_dir = 'a';
+            $sql = 'SELECT COUNT(post_id) AS total
+				FROM ' . POSTS_TABLE . "
+				$where_sql topic_id = $topic_id
+					AND post_time >= $min_time";
+            if (! $auth -> acl_get ('m_approve', $forum_id))
+                {
+                    $sql .= 'AND post_approved = 1';
+                }
+            break;
+        case 'unapproved_posts' :
+            $type = 'posts';
+            $default_key = 't';
+            $default_dir = 'd';
+            $where_sql .= ($topic_id) ? ' p.topic_id = ' . $topic_id . ' AND' : '';
+            $sql = 'SELECT COUNT(p.post_id) AS total
+				FROM ' . POSTS_TABLE . ' p, ' . TOPICS_TABLE . " t
+				$where_sql " . $db -> sql_in_set ('p.forum_id', ($forum_id) ? array (
+                $forum_id) : array_intersect (get_forum_list ('f_read'), get_forum_list ('m_approve'))) . '
+					AND p.post_approved = 0
+					AND t.topic_id = p.topic_id
+					AND t.topic_first_post_id <> p.post_id';
+            if ($min_time)
+                {
+                    $sql .= ' AND post_time >= ' . $min_time;
+                }
+            break;
+        case 'unapproved_topics' :
+            $type = 'topics';
+            $default_key = 't';
+            $default_dir = 'd';
+            $sql = 'SELECT COUNT(topic_id) AS total
+				FROM ' . TOPICS_TABLE . "
+				$where_sql " . $db -> sql_in_set ('forum_id', ($forum_id) ? array (
+                $forum_id) : array_intersect (get_forum_list ('f_read'), get_forum_list ('m_approve'))) . '
+					AND topic_approved = 0';
+            if ($min_time)
+                {
+                    $sql .= ' AND topic_time >= ' . $min_time;
+                }
+            break;
+        case 'pm_reports' :
+        case 'pm_reports_closed' :
+        case 'reports' :
+        case 'reports_closed' :
+            $pm = (strpos ($mode, 'pm_') === 0) ? true : false;
+            $type = ($pm) ? 'pm_reports' : 'reports';
+            $default_key = 't';
+            $default_dir = 'd';
+            $limit_time_sql = ($min_time) ? "AND r.report_time >= $min_time" : '';
+            if ($topic_id)
+                {
+                    $where_sql .= ' p.topic_id = ' . $topic_id . ' AND ';
+                }
+            else
+                if ($forum_id)
+                    {
+                        $where_sql .= ' p.forum_id = ' . $forum_id . ' AND ';
+                    }
+                else
+                    if (! $pm)
+                        {
+                            $where_sql .= ' ' . $db -> sql_in_set ('p.forum_id', get_forum_list (array (
+                                '!f_read',
+                                '!m_report')), true, true) . ' AND ';
+                        }
+            if ($mode == 'reports' || $mode == 'pm_reports')
+                {
+                    $where_sql .= ' r.report_closed = 0 AND ';
+                }
+            else
+                {
+                    $where_sql .= ' r.report_closed = 1 AND ';
+                }
+            if ($pm)
+                {
+                    $sql = 'SELECT COUNT(r.report_id) AS total
+					FROM ' . REPORTS_TABLE . ' r, ' . PRIVMSGS_TABLE . " p
+					$where_sql r.post_id = 0
+						AND p.msg_id = r.pm_id
+						$limit_time_sql";
+                }
+            else
+                {
+                    $sql = 'SELECT COUNT(r.report_id) AS total
+					FROM ' . REPORTS_TABLE . ' r, ' . POSTS_TABLE . " p
+					$where_sql r.pm_id = 0
+						AND p.post_id = r.post_id
+						$limit_time_sql";
+                }
+            break;
+        case 'viewlogs' :
+            $type = 'logs';
+            $default_key = 't';
+            $default_dir = 'd';
+            $sql = 'SELECT COUNT(log_id) AS total
+				FROM ' . LOG_TABLE . "
+				$where_sql " . $db -> sql_in_set ('forum_id', ($forum_id) ? array (
+                $forum_id) : array_intersect (get_forum_list ('f_read'), get_forum_list ('m_'))) . '
+					AND log_time >= ' . $min_time . '
+					AND log_type = ' . LOG_MOD;
+            break;
+    }
+    $sort_key = request_var ('sk', $default_key);
+    $sort_dir = request_var ('sd', $default_dir);
+    $sort_dir_text = array (
+        'a' => $user -> lang ['ASCENDING'],
+        'd' => $user -> lang ['DESCENDING']);
+    switch ($type)
+    {
+        case 'topics' :
+            $limit_days = array (
+                0 => $user -> lang ['ALL_TOPICS'],
+                1 => $user -> lang ['1_DAY'],
+                7 => $user -> lang ['7_DAYS'],
+                14 => $user -> lang ['2_WEEKS'],
+                30 => $user -> lang ['1_MONTH'],
+                90 => $user -> lang ['3_MONTHS'],
+                180 => $user -> lang ['6_MONTHS'],
+                365 => $user -> lang ['1_YEAR']);
+            $sort_by_text = array (
+                'a' => $user -> lang ['AUTHOR'],
+                't' => $user -> lang ['POST_TIME'],
+                'tt' => $user -> lang ['TOPIC_TIME'],
+                'r' => $user -> lang ['REPLIES'],
+                's' => $user -> lang ['SUBJECT'],
+                'v' => $user -> lang ['VIEWS']);
+            $sort_by_sql = array (
+                'a' => 't.topic_first_poster_name',
+                't' => 't.topic_last_post_time',
+                'tt' => 't.topic_time',
+                'r' => (($auth -> acl_get ('m_approve', $forum_id)) ? 't.topic_replies_real' : 't.topic_replies'),
+                's' => 't.topic_title',
+                'v' => 't.topic_views');
+            $limit_time_sql = ($min_time) ? "AND t.topic_last_post_time >= $min_time" : '';
+            break;
+        case 'posts' :
+            $limit_days = array (
+                0 => $user -> lang ['ALL_POSTS'],
+                1 => $user -> lang ['1_DAY'],
+                7 => $user -> lang ['7_DAYS'],
+                14 => $user -> lang ['2_WEEKS'],
+                30 => $user -> lang ['1_MONTH'],
+                90 => $user -> lang ['3_MONTHS'],
+                180 => $user -> lang ['6_MONTHS'],
+                365 => $user -> lang ['1_YEAR']);
+            $sort_by_text = array (
+                'a' => $user -> lang ['AUTHOR'],
+                't' => $user -> lang ['POST_TIME'],
+                's' => $user -> lang ['SUBJECT']);
+            $sort_by_sql = array (
+                'a' => 'u.username_clean',
+                't' => 'p.post_time',
+                's' => 'p.post_subject');
+            $limit_time_sql = ($min_time) ? "AND p.post_time >= $min_time" : '';
+            break;
+        case 'reports' :
+            $limit_days = array (
+                0 => $user -> lang ['ALL_REPORTS'],
+                1 => $user -> lang ['1_DAY'],
+                7 => $user -> lang ['7_DAYS'],
+                14 => $user -> lang ['2_WEEKS'],
+                30 => $user -> lang ['1_MONTH'],
+                90 => $user -> lang ['3_MONTHS'],
+                180 => $user -> lang ['6_MONTHS'],
+                365 => $user -> lang ['1_YEAR']);
+            $sort_by_text = array (
+                'a' => $user -> lang ['AUTHOR'],
+                'r' => $user -> lang ['REPORTER'],
+                'p' => $user -> lang ['POST_TIME'],
+                't' => $user -> lang ['REPORT_TIME'],
+                's' => $user -> lang ['SUBJECT']);
+            $sort_by_sql = array (
+                'a' => 'u.username_clean',
+                'r' => 'ru.username',
+                'p' => 'p.post_time',
+                't' => 'r.report_time',
+                's' => 'p.post_subject');
+            break;
+        case 'pm_reports' :
+            $limit_days = array (
+                0 => $user -> lang ['ALL_REPORTS'],
+                1 => $user -> lang ['1_DAY'],
+                7 => $user -> lang ['7_DAYS'],
+                14 => $user -> lang ['2_WEEKS'],
+                30 => $user -> lang ['1_MONTH'],
+                90 => $user -> lang ['3_MONTHS'],
+                180 => $user -> lang ['6_MONTHS'],
+                365 => $user -> lang ['1_YEAR']);
+            $sort_by_text = array (
+                'a' => $user -> lang ['AUTHOR'],
+                'r' => $user -> lang ['REPORTER'],
+                'p' => $user -> lang ['POST_TIME'],
+                't' => $user -> lang ['REPORT_TIME'],
+                's' => $user -> lang ['SUBJECT']);
+            $sort_by_sql = array (
+                'a' => 'u.username_clean',
+                'r' => 'ru.username',
+                'p' => 'p.message_time',
+                't' => 'r.report_time',
+                's' => 'p.message_subject');
+            break;
+        case 'logs' :
+            $limit_days = array (
+                0 => $user -> lang ['ALL_ENTRIES'],
+                1 => $user -> lang ['1_DAY'],
+                7 => $user -> lang ['7_DAYS'],
+                14 => $user -> lang ['2_WEEKS'],
+                30 => $user -> lang ['1_MONTH'],
+                90 => $user -> lang ['3_MONTHS'],
+                180 => $user -> lang ['6_MONTHS'],
+                365 => $user -> lang ['1_YEAR']);
+            $sort_by_text = array (
+                'u' => $user -> lang ['SORT_USERNAME'],
+                't' => $user -> lang ['SORT_DATE'],
+                'i' => $user -> lang ['SORT_IP'],
+                'o' => $user -> lang ['SORT_ACTION']);
+            $sort_by_sql = array (
+                'u' => 'u.username_clean',
+                't' => 'l.log_time',
+                'i' => 'l.log_ip',
+                'o' => 'l.log_operation');
+            $limit_time_sql = ($min_time) ? "AND l.log_time >= $min_time" : '';
+            break;
+    }
+    if (! isset ($sort_by_sql [$sort_key]))
+        {
+            $sort_key = $default_key;
+        }
+    $sort_order_sql = $sort_by_sql [$sort_key] . ' ' . (($sort_dir == 'd') ? 'DESC' : 'ASC');
+    $s_limit_days = $s_sort_key = $s_sort_dir = $sort_url = '';
+    gen_sort_selects ($limit_days, $sort_by_text, $sort_days, $sort_key, $sort_dir, $s_limit_days, $s_sort_key, $s_sort_dir, $sort_url);
+    $template -> assign_vars (array (
+        'S_SELECT_SORT_DIR' => $s_sort_dir,
+        'S_SELECT_SORT_KEY' => $s_sort_key,
+        'S_SELECT_SORT_DAYS' => $s_limit_days));
+    if (($sort_days && $mode != 'viewlogs') || in_array ($mode, array (
+        'reports',
+        'unapproved_topics',
+        'unapproved_posts')) || $where_sql != 'WHERE')
+        {
+            $result = $db -> sql_query ($sql);
+            $total = (int) $db -> sql_fetchfield ('total');
+            $db -> sql_freeresult ($result);
+        }
+    else
+        {
+            $total = - 1;
+        }
+}
+</source>
+<source file="systems/php/phpBB3/mcp.php" startline="844" endline="913">
+function check_ids (& $ids, $table, $sql_id, $acl_list = false, $single_forum = false)
+{
+    global $db, $auth;
+    if (! is_array ($ids) || empty ($ids))
+        {
+            return false;
+        }
+    $sql = "SELECT $sql_id, forum_id FROM $table
+		WHERE " . $db -> sql_in_set ($sql_id, $ids);
+    $result = $db -> sql_query ($sql);
+    $ids = array ();
+    $forum_id = false;
+    while ($row = $db -> sql_fetchrow ($result))
+    {
+        if ($acl_list && $row ['forum_id'] && ! $auth -> acl_gets ($acl_list, $row ['forum_id']))
+            {
+                continue;
+            }
+        if ($acl_list && ! $row ['forum_id'] && ! $auth -> acl_getf_global ($acl_list))
+            {
+                continue;
+            }
+        if ($single_forum === false)
+            {
+                $ids [] = $row [$sql_id];
+                continue;
+            }
+        if ($row ['forum_id'])
+            {
+                if ($single_forum !== true && $row ['forum_id'] == (int) $single_forum)
+                    {
+                        $forum_id = (int) $single_forum;
+                    }
+                else
+                    if ($forum_id === false)
+                        {
+                            $forum_id = $row ['forum_id'];
+                        }
+                if ($row ['forum_id'] == $forum_id)
+                    {
+                        $ids [] = $row [$sql_id];
+                    }
+            }
+        else
+            {
+                $ids [] = $row [$sql_id];
+            }
+    }
+    $db -> sql_freeresult ($result);
+    if (! sizeof ($ids))
+        {
+            return false;
+        }
+    return ($single_forum === false) ? true : (int) $forum_id;
+}
+</source>
+<source file="systems/php/phpBB3/cron.php" startline="205" endline="213">
+function unlock_cron ()
+{
+    global $db;
+    $sql = 'UPDATE ' . CONFIG_TABLE . "
+		SET config_value = '0'
+		WHERE config_name = 'cron_lock' AND config_value = '" . $db -> sql_escape (CRON_ID) . "'";
+    $db -> sql_query ($sql);
+}
+</source>
+<source file="systems/php/phpBB3/adm/index.php" startline="88" endline="157">
+function adm_page_header ($page_title)
+{
+    global $config, $db, $user, $template;
+    global $phpbb_root_path, $phpbb_admin_path, $phpEx, $SID, $_SID;
+    if (defined ('HEADER_INC'))
+        {
+            return;
+        }
+    define ('HEADER_INC', true);
+    if ($config ['gzip_compress'])
+        {
+            if (@ extension_loaded ('zlib') && ! headers_sent ())
+                {
+                    ob_start ('ob_gzhandler');
+                }
+        }
+    $template -> assign_vars (array (
+        'PAGE_TITLE' => $page_title,
+        'USERNAME' => $user -> data ['username'],
+        'SID' => $SID,
+        '_SID' => $_SID,
+        'SESSION_ID' => $user -> session_id,
+        'ROOT_PATH' => $phpbb_admin_path,
+        'U_LOGOUT' => append_sid ("{$phpbb_root_path}ucp.$phpEx", 'mode=logout'),
+        'U_ADM_LOGOUT' => append_sid ("{$phpbb_admin_path}index.$phpEx", 'action=admlogout'),
+        'U_ADM_INDEX' => append_sid ("{$phpbb_admin_path}index.$phpEx"),
+        'U_INDEX' => append_sid ("{$phpbb_root_path}index.$phpEx"),
+        'T_IMAGES_PATH' => "{$phpbb_root_path}images/",
+        'T_SMILIES_PATH' => "{$phpbb_root_path}{$config['smilies_path']}/",
+        'T_AVATAR_PATH' => "{$phpbb_root_path}{$config['avatar_path']}/",
+        'T_AVATAR_GALLERY_PATH' => "{$phpbb_root_path}{$config['avatar_gallery_path']}/",
+        'T_ICONS_PATH' => "{$phpbb_root_path}{$config['icons_path']}/",
+        'T_RANKS_PATH' => "{$phpbb_root_path}{$config['ranks_path']}/",
+        'T_UPLOAD_PATH' => "{$phpbb_root_path}{$config['upload_path']}/",
+        'ICON_MOVE_UP' => '<img src="' . $phpbb_admin_path . 'images/icon_up.gif" alt="' . $user -> lang ['MOVE_UP'] . '" title="' . $user -> lang ['MOVE_UP'] . '" />',
+        'ICON_MOVE_UP_DISABLED' => '<img src="' . $phpbb_admin_path . 'images/icon_up_disabled.gif" alt="' . $user -> lang ['MOVE_UP'] . '" title="' . $user -> lang ['MOVE_UP'] . '" />',
+        'ICON_MOVE_DOWN' => '<img src="' . $phpbb_admin_path . 'images/icon_down.gif" alt="' . $user -> lang ['MOVE_DOWN'] . '" title="' . $user -> lang ['MOVE_DOWN'] . '" />',
+        'ICON_MOVE_DOWN_DISABLED' => '<img src="' . $phpbb_admin_path . 'images/icon_down_disabled.gif" alt="' . $user -> lang ['MOVE_DOWN'] . '" title="' . $user -> lang ['MOVE_DOWN'] . '" />',
+        'ICON_EDIT' => '<img src="' . $phpbb_admin_path . 'images/icon_edit.gif" alt="' . $user -> lang ['EDIT'] . '" title="' . $user -> lang ['EDIT'] . '" />',
+        'ICON_EDIT_DISABLED' => '<img src="' . $phpbb_admin_path . 'images/icon_edit_disabled.gif" alt="' . $user -> lang ['EDIT'] . '" title="' . $user -> lang ['EDIT'] . '" />',
+        'ICON_DELETE' => '<img src="' . $phpbb_admin_path . 'images/icon_delete.gif" alt="' . $user -> lang ['DELETE'] . '" title="' . $user -> lang ['DELETE'] . '" />',
+        'ICON_DELETE_DISABLED' => '<img src="' . $phpbb_admin_path . 'images/icon_delete_disabled.gif" alt="' . $user -> lang ['DELETE'] . '" title="' . $user -> lang ['DELETE'] . '" />',
+        'ICON_SYNC' => '<img src="' . $phpbb_admin_path . 'images/icon_sync.gif" alt="' . $user -> lang ['RESYNC'] . '" title="' . $user -> lang ['RESYNC'] . '" />',
+        'ICON_SYNC_DISABLED' => '<img src="' . $phpbb_admin_path . 'images/icon_sync_disabled.gif" alt="' . $user -> lang ['RESYNC'] . '" title="' . $user -> lang ['RESYNC'] . '" />',
+        'S_USER_LANG' => $user -> lang ['USER_LANG'],
+        'S_CONTENT_DIRECTION' => $user -> lang ['DIRECTION'],
+        'S_CONTENT_ENCODING' => 'UTF-8',
+        'S_CONTENT_FLOW_BEGIN' => ($user -> lang ['DIRECTION'] == 'ltr') ? 'left' : 'right',
+        'S_CONTENT_FLOW_END' => ($user -> lang ['DIRECTION'] == 'ltr') ? 'right' : 'left',));
+    header ('Content-type: text/html; charset=UTF-8');
+    header ('Cache-Control: private, no-cache="set-cookie"');
+    header ('Expires: 0');
+    header ('Pragma: no-cache');
+    return;
+}
+</source>
+<source file="systems/php/phpBB3/adm/index.php" startline="162" endline="210">
+function adm_page_footer ($copyright_html = true)
+{
+    global $db, $config, $template, $user, $auth, $cache;
+    global $starttime, $phpbb_root_path, $phpbb_admin_path, $phpEx;
+    if (defined ('DEBUG'))
+        {
+            $mtime = explode (' ', microtime ());
+            $totaltime = $mtime [0] + $mtime [1] - $starttime;
+            if (! empty ($_REQUEST ['explain']) && $auth -> acl_get ('a_') && defined ('DEBUG_EXTRA') && method_exists ($db, 'sql_report'))
+                {
+                    $db -> sql_report ('display');
+                }
+            $debug_output = sprintf ('Time : %.3fs | ' . $db -> sql_num_queries () . ' Queries | GZIP : ' . (($config ['gzip_compress']) ? 'On' : 'Off') . (($user -> load) ? ' | Load : ' . $user -> load : ''), $totaltime);
+            if ($auth -> acl_get ('a_') && defined ('DEBUG_EXTRA'))
+                {
+                    if (function_exists ('memory_get_usage'))
+                        {
+                            if ($memory_usage = memory_get_usage ())
+                                {
+                                    global $base_memory_usage;
+                                    $memory_usage -= $base_memory_usage;
+                                    $memory_usage = get_formatted_filesize ($memory_usage);
+                                    $debug_output .= ' | Memory Usage: ' . $memory_usage;
+                                }
+                        }
+                    $debug_output .= ' | <a href="' . build_url () . '&amp;explain=1">Explain</a>';
+                }
+        }
+    $template -> assign_vars (array (
+        'DEBUG_OUTPUT' => (defined ('DEBUG')) ? $debug_output : '',
+        'TRANSLATION_INFO' => (! empty ($user -> lang ['TRANSLATION_INFO'])) ? $user -> lang ['TRANSLATION_INFO'] : '',
+        'S_COPYRIGHT_HTML' => $copyright_html,
+        'CREDIT_LINE' => $user -> lang ('POWERED_BY', '<a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Group'),
+        'VERSION' => $config ['version']));
+    $template -> display ('body');
+    garbage_collection ();
+    exit_handler ();
+}
+</source>
+<source file="systems/php/phpBB3/adm/index.php" startline="215" endline="219">
+function adm_back_link ($u_action)
+{
+    global $user;
+    return '<br /><br /><a href="' . $u_action . '">&laquo; ' . $user -> lang ['BACK_TO_PREV'] . '</a>';
+}
+</source>
+<source file="systems/php/phpBB3/adm/index.php" startline="224" endline="236">
+function build_select ($option_ary, $option_default = false)
+{
+    global $user;
+    $html = '';
+    foreach ($option_ary as $value => $title)
+    {
+        $selected = ($option_default !== false && $value == $option_default) ? ' selected="selected"' : '';
+        $html .= '<option value="' . $value . '"' . $selected . '>' . $user -> lang [$title] . '</option>';
+    }
+    return $html;
+}
+</source>
+<source file="systems/php/phpBB3/adm/index.php" startline="241" endline="255">
+function h_radio ($name, $input_ary, $input_default = false, $id = false, $key = false, $separator = '')
+{
+    global $user;
+    $html = '';
+    $id_assigned = false;
+    foreach ($input_ary as $value => $title)
+    {
+        $selected = ($input_default !== false && $value == $input_default) ? ' checked="checked"' : '';
+        $html .= '<label><input type="radio" name="' . $name . '"' . (($id && ! $id_assigned) ? ' id="' . $id . '"' : '') . ' value="' . $value . '"' . $selected . (($key) ? ' accesskey="' . $key . '"' : '') . ' class="radio" /> ' . $user -> lang [$title] . '</label>' . $separator;
+        $id_assigned = true;
+    }
+    return $html;
+}
+</source>
+<source file="systems/php/phpBB3/adm/index.php" startline="260" endline="375">
+function build_cfg_template ($tpl_type, $key, & $new, $config_key, $vars)
+{
+    global $user, $module;
+    $tpl = '';
+    $name = 'config[' . $config_key . ']';
+    if (! isset ($new [$config_key]))
+        {
+            $new [$config_key] = '';
+        }
+    switch ($tpl_type [0])
+    {
+        case 'text' :
+        case 'password' :
+            $size = (int) $tpl_type [1];
+            $maxlength = (int) $tpl_type [2];
+            $tpl = '<input id="' . $key . '" type="' . $tpl_type [0] . '"' . (($size) ? ' size="' . $size . '"' : '') . ' maxlength="' . (($maxlength) ? $maxlength : 255) . '" name="' . $name . '" value="' . $new [$config_key] . '"' . (($tpl_type [0] === 'password') ? ' autocomplete="off"' : '') . ' />';
+            break;
+        case 'dimension' :
+            $size = (int) $tpl_type [1];
+            $maxlength = (int) $tpl_type [2];
+            $tpl = '<input id="' . $key . '" type="text"' . (($size) ? ' size="' . $size . '"' : '') . ' maxlength="' . (($maxlength) ? $maxlength : 255) . '" name="config[' . $config_key . '_width]" value="' . $new [$config_key . '_width'] . '" /> x <input type="text"' . (($size) ? ' size="' . $size . '"' : '') . ' maxlength="' . (($maxlength) ? $maxlength : 255) . '" name="config[' . $config_key . '_height]" value="' . $new [$config_key . '_height'] . '" />';
+            break;
+        case 'textarea' :
+            $rows = (int) $tpl_type [1];
+            $cols = (int) $tpl_type [2];
+            $tpl = '<textarea id="' . $key . '" name="' . $name . '" rows="' . $rows . '" cols="' . $cols . '">' . $new [$config_key] . '</textarea>';
+            break;
+        case 'radio' :
+            $key_yes = ($new [$config_key]) ? ' checked="checked"' : '';
+            $key_no = (! $new [$config_key]) ? ' checked="checked"' : '';
+            $tpl_type_cond = explode ('_', $tpl_type [1]);
+            $type_no = ($tpl_type_cond [0] == 'disabled' || $tpl_type_cond [0] == 'enabled') ? false : true;
+            $tpl_no = '<label><input type="radio" name="' . $name . '" value="0"' . $key_no . ' class="radio" /> ' . (($type_no) ? $user -> lang ['NO'] : $user -> lang ['DISABLED']) . '</label>';
+            $tpl_yes = '<label><input type="radio" id="' . $key . '" name="' . $name . '" value="1"' . $key_yes . ' class="radio" /> ' . (($type_no) ? $user -> lang ['YES'] : $user -> lang ['ENABLED']) . '</label>';
+            $tpl = ($tpl_type_cond [0] == 'yes' || $tpl_type_cond [0] == 'enabled') ? $tpl_yes . $tpl_no : $tpl_no . $tpl_yes;
+            break;
+        case 'select' :
+        case 'custom' :
+            $return = '';
+            if (isset ($vars ['method']))
+                {
+                    $call = array (
+                        $module -> module,
+                        $vars ['method']);
+                }
+            else
+                if (isset ($vars ['function']))
+                    {
+                        $call = $vars ['function'];
+                    }
+                else
+                    {
+                        break;
+                    }
+            if (isset ($vars ['params']))
+                {
+                    $args = array ();
+                    foreach ($vars ['params'] as $value)
+                    {
+                        switch ($value)
+                        {
+                            case '{CONFIG_VALUE}' :
+                                $value = $new [$config_key];
+                                break;
+                            case '{KEY}' :
+                                $value = $key;
+                                break;
+                        }
+                        $args [] = $value;
+                    }
+                }
+            else
+                {
+                    $args = array (
+                        $new [$config_key],
+                        $key);
+                }
+            $return = call_user_func_array ($call, $args);
+            if ($tpl_type [0] == 'select')
+                {
+                    $tpl = '<select id="' . $key . '" name="' . $name . '">' . $return . '</select>';
+                }
+            else
+                {
+                    $tpl = $return;
+                }
+            break;
+        default :
+            break;
+    }
+    if (isset ($vars ['append']))
+        {
+            $tpl .= $vars ['append'];
+        }
+    return $tpl;
+}
+</source>
+<source file="systems/php/phpBB3/adm/index.php" startline="381" endline="569">
+function validate_config_vars ($config_vars, & $cfg_array, & $error)
+{
+    global $phpbb_root_path, $user;
+    $type = 0;
+    $min = 1;
+    $max = 2;
+    foreach ($config_vars as $config_name => $config_definition)
+    {
+        if (! isset ($cfg_array [$config_name]) || strpos ($config_name, 'legend') !== false)
+            {
+                continue;
+            }
+        if (! isset ($config_definition ['validate']))
+            {
+                continue;
+            }
+        $validator = explode (':', $config_definition ['validate']);
+        switch ($validator [$type])
+        {
+            case 'string' :
+                $length = utf8_strlen ($cfg_array [$config_name]);
+                $validator [$max] = (isset ($validator [$max])) ? min (255, $validator [$max]) : 255;
+                if (isset ($validator [$min]) && $length < $validator [$min])
+                    {
+                        $error [] = sprintf ($user -> lang ['SETTING_TOO_SHORT'], $user -> lang [$config_definition ['lang']], $validator [$min]);
+                    }
+                else
+                    if (isset ($validator [$max]) && $length > $validator [2])
+                        {
+                            $error [] = sprintf ($user -> lang ['SETTING_TOO_LONG'], $user -> lang [$config_definition ['lang']], $validator [$max]);
+                        }
+                break;
+            case 'bool' :
+                $cfg_array [$config_name] = ($cfg_array [$config_name]) ? 1 : 0;
+                break;
+            case 'int' :
+                $cfg_array [$config_name] = (int) $cfg_array [$config_name];
+                if (isset ($validator [$min]) && $cfg_array [$config_name] < $validator [$min])
+                    {
+                        $error [] = sprintf ($user -> lang ['SETTING_TOO_LOW'], $user -> lang [$config_definition ['lang']], $validator [$min]);
+                    }
+                else
+                    if (isset ($validator [$max]) && $cfg_array [$config_name] > $validator [$max])
+                        {
+                            $error [] = sprintf ($user -> lang ['SETTING_TOO_BIG'], $user -> lang [$config_definition ['lang']], $validator [$max]);
+                        }
+                if (strpos ($config_name, '_max') !== false)
+                    {
+                        $min_name = str_replace ('_max', '_min', $config_name);
+                        if (isset ($cfg_array [$min_name]) && is_numeric ($cfg_array [$min_name]) && $cfg_array [$config_name] < $cfg_array [$min_name])
+                            {
+                                $error [] = sprintf ($user -> lang ['SETTING_TOO_LOW'], $user -> lang [$config_definition ['lang']], (int) $cfg_array [$min_name]);
+                            }
+                    }
+                break;
+            case 'email' :
+                if (! preg_match ('/^' . get_preg_expression ('email') . '$/i', $cfg_array [$config_name]))
+                    {
+                        $error [] = $user -> lang ['EMAIL_INVALID_EMAIL'];
+                    }
+                break;
+            case 'script_path' :
+                if (! $cfg_array [$config_name])
+                    {
+                        break;
+                    }
+                $destination = str_replace ('\\', '/', $cfg_array [$config_name]);
+                if ($destination !== '/')
+                    {
+                        if (substr ($destination, - 1, 1) == '/')
+                            {
+                                $destination = substr ($destination, 0, - 1);
+                            }
+                        $destination = str_replace (array (
+                            '../',
+                            './'), '', $destination);
+                        if ($destination [0] != '/')
+                            {
+                                $destination = '/' . $destination;
+                            }
+                    }
+                $cfg_array [$config_name] = trim ($destination);
+                break;
+            case 'lang' :
+                if (! $cfg_array [$config_name])
+                    {
+                        break;
+                    }
+                $cfg_array [$config_name] = basename ($cfg_array [$config_name]);
+                if (! file_exists ($phpbb_root_path . 'language/' . $cfg_array [$config_name] . '/'))
+                    {
+                        $error [] = $user -> lang ['WRONG_DATA_LANG'];
+                    }
+                break;
+            case 'rpath' :
+            case 'rwpath' :
+                if (! $cfg_array [$config_name])
+                    {
+                        break;
+                    }
+                $destination = $cfg_array [$config_name];
+                if (substr ($destination, - 1, 1) == '/' || substr ($destination, - 1, 1) == '\\')
+                    {
+                        $destination = substr ($destination, 0, - 1);
+                    }
+                $destination = str_replace (array (
+                    '../',
+                    '..\\',
+                    './',
+                    '.\\'), '', $destination);
+                if ($destination && ($destination [0] == '/' || $destination [0] == "\\"))
+                    {
+                        $destination = '';
+                    }
+                $cfg_array [$config_name] = trim ($destination);
+            case 'path' :
+            case 'wpath' :
+                if (! $cfg_array [$config_name])
+                    {
+                        break;
+                    }
+                $cfg_array [$config_name] = trim ($cfg_array [$config_name]);
+                if (strpos ($cfg_array [$config_name], "\0") !== false || strpos ($cfg_array [$config_name], '%00') !== false)
+                    {
+                        $cfg_array [$config_name] = '';
+                        break;
+                    }
+                if (! file_exists ($phpbb_root_path . $cfg_array [$config_name]))
+                    {
+                        $error [] = sprintf ($user -> lang ['DIRECTORY_DOES_NOT_EXIST'], $cfg_array [$config_name]);
+                    }
+                if (file_exists ($phpbb_root_path . $cfg_array [$config_name]) && ! is_dir ($phpbb_root_path . $cfg_array [$config_name]))
+                    {
+                        $error [] = sprintf ($user -> lang ['DIRECTORY_NOT_DIR'], $cfg_array [$config_name]);
+                    }
+                if ($config_definition ['validate'] == 'wpath' || $config_definition ['validate'] == 'rwpath')
+                    {
+                        if (file_exists ($phpbb_root_path . $cfg_array [$config_name]) && ! phpbb_is_writable ($phpbb_root_path . $cfg_array [$config_name]))
+                            {
+                                $error [] = sprintf ($user -> lang ['DIRECTORY_NOT_WRITABLE'], $cfg_array [$config_name]);
+                            }
+                    }
+                break;
+        }
+    }
+    return;
+}
+</source>
+<source file="systems/php/phpBB3/adm/index.php" startline="576" endline="631">
+function validate_range ($value_ary, & $error)
+{
+    global $user;
+    $column_types = array (
+        'BOOL' => array (
+            'php_type' => 'int',
+            'min' => 0,
+            'max' => 1),
+        'USINT' => array (
+            'php_type' => 'int',
+            'min' => 0,
+            'max' => 65535),
+        'UINT' => array (
+            'php_type' => 'int',
+            'min' => 0,
+            'max' => (int) 0x7fffffff),
+        'INT' => array (
+            'php_type' => 'int',
+            'min' => (int) - 2147483648,
+            'max' => (int) 0x7fffffff),
+        'TINT' => array (
+            'php_type' => 'int',
+            'min' => - 128,
+            'max' => 127),
+        'VCHAR' => array (
+            'php_type' => 'string',
+            'min' => 0,
+            'max' => 255),);
+    foreach ($value_ary as $value)
+    {
+        $column = explode (':', $value ['column_type']);
+        $max = $min = 0;
+        $type = 0;
+        if (! isset ($column_types [$column [0]]))
+            {
+                continue;
+            }
+        else
+            {
+                $type = $column_types [$column [0]];
+            }
+        switch ($type ['php_type'])
+        {
+            case 'string' :
+                $max = (isset ($column [1])) ? min ($column [1], $type ['max']) : $type ['max'];
+                if (utf8_strlen ($value ['value']) > $max)
+                    {
+                        $error [] = sprintf ($user -> lang ['SETTING_TOO_LONG'], $user -> lang [$value ['lang']], $max);
+                    }
+                break;
+            case 'int' :
+                $min = (isset ($column [1])) ? max ($column [1], $type ['min']) : $type ['min'];
+                $max = (isset ($column [2])) ? min ($column [2], $type ['max']) : $type ['max'];
+                if ($value ['value'] < $min)
+                    {
+                        $error [] = sprintf ($user -> lang ['SETTING_TOO_LOW'], $user -> lang [$value ['lang']], $min);
+                    }
+                else
+                    if ($value ['value'] > $max)
+                        {
+                            $error [] = sprintf ($user -> lang ['SETTING_TOO_BIG'], $user -> lang [$value ['lang']], $max);
+                        }
+                break;
+        }
+    }
+}
+</source>
+<source file="systems/php/phpBB3/download/file.php" startline="320" endline="392">
+function send_avatar_to_browser ($file, $browser)
+{
+    global $config, $phpbb_root_path;
+    $prefix = $config ['avatar_salt'] . '_';
+    $image_dir = $config ['avatar_path'];
+    if (substr ($image_dir, - 1, 1) == '/' || substr ($image_dir, - 1, 1) == '\\')
+        {
+            $image_dir = substr ($image_dir, 0, - 1) . '/';
+        }
+    $image_dir = str_replace (array (
+        '../',
+        '..\\',
+        './',
+        '.\\'), '', $image_dir);
+    if ($image_dir && ($image_dir [0] == '/' || $image_dir [0] == '\\'))
+        {
+            $image_dir = '';
+        }
+    $file_path = $phpbb_root_path . $image_dir . '/' . $prefix . $file;
+    if ((@ file_exists ($file_path) && @ is_readable ($file_path)) && ! headers_sent ())
+        {
+            header ('Pragma: public');
+            $image_data = @ getimagesize ($file_path);
+            header ('Content-Type: ' . image_type_to_mime_type ($image_data [2]));
+            if ((strpos (strtolower ($browser), 'msie') !== false) && ! phpbb_is_greater_ie_version ($browser, 7))
+                {
+                    header ('Content-Disposition: attachment; ' . header_filename ($file));
+                    if (strpos (strtolower ($browser), 'msie 6.0') !== false)
+                        {
+                            header ('Expires: -1');
+                        }
+                    else
+                        {
+                            header ('Expires: ' . gmdate ('D, d M Y H:i:s \G\M\T', time () + 31536000));
+                        }
+                }
+            else
+                {
+                    header ('Content-Disposition: inline; ' . header_filename ($file));
+                    header ('Expires: ' . gmdate ('D, d M Y H:i:s \G\M\T', time () + 31536000));
+                }
+            $size = @ filesize ($file_path);
+            if ($size)
+                {
+                    header ("Content-Length: $size");
+                }
+            if (@ readfile ($file_path) == false)
+                {
+                    $fp = @ fopen ($file_path, 'rb');
+                    if ($fp !== false)
+                        {
+                            while (! feof ($fp))
+                            {
+                                echo fread ($fp, 8192)
+                            }
+                            fclose ($fp);
+                        }
+                }
+            flush ();
+        }
+    else
+        {
+            send_status_line (404, 'Not Found');
+        }
+}
+</source>
+<source file="systems/php/phpBB3/download/file.php" startline="399" endline="413">
+function wrap_img_in_html ($src, $title)
+{
+    echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-Strict.dtd">'
+    echo '<html>'
+    echo '<head>'
+    echo '<meta http-equiv="content-type" content="text/html; charset=UTF-8" />'
+    echo '<title>' . $title . '</title>'
+    echo '</head>'
+    echo '<body>'
+    echo '<div>'
+    echo '<img src="' . $src . '" alt="' . $title . '" />'
+    echo '</div>'
+    echo '</body>'
+    echo '</html>'
+}
+</source>
+<source file="systems/php/phpBB3/download/file.php" startline="418" endline="543">
+function send_file_to_browser ($attachment, $upload_dir, $category)
+{
+    global $user, $db, $config, $phpbb_root_path;
+    $filename = $phpbb_root_path . $upload_dir . '/' . $attachment ['physical_filename'];
+    if (! @ file_exists ($filename))
+        {
+            send_status_line (404, 'Not Found');
+            trigger_error ('ERROR_NO_ATTACHMENT');
+        }
+    if ($category != ATTACHMENT_CATEGORY_IMAGE || strpos ($attachment ['mimetype'], 'image') !== 0)
+        {
+            $attachment ['mimetype'] = (strpos (strtolower ($user -> browser), 'msie') !== false || strpos (strtolower ($user -> browser), 'opera') !== false) ? 'application/octetstream' : 'application/octet-stream';
+        }
+    if (@ ob_get_length ())
+        {
+            @ ob_end_clean ();
+        }
+    $size = @ filesize ($filename);
+    if (headers_sent () || ! @ file_exists ($filename) || ! @ is_readable ($filename))
+        {
+            if (! empty ($php_errormsg))
+                {
+                    send_status_line (500, 'Internal Server Error');
+                    trigger_error ($user -> lang ['UNABLE_TO_DELIVER_FILE'] . '<br />' . sprintf ($user -> lang ['TRACKED_PHP_ERROR'], $php_errormsg));
+                }
+            send_status_line (500, 'Internal Server Error');
+            trigger_error ('UNABLE_TO_DELIVER_FILE');
+        }
+    header ('Pragma: public');
+    header ('Content-Type: ' . $attachment ['mimetype']);
+    if (phpbb_is_greater_ie_version ($user -> browser, 7))
+        {
+            header ('X-Content-Type-Options: nosniff');
+        }
+    if ($category == ATTACHMENT_CATEGORY_FLASH && request_var ('view', 0) === 1)
+        {
+            header ('Content-Disposition: inline');
+        }
+    else
+        {
+            if (empty ($user -> browser) || ((strpos (strtolower ($user -> browser), 'msie') !== false) && ! phpbb_is_greater_ie_version ($user -> browser, 7)))
+                {
+                    header ('Content-Disposition: attachment; ' . header_filename (htmlspecialchars_decode ($attachment ['real_filename'])));
+                    if (empty ($user -> browser) || (strpos (strtolower ($user -> browser), 'msie 6.0') !== false))
+                        {
+                            header ('expires: -1');
+                        }
+                }
+            else
+                {
+                    header ('Content-Disposition: ' . ((strpos ($attachment ['mimetype'], 'image') === 0) ? 'inline' : 'attachment') . '; ' . header_filename (htmlspecialchars_decode ($attachment ['real_filename'])));
+                    if (phpbb_is_greater_ie_version ($user -> browser, 7) && (strpos ($attachment ['mimetype'], 'image') !== 0))
+                        {
+                            header ('X-Download-Options: noopen');
+                        }
+                }
+        }
+    if ($size)
+        {
+            header ("Content-Length: $size");
+        }
+    $db -> sql_close ();
+    if (! set_modified_headers ($attachment ['filetime'], $user -> browser))
+        {
+            @ set_time_limit (0);
+            $fp = @ fopen ($filename, 'rb');
+            if ($fp !== false)
+                {
+                    while (! feof ($fp))
+                    {
+                        echo fread ($fp, 8192)
+                    }
+                    fclose ($fp);
+                }
+            else
+                {
+                    @ readfile ($filename);
+                }
+            flush ();
+        }
+    file_gc ();
+}
+</source>
+<source file="systems/php/phpBB3/download/file.php" startline="548" endline="561">
+function header_filename ($file)
+{
+    $user_agent = (! empty ($_SERVER ['HTTP_USER_AGENT'])) ? htmlspecialchars ((string) $_SERVER ['HTTP_USER_AGENT']) : '';
+    if (strpos ($user_agent, 'MSIE') !== false || strpos ($user_agent, 'Safari') !== false || strpos ($user_agent, 'Konqueror') !== false)
+        {
+            return "filename=" . rawurlencode ($file);
+        }
+    return "filename*=UTF-8''" . rawurlencode ($file);
+}
+</source>
+<source file="systems/php/phpBB3/download/file.php" startline="566" endline="672">
+function download_allowed ()
+{
+    global $config, $user, $db;
+    if (! $config ['secure_downloads'])
+        {
+            return true;
+        }
+    $url = (! empty ($_SERVER ['HTTP_REFERER'])) ? trim ($_SERVER ['HTTP_REFERER']) : trim (getenv ('HTTP_REFERER'));
+    if (! $url)
+        {
+            return ($config ['secure_allow_empty_referer']) ? true : false;
+        }
+    $url = @ parse_url ($url);
+    if ($url === false)
+        {
+            return ($config ['secure_allow_empty_referer']) ? true : false;
+        }
+    $hostname = $url ['host'];
+    unset ($url);
+    $allowed = ($config ['secure_allow_deny']) ? false : true;
+    $iplist = array ();
+    if (($ip_ary = @ gethostbynamel ($hostname)) !== false)
+        {
+            foreach ($ip_ary as $ip)
+            {
+                if ($ip)
+                    {
+                        $iplist [] = $ip;
+                    }
+            }
+        }
+    $server_name = $user -> host;
+    if ($config ['force_server_vars'] || ! $server_name)
+        {
+            $server_name = $config ['server_name'];
+        }
+    if (preg_match ('#^.*?' . preg_quote ($server_name, '#') . '.*?$#i', $hostname))
+        {
+            $allowed = true;
+        }
+    if (! $allowed)
+        {
+            $sql = 'SELECT site_ip, site_hostname, ip_exclude
+			FROM ' . SITELIST_TABLE;
+            $result = $db -> sql_query ($sql);
+            while ($row = $db -> sql_fetchrow ($result))
+            {
+                $site_ip = trim ($row ['site_ip']);
+                $site_hostname = trim ($row ['site_hostname']);
+                if ($site_ip)
+                    {
+                        foreach ($iplist as $ip)
+                        {
+                            if (preg_match ('#^' . str_replace ('\*', '.*?', preg_quote ($site_ip, '#')) . '$#i', $ip))
+                                {
+                                    if ($row ['ip_exclude'])
+                                        {
+                                            $allowed = ($config ['secure_allow_deny']) ? false : true;
+                                            break 2;
+                                        }
+                                    else
+                                        {
+                                            $allowed = ($config ['secure_allow_deny']) ? true : false;
+                                        }
+                                }
+                        }
+                    }
+                if ($site_hostname)
+                    {
+                        if (preg_match ('#^' . str_replace ('\*', '.*?', preg_quote ($site_hostname, '#')) . '$#i', $hostname))
+                            {
+                                if ($row ['ip_exclude'])
+                                    {
+                                        $allowed = ($config ['secure_allow_deny']) ? false : true;
+                                        break;
+                                    }
+                                else
+                                    {
+                                        $allowed = ($config ['secure_allow_deny']) ? true : false;
+                                    }
+                            }
+                    }
+            }
+            $db -> sql_freeresult ($result);
+        }
+    return $allowed;
+}
+</source>
+<source file="systems/php/phpBB3/download/file.php" startline="678" endline="699">
+function set_modified_headers ($stamp, $browser)
+{
+    $last_load = isset ($_SERVER ['HTTP_IF_MODIFIED_SINCE']) ? strtotime (trim ($_SERVER ['HTTP_IF_MODIFIED_SINCE'])) : false;
+    if (strpos (strtolower ($browser), 'msie 6.0') === false && ! phpbb_is_greater_ie_version ($browser, 7))
+        {
+            if ($last_load !== false && $last_load >= $stamp)
+                {
+                    send_status_line (304, 'Not Modified');
+                    header ('Pragma: public');
+                    header ('Expires: ' . gmdate ('D, d M Y H:i:s \G\M\T', time () + 31536000));
+                    return true;
+                }
+            else
+                {
+                    header ('Last-Modified: ' . gmdate ('D, d M Y H:i:s', $stamp) . ' GMT');
+                }
+        }
+    return false;
+}
+</source>
+<source file="systems/php/phpBB3/download/file.php" startline="701" endline="710">
+function file_gc ()
+{
+    global $cache, $db;
+    if (! empty ($cache))
+        {
+            $cache -> unload ();
+        }
+    $db -> sql_close ();
+    exit;
+}
+</source>
+<source file="systems/php/phpBB3/download/file.php" startline="720" endline="731">
+function phpbb_is_greater_ie_version ($user_agent, $version)
+{
+    if (preg_match ('/msie (\d+)/', strtolower ($user_agent), $matches))
+        {
+            $ie_version = (int) $matches [1];
+            return ($ie_version > $version);
+        }
+    else
+        {
+            return false;
+        }
+}
+</source>
+<source file="systems/php/phpBB3/posting.php" startline="1537" endline="1557">
+function upload_popup ($forum_style = 0)
+{
+    global $template, $user;
+    ($forum_style) ? $user -> setup ('posting', $forum_style) : $user -> setup ('posting');
+    page_header ($user -> lang ['PROGRESS_BAR'], false);
+    $template -> set_filenames (array (
+        'popup' => 'posting_progress_bar.html'));
+    $template -> assign_vars (array (
+        'PROGRESS_BAR' => $user -> img ('upload_bar', $user -> lang ['UPLOAD_IN_PROGRESS'])));
+    $template -> display ('popup');
+    garbage_collection ();
+    exit_handler ();
+}
+</source>
+<source file="systems/php/phpBB3/posting.php" startline="1562" endline="1631">
+function handle_post_delete ($forum_id, $topic_id, $post_id, & $post_data)
+{
+    global $user, $db, $auth, $config;
+    global $phpbb_root_path, $phpEx;
+    if ($auth -> acl_get ('m_delete', $forum_id) || ($post_data ['poster_id'] == $user -> data ['user_id'] && $user -> data ['is_registered'] && $auth -> acl_get ('f_delete', $forum_id) && $post_id == $post_data ['topic_last_post_id'] && ! $post_data ['post_edit_locked'] && ($post_data ['post_time'] > time () - ($config ['delete_time'] * 60) || ! $config ['delete_time'])))
+        {
+            $s_hidden_fields = build_hidden_fields (array (
+                'p' => $post_id,
+                'f' => $forum_id,
+                'mode' => 'delete'));
+            if (confirm_box (true))
+                {
+                    $data = array (
+                        'topic_first_post_id' => $post_data ['topic_first_post_id'],
+                        'topic_last_post_id' => $post_data ['topic_last_post_id'],
+                        'topic_replies_real' => $post_data ['topic_replies_real'],
+                        'topic_approved' => $post_data ['topic_approved'],
+                        'topic_type' => $post_data ['topic_type'],
+                        'post_approved' => $post_data ['post_approved'],
+                        'post_reported' => $post_data ['post_reported'],
+                        'post_time' => $post_data ['post_time'],
+                        'poster_id' => $post_data ['poster_id'],
+                        'post_postcount' => $post_data ['post_postcount']);
+                    $next_post_id = delete_post ($forum_id, $topic_id, $post_id, $data);
+                    $post_username = ($post_data ['poster_id'] == ANONYMOUS && ! empty ($post_data ['post_username'])) ? $post_data ['post_username'] : $post_data ['username'];
+                    if ($next_post_id === false)
+                        {
+                            add_log ('mod', $forum_id, $topic_id, 'LOG_DELETE_TOPIC', $post_data ['topic_title'], $post_username);
+                            $meta_info = append_sid ("{$phpbb_root_path}viewforum.$phpEx", "f=$forum_id");
+                            $message = $user -> lang ['POST_DELETED'];
+                        }
+                    else
+                        {
+                            add_log ('mod', $forum_id, $topic_id, 'LOG_DELETE_POST', $post_data ['post_subject'], $post_username);
+                            $meta_info = append_sid ("{$phpbb_root_path}viewtopic.$phpEx", "f=$forum_id&amp;t=$topic_id&amp;p=$next_post_id") . "#p$next_post_id";
+                            $message = $user -> lang ['POST_DELETED'] . '<br /><br />' . sprintf ($user -> lang ['RETURN_TOPIC'], '<a href="' . $meta_info . '">', '</a>');
+                        }
+                    meta_refresh (3, $meta_info);
+                    $message .= '<br /><br />' . sprintf ($user -> lang ['RETURN_FORUM'], '<a href="' . append_sid ("{$phpbb_root_path}viewforum.$phpEx", 'f=' . $forum_id) . '">', '</a>');
+                    trigger_error ($message);
+                }
+            else
+                {
+                    confirm_box (false, 'DELETE_POST', $s_hidden_fields);
+                }
+        }
+    if ($post_data ['poster_id'] != $user -> data ['user_id'] && $auth -> acl_get ('f_delete', $forum_id))
+        {
+            trigger_error ('DELETE_OWN_POSTS');
+        }
+    if ($post_data ['poster_id'] == $user -> data ['user_id'] && $auth -> acl_get ('f_delete', $forum_id) && $post_id != $post_data ['topic_last_post_id'])
+        {
+            trigger_error ('CANNOT_DELETE_REPLIED');
+        }
+    trigger_error ('USER_CANNOT_DELETE');
+}
+</source>
+<source file="systems/php/phpBB3/ucp.php" startline="338" endline="353">
+function _module_zebra ($mode, & $module_row)
+{
+    global $template;
+    $template -> assign_var ('S_ZEBRA_ENABLED', true);
+    if ($mode == 'friends')
+        {
+            $template -> assign_var ('S_ZEBRA_FRIENDS_ENABLED', true);
+        }
+    if ($mode == 'foes')
+        {
+            $template -> assign_var ('S_ZEBRA_FOES_ENABLED', true);
+        }
+}
+</source>
+<source file="systems/php/phpBB3/memberlist.php" startline="1630" endline="1741">
+function show_profile ($data, $user_notes_enabled = false, $warn_user_enabled = false)
+{
+    global $config, $auth, $template, $user, $phpEx, $phpbb_root_path;
+    $username = $data ['username'];
+    $user_id = $data ['user_id'];
+    $rank_title = $rank_img = $rank_img_src = '';
+    get_user_rank ($data ['user_rank'], (($user_id == ANONYMOUS) ? false : $data ['user_posts']), $rank_title, $rank_img, $rank_img_src);
+    if ((! empty ($data ['user_allow_viewemail']) && $auth -> acl_get ('u_sendemail')) || $auth -> acl_get ('a_user'))
+        {
+            $email = ($config ['board_email_form'] && $config ['email_enable']) ? append_sid ("{$phpbb_root_path}memberlist.$phpEx", 'mode=email&amp;u=' . $user_id) : (($config ['board_hide_emails'] && ! $auth -> acl_get ('a_user')) ? '' : 'mailto:' . $data ['user_email']);
+        }
+    else
+        {
+            $email = '';
+        }
+    if ($config ['load_onlinetrack'])
+        {
+            $update_time = $config ['load_online_time'] * 60;
+            $online = (time () - $update_time < $data ['session_time'] && ((isset ($data ['session_viewonline']) && $data ['session_viewonline']) || $auth -> acl_get ('u_viewonline'))) ? true : false;
+        }
+    else
+        {
+            $online = false;
+        }
+    if ($data ['user_allow_viewonline'] || $auth -> acl_get ('u_viewonline'))
+        {
+            $last_visit = (! empty ($data ['session_time'])) ? $data ['session_time'] : $data ['user_lastvisit'];
+        }
+    else
+        {
+            $last_visit = '';
+        }
+    $age = '';
+    if ($config ['allow_birthdays'] && $data ['user_birthday'])
+        {
+            list ($bday_day, $bday_month, $bday_year) = array_map ('intval', explode ('-', $data ['user_birthday']));
+            if ($bday_year)
+                {
+                    $now = phpbb_gmgetdate (time () + $user -> timezone + $user -> dst);
+                    $diff = $now ['mon'] - $bday_month;
+                    if ($diff == 0)
+                        {
+                            $diff = ($now ['mday'] - $bday_day < 0) ? 1 : 0;
+                        }
+                    else
+                        {
+                            $diff = ($diff < 0) ? 1 : 0;
+                        }
+                    $age = max (0, (int) ($now ['year'] - $bday_year - $diff));
+                }
+        }
+    return array (
+        'AGE' => $age,
+        'RANK_TITLE' => $rank_title,
+        'JOINED' => $user -> format_date ($data ['user_regdate']),
+        'VISITED' => (empty ($last_visit)) ? ' - ' : $user -> format_date ($last_visit),
+        'POSTS' => ($data ['user_posts']) ? $data ['user_posts'] : 0,
+        'WARNINGS' => isset ($data ['user_warnings']) ? $data ['user_warnings'] : 0,
+        'USERNAME_FULL' => get_username_string ('full', $user_id, $username, $data ['user_colour']),
+        'USERNAME' => get_username_string ('username', $user_id, $username, $data ['user_colour']),
+        'USER_COLOR' => get_username_string ('colour', $user_id, $username, $data ['user_colour']),
+        'U_VIEW_PROFILE' => get_username_string ('profile', $user_id, $username, $data ['user_colour']),
+        'A_USERNAME' => addslashes (get_username_string ('username', $user_id, $username, $data ['user_colour'])),
+        'AVATAR_IMG' => get_user_avatar ($data ['user_avatar'], $data ['user_avatar_type'], $data ['user_avatar_width'], $data ['user_avatar_height']),
+        'ONLINE_IMG' => (! $config ['load_onlinetrack']) ? '' : (($online) ? $user -> img ('icon_user_online', 'ONLINE') : $user -> img ('icon_user_offline', 'OFFLINE')),
+        'S_ONLINE' => ($config ['load_onlinetrack'] && $online) ? true : false,
+        'RANK_IMG' => $rank_img,
+        'RANK_IMG_SRC' => $rank_img_src,
+        'ICQ_STATUS_IMG' => (! empty ($data ['user_icq'])) ? '<img src="http://web.icq.com/whitepages/online?icq=' . $data ['user_icq'] . '&amp;img=5" width="18" height="18" />' : '',
+        'S_JABBER_ENABLED' => ($config ['jab_enable']) ? true : false,
+        'S_WARNINGS' => ($auth -> acl_getf_global ('m_') || $auth -> acl_get ('m_warn')) ? true : false,
+        'U_SEARCH_USER' => ($auth -> acl_get ('u_search')) ? append_sid ("{$phpbb_root_path}search.$phpEx", "author_id=$user_id&amp;sr=posts") : '',
+        'U_NOTES' => ($user_notes_enabled && $auth -> acl_getf_global ('m_')) ? append_sid ("{$phpbb_root_path}mcp.$phpEx", 'i=notes&amp;mode=user_notes&amp;u=' . $user_id, true, $user -> session_id) : '',
+        'U_WARN' => ($warn_user_enabled && $auth -> acl_get ('m_warn')) ? append_sid ("{$phpbb_root_path}mcp.$phpEx", 'i=warn&amp;mode=warn_user&amp;u=' . $user_id, true, $user -> session_id) : '',
+        'U_PM' => ($config ['allow_privmsg'] && $auth -> acl_get ('u_sendpm') && ($data ['user_allow_pm'] || $auth -> acl_gets ('a_', 'm_') || $auth -> acl_getf_global ('m_'))) ? append_sid ("{$phpbb_root_path}ucp.$phpEx", 'i=pm&amp;mode=compose&amp;u=' . $user_id) : '',
+        'U_EMAIL' => $email,
+        'U_WWW' => (! empty ($data ['user_website'])) ? $data ['user_website'] : '',
+        'U_SHORT_WWW' => (! empty ($data ['user_website'])) ? ((strlen ($data ['user_website']) > 55) ? substr ($data ['user_website'], 0, 39) . ' ... ' . substr ($data ['user_website'], - 10) : $data ['user_website']) : '',
+        'U_ICQ' => ($data ['user_icq']) ? 'http://www.icq.com/people/' . urlencode ($data ['user_icq']) . '/' : '',
+        'U_AIM' => ($data ['user_aim'] && $auth -> acl_get ('u_sendim')) ? append_sid ("{$phpbb_root_path}memberlist.$phpEx", 'mode=contact&amp;action=aim&amp;u=' . $user_id) : '',
+        'U_YIM' => ($data ['user_yim']) ? 'http://edit.yahoo.com/config/send_webmesg?.target=' . urlencode ($data ['user_yim']) . '&amp;.src=pg' : '',
+        'U_MSN' => ($data ['user_msnm'] && $auth -> acl_get ('u_sendim')) ? append_sid ("{$phpbb_root_path}memberlist.$phpEx", 'mode=contact&amp;action=msnm&amp;u=' . $user_id) : '',
+        'U_JABBER' => ($data ['user_jabber'] && $auth -> acl_get ('u_sendim')) ? append_sid ("{$phpbb_root_path}memberlist.$phpEx", 'mode=contact&amp;action=jabber&amp;u=' . $user_id) : '',
+        'LOCATION' => ($data ['user_from']) ? $data ['user_from'] : '',
+        'USER_ICQ' => $data ['user_icq'],
+        'USER_AIM' => $data ['user_aim'],
+        'USER_YIM' => $data ['user_yim'],
+        'USER_MSN' => $data ['user_msnm'],
+        'USER_JABBER' => $data ['user_jabber'],
+        'USER_JABBER_IMG' => ($data ['user_jabber']) ? $user -> img ('icon_contact_jabber', $data ['user_jabber']) : '',
+        'L_VIEWING_PROFILE' => sprintf ($user -> lang ['VIEWING_PROFILE'], $username),);
+}
+</source>
+<source file="systems/php/phpBB3/memberlist.php" startline="1743" endline="1761">
+function _sort_last_active ($first, $second)
+{
+    global $id_cache, $sort_dir;
+    $lesser_than = ($sort_dir === 'd') ? - 1 : 1;
+    if (isset ($id_cache [$first] ['group_leader']) && $id_cache [$first] ['group_leader'] && (! isset ($id_cache [$second] ['group_leader']) || ! $id_cache [$second] ['group_leader']))
+        {
+            return - 1;
+        }
+    else
+        if (isset ($id_cache [$second] ['group_leader']) && (! isset ($id_cache [$first] ['group_leader']) || ! $id_cache [$first] ['group_leader']) && $id_cache [$second] ['group_leader'])
+            {
+                return 1;
+            }
+        else
+            {
+                return $lesser_than * (int) ($id_cache [$first] ['last_visit'] - $id_cache [$second] ['last_visit']);
+            }
+}
+</source>

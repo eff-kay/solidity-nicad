@@ -1,0 +1,1042 @@
+<source file="systems/java/jEdit/trunk/installer/CBZip2OutputStream.java" startline="1948" endline="1959">
+{
+    int temp = 0;
+    while (n > 0) {
+        temp = m_zptr [p1];
+        m_zptr [p1] = m_zptr [p2];
+        m_zptr [p2] = temp;
+        p1 ++;
+        p2 ++;
+        n --;
+    }
+
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/CBZip2OutputStream.java" startline="1951" endline="1958">
+{
+    temp = m_zptr [p1];
+    m_zptr [p1] = m_zptr [p2];
+    m_zptr [p2] = temp;
+    p1 ++;
+    p2 ++;
+    n --;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/CBZip2OutputStream.java" startline="1963" endline="2012">
+{
+    if (m_last < m_allowableBlockSize) {
+        m_inUse [m_currentChar] = true;
+        for (int i = 0;
+        i < m_runLength; i ++) {
+            m_crc.updateCRC ((char) m_currentChar);
+        }
+
+        switch (m_runLength) {
+            case 1 :
+                m_last ++;
+                m_block [m_last + 1] = (char) m_currentChar;
+                break;
+            case 2 :
+                m_last ++;
+                m_block [m_last + 1] = (char) m_currentChar;
+                m_last ++;
+                m_block [m_last + 1] = (char) m_currentChar;
+                break;
+            case 3 :
+                m_last ++;
+                m_block [m_last + 1] = (char) m_currentChar;
+                m_last ++;
+                m_block [m_last + 1] = (char) m_currentChar;
+                m_last ++;
+                m_block [m_last + 1] = (char) m_currentChar;
+                break;
+            default :
+                m_inUse [m_runLength - 4] = true;
+                m_last ++;
+                m_block [m_last + 1] = (char) m_currentChar;
+                m_last ++;
+                m_block [m_last + 1] = (char) m_currentChar;
+                m_last ++;
+                m_block [m_last + 1] = (char) m_currentChar;
+                m_last ++;
+                m_block [m_last + 1] = (char) m_currentChar;
+                m_last ++;
+                m_block [m_last + 1] = (char) (m_runLength - 4);
+                break;
+        }
+    }
+    else {
+        endBlock ();
+        initBlock ();
+        writeRun ();
+    }
+
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/CBZip2OutputStream.java" startline="1965" endline="2005">
+{
+    m_inUse [m_currentChar] = true;
+    for (int i = 0;
+    i < m_runLength; i ++) {
+        m_crc.updateCRC ((char) m_currentChar);
+    }
+
+    switch (m_runLength) {
+        case 1 :
+            m_last ++;
+            m_block [m_last + 1] = (char) m_currentChar;
+            break;
+        case 2 :
+            m_last ++;
+            m_block [m_last + 1] = (char) m_currentChar;
+            m_last ++;
+            m_block [m_last + 1] = (char) m_currentChar;
+            break;
+        case 3 :
+            m_last ++;
+            m_block [m_last + 1] = (char) m_currentChar;
+            m_last ++;
+            m_block [m_last + 1] = (char) m_currentChar;
+            m_last ++;
+            m_block [m_last + 1] = (char) m_currentChar;
+            break;
+        default :
+            m_inUse [m_runLength - 4] = true;
+            m_last ++;
+            m_block [m_last + 1] = (char) m_currentChar;
+            m_last ++;
+            m_block [m_last + 1] = (char) m_currentChar;
+            m_last ++;
+            m_block [m_last + 1] = (char) m_currentChar;
+            m_last ++;
+            m_block [m_last + 1] = (char) m_currentChar;
+            m_last ++;
+            m_block [m_last + 1] = (char) (m_runLength - 4);
+            break;
+    }
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/CBZip2OutputStream.java" startline="1968" endline="1970">
+{
+    m_crc.updateCRC ((char) m_currentChar);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/CBZip2OutputStream.java" startline="2007" endline="2011">
+{
+    endBlock ();
+    initBlock ();
+    writeRun ();
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ServerKiller.java" startline="50" endline="117">
+{
+    String settingsDirectory = System.getProperty ("user.home");
+    File portFile;
+    File f = new File (settingsDirectory);
+    portFile = new File (f, ".jedit/server");
+    if (portFile.exists ()) {
+        try {
+            BufferedReader in = new BufferedReader (new FileReader (portFile));
+            String check = in.readLine ();
+            if (! check.equals ("b")) {
+                System.out.println ("Wrong port file format");
+                return false;
+            }
+
+            int port = Integer.parseInt (in.readLine ());
+            int key = Integer.parseInt (in.readLine ());
+            Socket socket = new Socket (InetAddress.getByName ("127.0.0.1"), port);
+            DataOutputStream out = new DataOutputStream (socket.getOutputStream ());
+            out.writeInt (key);
+            String script;
+            script = "jEdit.exit(null,true);\n";
+            out.writeUTF (script);
+            try {
+                socket.getInputStream ().read ();
+            }
+            catch (Exception e) {
+            }
+
+            in.close ();
+            out.close ();
+        }
+        catch (FileNotFoundException fnfe) {
+        }
+        catch (UnknownHostException uhe) {
+        }
+        catch (IOException ioe) {
+            System.out.println ("Exception while trying to connect to existing server:");
+            System.out.println (ioe);
+            System.out.println ("Don't worry too much !");
+            return false;
+        }
+
+    }
+
+    return true;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ServerKiller.java" startline="60" endline="115">
+{
+    try {
+        BufferedReader in = new BufferedReader (new FileReader (portFile));
+        String check = in.readLine ();
+        if (! check.equals ("b")) {
+            System.out.println ("Wrong port file format");
+            return false;
+        }
+
+        int port = Integer.parseInt (in.readLine ());
+        int key = Integer.parseInt (in.readLine ());
+        Socket socket = new Socket (InetAddress.getByName ("127.0.0.1"), port);
+        DataOutputStream out = new DataOutputStream (socket.getOutputStream ());
+        out.writeInt (key);
+        String script;
+        script = "jEdit.exit(null,true);\n";
+        out.writeUTF (script);
+        try {
+            socket.getInputStream ().read ();
+        }
+        catch (Exception e) {
+        }
+
+        in.close ();
+        out.close ();
+    }
+    catch (FileNotFoundException fnfe) {
+    }
+    catch (UnknownHostException uhe) {
+    }
+    catch (IOException ioe) {
+        System.out.println ("Exception while trying to connect to existing server:");
+        System.out.println (ioe);
+        System.out.println ("Don't worry too much !");
+        return false;
+    }
+
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ServerKiller.java" startline="62" endline="99">
+{
+    BufferedReader in = new BufferedReader (new FileReader (portFile));
+    String check = in.readLine ();
+    if (! check.equals ("b")) {
+        System.out.println ("Wrong port file format");
+        return false;
+    }
+
+    int port = Integer.parseInt (in.readLine ());
+    int key = Integer.parseInt (in.readLine ());
+    Socket socket = new Socket (InetAddress.getByName ("127.0.0.1"), port);
+    DataOutputStream out = new DataOutputStream (socket.getOutputStream ());
+    out.writeInt (key);
+    String script;
+    script = "jEdit.exit(null,true);\n";
+    out.writeUTF (script);
+    try {
+        socket.getInputStream ().read ();
+    }
+    catch (Exception e) {
+    }
+
+    in.close ();
+    out.close ();
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ServerKiller.java" startline="66" endline="69">
+{
+    System.out.println ("Wrong port file format");
+    return false;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ServerKiller.java" startline="89" endline="91">
+{
+    socket.getInputStream ().read ();
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ServerKiller.java" startline="93" endline="95">
+{
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ServerKiller.java" startline="101" endline="103">
+{
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ServerKiller.java" startline="105" endline="107">
+{
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ServerKiller.java" startline="109" endline="114">
+{
+    System.out.println ("Exception while trying to connect to existing server:");
+    System.out.println (ioe);
+    System.out.println ("Don't worry too much !");
+    return false;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ServerKiller.java" startline="124" endline="130">
+{
+    boolean success = quitjEditServer ();
+    if (! success) {
+        System.exit (- 1);
+    }
+
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ServerKiller.java" startline="127" endline="129">
+{
+    System.exit (- 1);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ConsoleInstall.java" startline="25" endline="111">
+{
+    installer = new Install ();
+    String appName = installer.getProperty ("app.name");
+    String appVersion = installer.getProperty ("app.version");
+    BufferedReader in = new BufferedReader (new InputStreamReader (System.in));
+    System.out.println ("*** " + appName + " " + appVersion + " installer");
+    OperatingSystem os = OperatingSystem.getOperatingSystem ();
+    String installDir = os.getInstallDirectory (appName, appVersion);
+    System.out.print ("Installation directory: [" + installDir + "] ");
+    System.out.flush ();
+    String _installDir = readLine (in);
+    if (_installDir.length () != 0) installDir = _installDir;
+    else System.out.println ("Will use default");
+
+    OperatingSystem.OSTask [] osTasks = os.getOSTasks (installer);
+    for (int i = 0;
+    i < osTasks.length; i ++) {
+        OperatingSystem.OSTask osTask = osTasks [i];
+        String label = osTask.getLabel ();
+        if (label != null) {
+            String dir = osTask.getDirectory ();
+            System.out.print (label + " [" + dir + "] ");
+            System.out.flush ();
+            dir = readLine (in);
+            osTask.setEnabled (true);
+            if (dir.length () != 0) {
+                if (dir.equals ("off")) osTask.setEnabled (false);
+                else osTask.setDirectory (dir);
+
+            }
+            else System.out.println ("will use default");
+
+        }
+
+    }
+
+    int compCount = installer.getIntegerProperty ("comp.count");
+    Vector components = new Vector (compCount);
+    System.out.println ("*** Program components to install");
+    for (int i = 0;
+    i < compCount; i ++) {
+        String fileset = installer.getProperty ("comp." + i + ".fileset");
+        String osDep = installer.getProperty ("comp." + i + ".os");
+        if (osDep != null) {
+            if (! os.getClass ().getName ().endsWith (osDep)) {
+                continue;
+            }
+
+        }
+
+        System.out.print ("Install " + installer.getProperty ("comp." + i + ".name") + " (" + installer.getProperty ("comp." + i + ".disk-size") + "Kb) [Y/n]? ");
+        String line = readLine (in);
+        if (line.length () == 0 || line.charAt (0) == 'y' || line.charAt (0) == 'Y') components.addElement (fileset);
+
+    }
+
+    System.out.println ("*** Starting installation...");
+    ConsoleProgress progress = new ConsoleProgress ();
+    InstallThread thread = new InstallThread (installer, progress, installDir, osTasks, 0, components);
+    thread.start ();
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ConsoleInstall.java" startline="52" endline="74">
+{
+    OperatingSystem.OSTask osTask = osTasks [i];
+    String label = osTask.getLabel ();
+    if (label != null) {
+        String dir = osTask.getDirectory ();
+        System.out.print (label + " [" + dir + "] ");
+        System.out.flush ();
+        dir = readLine (in);
+        osTask.setEnabled (true);
+        if (dir.length () != 0) {
+            if (dir.equals ("off")) osTask.setEnabled (false);
+            else osTask.setDirectory (dir);
+
+        }
+        else System.out.println ("will use default");
+
+    }
+
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ConsoleInstall.java" startline="57" endline="73">
+{
+    String dir = osTask.getDirectory ();
+    System.out.print (label + " [" + dir + "] ");
+    System.out.flush ();
+    dir = readLine (in);
+    osTask.setEnabled (true);
+    if (dir.length () != 0) {
+        if (dir.equals ("off")) osTask.setEnabled (false);
+        else osTask.setDirectory (dir);
+
+    }
+    else System.out.println ("will use default");
+
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ConsoleInstall.java" startline="65" endline="70">
+{
+    if (dir.equals ("off")) osTask.setEnabled (false);
+    else osTask.setDirectory (dir);
+
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ConsoleInstall.java" startline="81" endline="103">
+{
+    String fileset = installer.getProperty ("comp." + i + ".fileset");
+    String osDep = installer.getProperty ("comp." + i + ".os");
+    if (osDep != null) {
+        if (! os.getClass ().getName ().endsWith (osDep)) {
+            continue;
+        }
+
+    }
+
+    System.out.print ("Install " + installer.getProperty ("comp." + i + ".name") + " (" + installer.getProperty ("comp." + i + ".disk-size") + "Kb) [Y/n]? ");
+    String line = readLine (in);
+    if (line.length () == 0 || line.charAt (0) == 'y' || line.charAt (0) == 'Y') components.addElement (fileset);
+
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ConsoleInstall.java" startline="86" endline="91">
+{
+    if (! os.getClass ().getName ().endsWith (osDep)) {
+        continue;
+    }
+
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ConsoleInstall.java" startline="88" endline="90">
+{
+    continue;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ConsoleInstall.java" startline="117" endline="137">
+{
+    try {
+        String line = in.readLine ();
+        if (line == null) {
+            System.err.println ("\nEOF in input!");
+            System.exit (1);
+            throw new InternalError ();
+        }
+
+        return line;
+    }
+    catch (IOException io) {
+        System.err.println ("\nI/O error: " + io);
+        System.exit (1);
+        throw new InternalError ();
+    }
+
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ConsoleInstall.java" startline="119" endline="129">
+{
+    String line = in.readLine ();
+    if (line == null) {
+        System.err.println ("\nEOF in input!");
+        System.exit (1);
+        throw new InternalError ();
+    }
+
+    return line;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ConsoleInstall.java" startline="122" endline="127">
+{
+    System.err.println ("\nEOF in input!");
+    System.exit (1);
+    throw new InternalError ();
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/ConsoleInstall.java" startline="131" endline="136">
+{
+    System.err.println ("\nI/O error: " + io);
+    System.exit (1);
+    throw new InternalError ();
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/CRC.java" startline="89" endline="91">
+{
+    initialiseCRC ();
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/CRC.java" startline="94" endline="96">
+{
+    return ~ m_globalCrc;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/CRC.java" startline="99" endline="101">
+{
+    m_globalCrc = 0xffffffff;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/CRC.java" startline="104" endline="111">
+{
+    int temp = (m_globalCrc>> 24) ^ inCh;
+    if (temp < 0) {
+        temp = 256 + temp;
+    }
+
+    m_globalCrc = (m_globalCrc << 8) ^ CRC32_TABLE [temp];
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/CRC.java" startline="107" endline="109">
+{
+    temp = 256 + temp;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="58" endline="60">
+{
+    this (is, TarBuffer.DEFAULT_BLKSIZE, TarBuffer.DEFAULT_RCDSIZE);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="64" endline="66">
+{
+    this (is, blockSize, TarBuffer.DEFAULT_RCDSIZE);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="70" endline="80">
+{
+    super (is);
+    this.buffer = new TarBuffer (is, blockSize, recordSize);
+    this.readBuf = null;
+    this.oneBuf = new byte [1];
+    this.debug = false;
+    this.hasHitEOF = false;
+    this.eFactory = null;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="89" endline="91">
+{
+    this.debug = debugF;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="100" endline="102">
+{
+    this.eFactory = factory;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="111" endline="113">
+{
+    this.buffer.setDebug (debug);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="121" endline="123">
+{
+    this.buffer.close ();
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="132" endline="134">
+{
+    return this.buffer.getRecordSize ();
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="149" endline="151">
+{
+    return this.entrySize - this.entryOffset;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="164" endline="183">
+{
+    byte [] skipBuf = new byte [8 * 1024];
+    for (int num = numToSkip;
+    num > 0;) {
+        int numRead = this.read (skipBuf, 0, (num > skipBuf.length ? skipBuf.length : num));
+        if (numRead == - 1) break;
+
+        num -= numRead;
+    }
+
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="173" endline="182">
+{
+    int numRead = this.read (skipBuf, 0, (num > skipBuf.length ? skipBuf.length : num));
+    if (numRead == - 1) break;
+
+    num -= numRead;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="192" endline="194">
+{
+    return false;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="203" endline="204">
+{
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="211" endline="212">
+{
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="229" endline="330">
+{
+    if (this.hasHitEOF) return null;
+
+    if (this.currEntry != null) {
+        int numToSkip = this.entrySize - this.entryOffset;
+        if (this.debug) System.err.println ("TarInputStream: SKIP currENTRY '" + this.currEntry.getName () + "' SZ " + this.entrySize + " OFF " + this.entryOffset + "  skipping " + numToSkip + " bytes");
+
+        if (numToSkip > 0) {
+            this.skip (numToSkip);
+        }
+
+        this.readBuf = null;
+    }
+
+    byte [] headerBuf = this.buffer.readRecord ();
+    if (headerBuf == null) {
+        if (this.debug) {
+            System.err.println ("READ NULL RECORD");
+        }
+
+        this.hasHitEOF = true;
+    }
+    else if (this.buffer.isEOFRecord (headerBuf)) {
+        if (this.debug) {
+            System.err.println ("READ EOF RECORD");
+        }
+
+        this.hasHitEOF = true;
+    }
+
+    if (this.hasHitEOF) {
+        this.currEntry = null;
+    }
+    else {
+        try {
+            if (this.eFactory == null) {
+                this.currEntry = new TarEntry (headerBuf);
+            }
+            else {
+                this.currEntry = this.eFactory.createEntry (headerBuf);
+            }
+
+            if (! (headerBuf [257] == 'u' && headerBuf [258] == 's' && headerBuf [259] == 't' && headerBuf [260] == 'a' && headerBuf [261] == 'r')) {
+                throw new InvalidHeaderException ("header magic is not 'ustar', but '" + headerBuf [257] + headerBuf [258] + headerBuf [259] + headerBuf [260] + headerBuf [261] + "', or (dec) " + ((int) headerBuf [257]) + ", " + ((int) headerBuf [258]) + ", " + ((int) headerBuf [259]) + ", " + ((int) headerBuf [260]) + ", " + ((int) headerBuf [261]));
+            }
+
+            if (this.debug) System.err.println ("TarInputStream: SET CURRENTRY '" + this.currEntry.getName () + "' size = " + this.currEntry.getSize ());
+
+            this.entryOffset = 0;
+            this.entrySize = (int) this.currEntry.getSize ();
+        }
+        catch (InvalidHeaderException ex) {
+            this.entrySize = 0;
+            this.entryOffset = 0;
+            this.currEntry = null;
+            throw new InvalidHeaderException ("bad header in block " + this.buffer.getCurrentBlockNum () + " record " + this.buffer.getCurrentRecordNum () + ", " + ex.getMessage ());
+        }
+
+    }
+
+    return this.currEntry;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="234" endline="250">
+{
+    int numToSkip = this.entrySize - this.entryOffset;
+    if (this.debug) System.err.println ("TarInputStream: SKIP currENTRY '" + this.currEntry.getName () + "' SZ " + this.entrySize + " OFF " + this.entryOffset + "  skipping " + numToSkip + " bytes");
+
+    if (numToSkip > 0) {
+        this.skip (numToSkip);
+    }
+
+    this.readBuf = null;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="245" endline="247">
+{
+    this.skip (numToSkip);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="255" endline="262">
+{
+    if (this.debug) {
+        System.err.println ("READ NULL RECORD");
+    }
+
+    this.hasHitEOF = true;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="257" endline="259">
+{
+    System.err.println ("READ NULL RECORD");
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="264" endline="271">
+{
+    if (this.debug) {
+        System.err.println ("READ EOF RECORD");
+    }
+
+    this.hasHitEOF = true;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="266" endline="268">
+{
+    System.err.println ("READ EOF RECORD");
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="274" endline="276">
+{
+    this.currEntry = null;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="278" endline="327">
+{
+    try {
+        if (this.eFactory == null) {
+            this.currEntry = new TarEntry (headerBuf);
+        }
+        else {
+            this.currEntry = this.eFactory.createEntry (headerBuf);
+        }
+
+        if (! (headerBuf [257] == 'u' && headerBuf [258] == 's' && headerBuf [259] == 't' && headerBuf [260] == 'a' && headerBuf [261] == 'r')) {
+            throw new InvalidHeaderException ("header magic is not 'ustar', but '" + headerBuf [257] + headerBuf [258] + headerBuf [259] + headerBuf [260] + headerBuf [261] + "', or (dec) " + ((int) headerBuf [257]) + ", " + ((int) headerBuf [258]) + ", " + ((int) headerBuf [259]) + ", " + ((int) headerBuf [260]) + ", " + ((int) headerBuf [261]));
+        }
+
+        if (this.debug) System.err.println ("TarInputStream: SET CURRENTRY '" + this.currEntry.getName () + "' size = " + this.currEntry.getSize ());
+
+        this.entryOffset = 0;
+        this.entrySize = (int) this.currEntry.getSize ();
+    }
+    catch (InvalidHeaderException ex) {
+        this.entrySize = 0;
+        this.entryOffset = 0;
+        this.currEntry = null;
+        throw new InvalidHeaderException ("bad header in block " + this.buffer.getCurrentBlockNum () + " record " + this.buffer.getCurrentRecordNum () + ", " + ex.getMessage ());
+    }
+
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="279" endline="314">
+{
+    if (this.eFactory == null) {
+        this.currEntry = new TarEntry (headerBuf);
+    }
+    else {
+        this.currEntry = this.eFactory.createEntry (headerBuf);
+    }
+
+    if (! (headerBuf [257] == 'u' && headerBuf [258] == 's' && headerBuf [259] == 't' && headerBuf [260] == 'a' && headerBuf [261] == 'r')) {
+        throw new InvalidHeaderException ("header magic is not 'ustar', but '" + headerBuf [257] + headerBuf [258] + headerBuf [259] + headerBuf [260] + headerBuf [261] + "', or (dec) " + ((int) headerBuf [257]) + ", " + ((int) headerBuf [258]) + ", " + ((int) headerBuf [259]) + ", " + ((int) headerBuf [260]) + ", " + ((int) headerBuf [261]));
+    }
+
+    if (this.debug) System.err.println ("TarInputStream: SET CURRENTRY '" + this.currEntry.getName () + "' size = " + this.currEntry.getSize ());
+
+    this.entryOffset = 0;
+    this.entrySize = (int) this.currEntry.getSize ();
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="281" endline="283">
+{
+    this.currEntry = new TarEntry (headerBuf);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="285" endline="288">
+{
+    this.currEntry = this.eFactory.createEntry (headerBuf);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="293" endline="303">
+{
+    throw new InvalidHeaderException ("header magic is not 'ustar', but '" + headerBuf [257] + headerBuf [258] + headerBuf [259] + headerBuf [260] + headerBuf [261] + "', or (dec) " + ((int) headerBuf [257]) + ", " + ((int) headerBuf [258]) + ", " + ((int) headerBuf [259]) + ", " + ((int) headerBuf [260]) + ", " + ((int) headerBuf [261]));
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="316" endline="326">
+{
+    this.entrySize = 0;
+    this.entryOffset = 0;
+    this.currEntry = null;
+    throw new InvalidHeaderException ("bad header in block " + this.buffer.getCurrentBlockNum () + " record " + this.buffer.getCurrentRecordNum () + ", " + ex.getMessage ());
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="342" endline="348">
+{
+    int num = this.read (this.oneBuf, 0, 1);
+    if (num == - 1) return num;
+    else return this.oneBuf [0];
+
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="361" endline="363">
+{
+    return this.read (buf, 0, buf.length);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="380" endline="448">
+{
+    int totalRead = 0;
+    if (this.entryOffset >= this.entrySize) return - 1;
+
+    if ((numToRead + this.entryOffset) > this.entrySize) {
+        numToRead = (this.entrySize - this.entryOffset);
+    }
+
+    if (this.readBuf != null) {
+        int sz = (numToRead > this.readBuf.length) ? this.readBuf.length : numToRead;
+        System.arraycopy (this.readBuf, 0, buf, offset, sz);
+        if (sz >= this.readBuf.length) {
+            this.readBuf = null;
+        }
+        else {
+            int newLen = this.readBuf.length - sz;
+            byte [] newBuf = new byte [newLen];
+            System.arraycopy (this.readBuf, sz, newBuf, 0, newLen);
+            this.readBuf = newBuf;
+        }
+
+        totalRead += sz;
+        numToRead -= sz;
+        offset += sz;
+    }
+
+    for (; numToRead > 0;) {
+        byte [] rec = this.buffer.readRecord ();
+        if (rec == null) {
+            throw new IOException ("unexpected EOF with " + numToRead + " bytes unread");
+        }
+
+        int sz = numToRead;
+        int recLen = rec.length;
+        if (recLen > sz) {
+            System.arraycopy (rec, 0, buf, offset, sz);
+            this.readBuf = new byte [recLen - sz];
+            System.arraycopy (rec, sz, this.readBuf, 0, recLen - sz);
+        }
+        else {
+            sz = recLen;
+            System.arraycopy (rec, 0, buf, offset, recLen);
+        }
+
+        totalRead += sz;
+        numToRead -= sz;
+        offset += sz;
+    }
+
+    this.entryOffset += totalRead;
+    return totalRead;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="387" endline="389">
+{
+    numToRead = (this.entrySize - this.entryOffset);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="392" endline="413">
+{
+    int sz = (numToRead > this.readBuf.length) ? this.readBuf.length : numToRead;
+    System.arraycopy (this.readBuf, 0, buf, offset, sz);
+    if (sz >= this.readBuf.length) {
+        this.readBuf = null;
+    }
+    else {
+        int newLen = this.readBuf.length - sz;
+        byte [] newBuf = new byte [newLen];
+        System.arraycopy (this.readBuf, sz, newBuf, 0, newLen);
+        this.readBuf = newBuf;
+    }
+
+    totalRead += sz;
+    numToRead -= sz;
+    offset += sz;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="399" endline="401">
+{
+    this.readBuf = null;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="403" endline="408">
+{
+    int newLen = this.readBuf.length - sz;
+    byte [] newBuf = new byte [newLen];
+    System.arraycopy (this.readBuf, sz, newBuf, 0, newLen);
+    this.readBuf = newBuf;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="416" endline="443">
+{
+    byte [] rec = this.buffer.readRecord ();
+    if (rec == null) {
+        throw new IOException ("unexpected EOF with " + numToRead + " bytes unread");
+    }
+
+    int sz = numToRead;
+    int recLen = rec.length;
+    if (recLen > sz) {
+        System.arraycopy (rec, 0, buf, offset, sz);
+        this.readBuf = new byte [recLen - sz];
+        System.arraycopy (rec, sz, this.readBuf, 0, recLen - sz);
+    }
+    else {
+        sz = recLen;
+        System.arraycopy (rec, 0, buf, offset, recLen);
+    }
+
+    totalRead += sz;
+    numToRead -= sz;
+    offset += sz;
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="419" endline="423">
+{
+    throw new IOException ("unexpected EOF with " + numToRead + " bytes unread");
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="429" endline="433">
+{
+    System.arraycopy (rec, 0, buf, offset, sz);
+    this.readBuf = new byte [recLen - sz];
+    System.arraycopy (rec, sz, this.readBuf, 0, recLen - sz);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="435" endline="438">
+{
+    sz = recLen;
+    System.arraycopy (rec, 0, buf, offset, recLen);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="459" endline="469">
+{
+    byte [] buf = new byte [32 * 1024];
+    for (;;) {
+        int numRead = this.read (buf, 0, buf.length);
+        if (numRead == - 1) break;
+
+        out.write (buf, 0, numRead);
+    }
+
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="463" endline="468">
+{
+    int numRead = this.read (buf, 0, buf.length);
+    if (numRead == - 1) break;
+
+    out.write (buf, 0, numRead);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="498" endline="500">
+{
+    return new TarEntry (name);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="505" endline="507">
+{
+    return new TarEntry (path);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/TarInputStream.java" startline="512" endline="514">
+{
+    return new TarEntry (headerBuf);
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/InvalidHeaderException.java" startline="31" endline="33">
+{
+    super ();
+}
+
+</source>
+<source file="systems/java/jEdit/trunk/installer/InvalidHeaderException.java" startline="37" endline="39">
+{
+    super (msg);
+}
+
+</source>
