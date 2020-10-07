@@ -1,0 +1,27 @@
+	1. function pause(bool newPausedPublic, bool newPausedOwnerAdmin) onlyOwner public 
+	2. function Start(string _question, string _response) public payable isAdmin
+	3. function Stop() public payable isAdmin 
+	4. function toKey(address _addr, uint _release) internal pure returns (bytes32 result) 
+	5. function freeze(address _to, uint64 _until) internal 
+	6. function Try(string _response) external payable 
+	7. function cancelPending(bytes32 operation) public onlyAnyBeneficiary 
+	8. function cancelAllPending() public onlyManyBeneficiaries 
+	9. function allOperationsCount() public view returns(uint) 
+	10. function _operationLimitByBeneficiaryIndex(uint8 beneficiaryIndex) internal view returns(bool) 
+	11. function _cancelAllPending() internal 
+	12. function callOptionalReturn(IERC20 token, bytes memory data) private 
+	13. function finishDistribution() onlyOwner canDistr public returns (bool) 
+	14. function paused() public view returns (bool) 
+	15. function pause() public onlyPauser whenNotPaused 
+	16. function unpause() public onlyPauser whenPaused
+	17. function freezeAccount(address target, bool freeze) onlyOwner public 
+	18. function paused() external view returns (bool) 
+	19. function pause() external onlyOwner whenNotPaused 
+	20. function unpause() external onlyOwner whenPaused 
+	21. function pause() onlyOwner whenNotPaused public 
+	22. function unpause() onlyOwner whenPaused public 
+	23. function _extendTime(uint256 newClosingTime) internal 
+	24. function finalizeReservedAddress(address addr) public onlyMintAgent canMint 
+	25. function isAddressReserved(address addr) public constant returns (bool isReserved) 
+	26. function halt() external onlyOwner 
+function unhalt() external onlyOwner onlyInEmergency

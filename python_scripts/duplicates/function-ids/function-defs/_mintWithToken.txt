@@ -1,0 +1,133 @@
+_mintWithToken(
+        address receiver,
+        address depositTokenAddress,
+        uint256 depositAmount,
+        uint256 currentPrice,
+        uint256 toCollateralRate,
+        uint256 toCollateralPrecision)
+        internal
+        returns (uint256)
+    {
+        uint256 refundAmount;
+        if (depositTokenAddress != loanTokenAddress && depositTokenAddress != tradeTokenAddress) {
+            (uint256 destTokenAmountReceived, uint256 depositAmountUsed) = _tradeUserAsset(
+                depositTokenAddress,    // sourceTokenAddress
+                loanTokenAddress,       // destTokenAddress
+                address(this),          // receiver
+                depositAmount           // sourceTokenAmount
+            );
+
+            if (depositAmount > depositAmountUsed) {
+                refundAmount = depositAmount-depositAmountUsed;
+                if (msg.value == 0) {
+                    require(ERC20(depositTokenAddress).transfer(
+                        msg.sender,
+                        refundAmount
+                    ), "transfer of token failed");
+                }
+_mintWithToken(
+        address receiver,
+        address depositTokenAddress,
+        uint256 depositAmount,
+        uint256 currentPrice,
+        uint256 toCollateralRate,
+        uint256 toCollateralPrecision)
+        internal
+        returns (uint256)
+    {
+        uint256 refundAmount;
+        if (depositTokenAddress != loanTokenAddress && depositTokenAddress != tradeTokenAddress) {
+            (uint256 destTokenAmountReceived, uint256 depositAmountUsed) = _tradeUserAsset(
+                depositTokenAddress,    // sourceTokenAddress
+                loanTokenAddress,       // destTokenAddress
+                address(this),          // receiver
+                depositAmount           // sourceTokenAmount
+            );
+
+            if (depositAmount > depositAmountUsed) {
+                refundAmount = depositAmount-depositAmountUsed;
+                if (msg.value == 0) {
+                    require(ERC20(depositTokenAddress).transfer(
+                        msg.sender,
+                        refundAmount
+                    ), "transfer of token failed");
+                }
+_mintWithToken(
+        address receiver,
+        address depositTokenAddress,
+        uint256 depositAmount,
+        uint256 currentPrice,
+        uint256 toCollateralRate,
+        uint256 toCollateralPrecision)
+        internal
+        returns (uint256)
+    {
+        uint256 refundAmount;
+        if (depositTokenAddress != loanTokenAddress && depositTokenAddress != tradeTokenAddress) {
+            (uint256 destTokenAmountReceived, uint256 depositAmountUsed) = _tradeUserAsset(
+                depositTokenAddress,    // sourceTokenAddress
+                loanTokenAddress,       // destTokenAddress
+                address(this),          // receiver
+                depositAmount           // sourceTokenAmount
+            );
+
+            if (depositAmount > depositAmountUsed) {
+                refundAmount = depositAmount-depositAmountUsed;
+                if (msg.value == 0) {
+                    require(ERC20(depositTokenAddress).transfer(
+                        msg.sender,
+                        refundAmount
+                    ), "transfer of token failed");
+                }
+_mintWithToken(
+        address receiver,
+        address depositTokenAddress,
+        uint256 depositAmount,
+        uint256 currentPrice)
+        internal
+        returns (uint256)
+    {
+        uint256 refundAmount;
+        if (depositTokenAddress != tradeTokenAddress && depositTokenAddress != loanTokenAddress) {
+            (uint256 destTokenAmountReceived, uint256 depositAmountUsed) = _tradeUserAsset(
+                depositTokenAddress,    // sourceTokenAddress
+                tradeTokenAddress,      // destTokenAddress
+                address(this),          // receiver
+                depositAmount           // sourceTokenAmount
+            );
+
+            if (depositAmount > depositAmountUsed) {
+                refundAmount = depositAmount-depositAmountUsed;
+                if (msg.value == 0) {
+                    require(ERC20(depositTokenAddress).transfer(
+                        msg.sender,
+                        refundAmount
+                    ), "transfer of token failed");
+                }
+_mintWithToken(
+        address receiver,
+        address depositTokenAddress,
+        uint256 depositAmount,
+        uint256 currentPrice,
+        uint256 toCollateralRate,
+        uint256 toCollateralPrecision)
+        internal
+        returns (uint256)
+    {
+        uint256 refundAmount;
+        if (depositTokenAddress != loanTokenAddress && depositTokenAddress != tradeTokenAddress) {
+            (uint256 destTokenAmountReceived, uint256 depositAmountUsed) = _tradeUserAsset(
+                depositTokenAddress,    // sourceTokenAddress
+                loanTokenAddress,       // destTokenAddress
+                address(this),          // receiver
+                depositAmount           // sourceTokenAmount
+            );
+
+            if (depositAmount > depositAmountUsed) {
+                refundAmount = depositAmount-depositAmountUsed;
+                if (msg.value == 0) {
+                    require(ERC20(depositTokenAddress).transfer(
+                        msg.sender,
+                        refundAmount
+                    ), "transfer of token failed");
+                }

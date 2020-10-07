@@ -1,0 +1,682 @@
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= totalSupply, since that would imply the
+        // sender's balance is greater than the totalSupply, which *should* be an assertion failure
+
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint value) public onlyOwner {
+        _burn(msg.sender, value);
+    }
+burn(uint value) public onlyOwner {
+        _burn(msg.sender, value);
+    }
+burn(uint _value) returns (bool)
+    {
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        Burn(msg.sender, _value);
+        Transfer(msg.sender, address(0x0), _value);
+        return true;
+    }
+burn(uint _value) returns (bool)
+    {
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        Burn(msg.sender, _value);
+        Transfer(msg.sender, address(0x0), _value);
+        return true;
+    }
+burn(uint256 _value) returns (bool success) {
+        if (balanceOf[msg.sender] < _value) throw;            // Check if the sender has enough
+		if (_value <= 0) throw; 
+        balanceOf[msg.sender] = SafeMath.safeSub(balanceOf[msg.sender], _value);                      // Subtract from the sender
+        totalSupply = SafeMath.safeSub(totalSupply,_value);                                // Updates totalSupply
+        Burn(msg.sender, _value);
+        return true;
+    }
+burn(uint256 _value) returns (bool success) {
+        if (balanceOf[msg.sender] < _value) throw;            // Check if the sender has enough
+		if (_value <= 0) throw; 
+        balanceOf[msg.sender] = SafeMath.safeSub(balanceOf[msg.sender], _value);                      // Subtract from the sender
+        totalSupply = SafeMath.safeSub(totalSupply,_value);                                // Updates totalSupply
+        Burn(msg.sender, _value);
+        return true;
+    }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 _value) public onlyOwner returns (bool success) {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply_ = totalSupply_.sub(_value);
+        emit Burn(burner, _value);
+        return true;
+    }
+burn(uint256 _value) public onlyOwner returns (bool success) {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply_ = totalSupply_.sub(_value);
+        emit Burn(burner, _value);//burn
+        return true;
+    }
+burn(uint256 _value) public returns (bool success) {
+        require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
+        balanceOf[msg.sender] -= _value;            // Subtract from the sender
+        totalSupply -= _value;                      // Updates totalSupply
+        Burn(msg.sender, _value);
+        return true;
+    }
+burn(uint256 _value) public returns (bool success) {
+        require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
+        balanceOf[msg.sender] -= _value;            // Subtract from the sender
+        totalSupply -= _value;                      // Updates totalSupply
+        Burn(msg.sender, _value);
+        return true;
+    }
+burn(uint256 _value) public returns (bool success) {
+        require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
+        balanceOf[msg.sender] -= _value;            // Subtract from the sender
+        totalSupply -= _value;                      // Updates totalSupply
+        Burn(msg.sender, _value);
+        return true;
+    }
+burn(uint256 _value) public returns (bool success) {
+        require(balanceOf[msg.sender] >= _value);
+        balanceOf[msg.sender] -= _value;
+        totalSupply -= _value;
+        Burn(msg.sender, _value);
+        return true;
+    }
+burn(uint256 _value) public returns (bool success) {
+        require(balanceOf[msg.sender] >= _value);
+        balanceOf[msg.sender] -= _value;
+        totalSupply -= _value;
+        Burn(msg.sender, _value);
+        return true;
+    }
+burn(uint256 value) public {
+        _burn(msg.sender, value);
+    }
+burn(uint256 value) public {
+    _burn(msg.sender, value);
+  }
+burn(uint256 value) public {
+        _burn(msg.sender, value);
+    }
+burn(uint256 value) public {
+    _burn(msg.sender, value);
+  }
+burn(uint256 value) public {
+        _burn(msg.sender, value);
+    }
+burn(uint256 value) public {
+        _burn(msg.sender, value);
+    }
+burn(uint256 amount) public {
+    require(!_locked[msg.sender]);
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) public {
+    require(!_locked[msg.sender]);
+    _burn(msg.sender, amount);
+  }
+burn(uint256 _value) public returns (bool) {
+	
+	require(balanceOf[msg.sender] >= _value);
+	balanceOf[msg.sender] =balanceOf[msg.sender].sub(_value);
+	totalSupply = totalSupply.sub(_value);
+	emit Burn(msg.sender, _value);
+	return true;
+}
+burn(uint256 _value) public returns (bool) {
+    
+    require(balanceOf[msg.sender] >= _value);
+    balanceOf[msg.sender] =balanceOf[msg.sender].sub(_value);
+    totalSupply = totalSupply.sub(_value);
+    emit Burn(msg.sender, _value);
+    return true;
+}
+burn(address _account, uint256 _amount) public whenNotPaused onlyMinterAddress {
+        require(checkBurnAllowed(_account, _amount) == STATUS_ALLOWED, "burn must be allowed");
+        ERC20._burn(_account, _amount);
+    }
+burn(address _account, uint256 _amount) public whenNotPaused onlyMinterAddress {
+        require(checkBurnAllowed(_account, _amount) == STATUS_ALLOWED, "burn must be allowed");
+        ERC20._burn(_account, _amount);
+    }
+burn(uint256 _value) public {
+    _burn(msg.sender, _value);
+  }
+burn(uint256 _value) public {
+    _burn(msg.sender, _value);
+  }
+burn(uint256 _value) public {
+    _burn(msg.sender, _value);
+  }
+burn(uint256 _value) public {
+        require(_value > 0);
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= totalSupply, since that would imply the
+        // sender's balance is greater than the totalSupply, which *should* be an assertion failure
+
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) public {
+        require(_value > 0);
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= totalSupply, since that would imply the
+        // sender's balance is greater than the totalSupply, which *should* be an assertion failure
+
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply_ = totalSupply_.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= totalSupply, since that would imply the
+        // sender's balance is greater than the totalSupply, which *should* be an assertion failure
+
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) onlyOwner public {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) public {
+        require(_balances[msg.sender] >= amount);
+        _balances[msg.sender] = _balances[msg.sender].sub(amount);
+        supply = supply.sub(amount);
+        emit Transfer(msg.sender, address(0), amount);
+        emit Burn(msg.sender, amount);
+    }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) public {
+    require(!_locked[msg.sender]);
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) public {
+    require(!_locked[msg.sender]);
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+burn(uint256 amount) external {
+    _burn(msg.sender, amount);
+  }
+burn(uint256 amount) public {
+        require(amount > 0);
+        _burn(msg.sender, amount);
+    }
+burn(uint value) public onlyOwner {
+        _burn(msg.sender, value);
+    }
+burn(uint256 value) public {
+        _burn(msg.sender, value);
+    }
+burn(uint value) public onlyOwner {
+        _burn(msg.sender, value);
+    }
+burn(uint256 value) public {
+    _burn(msg.sender, value);
+  }
+burn(uint256 value) public {
+        _burn(msg.sender, value);
+    }
+burn(uint256 value) public {
+        _burn(msg.sender, value);
+    }
+burn(uint256 value) public onlyAdmin {
+        _burn(msg.sender, value);
+    }
+burn(uint256 value) public {
+        _burn(msg.sender, value);
+    }
+burn(uint256 value) public {
+    _burn(msg.sender, value);
+  }
+burn(uint256 _value) onlyOwner public returns (bool success) {
+    balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);   // Subtract from the sender
+    totalSupply = totalSupply.sub(_value);                      // Updates totalSupply
+    emit Burn(msg.sender, _value);
+    return true;
+  }
+burn(uint256 _value) onlyOwner public returns (bool success) {
+        require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
+        require(_value <= totalSupply);
+        balanceOf[msg.sender] -= _value;            // Subtract from the sender
+        totalSupply -= _value;                      // Updates totalSupply
+        emit Burn(msg.sender, _value);
+        return true;
+    }
+burn(uint256 _value) public onlyOwner returns (bool success) {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply_ = totalSupply_.sub(_value);
+        emit Burn(burner, _value);
+        return true;
+    }
+burn(uint256 _value) public onlyOwner returns (bool success){
+             require(balanceOf[msg.sender] >= _value);
+             balanceOf[msg.sender] -= _value;
+             totalSupply -= _value;
+             return true;
+        }
+burn(uint256 _value) public onlyOwner returns (bool success) {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply_ = totalSupply_.sub(_value);
+        emit Burn(burner, _value);//burn
+        return true;
+    }
+burn(uint256 _value) public {
+  	require(balances[msg.sender] >= _value);
+  	balances[msg.sender] = balances[msg.sender].sub(_value);
+  	totalSupply_ = totalSupply_.sub(_value);
+  	emit Transfer(msg.sender, address(0x00), _value);
+  	emit Burn(msg.sender, _value);
+  }
+burn(uint256 _value) public {
+        require(_value > 0);
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= totalSupply, since that would imply the
+        // sender's balance is greater than the totalSupply, which *should* be an assertion failure
+
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply_ = totalSupply_.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) public {
+    _burn(msg.sender, _value);
+  }
+burn(uint256 _value) public {
+    _burn(msg.sender, _value);
+  }
+burn(uint256 _value) public {
+        require(balanceOf[msg.sender] >= _value);
+        balanceOf[msg.sender] -= _value;
+        balanceOf[0x0] += _value;
+        emit Transfer(msg.sender, 0x0, _value);
+    }
+burn(uint256 _value) public {
+    _burn(msg.sender, _value);
+  }
+burn(uint256 _value) public {
+        require(_value > 0);
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= totalSupply, since that would imply the
+        // sender's balance is greater than the totalSupply, which *should* be an assertion failure
+
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        emit Burn(burner, _value);
+    }
+burn(uint256 _value) public returns (bool)  {
+    require(burnable, "Token is not burnable");
+    super.burn(_value);
+  }
+burn(uint256 _value) public returns (bool) {
+    
+    require(balanceOf[msg.sender] >= _value);
+    balanceOf[msg.sender] =balanceOf[msg.sender].sub(_value);
+    totalSupply = totalSupply.sub(_value);
+    emit Burn(msg.sender, _value);
+    return true;
+}
+burn(uint256 _value) public returns (bool) {
+	
+	require(balanceOf[msg.sender] >= _value);
+	balanceOf[msg.sender] =balanceOf[msg.sender].sub(_value);
+	totalSupply = totalSupply.sub(_value);
+	emit Burn(msg.sender, _value);
+	return true;
+}
+burn(uint256 _value) onlyOwner public returns (bool success) {
+    balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);   // Subtract from the sender
+    totalSupply = totalSupply.sub(_value);                      // Updates totalSupply
+    emit Burn(msg.sender, _value);
+    return true;
+  }
+burn(uint256 _value) public onlyOwner returns (bool success) {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply_ = totalSupply_.sub(_value);
+        emit Burn(burner, _value);
+        return true;
+    }
+burn(uint256 _value) onlyOwner public returns (bool success) {
+        require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
+        require(_value <= totalSupply);
+        balanceOf[msg.sender] -= _value;            // Subtract from the sender
+        totalSupply -= _value;                      // Updates totalSupply
+        emit Burn(msg.sender, _value);
+        return true;
+    }
+burn(uint256 _value) public onlyOwner returns (bool success) {
+        require(_value <= balances[msg.sender]);
+        address burner = msg.sender;
+        balances[burner] = balances[burner].sub(_value);
+        totalSupply_ = totalSupply_.sub(_value);
+        emit Burn(burner, _value);//burn
+        return true;
+    }
+burn(uint256 _value) public onlyOwner returns (bool success){
+             require(balanceOf[msg.sender] >= _value);
+             balanceOf[msg.sender] -= _value;
+             totalSupply -= _value;
+             return true;
+        }

@@ -1,0 +1,34 @@
+function changeOwner(address _newOwner) public 
+function withdraw() public 
+function transfer(address _to, uint256 _value) public returns (bool success) 
+function multiTransfer(address[] memory receivers, uint256[] memory amounts) public 
+function transfer(address _to, uint256 _value) returns (bool success) 
+function safeToNextIdx() internal
+function () public payable 
+function clearApproval(address _owner, uint256 _tokenId) internal 
+function checkAndCallSafeTransfer(
+    address _from,
+    address _to,
+    uint256 _tokenId,
+    bytes _data
+  )
+    internal
+    returns (bool)
+  
+function _clearApproval(uint256 tokenId) private 
+function checkIsAdmin(address addr) private view returns (bool) 
+function checkinterests() public view returns(uint) 
+function balanceOf(address who) public view returns (uint256) 
+function isAddressWhitelisted(address addr) public constant returns(bool) 
+function timeOutBySender(uint _transactionID) public 
+function setPaused(bool value) external onlyOwner 
+function percUp(Token storage self, uint256 i) private 
+function mint(address[] memory accounts, uint32[] memory amounts) public onlyMinter 
+function getLockedTokensInGroup_(address walletAddress, uint256 groupNumber) internal view returns (uint256 balance) 
+function _multiplyDecimalRound(uint x, uint y, uint precisionUnit)
+        private
+        pure
+        returns (uint)
+    
+function addAddressToGovernanceContract(address addr) onlyOwner public returns(bool success) 
+function hasReachedSoftCap() public view returns (bool) 

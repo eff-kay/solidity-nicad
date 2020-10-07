@@ -1,0 +1,31 @@
+<clones>
+<systeminfo granularity="functions-blind" maxlines="4" minlines="1" processor="nicad5" system="smart_contracts" threshold="30%" />
+<cloneinfo npairs="374891" npcs="8259" />
+<runinfo cputime="2691782" ncompares="4324700" />
+<classinfo nclasses="135" />
+
+<class classid="7" nclones="1970" nlines="3" similarity="75">
+<source endline="1207" file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" pcid="4909" startline="1203" />
+<source endline="276" file="systems/smart_contracts/TrueProfileLogic.sol" pcid="7521" startline="272" />
+<source endline="869" file="systems/smart_contracts/DcorpDissolvementProposal.sol" pcid="2373" startline="859" />
+<source endline="505" file="systems/smart_contracts/Factory.sol" pcid="3511" startline="501" />
+<source endline="73" file="systems/smart_contracts/ParkingResolver.sol" pcid="5600" startline="69" />
+<source endline="623" file="systems/smart_contracts/Fortune999.sol" pcid="3750" startline="616" />
+<source endline="38" file="systems/smart_contracts/RestrictedTransferAgent.sol" pcid="6172" startline="26" />
+<source endline="1198" file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" pcid="4908" startline="1183" />
+<source endline="1242" file="systems/smart_contracts/SparksterTokenSwap.sol" pcid="6672" startline="1238" />
+<source endline="1497" file="systems/smart_contracts/CMRPDCrowdsale.sol" pcid="1833" startline="1494" />
+</class>
+
+<class classid="33" nclones="90" nlines="4" similarity="75">
+<source endline="1118" file="systems/smart_contracts/EstateRegistry.sol" pcid="3127" startline="1101" />
+<source endline="1603" file="systems/smart_contracts/Synthetix.sol" pcid="6876" startline="1587" />
+<source endline="871" file="systems/smart_contracts/SparksterTokenSwap.sol" pcid="6637" startline="863" />
+</class>
+
+<class classid="124" nclones="2" nlines="4" similarity="75">
+<source endline="1040" file="systems/smart_contracts/FPDeployer.sol" pcid="3897" startline="1033" />
+<source endline="250" file="systems/smart_contracts/VokenShareholders.sol" pcid="7797" startline="243" />
+</class>
+
+</clones>

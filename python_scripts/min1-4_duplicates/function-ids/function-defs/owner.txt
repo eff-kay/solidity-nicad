@@ -1,0 +1,377 @@
+owner() public pure returns (address) {}
+owner() public pure returns (address) {}
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+    return _owner;
+  }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+      return _owner;
+  }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public pure returns (address) {}
+owner() public pure returns (address) {}
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+    return _owner;
+  }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() external view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+      return _owner;
+  }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public pure returns (address) {}
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+      return _owner;
+  }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+    return _owner;
+  }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public pure returns (address) {}
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() external view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public pure returns (address) {}
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public pure returns (address) {}
+owner() public view returns (address) {
+      return _owner;
+  }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+    return _owner;
+  }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }
+owner() external view returns (address) {
+        return _owner;
+    }
+owner() public view returns(address) {
+        return _owner;
+    }
+owner() public view returns (address) {
+        return _owner;
+    }

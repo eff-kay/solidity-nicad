@@ -1,0 +1,83 @@
+	1. function isProxy(address account) public view returns (bool) 
+	2. function addProxy(address account) public onlyOwner 
+	3. function removeProxy(address account) public onlyOwner 
+	4. function setTarget(Proxyable _target)
+	        external
+	        onlyOwner
+	5. function setUseDELEGATECALL(bool value) 
+	        external
+	        onlyOwner
+	6. function _emit(bytes callData, uint numTopics, bytes32 topic1, bytes32 topic2, bytes32 topic3, bytes32 topic4)
+	        external
+	        onlyTarget
+	7. function()
+	        external
+	        payable
+	8. function setProxy(address _proxy)
+	        external
+	        onlyOwner
+	9. function setIntegrationProxy(address _integrationProxy)
+	        external
+	        onlyOwner
+	10. function setMessageSender(address sender)
+	        external
+	        onlyProxy
+	11. function changeSymbol(string memory _newSymbol) public onlyAttributesPermission 
+	12. function setup_key(string key) public
+	13. function update_new_hash(bytes32 new_hash) public
+	14. function clear() public
+	15. function get_id() public view returns(bytes32)
+	16. function isImportedContract(address _contract) external view returns (bool) 
+	17. function getImportedContractRate(address _contract) external view returns (uint256) 
+	18. function setImportedContract(address _contract, uint256 _exchRate) external onlyOwner
+	19. function supportsInterface(bytes4 interfaceId) external view returns (bool) 
+	20. function _registerInterface(bytes4 interfaceId) internal 
+	21. function name() external view returns (string memory) 
+	22. function symbol() external view returns (string memory) 
+	23. function Ownable() 
+	24. function implementation() external view returns (address impl) 
+	25. function initialize(uint256 _parentBlockInterval) public initializer 
+	26. function setOperator(address _operator) public ifAdmin 
+	27. function() 
+	    public 
+	    payable
+	28. function AddMessage(address _adr,uint _val,string _data)
+	    public
+	29. function showLockState(address _holder) public view returns (bool, uint256, uint256) 
+	30. function isContract(address addr) internal view returns (bool) 
+	31. function isContract(address account) internal view returns (bool) 
+	32. function toPayable(address account) internal pure returns (address payable) 
+	33. function () external payable 
+	34. function wallet() public view returns (address payable) 
+	35. function rate() public view returns (uint256) 
+	36. function weiRaised() public view returns (uint256) 
+	37. function finalized() public view returns (bool) 
+	38. function finalize() public 
+	39. function primary() public view returns (address) 
+	40. function transferPrimary(address recipient) public onlyPrimary 
+	41. function name() public view returns (string) 
+	42. function symbol() public view returns (string) 
+	43. function check(address _token,address _spender,address _from,address _to,uint256 _amount) public view returns (uint8)
+	44. function Try(string _response) external payable 
+	45. function isPricingStrategy() public constant returns (bool) 
+	46. function isSane(address crowdsale) public constant returns (bool) 
+	47. function isPresalePurchase(address purchaser) public constant returns (bool) 
+	48. function areReservedTokensDistributed() public constant returns (bool)
+	49. function hasDeposited(address user) public view returns (bool) 
+	50. function isUnlocked(address user) public view returns (bool) 
+	51. function setFactoryAddress(address _fAddress) external onlyOwner 
+	52. function getFactoryAddress() external view returns(address) 
+	53. function assert(bool assertion) internal 
+	54. function New(string _question, bytes32 _responseHash) public payable isAdmin 
+	55. function deleteOperation(bytes32 operation) internal 
+	56. function isContract(address account) internal view returns (bool) 
+	57. unction name() public view returns (string memory) 
+	58. function symbol() public view returns (string memory) 
+	59. function () external payable 
+	60. function _assert(bool assertion)public pure 
+	61. function isContract(address _addr) internal view returns (bool is_contract) 
+	62. function limitLessThan(uint a, uint b) internal pure returns(uint c) 
+	63. function _reAdjustDifficulty() internal 
+	64. function () external payable 
+	65. function isContract(address addr) internal view returns (bool) 
+function _admin() internal view returns (address adm) 

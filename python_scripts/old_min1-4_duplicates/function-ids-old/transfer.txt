@@ -1,0 +1,4359 @@
+transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through {transferFrom}
+transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/RaffleTicket.sol" startline="159" endline="168" pcid="5956">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/ZPayToken.sol" startline="33" endline="42" pcid="8226">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/YottaBytes.sol" startline="135" endline="144" pcid="8192">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/NibiruGovernanceToken.sol" startline="177" endline="186" pcid="5418">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through {transferFrom}
+transfer(address recipient, uint256 amount) external returns (bool);
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/ReferralTracker.sol" startline="109" endline="118" pcid="6019">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/KGCMortage.sol" startline="141" endline="150" pcid="4422">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/WantMarketplacesUtilityTokenCrowdsale.sol" startline="136" endline="145" pcid="7902">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/FPDeployer.sol" startline="260" endline="269" pcid="3806">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/QTChain.sol" startline="31" endline="40" pcid="5904">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through {transferFrom}
+transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/AMAToken.sol" startline="31" endline="40" pcid="644">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/AkropolisTimeLock.sol" startline="31" endline="40" pcid="477">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TDeployer.sol" startline="34" endline="43" pcid="7013">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/NewVoken.sol" startline="150" endline="151" pcid="5345">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/VokenShareholders.sol" startline="215" endline="216" pcid="7795">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+    function mintWithAllocation(address account, uint256 amount, address allocationContract) external returns (bool);
+</source>
+<source file="systems/smart_contracts/GAToken.sol" startline="135" endline="144" pcid="4033">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/PPLL.sol" startline="25" endline="34" pcid="5771">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through {transferFrom}
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+    _transfer(msg.sender, to, value);
+    return true;
+  }
+transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+    _transfer(msg.sender, to, value);
+    return true;
+  }
+transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+    _transfer(msg.sender, to, value);
+    return true;
+  }
+transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
+    return super.transfer(_to, _value);
+  }
+transfer(
+    address _to,
+    uint256 _value
+  )
+    public
+    whenNotPaused
+    returns (bool)
+  {
+    return super.transfer(_to, _value);
+  }
+transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
+    return super.transfer(_to, _value);
+  }
+transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
+    return super.transfer(_to, _value);
+  }
+transfer(address _to, uint _value) validDestination(_to) returns (bool) 
+    {
+        return super.transfer(_to, _value);
+    }
+transfer(address _to, uint _value) validDestination(_to) returns (bool) 
+    {
+        return super.transfer(_to, _value);
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+    _transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint _value) returns (bool success) {}
+transfer(address _to, uint _value) returns (bool success) {}
+transfer(address _to, uint _value) returns (bool success) {}
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+        require(_to != address(0));
+        require(_value <= balances[msg.sender]);
+        // SafeMath.sub will throw if there is not enough balance.
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+        require(_to != address(0));
+        require(_value <= balances[msg.sender]);
+
+        // SafeMath.sub will throw if there is not enough balance.
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+        require(_to != address(0));
+        require(_value <= balances[msg.sender]);
+
+        // SafeMath.sub will throw if there is not enough balance.
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+        require(_to != address(0));
+        require(_value <= balances[msg.sender]);
+
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint _value) returns (bool success) {
+    balances[msg.sender] = safeSub(balances[msg.sender], _value);
+    balances[_to] = safeAdd(balances[_to], _value);
+    Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint _value) returns (bool success) {
+    balances[msg.sender] = safeSub(balances[msg.sender], _value);
+    balances[_to] = safeAdd(balances[_to], _value);
+    Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint _value) returns (bool success) {
+    balances[msg.sender] = safeSub(balances[msg.sender], _value);
+    balances[_to] = safeAdd(balances[_to], _value);
+    Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint _value) canTransfer(msg.sender) returns (bool success) {
+    // Call StandardToken.transfer()
+   return super.transfer(_to, _value);
+  }
+transfer(address _to, uint _value) canTransfer(msg.sender) returns (bool success) {
+    // Call StandardToken.transfer()
+   return super.transfer(_to, _value);
+  }
+transfer(address to, uint256 value) public returns (bool) {
+        require(!frozenAccount[msg.sender]);
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+        require(!frozenAccount[msg.sender]);
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+        require(!frozenAccount[msg.sender]);
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        emit Transfer(msg.sender, _to, _value); //solhint-disable-line indent, no-unused-vars
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        emit Transfer(msg.sender, _to, _value); //solhint-disable-line indent, no-unused-vars
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address recipient, uint256 amount) public returns (bool) {
+    require(!_locked[msg.sender]);
+    _transfer(msg.sender, recipient, amount);
+    return true;
+  }
+transfer(address recipient, uint256 amount) public returns (bool) {
+    require(!_locked[msg.sender]);
+    _transfer(msg.sender, recipient, amount);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool){
+
+  	require(_to != address(0));
+  	require(_value <= balanceOf[msg.sender]);
+  	balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
+  	balanceOf[_to] = balanceOf[_to].add(_value);
+  	emit Transfer(msg.sender, _to, _value);
+  	return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool){
+
+      require(_to != address(0));
+      require(_value <= balanceOf[msg.sender]);
+      balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
+      balanceOf[_to] = balanceOf[_to].add(_value);
+      emit Transfer(msg.sender, _to, _value);
+      return true;
+  }
+transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
+        require(checkTransferAllowed(msg.sender, _to, _value) == STATUS_ALLOWED, "transfer must be allowed");
+        return ERC20.transfer(_to, _value);
+    }
+transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
+        require(checkTransferAllowed(msg.sender, _to, _value) == STATUS_ALLOWED, "transfer must be allowed");
+        return ERC20.transfer(_to, _value);
+    }
+transfer(address to, uint256 value) public {
+        _transfer(msg.sender, to, value);
+    }
+transfer(address to, uint256 value) public {
+        _transfer(msg.sender, to, value);
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool) {
+    require(value <= _balances[msg.sender]);
+    require(to != address(0));
+
+    uint256 tokensToBurn = findTwentyPercent(value);
+    uint256 tokensToTransfer = value.sub(tokensToBurn);
+
+    _balances[msg.sender] = _balances[msg.sender].sub(value);
+    _balances[to] = _balances[to].add(tokensToTransfer);
+
+    _totalSupply = _totalSupply.sub(tokensToBurn);
+
+    emit Transfer(msg.sender, to, tokensToTransfer);
+    emit Transfer(msg.sender, address(0), tokensToBurn);
+    return true;
+  }
+transfer(address to, uint256 value) public returns (bool) {
+    require(value <= _balances[msg.sender]);
+    require(to != address(0));
+
+    uint256 tokensToBurn = getTokensToBurn(value);
+    uint256 tokensToTransfer = value.sub(tokensToBurn);
+
+    _balances[msg.sender] = _balances[msg.sender].sub(value);
+    _balances[to] = _balances[to].add(tokensToTransfer);
+
+    _totalSupply = _totalSupply.sub(tokensToBurn);
+
+    emit Transfer(msg.sender, to, tokensToTransfer);
+    emit Transfer(msg.sender, address(0), tokensToBurn);
+    return true;
+  }
+transfer(address to, uint256 value) public returns (bool) {
+    require(value <= _balances[msg.sender]);
+    require(to != address(0));
+
+    uint256 tokensToBurn = findOnePercent(value);
+    uint256 tokensToTransfer = value.sub(tokensToBurn);
+
+    _balances[msg.sender] = _balances[msg.sender].sub(value);
+    _balances[to] = _balances[to].add(tokensToTransfer);
+
+    _totalSupply = _totalSupply.sub(tokensToBurn);
+
+    emit Transfer(msg.sender, to, tokensToTransfer);
+    emit Transfer(msg.sender, address(0), tokensToBurn);
+    return true;
+  }
+transfer(address to, uint256 value) public returns (bool) {
+    require(value <= _balances[msg.sender]);
+    require(to != address(0));
+
+    uint256 tokensToBurn = cut(value);
+    uint256 tokensToTransfer = value.sub(tokensToBurn);
+
+    _balances[msg.sender] = _balances[msg.sender].sub(value);
+    _balances[to] = _balances[to].add(tokensToTransfer);
+
+    _totalSupply = _totalSupply.sub(tokensToBurn);
+
+    emit Transfer(msg.sender, to, tokensToTransfer);
+    emit Transfer(msg.sender, address(0), tokensToBurn);
+    return true;
+  }
+transfer(address to, uint256 value) public returns (bool) {
+    require(value <= _balances[msg.sender]);
+    require(to != address(0));
+
+    uint256 tokensToBurn = cut(value);
+    uint256 tokensToTransfer = value.sub(tokensToBurn);
+
+    _balances[msg.sender] = _balances[msg.sender].sub(value);
+    _balances[to] = _balances[to].add(tokensToTransfer);
+
+    _totalSupply = _totalSupply.sub(tokensToBurn);
+
+    emit Transfer(msg.sender, to, tokensToTransfer);
+    emit Transfer(msg.sender, address(0), tokensToBurn);
+    return true;
+  }
+transfer(address to, uint256 value) public returns (bool) {
+    require(value <= _balances[msg.sender]);
+    require(to != address(0));
+
+    uint256 tokensToBurn = findOnePercent(value);
+    uint256 tokensToTransfer = value.sub(tokensToBurn);
+
+    _balances[msg.sender] = _balances[msg.sender].sub(value);
+    _balances[to] = _balances[to].add(tokensToTransfer);
+
+    _totalSupply = _totalSupply.sub(tokensToBurn);
+
+    emit Transfer(msg.sender, to, tokensToTransfer);
+    emit Transfer(msg.sender, address(0), tokensToBurn);
+    return true;
+  }
+transfer(address to, uint256 value) public returns (bool) {
+    require(value <= _balances[msg.sender]);
+    require(to != address(0));
+
+    uint256 tokensToBurn = findOneTenthPercent(value);
+    uint256 tokensToTransfer = value.sub(tokensToBurn);
+
+    _balances[msg.sender] = _balances[msg.sender].sub(value);
+    _balances[to] = _balances[to].add(tokensToTransfer);
+
+    _totalSupply = _totalSupply.sub(tokensToBurn);
+
+    emit Transfer(msg.sender, to, tokensToTransfer);
+    emit Transfer(msg.sender, address(0), tokensToBurn);
+    return true;
+  }
+transfer(address to, uint256 value) public returns (bool) {
+    require(value <= _balances[msg.sender]);
+    require(to != address(0));
+
+    uint256 tokensToBurn = findOnePercent(value);
+    uint256 tokensToTransfer = value.sub(tokensToBurn);
+
+    _balances[msg.sender] = _balances[msg.sender].sub(value);
+    _balances[to] = _balances[to].add(tokensToTransfer);
+
+    _totalSupply = _totalSupply.sub(tokensToBurn);
+
+    emit Transfer(msg.sender, to, tokensToTransfer);
+    emit Transfer(msg.sender, address(0), tokensToBurn);
+    return true;
+  }
+transfer(address to, uint256 value) public returns (bool) {
+    require(value <= _balances[msg.sender]);
+    require(to != address(0));
+
+    uint256 tokensToBurn = findOnePercent(value);
+    uint256 tokensToTransfer = value.sub(tokensToBurn);
+
+    _balances[msg.sender] = _balances[msg.sender].sub(value);
+    _balances[to] = _balances[to].add(tokensToTransfer);
+
+    _totalSupply = _totalSupply.sub(tokensToBurn);
+
+    emit Transfer(msg.sender, to, tokensToTransfer);
+    emit Transfer(msg.sender, address(0), tokensToBurn);
+    return true;
+  }
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address to, uint256 value) public {
+        _transfer(msg.sender, to, value);
+    }
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address to, uint256 value) public {
+        _transfer(msg.sender, to, value);
+    }
+transfer(address _to, uint256 _value) public {
+        transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+        require(_to != address(0));
+		require(_value > 0); 
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[_to] + _value >= balanceOf[_to]);
+		uint previousBalances = balanceOf[msg.sender] + balanceOf[_to];		
+        balanceOf[msg.sender] = SafeMath.safeSub(balanceOf[msg.sender], _value);
+        balanceOf[_to] = SafeMath.safeAdd(balanceOf[_to], _value);
+        emit Transfer(msg.sender, _to, _value);
+		assert(balanceOf[msg.sender]+balanceOf[_to]==previousBalances);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+        require(_to != address(0));
+		require(_value > 0); 
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[_to] + _value >= balanceOf[_to]);
+		uint previousBalances = balanceOf[msg.sender] + balanceOf[_to];		
+        balanceOf[msg.sender] = SafeMath.safeSub(balanceOf[msg.sender], _value);
+        balanceOf[_to] = SafeMath.safeAdd(balanceOf[_to], _value);
+        emit Transfer(msg.sender, _to, _value);
+		assert(balanceOf[msg.sender]+balanceOf[_to]==previousBalances);
+        return true;
+    }
+transfer(address _to, uint256 _value)public returns (bool success) {
+        require(_to != address(0));
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[ _to] + _value >= balanceOf[ _to]); 
+        
+        balanceOf[msg.sender] =SafeMath.safeSub(balanceOf[msg.sender],_value) ;
+        balanceOf[_to] =SafeMath.safeAdd(balanceOf[_to],_value) ;
+        
+        emit Transfer(msg.sender, _to, _value);
+        
+        return true;
+    }
+transfer(address _to, uint256 _value)public returns (bool success) {
+        require(_to != address(0));
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[ _to] + _value >= balanceOf[ _to]); 
+        
+        balanceOf[msg.sender] =SafeMath.safeSub(balanceOf[msg.sender],_value) ;
+        balanceOf[_to] =SafeMath.safeAdd(balanceOf[_to],_value) ;
+        
+        emit Transfer(msg.sender, _to, _value);
+        
+        return true;
+    }
+transfer(address _to, uint256 _value)public returns (bool success) {
+        require(_to != address(0));
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[ _to] + _value >= balanceOf[ _to]); 
+        
+        balanceOf[msg.sender] =SafeMath.safeSub(balanceOf[msg.sender],_value) ;
+        balanceOf[_to] =SafeMath.safeAdd(balanceOf[_to],_value) ;
+        
+        emit Transfer(msg.sender, _to, _value);
+        
+        return true;
+    }
+transfer(address _to, uint256 _value)public returns (bool success) {
+        require(_to != address(0));
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[ _to] + _value >= balanceOf[ _to]); 
+        
+        balanceOf[msg.sender] =SafeMath.safeSub(balanceOf[msg.sender],_value) ;
+        balanceOf[_to] =SafeMath.safeAdd(balanceOf[_to],_value) ;
+        
+        emit Transfer(msg.sender, _to, _value);
+        
+        return true;
+    }
+transfer(address _to, uint256 _value)public returns (bool success) {
+      require(_to != address(0));
+      require(balanceOf[msg.sender] >= _value);
+      require(balanceOf[ _to] + _value >= balanceOf[ _to]); 
+
+      balanceOf[msg.sender] =SafeMath.safeSub(balanceOf[msg.sender],_value) ;
+      balanceOf[_to] =SafeMath.safeAdd(balanceOf[_to],_value) ;
+
+      emit Transfer(msg.sender, _to, _value);
+
+      return true;
+  }
+transfer(address _to, uint256 _value)public returns (bool success) {
+        require(_to != address(0));
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[ _to] + _value >= balanceOf[ _to]); 
+        
+        balanceOf[msg.sender] =SafeMath.safeSub(balanceOf[msg.sender],_value) ;
+        balanceOf[_to] =SafeMath.safeAdd(balanceOf[_to],_value) ;
+        
+        emit Transfer(msg.sender, _to, _value);
+        
+        return true;
+    }
+transfer(address _to, uint256 _value)public returns (bool success) {
+        require(_to != address(0));
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[ _to] + _value >= balanceOf[ _to]); 
+        
+        balanceOf[msg.sender] =SafeMath.safeSub(balanceOf[msg.sender],_value) ;
+        balanceOf[_to] =SafeMath.safeAdd(balanceOf[_to],_value) ;
+        
+        emit Transfer(msg.sender, _to, _value);
+        
+        return true;
+    }
+transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through {transferFrom}
+transfer(address to, uint256 value) external returns (bool);
+  function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/AronCoin.sol" startline="26" endline="27" pcid="760">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/SuperMarket.sol" startline="8" endline="10" pcid="6753">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/GFNX.sol" startline="18" endline="20" pcid="4095">
+  function transfer(address to, uint256 value) external returns (bool);
+
+  function approve(address spender, uint256 value)
+</source>
+<source file="systems/smart_contracts/Comet.sol" startline="12" endline="13" pcid="1916">
+  function approve(address spender, uint256 value) external returns (bool);
+  function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/SuperMarket.sol" startline="10" endline="12" pcid="6754">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/DNP.sol" startline="74" endline="75" pcid="2790">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/SellableToken.sol" startline="37" endline="38" pcid="6460">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/EnergiPlus.sol" startline="55" endline="56" pcid="2950">
+    function transfer(address _to, uint256 _value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/EducationLibra.sol" startline="45" endline="46" pcid="2882">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/RDTv1.sol" startline="14" endline="15" pcid="5988">
+  function approve(address spender, uint256 value) external returns (bool);
+  function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/Fuelcoin.sol" startline="12" endline="13" pcid="3916">
+  function approve(address spender, uint256 value) external returns (bool);
+  function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/ReservedTokensFinalizeAgent.sol" startline="331" endline="332" pcid="6097">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/TDCToken.sol" startline="77" endline="78" pcid="6981">
+    function transfer(address to, uint256 value) external returns (bool);
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/ReferralTracker.sol" startline="134" endline="145" pcid="6021">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/BountyBoard.sol" startline="119" endline="121" pcid="1496">
+  function approve(address spender, uint256 value) public returns (bool);
+
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/NSTTeamLock.sol" startline="14" endline="16" pcid="5452">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/ERC20TOKEN.sol" startline="19" endline="21" pcid="3010">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/Comet.sol" startline="11" endline="12" pcid="1915">
+  function transfer(address to, uint256 value) external returns (bool);
+  function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/Factory.sol" startline="198" endline="199" pcid="3445">
+    function transfer(address to, uint256 value) external returns (bool);
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/ABCToken.sol" startline="54" endline="65" pcid="303">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer}
+transfer(address _to, uint256 _value)
+        external
+        returns (bool);
+
+    function transferFrom(address _from, address _to, uint256 _value)
+</source>
+<source file="systems/smart_contracts/ShekzCoin.sol" startline="58" endline="59" pcid="6481">
+    function transfer(address _to, uint256 _value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/BlockPoolToken.sol" startline="15" endline="16" pcid="1407">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/AronCoin.sol" startline="15" endline="16" pcid="757">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/ESTATERO.sol" startline="33" endline="34" pcid="3165">
+  function approve(address spender, uint256 value) external returns (bool);
+  function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/MainToken.sol" startline="10" endline="11" pcid="4640">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/LuckyAdvcedWoken.sol" startline="9" endline="11" pcid="4548">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/PositionTokenV2.sol" startline="21" endline="22" pcid="5745">
+  function transfer(address _to, uint256 _value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/BKN.sol" startline="20" endline="21" pcid="1323">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/GFNX.sol" startline="20" endline="23" pcid="4096">
+  function approve(address spender, uint256 value)
+    external returns (bool);
+
+  function transferFrom(address from, address to, uint256 value)
+</source>
+<source file="systems/smart_contracts/Fair7Token.sol" startline="64" endline="65" pcid="3522">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/ILLUSION.sol" startline="66" endline="67" pcid="4298">
+    function transfer(address _to, uint256 _value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/bitforedex.sol" startline="60" endline="61" pcid="1272">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/MBA.sol" startline="109" endline="110" pcid="4710">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(
+</source>
+<source file="systems/smart_contracts/MonereumNetwork.sol" startline="54" endline="55" pcid="4955">
+    function transfer(address _to, uint256 _value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/Gacha.sol" startline="76" endline="78" pcid="3976">
+    function transfer(address to, uint256 value) public returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/SmokeCoinV_2.sol" startline="55" endline="56" pcid="6547">
+    function transfer(address _to, uint256 _value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/CoinDumper.sol" startline="202" endline="203" pcid="1894">
+    function approve(address spender, uint256 value) public returns (bool);
+    function burn(uint256 _value) public ;
+</source>
+<source file="systems/smart_contracts/BlockPoolToken.sol" startline="130" endline="131" pcid="1419">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/FPDeployer.sol" startline="285" endline="296" pcid="3808">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/SparksterTokenSwap.sol" startline="423" endline="424" pcid="6615">
+	function transfer(address to, uint256 value) public returns (bool);
+	event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/PoaOperator.sol" startline="309" endline="311" pcid="5683">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/CrowdsaleTokenExt.sol" startline="17" endline="18" pcid="2092">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/CRUSH.sol" startline="11" endline="12" pcid="2147">
+  function transfer(address to, uint256 value) external returns (bool);
+  function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/bitforedex.sol" startline="54" endline="55" pcid="1270">
+    function transfer(address _to, uint256 _value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/MULTIFOMO.sol" startline="58" endline="59" pcid="5090">
+  function transfer(address to, uint256 value) external returns (bool);
+  function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/BDAM.sol" startline="97" endline="98" pcid="1115">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/Faireum.sol" startline="257" endline="259" pcid="3568">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/CRUSH.sol" startline="12" endline="13" pcid="2148">
+  function approve(address spender, uint256 value) external returns (bool);
+  function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/DNP.sol" startline="19" endline="20" pcid="2783">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/PokaToken.sol" startline="10" endline="12" pcid="5726">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/MULTIFOMO.sol" startline="59" endline="60" pcid="5091">
+  function approve(address spender, uint256 value) external returns (bool);
+  function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/KAKITOKEN.sol" startline="105" endline="107" pcid="4387">
+    function approve(address spender, uint256 value) public returns (bool);
+
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/HupayX.sol" startline="95" endline="98" pcid="4238">
+  function approve(address spender, uint256 value)
+  external returns (bool);
+
+  function transferFrom(address from, address to, uint256 value)
+</source>
+<source file="systems/smart_contracts/BFGToken.sol" startline="56" endline="58" pcid="1186">
+  function approve(address agent, uint256 value) public returns (bool);
+
+}
+</source>
+<source file="systems/smart_contracts/Aigopay.sol" startline="67" endline="68" pcid="445">
+    function transfer(address _to, uint256 _value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/DAITOKEN.sol" startline="15" endline="17" pcid="2299">
+  function transfer(address to, uint256 value) external returns (bool);
+
+  function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/BDAM.sol" startline="175" endline="176" pcid="1124">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/PPLL.sol" startline="25" endline="34" pcid="5771">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through {transferFrom}
+transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/HupayX.sol" startline="93" endline="95" pcid="4237">
+  function transfer(address to, uint256 value) external returns (bool);
+
+  function approve(address spender, uint256 value)
+</source>
+<source file="systems/smart_contracts/RETC.sol" startline="41" endline="42" pcid="6182">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/AoraCoin.sol" startline="25" endline="28" pcid="728">
+  function approve(address spender, uint256 value)
+    external returns (bool);
+
+  function transferFrom(address from, address to, uint256 value)
+</source>
+<source file="systems/smart_contracts/Fair7Token.sol" startline="51" endline="52" pcid="3517">
+    function transfer(address _to, uint256 _value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/PropertyToken.sol" startline="85" endline="87" pcid="5840">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value)
+</source>
+<source file="systems/smart_contracts/CRYPTOMZ.sol" startline="86" endline="87" pcid="2179">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/GameGold.sol" startline="193" endline="194" pcid="3996">
+  function transfer(address to, uint256 value) public returns (bool);
+  function allowance(address owner, address spender) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TDCToken.sol" startline="79" endline="80" pcid="6983">
+    function approve(address spender, uint256 value) external returns (bool);
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/DigitalBitsToken.sol" startline="23" endline="26" pcid="2737">
+  function approve(address spender, uint256 value)
+    external returns (bool);
+
+  function transferFrom(address from, address to, uint256 value)
+</source>
+<source file="systems/smart_contracts/SistContract.sol" startline="38" endline="39" pcid="6517">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/ShekzCoin.sol" startline="64" endline="65" pcid="6483">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/Faireum.sol" startline="255" endline="257" pcid="3567">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/BoleToken.sol" startline="68" endline="69" pcid="1435">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/LBBT.sol" startline="42" endline="44" pcid="4538">
+  function transfer(address to, uint256 value) public returns (bool);
+  
+  function allowance(address owner, address spender)
+</source>
+<source file="systems/smart_contracts/Byte.sol" startline="13" endline="14" pcid="1568">
+  function transfer(address to, uint256 value) external returns (bool);
+  function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/SistContract.sol" startline="50" endline="51" pcid="6520">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" startline="67" endline="68" pcid="4837">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/MBFToken.sol" startline="447" endline="451" pcid="4762">
+    function approve(address _spender, uint256 _value)
+        external
+        returns (bool);
+
+    function totalSupply()
+</source>
+<source file="systems/smart_contracts/magesh.sol" startline="77" endline="79" pcid="4613">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/BlockbidLiquidity.sol" startline="14" endline="16" pcid="1359">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/CST_TOKEN.sol" startline="10" endline="11" pcid="2194">
+  function transfer(address _to, uint256 _value) external returns (bool);
+  function transferFrom(address _from, address _to, uint256 _value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/SuperPointsToken.sol" startline="109" endline="110" pcid="6778">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/BKN.sol" startline="17" endline="18" pcid="1320">
+    function transfer(address to, uint256 value) public returns (bool);
+    function allowance(address owner, address spender) public constant returns (uint256);
+</source>
+<source file="systems/smart_contracts/CRYPTOMZ.sol" startline="131" endline="132" pcid="2184">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/CST_TOKEN.sol" startline="12" endline="13" pcid="2196">
+  function approve(address _spender, uint256 _value) external returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/BoleToken.sol" startline="75" endline="76" pcid="1438">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/ReferralTracker.sol" startline="109" endline="118" pcid="6019">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/NBToken.sol" startline="15" endline="16" pcid="5297">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/PoaOperator.sol" startline="307" endline="309" pcid="5682">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/RaffleTicket.sol" startline="159" endline="168" pcid="5956">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/QTChain.sol" startline="56" endline="67" pcid="5906">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer}
+transfer(address to, uint256 value) public returns (bool);
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/BoleToken.sol" startline="62" endline="63" pcid="1433">
+    function transfer(address _to, uint256 _value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/SeedDex.sol" startline="17" endline="19" pcid="6405">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/ankara.sol" startline="19" endline="21" pcid="675">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/SeedDex.sol" startline="19" endline="21" pcid="6406">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/MAdvcedWoken.sol" startline="11" endline="13" pcid="4588">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/LBBT.sol" startline="47" endline="49" pcid="4540">
+  function approve(address spender, uint256 value) public returns (bool);
+  
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/NSTTeamLock.sol" startline="12" endline="14" pcid="5451">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/BlockbidLiquidity.sol" startline="16" endline="18" pcid="1360">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/NBToken.sol" startline="146" endline="147" pcid="5309">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/Aigopay.sol" startline="80" endline="81" pcid="450">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/MBA.sol" startline="58" endline="59" pcid="4704">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/AkropolisTimeLock.sol" startline="31" endline="40" pcid="477">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/CASTWEETTOKEN.sol" startline="104" endline="106" pcid="1633">
+    function approve(address spender, uint256 value) public returns (bool);
+
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/Fair7Token.sol" startline="57" endline="58" pcid="3519">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/Authorization.sol" startline="109" endline="118" pcid="947">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/QTChain.sol" startline="31" endline="40" pcid="5904">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through {transferFrom}
+transfer(address _to, uint256 _value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/Aigopay.sol" startline="73" endline="74" pcid="447">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/EducationLibra.sol" startline="38" endline="39" pcid="2879">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/MonereumNetwork.sol" startline="60" endline="61" pcid="4957">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/NibiruGovernanceToken.sol" startline="177" endline="186" pcid="5418">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through {transferFrom}
+transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/ESTATERO.sol" startline="32" endline="33" pcid="3164">
+  function transfer(address to, uint256 value) external returns (bool);
+  function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/TDeployer.sol" startline="34" endline="43" pcid="7013">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TigerCash.sol" startline="202" endline="211" pcid="7179">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/MockOracle.sol" startline="75" endline="77" pcid="4924">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/ankara.sol" startline="21" endline="23" pcid="676">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/ALBToken.sol" startline="189" endline="191" pcid="576">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/TokenSwap.sol" startline="148" endline="150" pcid="7395">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/SmokeCoinV_2.sol" startline="61" endline="62" pcid="6549">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/BANG.sol" startline="16" endline="17" pcid="1039">
+  function approve(address spender, uint256 value) external returns (bool);
+  function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/TokenSwap.sol" startline="150" endline="152" pcid="7396">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/DigitalBitsToken.sol" startline="21" endline="23" pcid="2736">
+  function transfer(address to, uint256 value) external returns (bool);
+
+  function approve(address spender, uint256 value)
+</source>
+<source file="systems/smart_contracts/TokenSale.sol" startline="287" endline="288" pcid="7360">
+    function mint(address _to, uint256 _amount) public returns (bool);
+    function owner() public view returns (address);
+</source>
+<source file="systems/smart_contracts/SuperPointsToken.sol" startline="188" endline="189" pcid="6784">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/KGCMortage.sol" startline="141" endline="150" pcid="4422">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TokenSale.sol" startline="281" endline="283" pcid="7359">
+    function transfer(address to, uint256 value) public returns (bool);
+
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/TokenSale.sol" startline="278" endline="279" pcid="7356">
+    function approve(address spender, uint256 value) public returns (bool);
+    function totalSupply() public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/GAToken.sol" startline="160" endline="171" pcid="4035">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/MultipleArbitrableTokenTransaction.sol" startline="275" endline="284" pcid="5158">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/KGCMortage.sol" startline="166" endline="177" pcid="4424">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/CNG.sol" startline="19" endline="21" pcid="1843">
+  function transfer(address to, uint256 value) external returns (bool);
+
+  function approve(address spender, uint256 value)
+</source>
+<source file="systems/smart_contracts/BFGToken.sol" startline="45" endline="46" pcid="1183">
+  function transfer(address to, uint256 value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/TorexToken.sol" startline="69" endline="70" pcid="7409">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/GoldenRings.sol" startline="45" endline="46" pcid="4171">
+    function transfer(address to, uint256 value) public returns (bool);
+    function allowance(address owner, address spender) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/YottaBytes.sol" startline="135" endline="144" pcid="8192">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TorexToken.sol" startline="162" endline="163" pcid="7417">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(
+</source>
+<source file="systems/smart_contracts/TigerCash.sol" startline="227" endline="238" pcid="7181">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/TRT_Token.sol" startline="62" endline="63" pcid="7454">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/FPDeployer.sol" startline="773" endline="774" pcid="3879">
+    function transfer(address to, uint256 value) external returns (bool);
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/TRT_Token.sol" startline="117" endline="118" pcid="7460">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/UGCoin.sol" startline="34" endline="35" pcid="7528">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/TDeployer.sol" startline="59" endline="70" pcid="7015">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/UGCoin.sol" startline="41" endline="42" pcid="7531">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/GameGold.sol" startline="196" endline="197" pcid="3999">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/XGP.sol" startline="80" endline="81" pcid="8107">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/UTC.sol" startline="65" endline="66" pcid="7577">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/CustomToken.sol" startline="186" endline="188" pcid="2241">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value)
+</source>
+<source file="systems/smart_contracts/UTC.sol" startline="125" endline="126" pcid="7583">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/CNG.sol" startline="21" endline="24" pcid="1844">
+  function approve(address spender, uint256 value)
+    external returns (bool);
+
+  function transferFrom(address from, address to, uint256 value)
+</source>
+<source file="systems/smart_contracts/Tokeniso.sol" startline="12" endline="13" pcid="7314">
+  function approve(address spender, uint256 value) external returns (bool);
+  function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/AoraCoin.sol" startline="23" endline="25" pcid="727">
+  function transfer(address to, uint256 value) external returns (bool);
+
+  function approve(address spender, uint256 value)
+</source>
+<source file="systems/smart_contracts/LuckyAdvcedWoken.sol" startline="11" endline="13" pcid="4549">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/Tokeniso.sol" startline="11" endline="12" pcid="7313">
+  function transfer(address to, uint256 value) external returns (bool);
+  function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/VantaToken.sol" startline="28" endline="30" pcid="7635">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/Stakeo.sol" startline="73" endline="74" pcid="6684">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/MultiSign.sol" startline="23" endline="24" pcid="5235">
+  function transfer(address to, uint256 value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/PDataToSHFund.sol" startline="18" endline="19" pcid="5628">
+  function transfer(address _to, uint256 _value) public returns (bool);
+  function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/XGP.sol" startline="73" endline="74" pcid="8104">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/VantaToken.sol" startline="30" endline="32" pcid="7636">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/EnergiPlus.sol" startline="61" endline="62" pcid="2952">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/SBC.sol" startline="283" endline="285" pcid="6329">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/TokenBank.sol" startline="241" endline="244" pcid="7286">
+  function approve(address spender, uint256 value)
+    external returns (bool);
+
+  function transferFrom(address from, address to, uint256 value)
+</source>
+<source file="systems/smart_contracts/ILLUSION.sol" startline="79" endline="80" pcid="4303">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/GAToken.sol" startline="135" endline="144" pcid="4033">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TokenBank.sol" startline="239" endline="241" pcid="7285">
+  function transfer(address to, uint256 value) external returns (bool);
+
+  function approve(address spender, uint256 value)
+</source>
+<source file="systems/smart_contracts/Stakeo.sol" startline="66" endline="67" pcid="6681">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/DepositRegistry.sol" startline="109" endline="118" pcid="2460">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/SBC.sol" startline="285" endline="287" pcid="6330">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/CustomToken.sol" startline="188" endline="191" pcid="2242">
+    function approve(address spender, uint256 value)
+    external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value)
+</source>
+<source file="systems/smart_contracts/ZPayToken.sol" startline="58" endline="69" pcid="8228">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/AMAToken.sol" startline="31" endline="40" pcid="644">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/ShekzCoin.sol" startline="71" endline="72" pcid="6486">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/DAITOKEN.sol" startline="17" endline="19" pcid="2300">
+  function approve(address spender, uint256 value) external returns (bool);
+
+  function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/Stakeo.sol" startline="60" endline="61" pcid="6679">
+    function transfer(address _to, uint256 _value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/ReservedTokensFinalizeAgent.sol" startline="17" endline="18" pcid="6069">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/AkropolisTokenVesting.sol" startline="56" endline="67" pcid="519">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/DABANKING_SWAP.sol" startline="14" endline="16" pcid="2268">
+    function approve(address spender, uint256 value) public returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/Authorization.sol" startline="134" endline="145" pcid="949">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/CMRPDCrowdsale.sol" startline="56" endline="67" pcid="1748">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/DepositRegistry.sol" startline="134" endline="145" pcid="2462">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/CoinDumper.sol" startline="195" endline="196" pcid="1891">
+    function transfer(address to, uint256 value) external returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/AkropolisTimeLock.sol" startline="56" endline="67" pcid="479">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/VictorToken.sol" startline="186" endline="188" pcid="7714">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value)
+</source>
+<source file="systems/smart_contracts/ALBToken.sol" startline="191" endline="193" pcid="577">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/RaffleTicket.sol" startline="184" endline="195" pcid="5958">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/NibiruGovernanceToken.sol" startline="202" endline="213" pcid="5420">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer}
+transfer(address to, uint256 value) external returns (bool);
+  function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/FMT.sol" startline="12" endline="13" pcid="3647">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/NaorisToken.sol" startline="62" endline="63" pcid="5283">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/GoldenRings.sol" startline="48" endline="50" pcid="4174">
+    function approve(address spender, uint256 value) public returns (bool);
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/DICCrowdsale.sol" startline="12" endline="13" pcid="2641">
+  function approve(address spender, uint256 value) external returns (bool);
+  function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/MultipleArbitrableTokenTransaction.sol" startline="300" endline="311" pcid="5160">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/CASTWEETTOKEN.sol" startline="102" endline="103" pcid="1631">
+    function transfer(address to, uint256 value) public returns (bool);
+    function transferFrom(address from, address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/Crowdsale.sol" startline="55" endline="56" pcid="2045">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(
+</source>
+<source file="systems/smart_contracts/ROCKEX.sol" startline="11" endline="12" pcid="6198">
+  function transfer(address to, uint256 value) external returns (bool);
+  function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/Deflacoin.sol" startline="16" endline="17" pcid="2390">
+  function approve(address spender, uint256 value) external returns (bool);
+  function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/ERC20TOKEN.sol" startline="17" endline="19" pcid="3009">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/STPCToken.sol" startline="186" endline="188" pcid="6727">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value)
+</source>
+<source file="systems/smart_contracts/PokaToken.sol" startline="8" endline="10" pcid="5725">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/VictorToken.sol" startline="188" endline="191" pcid="7715">
+    function approve(address spender, uint256 value)
+    external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value)
+</source>
+<source file="systems/smart_contracts/VisionBitcoinCash.sol" startline="15" endline="16" pcid="7741">
+  function transfer(address to, uint256 value) public returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/DICCrowdsale.sol" startline="11" endline="12" pcid="2640">
+  function transfer(address to, uint256 value) external returns (bool);
+  function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/XGP.sol" startline="67" endline="68" pcid="8102">
+    function transfer(address _to, uint256 _value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/SparksterTokenSwap.sol" startline="534" endline="535" pcid="6624">
+	function approve(address spender, uint256 value) public returns (bool);
+	event Approval(
+</source>
+<source file="systems/smart_contracts/MAdvcedWoken.sol" startline="9" endline="11" pcid="4587">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/Deflacoin.sol" startline="15" endline="16" pcid="2389">
+  function transfer(address to, uint256 value) external returns (bool);
+  function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/CMRPDCrowdsale.sol" startline="31" endline="40" pcid="1746">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/VisionBitcoinCash.sol" startline="26" endline="27" pcid="7744">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/VokenShareholders.sol" startline="192" endline="193" pcid="7789">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/CrowdsaleTokenExt.sol" startline="144" endline="145" pcid="2105">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/KAKITOKEN.sol" startline="103" endline="104" pcid="4385">
+    function transfer(address to, uint256 value) public returns (bool);
+    function transferFrom(address from, address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/ITVR.sol" startline="18" endline="19" pcid="4324">
+  function transfer(address _to, uint256 _value) public returns (bool);
+  function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/VokenShareholders.sol" startline="194" endline="195" pcid="7791">
+    function approve(address spender, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/VokenShareholders.sol" startline="215" endline="216" pcid="7795">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+    function mintWithAllocation(address account, uint256 amount, address allocationContract) external returns (bool);
+</source>
+<source file="systems/smart_contracts/XCToken.sol" startline="17" endline="18" pcid="8073">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/RDTv1.sol" startline="13" endline="14" pcid="5987">
+  function transfer(address to, uint256 value) external returns (bool);
+  function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/WantMarketplacesUtilityTokenCrowdsale.sol" startline="136" endline="145" pcid="7902">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/MultiSendErc20.sol" startline="76" endline="77" pcid="5208">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/WantMarketplacesUtilityTokenCrowdsale.sol" startline="161" endline="172" pcid="7904">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/TimeLockedTokenStorage.sol" startline="68" endline="69" pcid="7227">
+    function transfer(address _to, uint256 _value) public returns (bool);
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/FMT.sol" startline="19" endline="20" pcid="3650">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/RETC.sol" startline="34" endline="35" pcid="6179">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/XCToken.sol" startline="14" endline="15" pcid="8070">
+  function transfer(address to, uint256 value) public returns (bool);
+  function allowance(address owner, address spender) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/WizardCashCoin.sol" startline="32" endline="33" pcid="8011">
+    function transfer(address _to, uint256 _value) public returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/MonereumNetwork.sol" startline="67" endline="68" pcid="4960">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/Crowdsale.sol" startline="44" endline="45" pcid="2042">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/WizardCashCoin.sol" startline="38" endline="39" pcid="8013">
+    function transfer(address to, uint256 value) public returns (bool);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+</source>
+<source file="systems/smart_contracts/NewVoken.sol" startline="150" endline="151" pcid="5345">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/WizardCashCoin.sol" startline="45" endline="46" pcid="8016">
+    function approve(address spender, uint256 value) public returns (bool);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/FPDeployer.sol" startline="774" endline="775" pcid="3880">
+    function approve(address spender, uint256 value) external returns (bool);
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" startline="336" endline="337" pcid="4857">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/AkropolisTokenVesting.sol" startline="31" endline="40" pcid="517">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through `transferFrom`. This is
+     * zero by default.
+     *
+     * This value changes when `approve` or `transferFrom` are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/MainToken.sol" startline="76" endline="77" pcid="4650">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(
+</source>
+<source file="systems/smart_contracts/NewVoken.sol" startline="152" endline="153" pcid="5347">
+    function approve(address spender, uint256 amount) external returns (bool);
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/BountyBoard.sol" startline="116" endline="117" pcid="1493">
+  function transfer(address to, uint256 value) public returns (bool);
+  function allowance(address owner, address spender) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/STPCToken.sol" startline="188" endline="191" pcid="6728">
+    function approve(address spender, uint256 value)
+    external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value)
+</source>
+<source file="systems/smart_contracts/MockOracle.sol" startline="77" endline="79" pcid="4925">
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/YottaBytes.sol" startline="160" endline="171" pcid="8194">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/WTA.sol" startline="65" endline="66" pcid="8049">
+    function approve(address spender, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/SellableToken.sol" startline="44" endline="45" pcid="6463">
+  function approve(address spender, uint256 value) public returns (bool);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+</source>
+<source file="systems/smart_contracts/WTA.sol" startline="63" endline="64" pcid="8047">
+    function transfer(address recipient, uint256 amount) external returns (bool);
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/magesh.sol" startline="75" endline="77" pcid="4612">
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function approve(address spender, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/PPLL.sol" startline="50" endline="61" pcid="5773">
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer}
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
+    return super.transfer(_to, _value);
+  }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(
+    address _to,
+    uint256 _value
+  )
+    public
+    whenNotPaused
+    returns (bool)
+  {
+    return super.transfer(_to, _value);
+  }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
+    return super.transfer(_to, _value);
+  }
+transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
+    return super.transfer(_to, _value);
+  }
+transfer(address to, uint256 value) public whenNotPaused returns (bool) {
+        return super.transfer(to, value);
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balanceOf[msg.sender] = balanceOf[msg.sender].sub(tokens);
+        balanceOf[to] = balanceOf[to].add(tokens);
+
+        emit Transfer(msg.sender, to, tokens);
+
+        return true;
+    }
+transfer(address _to, uint256 _value) {
+        if (_to == 0x0) throw;                               // Prevent transfer to 0x0 address. Use burn() instead
+		if (_value <= 0) throw; 
+        if (balanceOf[msg.sender] < _value) throw;           // Check if the sender has enough
+        if (balanceOf[_to] + _value < balanceOf[_to]) throw; // Check for overflows
+        balanceOf[msg.sender] = SafeMath.safeSub(balanceOf[msg.sender], _value);                     // Subtract from the sender
+        balanceOf[_to] = SafeMath.safeAdd(balanceOf[_to], _value);                            // Add the same to the recipient
+        Transfer(msg.sender, _to, _value);                   // Notify anyone listening that this transfer took place
+    }
+transfer(address _to, uint256 _value) {
+        if (_to == 0x0) throw;                               // Prevent transfer to 0x0 address. Use burn() instead
+		if (_value <= 0) throw; 
+        if (balanceOf[msg.sender] < _value) throw;           // Check if the sender has enough
+        if (balanceOf[_to] + _value < balanceOf[_to]) throw; // Check for overflows
+        balanceOf[msg.sender] = SafeMath.safeSub(balanceOf[msg.sender], _value);                     // Subtract from the sender
+        balanceOf[_to] = SafeMath.safeAdd(balanceOf[_to], _value);                            // Add the same to the recipient
+        Transfer(msg.sender, _to, _value);                   // Notify anyone listening that this transfer took place
+    }
+transfer(address to, uint256 value) public returns (bool) {
+    require(to != address(0));
+    require(value <= _balances[msg.sender]);
+
+    _balances[msg.sender] = _balances[msg.sender].sub(value);
+    _balances[to] = _balances[to].add(value);
+    emit Transfer(msg.sender, to, value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+        require(_to != address(0));
+        require(_value <= balances[msg.sender]);
+        // SafeMath.sub will throw if there is not enough balance.
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+        require(_to != address(0));
+        require(_value <= balances[msg.sender]);
+
+        // SafeMath.sub will throw if there is not enough balance.
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+        require(_to != address(0));
+        require(_value <= balances[msg.sender]);
+
+        // SafeMath.sub will throw if there is not enough balance.
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool){
+
+  	require(_to != address(0));
+  	require(_value <= balanceOf[msg.sender]);
+  	balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
+  	balanceOf[_to] = balanceOf[_to].add(_value);
+  	emit Transfer(msg.sender, _to, _value);
+  	return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool){
+
+      require(_to != address(0));
+      require(_value <= balanceOf[msg.sender]);
+      balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
+      balanceOf[_to] = balanceOf[_to].add(_value);
+      emit Transfer(msg.sender, _to, _value);
+      return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+        require(_to != address(0));
+        require(_value <= balances[msg.sender]);
+
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+    }
+transfer(
+    address _to,
+    uint256 _value
+  )
+    public
+    returns (bool)
+  {
+    frozenCheck(msg.sender);
+    frozenCheck(_to);
+    return super.transfer(_to, _value);
+  }
+transfer(address to, uint256 value) public returns (bool) {
+	    _tryTransfered(msg.sender);
+	    _tryTransfered(to);
+	    
+	    return super.transfer(to, value);
+	}
+transfer(address _to, uint256 _value) returns (bool success) {}
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        emit Transfer(msg.sender, _to, _value); //solhint-disable-line indent, no-unused-vars
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool success) {
+        require(balanceOf[msg.sender] >= value);
+        balanceOf[msg.sender] -= value;
+        balanceOf[to] += value;
+        emit Transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        emit Transfer(msg.sender, _to, _value); //solhint-disable-line indent, no-unused-vars
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+            require(balanceOf[msg.sender] >= _value);
+            balanceOf[msg.sender] -= _value;
+            balanceOf[_to] += _value;
+            emit Transfer(msg.sender, _to, _value);
+            return true;
+        }
+transfer(address _to, uint256 _value) public returns (bool){
+        return transferFrom(msg.sender, _to, _value);
+    }
+transfer(address dst, uint256 wad) public returns (bool) {
+        return transferFrom(msg.sender, dst, wad);
+    }
+transfer(address to, uint256 value) public returns (bool) {
+        // Mutable state call requires the proxy to tell the target who the msg.sender is.
+        target.setMessageSender(msg.sender);
+
+        // Forward the ERC20 call to the target contract
+        IERC20(target).transfer(to, value);
+
+        // Event emitting will occur via Synthetix.Proxy._emit()
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+
+        balances[to] = balances[to].add(tokens);
+
+        Transfer(msg.sender, to, tokens);
+
+        return true;
+
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+		require(_stopTrade != true || isOwner());
+		require(to > address(0));
+
+		balances[msg.sender] = balances[msg.sender].sub(tokens);
+		balances[to] = balances[to].add(tokens);
+		emit Transfer(msg.sender, to, tokens);
+		return true;
+	}
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balanceOf[msg.sender] = balanceOf[msg.sender].sub(tokens);
+        balanceOf[to] = balanceOf[to].add(tokens);
+
+        emit Transfer(msg.sender, to, tokens);
+
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
+
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        
+        balances[msg.sender] = balances[msg.sender].sub(_amount);
+        balances[_to] = balances[_to].add(_amount);
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(canTransfer(msg.sender));
+    
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool){
+        return transferFrom(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+	require(_to != address(0));
+    require(balances[msg.sender] >= _value);
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(
+    address _to,
+    uint256 _value
+  )
+    public
+    returns (bool)
+  {
+    frozenCheck(msg.sender);
+    frozenCheck(_to);
+    return super.transfer(_to, _value);
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+        require(_to != address(0));
+        require(_value <= balances[msg.sender]);
+        // SafeMath.sub will throw if there is not enough balance.
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+        require(_to != address(0));
+        require(_value <= balances[msg.sender]);
+
+        // SafeMath.sub will throw if there is not enough balance.
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool){
+
+      require(_to != address(0));
+      require(_value <= balanceOf[msg.sender]);
+      balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
+      balanceOf[_to] = balanceOf[_to].add(_value);
+      emit Transfer(msg.sender, _to, _value);
+      return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool){
+
+  	require(_to != address(0));
+  	require(_value <= balanceOf[msg.sender]);
+  	balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
+  	balanceOf[_to] = balanceOf[_to].add(_value);
+  	emit Transfer(msg.sender, _to, _value);
+  	return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool) {
+        require(_to != address(0));
+        require(_value <= balances[msg.sender]);
+
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+        require(_to != address(0));
+        require(_value <= balances[msg.sender]);
+
+        // SafeMath.sub will throw if there is not enough balance.
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(
+        address _to, 
+        uint256 _value
+    ) 
+    public 
+    returns (bool) 
+    {
+        require(_to != address(0));
+        require(_value <= balances[msg.sender]);
+
+        balances[msg.sender] = sub(balances[msg.sender],_value);
+
+            
+
+        balances[_to] = add(balances[_to], _value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value)
+  onlyPayloadSize(2 * 32)
+  checkTokenTransfer(msg.sender)
+  public returns (bool) {
+    require(_to != address(0));
+    require(_value <= balances[msg.sender]);
+
+    // SafeMath.sub will throw if there is not enough balance.
+    balances[msg.sender] = balances[msg.sender].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    emit Transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
+    return super.transfer(_to, _value);
+  }
+transfer(
+    address _to,
+    uint256 _value
+  )
+    public
+    whenNotPaused
+    returns (bool)
+  {
+    return super.transfer(_to, _value);
+  }
+transfer(address _to, uint _value) canTransfer(msg.sender) returns (bool success) {
+    // Call StandardToken.transfer()
+   return super.transfer(_to, _value);
+  }
+transfer(address _to, uint _value) canTransfer(msg.sender) returns (bool success) {
+    // Call StandardToken.transfer()
+   return super.transfer(_to, _value);
+  }
+transfer(address _to, uint _value) validDestination(_to) returns (bool) 
+    {
+        return super.transfer(_to, _value);
+    }
+transfer(address _to, uint _value) public validDestination(_to) returns (bool) {
+        return super.transfer(_to, _value);
+    }
+transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
+    return super.transfer(_to, _value);
+  }
+transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
+        require(checkTransferAllowed(msg.sender, _to, _value) == STATUS_ALLOWED, "transfer must be allowed");
+        return ERC20.transfer(_to, _value);
+    }
+transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
+    return super.transfer(_to, _value);
+  }
+transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
+        require(checkTransferAllowed(msg.sender, _to, _value) == STATUS_ALLOWED, "transfer must be allowed");
+        return ERC20.transfer(_to, _value);
+    }
+transfer(address _to, uint _value) validDestination(_to) returns (bool) 
+    {
+        return super.transfer(_to, _value);
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+    require(!frozenAccount[msg.sender]);
+	if (frozen) return false;
+    else return AbstractToken.transfer (_to, _value);
+  }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        emit Transfer(msg.sender, _to, _value); //solhint-disable-line indent, no-unused-vars
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        emit Transfer(msg.sender, _to, _value); //solhint-disable-line indent, no-unused-vars
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+    _transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool success){
+        success = operator.token_transfer(msg.sender, _to, _value);
+        bytes memory emptyBytes;
+        internalTokenFallback(msg.sender, _to, _value, emptyBytes);
+        emit Transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+            require(balanceOf[msg.sender] >= _value);
+            balanceOf[msg.sender] -= _value;
+            balanceOf[_to] += _value;
+            emit Transfer(msg.sender, _to, _value);
+            return true;
+        }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {}
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public kycVerified(msg.sender) frozenVerified(msg.sender) lockingVerified(msg.sender)  returns (bool) {
+        _transfer(msg.sender,_to,_value);
+        return true;
+    }
+transfer(address dst, uint256 wad) public returns (bool) {
+        require (dst != address(0));
+        require (wad > 0);
+        assert(_balances[msg.sender] >= wad);
+        
+        _balances[msg.sender] = _balances[msg.sender] - wad;
+        _balances[dst] = _balances[dst] + wad;
+        
+        emit Transfer(msg.sender, dst, wad);
+        
+        return true;
+    }
+transfer(address dst, uint256 wad) public returns (bool) {
+        return transferFrom(msg.sender, dst, wad);
+    }
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public {
+        transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value) public {
+/* Check if sender has balance and for overflows */
+require(balanceOf[msg.sender] >= _value && balanceOf[_to] + _value >= balanceOf[_to]);
+/* Notify anyone listening that this transfer took place */
+emit Transfer(msg.sender, _to, _value);
+/* Add and subtract new balances */
+balanceOf[msg.sender] -= _value;
+balanceOf[_to] += _value;
+}
+transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+transfer(address a, uint val) external returns (bool) {return false;}
+transfer(address to, uint tokens) public returns(bool success) {
+
+        uint toBurn = tokens.mul(burnPercent).div(1000);
+        uint toSend = tokens.sub(toBurn);
+
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+
+        balances[to] = balances[to].add(toSend);
+        emit Transfer(msg.sender, to, toSend);
+
+        balances[address(0)] = balances[address(0)].add(toBurn);
+        emit Transfer(msg.sender, address(0), toBurn);
+
+        return true;
+
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+
+        balances[to] = balances[to].add(tokens);
+
+        Transfer(msg.sender, to, tokens);
+
+        return true;
+
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+		require(_stopTrade != true || isOwner());
+		require(to > address(0));
+
+		balances[msg.sender] = balances[msg.sender].sub(tokens);
+		balances[to] = balances[to].add(tokens);
+		emit Transfer(msg.sender, to, tokens);
+		return true;
+	}
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = balances[msg.sender].sub(tokens);
+        balances[to] = balances[to].add(tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balanceOf[msg.sender] = balanceOf[msg.sender].sub(tokens);
+        balanceOf[to] = balanceOf[to].add(tokens);
+
+        emit Transfer(msg.sender, to, tokens);
+
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address to, uint256 tokens) public returns (bool success) {
+        require(tokens <= balances[msg.sender]);
+
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {}
+transfer(address _to, uint256 _value) public returns (bool _success) {
+        require(!paused);
+        return super.transfer(_to, _value);
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _amount) public returns (bool success) {
+        require(transfersEnabled);
+        return doTransfer(msg.sender, _to, _amount);
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value)public returns (bool success) {
+        require(_to != address(0));
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[ _to] + _value >= balanceOf[ _to]); 
+        
+        balanceOf[msg.sender] =SafeMath.safeSub(balanceOf[msg.sender],_value) ;
+        balanceOf[_to] =SafeMath.safeAdd(balanceOf[_to],_value) ;
+        
+        emit Transfer(msg.sender, _to, _value);
+        
+        return true;
+    }
+transfer(address _to, uint256 _value)public returns (bool success) {
+        require(_to != address(0));
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[ _to] + _value >= balanceOf[ _to]); 
+        
+        balanceOf[msg.sender] =SafeMath.safeSub(balanceOf[msg.sender],_value) ;
+        balanceOf[_to] =SafeMath.safeAdd(balanceOf[_to],_value) ;
+        
+        emit Transfer(msg.sender, _to, _value);
+        
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value)public returns (bool success) {
+        require(_to != address(0));
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[ _to] + _value >= balanceOf[ _to]); 
+        
+        balanceOf[msg.sender] =SafeMath.safeSub(balanceOf[msg.sender],_value) ;
+        balanceOf[_to] =SafeMath.safeAdd(balanceOf[_to],_value) ;
+        
+        emit Transfer(msg.sender, _to, _value);
+        
+        return true;
+    }
+transfer(address _to, uint256 _value)public returns (bool success) {
+        require(_to != address(0));
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[ _to] + _value >= balanceOf[ _to]); 
+        
+        balanceOf[msg.sender] =SafeMath.safeSub(balanceOf[msg.sender],_value) ;
+        balanceOf[_to] =SafeMath.safeAdd(balanceOf[_to],_value) ;
+        
+        emit Transfer(msg.sender, _to, _value);
+        
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+    require(!frozenAccount[msg.sender]);
+	if (frozen) return false;
+    else return AbstractToken.transfer (_to, _value);
+  }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        emit Transfer(msg.sender, _to, _value); //solhint-disable-line indent, no-unused-vars
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success){
+        success = operator.token_transfer(msg.sender, _to, _value);
+        bytes memory emptyBytes;
+        internalTokenFallback(msg.sender, _to, _value, emptyBytes);
+        emit Transfer(msg.sender, _to, _value);
+    }
+transfer(address _to, uint256 _value)public returns (bool success) {
+        require(_to != address(0));
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[ _to] + _value >= balanceOf[ _to]); 
+        
+        balanceOf[msg.sender] =SafeMath.safeSub(balanceOf[msg.sender],_value) ;
+        balanceOf[_to] =SafeMath.safeAdd(balanceOf[_to],_value) ;
+        
+        emit Transfer(msg.sender, _to, _value);
+        
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address to, uint256 value) public returns (bool success) {
+        require(balanceOf[msg.sender] >= value);
+        balanceOf[msg.sender] -= value;
+        balanceOf[to] += value;
+        emit Transfer(msg.sender, to, value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value)public returns (bool success) {
+        require(_to != address(0));
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[ _to] + _value >= balanceOf[ _to]); 
+        
+        balanceOf[msg.sender] =SafeMath.safeSub(balanceOf[msg.sender],_value) ;
+        balanceOf[_to] =SafeMath.safeAdd(balanceOf[_to],_value) ;
+        
+        emit Transfer(msg.sender, _to, _value);
+        
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+            require(balanceOf[msg.sender] >= _value);
+            balanceOf[msg.sender] -= _value;
+            balanceOf[_to] += _value;
+            emit Transfer(msg.sender, _to, _value);
+            return true;
+        }
+transfer(address _to, uint256 _value)public returns (bool success) {
+      require(_to != address(0));
+      require(balanceOf[msg.sender] >= _value);
+      require(balanceOf[ _to] + _value >= balanceOf[ _to]); 
+
+      balanceOf[msg.sender] =SafeMath.safeSub(balanceOf[msg.sender],_value) ;
+      balanceOf[_to] =SafeMath.safeAdd(balanceOf[_to],_value) ;
+
+      emit Transfer(msg.sender, _to, _value);
+
+      return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool success) {
+    _transfer(msg.sender, _to, _value);
+    return true;
+  }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        require(balances[msg.sender] >= _value);
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        emit Transfer(msg.sender, _to, _value); //solhint-disable-line indent, no-unused-vars
+        return true;
+    }
+transfer(address _to, uint256 _value) public returns (bool success) {
+        _transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address _to, uint256 _value) {
+        if (_to == 0x0) throw;                               // Prevent transfer to 0x0 address. Use burn() instead
+		if (_value <= 0) throw; 
+        if (balanceOf[msg.sender] < _value) throw;           // Check if the sender has enough
+        if (balanceOf[_to] + _value < balanceOf[_to]) throw; // Check for overflows
+        balanceOf[msg.sender] = SafeMath.safeSub(balanceOf[msg.sender], _value);                     // Subtract from the sender
+        balanceOf[_to] = SafeMath.safeAdd(balanceOf[_to], _value);                            // Add the same to the recipient
+        Transfer(msg.sender, _to, _value);                   // Notify anyone listening that this transfer took place
+    }
+transfer(address _to, uint256 _value) {
+        if (_to == 0x0) throw;                               // Prevent transfer to 0x0 address. Use burn() instead
+		if (_value <= 0) throw; 
+        if (balanceOf[msg.sender] < _value) throw;           // Check if the sender has enough
+        if (balanceOf[_to] + _value < balanceOf[_to]) throw; // Check for overflows
+        balanceOf[msg.sender] = SafeMath.safeSub(balanceOf[msg.sender], _value);                     // Subtract from the sender
+        balanceOf[_to] = SafeMath.safeAdd(balanceOf[_to], _value);                            // Add the same to the recipient
+        Transfer(msg.sender, _to, _value);                   // Notify anyone listening that this transfer took place
+    }
+transfer(address _to, uint256 _value) public isRunning validAddress returns (bool success) {
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[_to] + _value >= balanceOf[_to]);
+        balanceOf[msg.sender] -= _value;
+        balanceOf[_to] += _value;
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }
+transfer(address to, uint value)
+        public
+        optionalProxy
+        notFeeAddress(messageSender)
+        returns (bool)
+    {
+        uint amountReceived = feePool.amountReceivedFromTransfer(value);
+        uint fee = value.sub(amountReceived);
+
+        // Send the fee off to the fee pool.
+        synthetix.synthInitiatedFeePayment(messageSender, currencyKey, fee);
+
+        // And send their result off to the destination address
+        bytes memory empty;
+        return _internalTransfer(messageSender, to, amountReceived, empty);
+    }
+transfer(address to, uint value, bytes data)
+        public
+        optionalProxy
+        notFeeAddress(messageSender)
+        returns (bool)
+    {
+        uint amountReceived = feePool.amountReceivedFromTransfer(value);
+        uint fee = value.sub(amountReceived);
+
+        // Send the fee off to the fee pool, which we don't want to charge an additional fee on
+        synthetix.synthInitiatedFeePayment(messageSender, currencyKey, fee);
+
+        // And send their result off to the destination address
+        return _internalTransfer(messageSender, to, amountReceived, data);
+    }
+transfer(address _to, uint _value)  public transferAllowed(msg.sender, _to, _value) returns (bool) {
+        require((_to != address(0)) && (_to != address(this))); // Do not allow transfer to 0x0 or the token contract itself
+        balances[msg.sender] = balances[msg.sender].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+    }

@@ -1,0 +1,13 @@
+	1. function transfer(address _to, uint256 _value) public returns (bool success) 
+	2. function multiTransferSingleAmount(address[] memory receivers, uint256 amount) public 
+	3. function sendTokensBySameAmount(
+	        ERC20Interface token, 
+	        address[] memory addressArray, 
+	        uint256 amountToEachAddress,
+	        uint256 totalAmount
+	    ) public 
+	
+	4. function transfer(address to, uint256 value) public returns (bool) 
+	5. function giveBountyTokens(address _newInvestor, uint256 _value) public onlyOwner
+	6.  function payArbitrationFeeBySender(uint _transactionID) public payable
+    7. function removeInversePricing(bytes4 currencyKey) external onlyOwner 

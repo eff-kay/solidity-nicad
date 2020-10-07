@@ -1,0 +1,989 @@
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns(string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+        return _name;
+    }
+name() public view returns (string) {
+        return _name;
+    }
+name() public view returns(string) {
+        return _name;
+    }
+name() public view returns (string) {
+        return _name;
+    }
+name() public view returns (string) {
+        return _name;
+    }
+name() public view returns(string) {
+    return _name;
+  }
+name() public view returns(string) {
+    return _name;
+  }
+name() external view returns (string memory) {
+        return _name;
+    }
+name() external view returns (string memory) {
+        return _name;
+    }
+name() external view returns (string memory) {
+        return _name;
+    }
+name() external view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string);
+    function symbol() public view returns (string);
+</source>
+<source file="systems/smart_contracts/LBBT.sol" startline="40" endline="41" pcid="4536">
+  function totalSupply() public view returns (uint256);
+  function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TokenSwap.sol" startline="154" endline="156" pcid="7398">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TorexToken.sol" startline="67" endline="68" pcid="7407">
+  function totalSupply() public view returns (uint256);
+  function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TokenSale.sol" startline="293" endline="295" pcid="7366">
+    function paused() public view returns (bool);
+
+}
+</source>
+<source file="systems/smart_contracts/magesh.sol" startline="339" endline="341" pcid="4635">
+  function price() external view returns (uint256);
+
+}
+</source>
+<source file="systems/smart_contracts/TokenSale.sol" startline="292" endline="293" pcid="7365">
+    function decimals() public view returns (uint8);
+    function paused() public view returns (bool);
+</source>
+<source file="systems/smart_contracts/TokenSale.sol" startline="291" endline="292" pcid="7364">
+    function symbol() public view returns (string);
+    function decimals() public view returns (uint8);
+</source>
+<source file="systems/smart_contracts/TokenSale.sol" startline="290" endline="291" pcid="7363">
+    function name() public view returns (string);
+    function symbol() public view returns (string);
+</source>
+<source file="systems/smart_contracts/FPDeployer.sol" startline="771" endline="772" pcid="3877">
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address owner) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TokenSale.sol" startline="288" endline="289" pcid="7361">
+    function owner() public view returns (address);
+    function transferOwnership(address newOwner) public;
+</source>
+<source file="systems/smart_contracts/TokenSale.sol" startline="279" endline="280" pcid="7357">
+    function totalSupply() public view returns (uint256);
+    function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TournamentGameToken.sol" startline="30" endline="31" pcid="7428">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/FPDeployer.sol" startline="756" endline="757" pcid="3866">
+    function getMembersNumber() external view returns (uint);
+    function getMemberAddressByIndex(uint8) external view returns (address);
+</source>
+<source file="systems/smart_contracts/TRT_Token.sol" startline="60" endline="61" pcid="7452">
+    function totalSupply() public view returns (uint256);
+    function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/UltraBlockCoin.sol" startline="39" endline="40" pcid="7546">
+    function totalSupply() public view returns (uint);
+    function balanceOf(address tokenOwner) public view returns (uint balance);
+</source>
+<source file="systems/smart_contracts/UTC.sol" startline="63" endline="64" pcid="7575">
+  function totalSupply() public view returns (uint256);
+  function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/VACCToken.sol" startline="53" endline="54" pcid="7617">
+    function totalSupply() public constant returns (uint256);
+    function balanceOf(address tokenOwner) public constant returns (uint256 balance);
+</source>
+<source file="systems/smart_contracts/Tokeniso.sol" startline="8" endline="9" pcid="7310">
+  function totalSupply() external view returns (uint256);
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TDeployer.sol" startline="530" endline="531" pcid="7072">
+    function getWLLength() external view returns(uint256);
+    function setNewThreshold(uint256) external;
+</source>
+<source file="systems/smart_contracts/VantaToken.sol" startline="34" endline="36" pcid="7638">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TDeployer.sol" startline="528" endline="529" pcid="7070">
+    function getWLThresholdBalance() external view returns (uint256);
+    function getMaxWLAmount(address) external view returns(uint256);
+</source>
+<source file="systems/smart_contracts/VENT.sol" startline="56" endline="57" pcid="7680">
+        function totalSupply() public view returns (uint);
+        function balanceOf(address tokenOwner) public view returns (uint balance);
+</source>
+<source file="systems/smart_contracts/TokenBank.sol" startline="266" endline="268" pcid="7288">
+  function totalSupply() external view returns (uint256);
+
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TokenBank.sol" startline="232" endline="234" pcid="7282">
+  function totalSupply() external view returns (uint256);
+
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/PokaToken.sol" startline="14" endline="16" pcid="5728">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/VictorToken.sol" startline="179" endline="181" pcid="7711">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/SapientiaCharlesToken.sol" startline="49" endline="50" pcid="6271">
+    function totalSupply() public view returns (uint);
+    function balanceOf(address tokenOwner) public view returns (uint balance);
+</source>
+<source file="systems/smart_contracts/VokenShareholders.sol" startline="188" endline="190" pcid="7786">
+    function decimals() external view returns (uint8);
+
+    function totalSupply() external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/VokenShareholders.sol" startline="190" endline="191" pcid="7787">
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/VOTENOmodumtokenswapdotcom.sol" startline="50" endline="51" pcid="7833">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/BlockPoolToken.sol" startline="13" endline="14" pcid="1405">
+    function totalSupply() public view returns (uint256);
+    function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/WanCoinSupplyToken.sol" startline="35" endline="36" pcid="7855">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/Byte.sol" startline="10" endline="11" pcid="1565">
+  function totalSupply() external view returns (uint256);
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/WanCoinToken.sol" startline="35" endline="36" pcid="7877">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/Factory.sol" startline="195" endline="196" pcid="3442">
+    function decimals() external view returns (uint8);
+    function totalSupply() external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/WantMarketplacesUtilityTokenCrowdsale.sol" startline="122" endline="127" pcid="7900">
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * @dev Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/FPDeployer.sol" startline="770" endline="771" pcid="3876">
+    function decimals() external view returns (uint8);
+    function totalSupply() external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Wisdom.sol" startline="80" endline="82" pcid="7982">
+  function totalSupply() external view returns (uint256);
+
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/RDTv1.sol" startline="10" endline="11" pcid="5984">
+  function totalSupply() external view returns (uint256);
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/WTA.sol" startline="61" endline="62" pcid="8045">
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/XCToken.sol" startline="12" endline="13" pcid="8068">
+  function totalSupply() public view returns (uint256);
+  function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/XTRLPAY.sol" startline="50" endline="51" pcid="8131">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/TigerCash.sol" startline="188" endline="193" pcid="7177">
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/YOGEEToken.sol" startline="34" endline="35" pcid="8153">
+    function totalSupply() external view returns (uint);
+    function balanceOf(address owner) public view returns (uint256 balance);
+</source>
+<source file="systems/smart_contracts/TDeployer.sol" startline="497" endline="498" pcid="7043">
+    function getWalletOnTopAddress() external view returns (address);
+    function setWalletOnTopAddress(address) external returns(address);
+</source>
+<source file="systems/smart_contracts/YottaBytes.sol" startline="121" endline="126" pcid="8190">
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * @dev Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TDeployer.sol" startline="496" endline="497" pcid="7042">
+    function getMinterAddress() external view returns(address);
+    function getWalletOnTopAddress() external view returns (address);
+</source>
+<source file="systems/smart_contracts/ZPayToken.sol" startline="19" endline="24" pcid="8224">
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * @dev Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/MBFToken.sol" startline="451" endline="456" pcid="4763">
+    function totalSupply()
+        external
+        view
+        returns (uint256);
+
+    function balanceOf(address _owner)
+</source>
+<source file="systems/smart_contracts/GRAM.sol" startline="47" endline="48" pcid="4198">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/PRIT.sol" startline="33" endline="34" pcid="5804">
+    function totalSupply() public view returns (uint);
+    function balanceOf(address tokenOwner) public view returns (uint balance);
+</source>
+<source file="systems/smart_contracts/STPCToken.sol" startline="179" endline="181" pcid="6724">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Comet.sol" startline="8" endline="9" pcid="1912">
+  function totalSupply() external view returns (uint256);
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/ankara.sol" startline="25" endline="27" pcid="678">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/$martFund.sol" startline="64" endline="65" pcid="20">
+    function totalSupply() public view returns (uint256);
+    function balanceOf(address _holder) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/PropertyToken.sol" startline="78" endline="80" pcid="5837">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/NibiruGovernanceToken.sol" startline="163" endline="168" pcid="5416">
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * @dev Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TDeployer.sol" startline="20" endline="25" pcid="7011">
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * @dev Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/CustomToken.sol" startline="179" endline="181" pcid="2238">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/MockOracle.sol" startline="339" endline="341" pcid="4947">
+  function price() external view returns (uint256);
+
+}
+</source>
+<source file="systems/smart_contracts/Oracle.sol" startline="167" endline="168" pcid="5522">
+  function withdrawable() external view returns (uint256);
+}
+</source>
+<source file="systems/smart_contracts/DAITOKEN.sol" startline="9" endline="11" pcid="2296">
+  function totalSupply() external view returns (uint256);
+
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Faireum.sol" startline="249" endline="251" pcid="3564">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/MainToken.sol" startline="8" endline="9" pcid="4638">
+  function totalSupply() public view returns (uint256);
+  function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/SeedDex.sol" startline="117" endline="118" pcid="6431">
+    function getTotalFPContracts() external view returns(uint256);
+    function getContractsByIndex(uint256) external view returns (address, address, address, address);
+</source>
+<source file="systems/smart_contracts/BANG.sol" startline="12" endline="13" pcid="1035">
+  function totalSupply() external view returns (uint256);
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Perlin.sol" startline="50" endline="51" pcid="5638">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/SeedDex.sol" startline="116" endline="117" pcid="6430">
+    function getTotalTContracts() external view returns(uint256);
+    function getTotalFPContracts() external view returns(uint256);
+</source>
+<source file="systems/smart_contracts/SeedDex.sol" startline="115" endline="116" pcid="6429">
+    function getTotalATContracts() external view returns(uint256);
+    function getTotalTContracts() external view returns(uint256);
+</source>
+<source file="systems/smart_contracts/$martFund.sol" startline="519" endline="521" pcid="110">
+    function tailOfQueue() public view returns(uint256);
+    
+    function setColdWallet(address _coldWallet, uint256 _ratioAutoSave, uint256 _ratioAutoRemain) public;
+</source>
+<source file="systems/smart_contracts/SeedDex.sol" startline="114" endline="115" pcid="6428">
+    function getTotalDeployer() external view returns(uint256);
+    function getTotalATContracts() external view returns(uint256);
+</source>
+<source file="systems/smart_contracts/NewVoken.sol" startline="148" endline="149" pcid="5343">
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/SeedDex.sol" startline="109" endline="110" pcid="6423">
+    function getTotalDeployFees() external view returns (uint256);
+    function isFactoryDeployer(address) external view returns(bool);
+</source>
+<source file="systems/smart_contracts/NewVoken.sol" startline="146" endline="148" pcid="5342">
+    function decimals() external view returns (uint8);
+
+    function totalSupply() external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/DcorpDissolvementProposal.sol" startline="23" endline="32" pcid="2328">
+    function totalSupply() external view returns (uint);
+
+
+    /** 
+     * Get balance of `_owner` 
+     * 
+     * @param _owner The address from which the balance will be retrieved
+     * @return The balance
+     */
+    function balanceOf(address _owner) external view returns (uint);
+</source>
+<source file="systems/smart_contracts/TDeployer.sol" startline="542" endline="543" pcid="7080">
+    function decimals() external view returns (uint8);
+    function paused() external view returns (bool);
+</source>
+<source file="systems/smart_contracts/SeedDex.sol" startline="23" endline="25" pcid="6408">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/$martFund.sol" startline="63" endline="64" pcid="19">
+    function decimals() public view returns (uint8);
+    function totalSupply() public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/ESTATERO.sol" startline="29" endline="30" pcid="3161">
+  function totalSupply() external view returns (uint256);
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/ATDeployer.sol" startline="227" endline="228" pcid="841">
+    function getWLThresholdBalance() external view returns (uint256);
+    function getMaxWLAmount(address) external view returns(uint256);
+</source>
+<source file="systems/smart_contracts/AMAToken.sol" startline="17" endline="22" pcid="642">
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * @dev Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TDCToken.sol" startline="75" endline="76" pcid="6979">
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address owner) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/OSManagerToken.sol" startline="28" endline="29" pcid="5547">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/GNB.sol" startline="32" endline="33" pcid="4121">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/DcorpDissolvementProposal.sol" startline="95" endline="103" pcid="2334">
+    function isLocked() external view returns (bool);
+
+
+    /**
+     * Locks the token so that the transfering of value is disabled 
+     *
+     * @return Whether the unlocking was successful or not
+     */
+    function lock() external returns (bool);
+</source>
+<source file="systems/smart_contracts/$martFund.sol" startline="9" endline="10" pcid="2">
+    function symbol() public view returns (string);
+    function decimals() public view returns (uint8);
+</source>
+<source file="systems/smart_contracts/ATDeployer.sol" startline="247" endline="248" pcid="857">
+    function getTotalDeployer() external view returns(uint256);
+    function getTotalATContracts() external view returns(uint256);
+</source>
+<source file="systems/smart_contracts/$martFund.sol" startline="98" endline="99" pcid="34">
+    function token_name() public view returns (string);
+    function token_symbol() public view returns (string);
+</source>
+<source file="systems/smart_contracts/ATDeployer.sol" startline="248" endline="249" pcid="858">
+    function getTotalATContracts() external view returns(uint256);
+    function getTotalTContracts() external view returns(uint256);
+</source>
+<source file="systems/smart_contracts/JUNDCOIN.sol" startline="46" endline="47" pcid="4356">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/CRUSH.sol" startline="8" endline="9" pcid="2144">
+  function totalSupply() external view returns (uint256);
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/CGT.sol" startline="49" endline="50" pcid="1685">
+    function totalSupply() public view returns (uint);
+    function balanceOf(address tokenOwner) public view returns (uint balance);
+</source>
+<source file="systems/smart_contracts/ATDeployer.sol" startline="249" endline="250" pcid="859">
+    function getTotalTContracts() external view returns(uint256);
+    function getTotalFPContracts() external view returns(uint256);
+</source>
+<source file="systems/smart_contracts/$martFund.sol" startline="99" endline="100" pcid="35">
+    function token_symbol() public view returns (string);
+    function token_decimals() public view returns (uint8);
+</source>
+<source file="systems/smart_contracts/JDC.sol" startline="30" endline="31" pcid="4334">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/ATDeployer.sol" startline="250" endline="251" pcid="860">
+    function getTotalFPContracts() external view returns(uint256);
+    function getContractsByIndex(uint256) external view returns (address, address, address, address);
+</source>
+<source file="systems/smart_contracts/Factory.sol" startline="242" endline="243" pcid="3479">
+    function getWLThresholdBalance() external view returns (uint256);
+    function getMaxWLAmount(address) external view returns(uint256);
+</source>
+<source file="systems/smart_contracts/TDeployer.sol" startline="746" endline="747" pcid="7111">
+    function getFactoryAddress() external view returns(address);
+}
+</source>
+<source file="systems/smart_contracts/ATDeployer.sol" startline="258" endline="259" pcid="864">
+    function getFactoryDeployIndex() external view returns(uint);
+    function isMemberInserted(address) external view returns(bool);
+</source>
+<source file="systems/smart_contracts/magesh.sol" startline="81" endline="83" pcid="4615">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Factory.sol" startline="244" endline="245" pcid="3481">
+    function getWLLength() external view returns(uint256);
+    function setNewThreshold(uint256) external;
+</source>
+<source file="systems/smart_contracts/$martFund.sol" startline="100" endline="102" pcid="36">
+    function token_decimals() public view returns (uint8);
+    
+    function token_totalSupply() public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/PositionTokenV2.sol" startline="19" endline="20" pcid="5743">
+  function totalSupply() public view returns (uint256);
+  function balanceOf(address _who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/LanceToken.sol" startline="50" endline="51" pcid="4514">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/CASTWEETTOKEN.sol" startline="99" endline="100" pcid="1628">
+    function totalSupply() public view returns (uint256);
+    function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Exzie.sol" startline="42" endline="43" pcid="3410">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/SuperMarket.sol" startline="14" endline="16" pcid="6756">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/$martFund.sol" startline="102" endline="103" pcid="37">
+    function token_totalSupply() public view returns (uint256);
+    function token_balanceOf(address _owner) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/KAKITOKEN.sol" startline="100" endline="101" pcid="4382">
+    function totalSupply() public view returns (uint256);
+    function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/AoraCoin.sol" startline="16" endline="18" pcid="724">
+  function totalSupply() external view returns (uint256);
+
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/SAMPLE.sol" startline="53" endline="54" pcid="6247">
+	function totalSupply() public view returns (uint);
+	function balanceOf(address tokenOwner) public view returns (uint balance);
+</source>
+<source file="systems/smart_contracts/ATDeployer.sol" startline="229" endline="230" pcid="843">
+    function getWLLength() external view returns(uint256);
+    function setNewThreshold(uint256) external;
+</source>
+<source file="systems/smart_contracts/CMRPDCrowdsale.sol" startline="17" endline="22" pcid="1744">
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * @dev Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/SolaToken.sol" startline="35" endline="36" pcid="6577">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/ATDeployer.sol" startline="195" endline="196" pcid="813">
+    function getMinterAddress() external view returns(address);
+    function getWalletOnTopAddress() external view returns (address);
+</source>
+<source file="systems/smart_contracts/ATDeployer.sol" startline="270" endline="271" pcid="876">
+    function getMembersNumber() external view returns (uint);
+    function getMemberAddressByIndex(uint8) external view returns (address);
+</source>
+<source file="systems/smart_contracts/ReservedTokensFinalizeAgent.sol" startline="302" endline="304" pcid="6092">
+  function isSane() public constant returns (bool);
+
+  function distributeReservedTokens(uint reservedTokensDistributionBatch);
+</source>
+<source file="systems/smart_contracts/SistContract.sol" startline="36" endline="37" pcid="6515">
+  function totalSupply() public view returns (uint256);
+  function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/BlockbidLiquidity.sol" startline="20" endline="22" pcid="1362">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Factory.sol" startline="256" endline="257" pcid="3489">
+    function getFactoryAddress() external view returns(address);
+}
+</source>
+<source file="systems/smart_contracts/$martFund.sol" startline="10" endline="11" pcid="3">
+    function decimals() public view returns (uint8);
+    function totalSupply() public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Factory.sol" startline="263" endline="264" pcid="3492">
+    function getFactoryAddress() external view returns(address);
+}
+</source>
+<source file="systems/smart_contracts/TDCToken.sol" startline="74" endline="75" pcid="6978">
+    function decimals() external view returns (uint256);
+    function totalSupply() external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/DcorpDissolvementProposal.sol" startline="265" endline="274" pcid="2345">
+    function getObserverCount() external view returns (uint);
+
+
+    /**
+     * Gets the observer at `_index`
+     * 
+     * @param _index The index of the observer
+     * @return The observers address
+     */
+    function getObserverAtIndex(uint _index) external view returns (address);
+</source>
+<source file="systems/smart_contracts/Bitrix.sol" startline="42" endline="43" pcid="1299">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/FPDeployer.sol" startline="1137" endline="1138" pcid="3908">
+    function getFactoryAddress() external view returns(address);
+}
+</source>
+<source file="systems/smart_contracts/MockOracle.sol" startline="81" endline="83" pcid="4927">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Fuelcoin.sol" startline="8" endline="9" pcid="3912">
+  function totalSupply() external view returns (uint256);
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/FixedSupplyToken.sol" startline="49" endline="50" pcid="3600">
+    function totalSupply() public view returns (uint);
+    function balanceOf(address tokenOwner) public view returns (uint balance);
+</source>
+<source file="systems/smart_contracts/FUNNYTOKEN.sol" startline="36" endline="37" pcid="3945">
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+</source>
+<source file="systems/smart_contracts/DcorpDissolvementProposal.sol" startline="317" endline="318" pcid="2350">
+    function getOwner() public view returns (address);
+}
+</source>
+<source file="systems/smart_contracts/AdminUpgradeabilityProxy.sol" startline="28" endline="36" pcid="349">
+    function _implementation() internal view returns (address);
+
+    /**
+     * @dev Delegates execution to an implementation contract.
+     * This is a low level function that doesn't return to its internal call site.
+     * It will return to the external caller whatever the implementation returns.
+     * @param implementation Address to delegate.
+     */
+    function _delegate(address implementation) internal {
+</source>
+<source file="systems/smart_contracts/ALBToken.sol" startline="195" endline="197" pcid="579">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/DcorpDissolvementProposal.sol" startline="438" endline="447" pcid="2356">
+    function getOwnerCount() public view returns (uint);
+
+
+    /**
+     * Gets the owner at `_index`
+     *
+     * @param _index The index of the owner
+     * @return The address of the owner found at `_index`
+     */
+    function getOwnerAt(uint _index) public view returns (address);
+</source>
+<source file="systems/smart_contracts/ROCKEX.sol" startline="8" endline="9" pcid="6195">
+  function totalSupply() external view returns (uint256);
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/ABCToken.sol" startline="15" endline="20" pcid="299">
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * @dev Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/RaffleTicket.sol" startline="145" endline="150" pcid="5954">
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * @dev Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/NBToken.sol" startline="13" endline="14" pcid="5295">
+    function totalSupply() public view returns (uint256);
+    function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/FPDeployer.sol" startline="543" endline="544" pcid="3826">
+    function paused() external view returns (bool);
+    function pause() external;
+</source>
+<source file="systems/smart_contracts/Gacha.sol" startline="72" endline="74" pcid="3974">
+    function totalSupply() public view returns (uint256);
+
+    function balanceOf(address who) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Deflacoin.sol" startline="12" endline="13" pcid="2386">
+  function totalSupply() external view returns (uint256);
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/AHLE.sol" startline="44" endline="45" pcid="398">
+    function totalSupply() public view returns (uint);
+    function balanceOf(address tokenOwner) public view returns (uint balance);
+</source>
+<source file="systems/smart_contracts/$martFund.sol" startline="553" endline="554" pcid="133">
+    function totalSupply() public view returns (uint256);
+    function balanceOf(address _addr)public view returns(uint256);
+</source>
+<source file="systems/smart_contracts/GFNX.sol" startline="11" endline="13" pcid="4092">
+  function totalSupply() external view returns (uint256);
+
+  function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/FPDeployer.sol" startline="542" endline="543" pcid="3825">
+    function decimals() external view returns (uint8);
+    function paused() external view returns (bool);
+</source>
+<source file="systems/smart_contracts/PoaOperator.sol" startline="313" endline="315" pcid="5685">
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address who) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Factory.sol" startline="271" endline="272" pcid="3495">
+    function getFactoryAddress() external view returns(address);
+}
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() external view returns (string memory) {
+        return _name;
+    }
+name() external view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() external view returns (string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns(string memory) {
+        return _Tokenname;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() external view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns(string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _Name;
+  }
+name() public view returns(string memory) {
+        return _name;
+    }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns(string memory) {
+    return _name;
+  }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string memory) {
+        return _name;
+    }
+name() public view returns (string){
+        return operator.token_name();
+    }
+name() public pure returns (string _name) {
+        return TOKEN_NAME;
+    }
+name() public view returns (string){
+        // Immutable static call from target contract
+        return IERC20(target).name();
+    }

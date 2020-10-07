@@ -1,0 +1,360 @@
+	1. function rescueTokens(address tokenAddr, address recipient, uint256 amount) external onlyOwner 
+	2. function withdrawEther(address payable recipient, uint256 amount) external onlyOwner 
+	3. function transferFrom(address _from, address _to, uint256 _value)
+	        public
+	        returns (bool)
+	4. function withdraw(string key) public payable
+	5. function _transfer(address _from, address _to, uint _value) internal 
+	6. function setMultisig(address addr) public onlyOwner 
+	7. function isMinimumGoalReached() public constant returns (bool reached) 
+	8. function isFinalizerSane() public constant returns (bool sane) 
+	9. function isPricingSane() public constant returns (bool sane) 
+	10. function getState() public constant returns (State) 
+	11. function isCrowdsale() public constant returns (bool) 
+	12. function approveAndCall(address _spender, uint256 _amount, bytes calldata _extraData) external returns (bool success)
+	13. function transferAndCall(address _to, uint _value, bytes calldata _data) external returns (bool success)
+	14. function _burn(address account, uint256 value) private 
+	15. function _addsupply(address account, uint256 value) private 
+	16. function addsupply(uint256 amount) public 
+	17. function mintToken(address target, uint256 mintedAmount) onlyOwner public 
+	18. function flush() public payable 
+	19. function getPrice() public view returns (uint256) 
+	20. function withdraw(uint256 amountCent) public returns (uint256 amountWei)
+	21. function setPrice(uint256 price) public onlyOwner 
+	22. function price() public view returns (uint256)
+	23. function burn(uint256 _value) public 
+	24. function _burn(address _who, uint256 _value) internal 
+	25. function _transfer(address _from, address _to, uint256 _value) internal 
+	26. function transfer(address to, uint256 value) public 
+	27. function transferFrom(address _from, address _to, uint256 amount) public 
+	28. function totalSupply() public view returns (uint) 
+	29. function mint(
+	    address to,
+	    uint256 value
+	  )
+	  public
+	  onlyMinter
+	  returns (bool)  
+	30. function setPricingStrategy(PricingStrategy _pricingStrategy) public onlyOwner 
+	31. function _transfer(address _from, address _to, uint _value) internal 
+	32. function _transfer(address _from, address _to, uint _value) internal 
+	33. function getBalance()
+	    constant
+	    public
+	    returns(uint)
+	34. function mint(address _account, uint256 _amount) public whenNotPaused onlyMinterAddress 
+	35. function burn(address _account, uint256 _amount) public whenNotPaused onlyMinterAddress 
+	36. function transfer(address _to, uint256 _value) public whenNotPaused returns (bool) 
+	37. function transferFrom(address _from, address _to, uint256 _value) public whenNotPaused returns (bool) 
+	38. function transfer(address _to, uint256 _value) public returns (bool)
+	39. function transferFrom(address _from, address _to, uint256 _value) public returns (bool) 
+	40. function approve(address _spender, uint256 _value) public returns (bool) 
+	41. function burn(uint256 _value) public returns (bool) 
+	42. function mint(uint256 _value) public returns (bool) 
+	43. function finishMinting() public returns (bool) 
+	44. function safeTransferFrom(address from, address to, uint256 tokenId) public 
+	45. function _exists(uint256 tokenId) internal view returns (bool) 
+	46. function _checkOnERC721Received(address from, address to, uint256 tokenId, bytes memory _data)
+	        internal returns (bool)
+	47. function _transfer(address _from, address _to, uint _value) internal 
+	48. function mint(address account, uint256 amount) public 
+	49. function lock(address account) public 
+	50. function unlock(address account) public 
+	51. function burn(uint256 amount) public 
+	52. function transfer(address recipient, uint256 amount) public returns (bool) 
+	53. function transferFrom(address from, address to, uint256 value) public returns (bool) 
+	54. function _transfer(address from, address to, uint256 value) internal 
+	55. function _mint(address account, uint256 value) internal 
+	56. function _burnFrom(address account, uint256 value) internal 
+	57. function releaseTokenTransfer() public onlyReleaseAgent 
+	58. function transfer(address _to, uint _value) canTransfer(msg.sender) returns (bool success) 
+	59. function transferFrom(address _from, address _to, uint _value) canTransfer(_from) returns (bool success) 
+	60. function _transfer(address _from, address _to, uint _value) internal 
+	61. function transfer(address _to, uint256 _value) public 
+	62. function transferFrom (address _from, address _to, uint256 _value) public
+		a. returns(bool success) 
+	63. function burn (uint256 _value) public returns(bool success)
+	64. function Put(uint _unlockTime)
+	    public
+	    payable
+	65. function _mint(address account, uint256 value) internal 
+	66. function _burn(address account, uint256 value) internal 
+	67. function _burnFrom(address account, uint256 value) internal 
+	68. function transfer(address _to, uint256 _value) public returns (bool) 
+	69. function transferFrom(
+	    address _from,
+	    address _to,
+	    uint256 _value
+	  )
+	    public
+	    returns (bool) 
+	70. function CrowdsaleExt(string _name, address _token, PricingStrategy _pricingStrategy, address _multisigWallet, uint _start, uint _end, uint _minimumFundingGoal, bool _isUpdatable, bool _isWhiteListed) 
+	71. function() payable 
+	72. function investInternal(address receiver, uint128 customerId) stopInEmergency private 
+	73. function invest(address addr) public payable 
+	74. function buy() public payable 
+	75. function distributeReservedTokens(uint reservedTokensDistributionBatch) public inState(State.Success) onlyOwner stopInEmergency 
+	76. function balanceOf(address _owner) public constant returns (uint256 balance) 
+	77. function allowance(address _owner, address _spender) public constant returns (uint256 remaining) 
+	78. function transfer(address _to, uint256 _value) returns (bool success) 
+	79. function transferFrom(address _from, address _to, uint256 _value) returns (bool success) 
+	80. function balanceOf(address _owner) constant returns (uint256 balance) 
+	81. function approve(address _spender, uint256 _value) returns (bool success) 
+	82. function allowance(address _owner, address _spender) constant returns (uint256 remaining) 
+	83. function setTokenExchangeRate(uint256 _tokenExchangeRate) isOwner external 
+	84. function increaseSupply (uint256 _value) isOwner external 
+	85. function decreaseSupply (uint256 _value) isOwner external 
+	86. function startFunding (uint256 _fundingStartBlock, uint256 _fundingStopBlock) isOwner external 
+	87. function stopFunding() isOwner external 
+	88. function transferETH() isOwner external 
+	89. function allocateToken (address _addr, uint256 _eth) isOwner external 
+	90. function () payable 
+	91. function totalSupply() public view returns (uint256) 
+	92. function balanceOf(address _owner) public view returns (uint256) 
+	93. function increaseApproval(address _spender, uint _addedValue) public returns (bool) 
+	94. function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) 
+	95. function () payable external 
+	96. function Distribute(address _participant, uint _amount) onlyOwner internal 
+	97. function DistributeAirdrop(address _participant, uint _amount) onlyOwner external 
+	98. function DistributeAirdropMultiple(address[] _addresses, uint _amount) onlyOwner external 
+	99. function getTokenBalance(address tokenAddress, address who) constant public returns (uint)
+	100. function withdrawAll() onlyOwner public 
+	101. function withdraw(uint256 _wdamount) onlyOwner public 
+	102. function withdrawForeignTokens(address _tokenContract) onlyOwner public returns (bool)
+	103. function findOnePercent(uint256 value) public view returns (uint256)
+	104. function transfer(address to, uint256 value) public returns (bool) 
+	105. function transferFrom(address from, address to, uint256 value) public returns (bool) 
+	106. function isConstructor() private view returns (bool)
+	107. function transferOwnership(address newOwner) onlyOwner public 
+	108. function transfer(address _to, uint256 _value) public returns (bool success) 
+	109. function approve(address _spender, uint256 _value) public returns (bool success) 
+	110. function approveAndCall(address _spender, uint256 _value, bytes memory _extraData) public returns (bool success) 
+	111. function totalSupply()
+	        public
+	        constant
+	        returns (uint256) 
+	112. function transfer(address _to, uint _value) returns (bool) 
+	113. function transferFrom(address _from, address _to, uint _value) returns (bool) 
+	114. function balanceOf(address _owner) constant returns (uint) 
+	115. function Collect(uint _am)
+	    public
+	    payable
+	116. function _transfer(address sender, address recipient, uint256 amount) internal 
+	117. function transfer(address _to, uint256 _value) public returns (bool success) 
+	118. function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) 
+	119. function transfer(address _to, uint256 _value) public whenNotPaused returns (bool) 
+	120. function balanceOf(address _holder) public view returns (uint256 balance) 
+	121. function transferFrom(address _from, address _to, uint256 _value) public whenNotPaused returns (bool) 
+	122. function allowance(address _holder, address _spender) public view returns (uint256) 
+	123. function distribute(address _to, uint256 _value) public onlyOwner returns (bool) 
+	124. function distributeWithLockup(address _to, uint256 _value, uint256 _releaseStart, uint256 _releaseRate) public onlyOwner returns (bool) 
+	125. function claimToken(ERC20 token, address _to, uint256 _value) public onlyOwner returns (bool) 
+	126. function burn(uint256 _value) public onlyOwner returns (bool success) 
+	127. function burnFrom(address _from, uint256 _value) public returns (bool success) 
+	128. function buyTokens(address beneficiary) public nonReentrant payable 
+	129. function _preValidatePurchase(address beneficiary, uint256 weiAmount) internal view 
+	130. function _deliverTokens(address beneficiary, uint256 tokenAmount) internal 
+	131. function _processPurchase(address beneficiary, uint256 tokenAmount) internal 
+	132. function _getTokenAmount(uint256 weiAmount) internal view returns (uint256) 
+	133. function _forwardFunds() internal 
+	134. function cap() public view returns (uint256) 
+	135. function capReached() public view returns (bool) 
+	136. function _preValidatePurchase(address beneficiary, uint256 weiAmount) internal view 
+	137. function _deliverTokens(address beneficiary, uint256 tokenAmount) internal 
+	138. function safeTransferFrom(ERC20 token, address from, address to, uint256 value) internal 
+	139. function withdrawEtherFromcontract(uint _amountInwei) public onlyOwner
+	140. function findOnePercent(uint256 value) public view returns (uint256)  
+	141. function changeService(address _service) onlyOwner isContract(_service) public 
+	142. function _transfer(address _from, address _to, uint _value) internal 
+	143. function burn(uint256 _value) public returns (bool success) 
+	144. function burnFrom(address _from, uint256 _value) public returns (bool success) 
+	145. function isToken() public constant returns (bool weAre) 
+	146. function transfer(address _to, uint _value) returns (bool success) 
+	147. function transferFrom(address _from, address _to, uint _value) returns (bool success) 
+	148. function balanceOf(address _owner) constant returns (uint balance) 
+	149. function areTokensDistributedForAddress(address addr) public constant returns (bool isDistributed) 
+	150. function getReservedTokens(address addr) public constant returns (uint inTokens) 
+	151. function getReservedPercentageUnit(address addr) public constant returns (uint inPercentageUnit) 
+	152. function getReservedPercentageDecimals(address addr) public constant returns (uint inPercentageDecimals) 
+	153. function setReservedTokensListMultiple(
+	    address[] addrs, 
+	    uint[] inTokens, 
+	    uint[] inPercentageUnit, 
+	    uint[] inPercentageDecimals
+	  ) public canMint onlyOwner 
+	154. function mint(address receiver, uint amount) onlyMintAgent canMint public 
+	155. function CrowdsaleTokenExt(string _name, string _symbol, uint _initialSupply, uint _decimals, bool _mintable, uint _globalMinCap)
+	156.     UpgradeableToken(msg.sender) 
+	157. function releaseTokenTransfer() public onlyReleaseAgent 
+	158. function transfer(address to, uint256 value) public returns (bool) 
+	159. function approve(address spender, uint256 value) public returns (bool) 
+	160. function transferFrom(
+	        address from,
+	        address to,
+	        uint256 value
+	    )
+	    public
+	    returns (bool)
+	161. function increaseAllowance(
+	        address spender,
+	        uint256 addedValue
+	    )
+	    public
+	    returns (bool)
+	162. function decreaseAllowance(
+	        address spender,
+	        uint256 subtractedValue
+	    )
+	    public
+	    returns (bool)
+	163. function transfer(address _to, uint256 _value) public returns (bool) 
+	164. function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) 
+	165. function _burnFrom(address account, uint256 value) internal 
+	166. function burn(uint256 value) public 
+	167. function burnFrom(address from, uint256 value) public 
+	168. function mint(address to, uint256 value) public returns (bool) 
+	169. function transferOwnership(address payable _newOwner) public onlyOwner 
+	170. function transfer(address _to, uint256 _value) public returns (bool success) 
+	171. function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) 
+	172. function tokenWallet() public view returns (address) 
+	173. function remainingTokens() public view returns (uint256) 
+	174. function _deliverTokens(address beneficiary, uint256 tokenAmount) internal 
+	175. function cut(uint256 value) public view returns (uint256)  
+	176. function transfer(address to, uint256 value) public returns (bool) 
+	177. function transferFrom(address from, address to, uint256 value) public returns (bool) 
+	178. function upAllowance(address spender, uint256 addedValue) public returns (bool) 
+	179. function downAllowance(address spender, uint256 subtractedValue) public returns (bool) 
+	180. function _issue(address account, uint256 amount) internal 
+	181. function destroy(uint256 amount) external 
+	182. function _destroy(address account, uint256 amount) internal 
+	183. function destroyFrom(address account, uint256 amount) external 
+	184. function distr(address _to, uint256 _amount) canDistr private returns (bool) 
+	185. function () external payable 
+	186. function burnFrom(uint256 _value, address _burner) onlyOwner public 
+	187. function sendCurrentPayment() public 
+	188. function increaseApproval(
+	    address _spender,
+	    uint256 _addedValue
+	  )
+	    public
+	    returns (bool)
+	189. function decreaseApproval(
+	    address _spender,
+	    uint256 _subtractedValue
+	  )
+	    public
+	    returns (bool)
+	190. function multiTransfer(address[] memory receivers, uint256[] memory amounts) public 
+	191. function _mint(address account, uint256 amount) internal 
+	192. function burn(uint256 amount) external 
+	193. function _burn(address account, uint256 amount) internal 
+	194. function burnFrom(address account, uint256 amount) external 
+	195. function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) 
+	196. function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) 
+	197. function _burn(address account, uint256 value) internal 
+	198. function _burnFrom(address account, uint256 amount) internal 
+	199. function withdraw(address to) public 
+	200. function unlockAddressForWithdrawal(address user) public onlyAdmin 
+	201. function withdraw(address to) public whenNotPaused 
+	202. function getTrackerBalance() public view returns (uint256)
+	203. function addFunds(uint256 amount) public onlyAdmin whenNotPaused 
+	204. function removeFunds(address to) public onlyAdmin 
+	205. function transferFrom(address _from, address _to, uint256 _value) returns (bool success) 
+	206. function burn(uint256 _value) returns (bool success) 
+	207. function _transferOwnership(address newOwner) internal 
+	208. function transfer(address _to, uint256 _value) 
+	209. function allowance(address _owner, address _spender) public view returns (uint256) 
+	210. function transfer(address _to, uint _value) validDestination(_to) returns (bool) 
+	211. function transferFrom(address _from, address _to, uint _value) validDestination(_to) returns (bool) 
+	212. function burn(uint _value) returns (bool)
+	213. function burnFrom(address _from, uint256 _value) returns (bool) 
+	214. function emergencyERC20Drain( ERC20 token, uint amount ) onlyOwner 
+	215. function increaseApproval(address _spender, uint _addedValue) public whenNotPaused returns (bool success) 
+	216. function decreaseApproval(address _spender, uint _subtractedValue) public whenNotPaused returns (bool success) 
+	217. function transfer(address _to, uint256 _value) public whenNotPaused returns (bool) 
+	218. function transferFrom(address _from, address _to, uint256 _value) public whenNotPaused returns (bool) 
+	219. function transfer(address _to, uint256 _value) public returns (bool) 
+	220. function balanceOf(address _owner) public view returns (uint256 balance) 
+	221. function transferFrom(address _from, address _to, uint256 _value) public returns (bool) 
+	222. function burn(uint value) public onlyOwner 
+	223. function mint(address to, uint value) public onlyOwner 
+	224. function _transfer(address from, address to, uint256 value) internal 
+	225. function _burn(address account, uint256 value) internal 
+	226. function _mint(address account, uint256 value) internal 
+	227. function _burnFrom(address account, uint256 value) internal 
+	228. function transfer(address to, uint tokens) public returns (bool success) 
+	229. function transferFrom(address from, address to, uint tokens) public returns (bool success) 
+	230. function approveAndCall(address spender, uint tokens, bytes data) public returns (bool success) 
+	231. function transferFrom(address from, address to, uint256 value) public returns (bool) 
+	232. function increaseAllowance(address spender, uint256 addedValue) public returns (bool) 
+	233. function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) 
+	234. function increaseAllowance(address spender, uint256 addedValue) public returns (bool) 
+	235. function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) 
+	236. function transferFrom(address from, address to, uint256 value) public returns (bool) 
+	237. function burn(uint256 amount) public 
+	238. function burnFrom(address account, uint256 amount) public 
+	239. function transferFrom(address from, address to, uint256 value) public returns (bool) 
+	240. function increaseAllowance(address spender, uint256 addedValue) public returns (bool) 
+	241. function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) 
+	242. function _transfer(address from, address to, uint256 value) internal 
+	243. function _mint(address account, uint256 value) internal 
+	244. function _burn(address account, uint256 value) internal 
+	245. function _burnFrom(address account, uint256 value) internal 
+	246. function balanceOf(address _owner) public view returns (uint256 balance) 
+	247. function actualBalanceOf(address _owner) public view returns (uint256 balance) 
+	248. function freezingBalanceOf(address _owner) public view returns (uint256 balance) 
+	249. function freezingCount(address _addr) public view returns (uint count) 
+	250. function releaseAll() public returns (uint tokens) 
+	251. function totalSupply() public view returns(uint)
+	252. function balanceOf(address tokenOwner) public view returns(uint balance) 
+	253. function allowance(address tokenOwner, address spender) public view returns(uint remaining) 
+	254. function transferAnyERC20Token(address tokenAddress, uint tokens) public onlyOwner returns(bool success) 
+	255. function totalSupply() public constant returns (uint) 
+	256. function balanceOf(address tokenOwner) public constant returns (uint balance) 
+	257. function transfer(address _to, uint256 _value)public returns (bool success) 
+	258. function transferFrom(address _from, address _to, uint256 _value)public returns (bool success) 
+	259. function allowance(address _owner, address _spender)public view returns (uint256 remaining) 
+	260. function totalSupply() public view returns (uint256) 
+	261. function balanceOf(address account) public view returns (uint256) 
+	262. function transfer(address recipient, uint256 amount) public returns (bool) 
+	263. function allowance(address owner, address spender) public view returns (uint256) 
+	264. function increaseAllowance(address spender, uint256 addedValue) public returns (bool) 
+	265. function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) 
+	266. function _transfer(address sender, address recipient, uint256 amount) internal 
+	267. function _mint(address account, uint256 amount) internal 
+	268. function _burn(address account, uint256 value) internal 
+	269. function _burnFrom(address account, uint256 amount) internal 
+	270. function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) 
+	271. function transfer(address to, uint256 value) public whenNotPaused returns (bool) 
+	272. function transferFrom(address from, address to, uint256 value) public whenNotPaused returns (bool) 
+	273. function increaseAllowance(address spender, uint256 addedValue) public whenNotPaused returns (bool) 
+	274. function decreaseAllowance(address spender, uint256 subtractedValue) public whenNotPaused returns (bool) 
+	275. function mint(address account, uint256 amount) public onlyMinter returns (bool) 
+	276. function getTokens() payable canDistr  public 
+	277. function balanceOf(address _owner) constant public returns (uint256) 
+	278. function transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) 
+	279. function transferFrom(address _from, address _to, uint256 _amount) onlyPayloadSize(3 * 32) public returns (bool success) 
+	280. function getTokenBalance(address tokenAddress, address who) constant public returns (uint)
+	281. function withdraw() onlyOwner public 
+	282. function burn(uint256 _value) onlyOwner public 
+	283. function withdrawAltcoinTokens(address _tokenContract) onlyOwner public returns (bool) 
+	284. function safeTransfer(IERC20 token, address to, uint256 value) internal 
+	285. function safeTransferFrom(IERC20 token, address from, address to, uint256 value) internal 
+	286. function safeIncreaseAllowance(IERC20 token, address spender, uint256 value) internal 
+	287. function safeDecreaseAllowance(IERC20 token, address spender, uint256 value) internal 
+	288. function balanceOf(address owner) public view returns (uint256) 
+	289. function allowance(address owner, address spender) public view returns (uint256) 
+	290. function transfer(address to, uint256 value) public returns (bool) 
+	291. function transfer(address to, uint tokens) public returns (bool success) 
+	292. function transferFrom(address from, address to, uint tokens) public returns (bool success) 
+	293. function totalSupply() public view returns (uint) 
+	294. function transfer(address to, uint tokens) public returns (bool success) 
+	295. function transferFrom(address from, address to, uint tokens) public returns (bool success) 
+	296. function distr(address _to, uint256 _amount) canDistr private returns (bool) 
+	297. function doAirdrop(address _participant, uint _amount) internal 
+	298. function updateTokensPerEth(uint _tokensPerEth) public onlyOwner 
+	299. function safeTransfer(IERC20 token, address to, uint256 value) internal 
+	300. function safeTransferFrom(IERC20 token, address from, address to, uint256 value) internal 
+	301. function safeIncreaseAllowance(IERC20 token, address spender, uint256 value) internal 
+	302. function safeDecreaseAllowance(IERC20 token, address spender, uint256 value) internal 
+function token() public view returns (IERC20) 

@@ -1,0 +1,16 @@
+1. function withdraw() public 
+2. function transfer(address _to, uint256 _value) public returns (bool success) 
+3. function multiTransfer(address[] memory receivers, uint256[] memory amounts) public 
+4. function transfer(address _to, uint256 _value) returns (bool success) 
+5. function checkAndCallSafeTransfer(
+    address _from,
+    address _to,
+    uint256 _tokenId,
+    bytes _data
+    )
+6. function checkinterests() public view returns(uint) 
+7. function balanceOf(address who) public view returns (uint256) 
+8. function percUp(Token storage self, uint256 i) private 
+9. function mint(address[] memory accounts, uint32[] memory amounts) public onlyMinter 
+10. function getLockedTokensInGroup_(address walletAddress, uint256 groupNumber) internal view returns (uint256 balance) 
+11. function hasReachedSoftCap() public view returns (bool) 

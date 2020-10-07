@@ -1,0 +1,145 @@
+mint(address account, uint256 amount) public onlyMinter returns (bool) {
+        _mint(account, amount);
+        return true;
+    }
+mint(address account, uint256 amount) public onlyMinter returns (bool) {
+        _mint(account, amount);
+        return true;
+    }
+mint(address account, uint256 amount) public onlyMinter returns (bool) {
+        _mint(account, amount);
+        return true;
+    }
+mint(address account, uint256 amount) public onlyMinter returns (bool) {
+        _mint(account, amount);
+        return true;
+    }
+mint(address account, uint256 amount) public onlyMinter returns (bool) {
+        _mint(account, amount);
+        return true;
+    }
+mint(address account, uint256 amount) public onlyMinter returns (bool) {
+        _mint(account, amount);
+        return true;
+    }
+mint(address to, uint value) public onlyOwner { 
+        _mint(to, value);
+    }
+mint(address to, uint value) public onlyOwner { 
+        _mint(to, value);
+    }
+mint(address receiver, uint amount) onlyMintAgent canMint public {
+    totalSupply = totalSupply.plus(amount);
+    balances[receiver] = balances[receiver].plus(amount);
+
+    // This will make the mint transaction apper in EtherScan.io
+    // We can remove this after there is a standardized minting event
+    Transfer(0, receiver, amount);
+  }
+mint(address receiver, uint amount) onlyMintAgent canMint public {
+    totalSupply = totalSupply.plus(amount);
+    balances[receiver] = balances[receiver].plus(amount);
+
+    // This will make the mint transaction apper in EtherScan.io
+    // We can remove this after there is a standardized minting event
+    Transfer(0, receiver, amount);
+  }
+mint(address receiver, uint amount) onlyMintAgent canMint public {
+    totalSupply = totalSupply.plus(amount);
+    balances[receiver] = balances[receiver].plus(amount);
+
+    // This will make the mint transaction apper in EtherScan.io
+    // We can remove this after there is a standardized minting event
+    Transfer(0, receiver, amount);
+  }
+mint(address to, uint256 value) public returns (bool) {
+        _mint(to, value);
+        return true;
+    }
+mint(address to, uint256 value) public returns (bool) {
+        _mint(to, value);
+        return true;
+    }
+mint(address to, uint256 value) public returns (bool) {
+        _mint(to, value);
+        return true;
+    }
+mint(address account, uint256 amount) public {
+    require(isAdmin(msg.sender));
+    _mint(account, amount);
+  }
+mint(address account, uint256 amount) public {
+    require(isAdmin(msg.sender));
+    _mint(account, amount);
+  }
+mint(address _account, uint256 _amount) public whenNotPaused onlyMinterAddress {
+        require(checkMintAllowed(_account, _amount) == STATUS_ALLOWED, "mint must be allowed");
+        ERC20._mint(_account, _amount);
+    }
+mint(address _account, uint256 _amount) public whenNotPaused onlyMinterAddress {
+        require(checkMintAllowed(_account, _amount) == STATUS_ALLOWED, "mint must be allowed");
+        ERC20._mint(_account, _amount);
+    }
+mint(
+    address to,
+    uint256 value
+  )
+  public
+  onlyMinter
+  returns (bool)
+  {
+    _mint(to, value);
+    return true;
+  }
+mint(address to, uint256 value) public onlyMinter returns (bool) {
+        _mint(to, value);
+        return true;
+    }
+mint(uint256 _value) public returns (bool) {
+    require(!mintingFinished);
+    require(msg.sender == owner);
+    balanceOf[msg.sender] = balanceOf[msg.sender].add(_value);
+    totalSupply = totalSupply.add(_value);
+    emit Mint(msg.sender, _value);
+    emit Transfer(address(0),msg.sender,_value);
+    return true;
+}
+mint(uint256 _value) public returns (bool) {
+    require(!mintingFinished);
+    require(msg.sender == owner);
+    balanceOf[msg.sender] = balanceOf[msg.sender].add(_value);
+    totalSupply = totalSupply.add(_value);
+    emit Mint(msg.sender, _value);
+    emit Transfer(address(0),msg.sender,_value);
+    return true;
+}
+mint(address _to, uint256 _amount) canMint hasPermission public returns (bool) {
+    totalSupply = totalSupply.add(_amount);
+    balances[_to] = balances[_to].add(_amount);
+    emit Mint(_to, _amount);
+    emit Transfer(address(0), _to, _amount);
+    return true;
+  }
+mint(
+    address _to,
+    uint256 _amount
+  )
+    hasMintPermission
+    canMint
+    public
+    returns (bool)
+  {
+    totalSupply_ = totalSupply_.add(_amount);
+    balances[_to] = balances[_to].add(_amount);
+    emit Mint(_to, _amount);
+    emit Transfer(address(0), _to, _amount);
+    return true;
+  }
+mint(address account, uint256 amount) public whenNotPaused onlyMinter returns (bool) {
+        _mint(account, amount);
+        return true;
+    }
+mint(address to, uint256 value) public onlyNotBlacklisted onlyMinter returns (bool) {
+        _mint(to, value);
+        return true;
+    }

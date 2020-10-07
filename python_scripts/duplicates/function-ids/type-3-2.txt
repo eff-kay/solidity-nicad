@@ -1,0 +1,13 @@
+transferFrom
+_computeHeap
+decreaseApproval
+_transfer 
+transfer
+uint2str
+payArbitrationFeeBySender
+burnToEther
+burnToToken
+_mintWithToken
+_burnToken
+_triggerPosition
+

@@ -1,0 +1,465 @@
+burnFrom(address account, uint256 amount) public {
+        _burnFrom(account, amount);
+    }
+burnFrom(address account, uint256 amount) public {
+        _burnFrom(account, amount);
+    }
+burnFrom(address account, uint256 amount) public {
+        _burnFrom(account, amount);
+    }
+burnFrom(address _from, uint256 _value) returns (bool) 
+    {
+        assert( transferFrom( _from, msg.sender, _value ) );
+        return burn(_value);
+    }
+burnFrom(address _from, uint256 _value) returns (bool) 
+    {
+        assert( transferFrom( _from, msg.sender, _value ) );
+        return burn(_value);
+    }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+        require(amount <= _allowed[account][msg.sender]);
+        _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+        _burn(account, amount);
+    }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        emit Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        emit Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        emit Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        emit Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        emit Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        emit Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        emit Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);
+        require(_value <= allowance[_from][msg.sender]);
+        balanceOf[_from] -= _value;
+        allowance[_from][msg.sender] -= _value;
+        totalSupply -= _value;
+        Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);
+        require(_value <= allowance[_from][msg.sender]);
+        balanceOf[_from] -= _value;
+        allowance[_from][msg.sender] -= _value;
+        totalSupply -= _value;
+        Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        Burn(_from, _value);
+        return true;
+    }
+burnFrom(address from, uint256 value) public {
+        _burnFrom(from, value);
+    }
+burnFrom(address from, uint256 value) public {
+        _burnFrom(from, value);
+    }
+burnFrom(address from, uint256 value) public {
+    _burnFrom(from, value);
+  }
+burnFrom(address from, uint256 value) public {
+        _burnFrom(from, value);
+    }
+burnFrom(address from, uint256 value) public {
+        _burnFrom(from, value);
+    }
+burnFrom(address from, uint256 value) public {
+    _burnFrom(from, value);
+  }
+burnFrom(uint256 _value, address _burner) onlyOwner public {
+        require(_value <= balances[_burner]);
+        
+        balances[_burner] = balances[_burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(_burner, _value);
+    }
+burnFrom(uint256 _value, address _burner) onlyOwner public {
+        require(_value <= balances[_burner]);
+        
+        balances[_burner] = balances[_burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(_burner, _value);
+    }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address _from, uint256 _value) public {
+    require(_value <= allowed[_from][msg.sender]);
+    // Should https://github.com/OpenZeppelin/zeppelin-solidity/issues/707 be accepted,
+    // this function needs to emit an event with the updated approval.
+    allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+    _burn(_from, _value);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+    require(amount <= _allowed[account][msg.sender]);
+    _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+    _burn(account, amount);
+  }
+burnFrom(address account, uint256 amount) external {
+        require(amount <= _allowed[account][msg.sender]);
+        _allowed[account][msg.sender] = _allowed[account][msg.sender].sub(amount);
+        _burn(account, amount);
+    }
+burnFrom(address account, uint256 amount) public {
+        _burnFrom(account, amount);
+    }
+burnFrom(address account, uint256 amount) public {
+        burn(account, amount);
+        _approve(account, msg.sender, _allowances[account][msg.sender].sub(amount));
+    }
+burnFrom(address account, uint256 amount) public {
+        _burnFrom(account, amount);
+    }
+burnFrom(address account, uint256 amount) public {
+    require(!_locked[msg.sender]);
+    require(!_locked[account]);
+    _burnFrom(account, amount);
+  }
+burnFrom(address account, uint256 amount) public {
+        _burnFrom(account, amount);
+    }
+burnFrom(address account, uint256 amount) public {
+    require(!_locked[msg.sender]);
+    _burnFrom(account, amount);
+  }
+burnFrom(address _from, uint256 _value) returns (bool) 
+    {
+        assert( transferFrom( _from, msg.sender, _value ) );
+        return burn(_value);
+    }
+burnFrom(address _from, uint256 _value) public returns (bool) {
+        assert(transferFrom(_from, msg.sender, _value));
+        return burn(_value);
+    }
+burnFrom(address _from, uint256 _value) returns (bool) 
+    {
+        assert( transferFrom( _from, msg.sender, _value ) );
+        return burn(_value);
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+    balanceOf[_from] = balanceOf[_from].sub(_value);                          // Subtract from the targeted balance
+    allowance[_from][msg.sender] = allowance[_from][msg.sender].sub(_value);   // Subtract from the sender's allowance
+    totalSupply = totalSupply.sub(_value);                              // Update totalSupply
+    emit Burn(_from, _value);
+    return true;
+  }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        emit Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);
+        require(_value <= allowance[_from][msg.sender]);
+        balanceOf[_from] -= _value;
+        allowance[_from][msg.sender] -= _value;
+        totalSupply -= _value;
+        Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);
+        require(_value <= allowance[_from][msg.sender]);
+        balanceOf[_from] -= _value;
+        allowance[_from][msg.sender] -= _value;
+        totalSupply -= _value;
+        Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        emit Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        emit Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        emit Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        emit Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        emit Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) public returns (bool success) {
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
+        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        totalSupply -= _value;                              // Update totalSupply
+        emit Burn(_from, _value);
+        return true;
+    }
+burnFrom(address _from, uint256 _value) returns (bool) 
+    {
+        assert( transferFrom( _from, msg.sender, _value ) );
+        return burn(_value);
+    }
+burnFrom(address _from, uint256 _value) returns (bool) 
+    {
+        assert( transferFrom( _from, msg.sender, _value ) );
+        return burn(_value);
+    }
+burnFrom(uint256 _value, address _burner) onlyOwner public {
+        require(_value <= balances[_burner]);
+        
+        balances[_burner] = balances[_burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(_burner, _value);
+    }
+burnFrom(uint256 _value, address _burner) onlyOwner public {
+        require(_value <= balances[_burner]);
+        
+        balances[_burner] = balances[_burner].sub(_value);
+        totalSupply = totalSupply.sub(_value);
+        totalDistributed = totalDistributed.sub(_value);
+        emit Burn(_burner, _value);
+    }

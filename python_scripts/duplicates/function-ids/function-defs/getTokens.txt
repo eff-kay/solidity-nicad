@@ -1,0 +1,251 @@
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        require( msg.value >= minContribution );
+
+        require( msg.value > 0 );
+        
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        require( msg.value >= minContribution );
+
+        require( msg.value > 0 );
+        
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        require( msg.value >= minContribution );
+
+        require( msg.value > 0 );
+        
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        require( msg.value >= minContribution );
+
+        require( msg.value > 0 );
+        
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        require( msg.value >= minContribution );
+
+        require( msg.value > 0 );
+        
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        // minimum contribution
+        require( msg.value >= minInvest );
+
+        require( msg.value > 0 );
+        
+        // get baseline number of tokens
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        require( msg.value >= minContribution );
+
+        require( msg.value > 0 );
+        
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        require( msg.value >= minContribution );
+
+        require( msg.value > 0 );
+        
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        require( msg.value >= minContribution );
+
+        require( msg.value > 0 );
+        
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+      owner.transfer(msg.value);
+            distr(investor, tokens);
+        }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        require( msg.value >= minContribution );
+
+        require( msg.value > 0 );
+        
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        // minimum contribution
+        require( msg.value >= minInvest );
+
+        require( msg.value > 0 );
+        
+        // get baseline number of tokens
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        require( msg.value >= minContribution );
+
+        require( msg.value > 0 );
+        
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+        uint256 bonus = 0;
+        uint256 countbonus = 0;
+        uint256 bonusCond1 = 1 ether / 10;
+        uint256 bonusCond2 = 5 ether / 10;
+        uint256 bonusCond3 = 1 ether;
+
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+
+        if (msg.value >= requestMinimum && now < deadline && now < round1 && now < round2) {
+            if(msg.value >= bonusCond1 && msg.value < bonusCond2){
+                countbonus = tokens * 10 / 100;
+            }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+        uint256 bonus = 0;
+        uint256 countbonus = 0;
+        uint256 bonusCond1 = 1 ether / 10;
+        uint256 bonusCond2 = 1 ether;
+        uint256 bonusCond3 = 5 ether;
+
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+
+        if (msg.value >= requestMinimum && now < deadline && now < round1 && now < round2) {
+            if(msg.value >= bonusCond1 && msg.value < bonusCond2){
+                countbonus = tokens * 20 / 100;
+            }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+        uint256 bonus = 0;
+        uint256 countbonus = 0;
+        uint256 bonusCond1 = 1 ether / 10;
+        uint256 bonusCond2 = 5 ether / 10;
+        uint256 bonusCond3 = 1 ether;
+
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+
+        if (msg.value >= requestMinimum && now < deadline && now < round1 && now < round2) {
+            if(msg.value >= bonusCond1 && msg.value < bonusCond2){
+                countbonus = tokens * 10 / 100;
+            }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+        uint256 bonus = 0;
+        uint256 countbonus = 0;
+        uint256 bonusCond1 = 1 ether / 10;
+        uint256 bonusCond2 = 5 ether / 10;
+        uint256 bonusCond3 = 1 ether;
+
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+
+        if (msg.value >= requestMinimum && now < deadline && now < round1 && now < round2) {
+            if(msg.value >= bonusCond1 && msg.value < bonusCond2){
+                countbonus = tokens * 10 / 100;
+            }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+        uint256 bonus = 0;
+        uint256 countbonus = 0;
+        uint256 bonusCond1 = 1 ether / 10;
+        uint256 bonusCond2 = 5 ether / 10;
+        uint256 bonusCond3 = 1 ether;
+
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+
+        if (msg.value >= requestMinimum && now < deadline && now < round1 && now < round2) {
+            if(msg.value >= bonusCond1 && msg.value < bonusCond2){
+                countbonus = tokens * 10 / 100;
+            }
+getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+        uint256 bonus = 0;
+        uint256 countbonus = 0;
+        uint256 bonusCond1 = 1 ether / 10;
+        uint256 bonusCond2 = 5 ether / 10;
+        uint256 bonusCond3 = 1 ether;
+
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+
+        if (msg.value >= requestMinimum && now < deadline && now < round1 && now < round2) {
+            if(msg.value >= bonusCond1 && msg.value < bonusCond2){
+                countbonus = tokens * 10 / 100;
+            }

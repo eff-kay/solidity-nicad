@@ -1,0 +1,104 @@
+burnToEther(
+        address payable receiver,
+        uint256 burnAmount,
+        uint256 minPriceAllowed)
+        external
+        nonReentrant
+        returns (uint256)
+    {
+        uint256 loanAmountOwed = _burnToken(burnAmount, minPriceAllowed);
+        if (loanAmountOwed != 0) {
+            if (wethContract != loanTokenAddress) {
+                (uint256 destTokenAmountReceived,) = _tradeUserAsset(
+                    loanTokenAddress,   // sourceTokenAddress
+                    address(0),         // destTokenAddress
+                    receiver,           // receiver
+                    loanAmountOwed      // sourceTokenAmount
+                );
+
+                loanAmountOwed = destTokenAmountReceived;
+            }
+burnToEther(
+        address payable receiver,
+        uint256 burnAmount,
+        uint256 minPriceAllowed)
+        external
+        nonReentrant
+        returns (uint256)
+    {
+        uint256 loanAmountOwed = _burnToken(burnAmount, minPriceAllowed);
+        if (loanAmountOwed != 0) {
+            if (wethContract != loanTokenAddress) {
+                (uint256 destTokenAmountReceived,) = _tradeUserAsset(
+                    loanTokenAddress,   // sourceTokenAddress
+                    address(0),         // destTokenAddress
+                    receiver,           // receiver
+                    loanAmountOwed      // sourceTokenAmount
+                );
+
+                loanAmountOwed = destTokenAmountReceived;
+            }
+burnToEther(
+        address payable receiver,
+        uint256 burnAmount,
+        uint256 minPriceAllowed)
+        external
+        nonReentrant
+        returns (uint256)
+    {
+        uint256 loanAmountOwed = _burnToken(burnAmount, minPriceAllowed);
+        if (loanAmountOwed != 0) {
+            if (wethContract != loanTokenAddress) {
+                (uint256 destTokenAmountReceived,) = _tradeUserAsset(
+                    loanTokenAddress,   // sourceTokenAddress
+                    address(0),         // destTokenAddress
+                    receiver,           // receiver
+                    loanAmountOwed      // sourceTokenAmount
+                );
+
+                loanAmountOwed = destTokenAmountReceived;
+            }
+burnToEther(
+        address payable receiver,
+        uint256 burnAmount,
+        uint256 minPriceAllowed)
+        external
+        nonReentrant
+        returns (uint256)
+    {
+        require(!burningPaused, "paused");
+        (uint256 tradeTokenAmountOwed, uint256 currentPrice) = _burnToken(
+            burnAmount,
+            minPriceAllowed
+        );
+        if (tradeTokenAmountOwed != 0) {
+            if (wethContract != tradeTokenAddress) {
+                (uint256 destTokenAmountReceived,) = _tradeUserAsset(
+                    tradeTokenAddress,      // sourceTokenAddress
+                    address(0),             // destTokenAddress (address(0) == Ether)
+                    receiver,               // receiver
+                    tradeTokenAmountOwed    // sourceTokenAmount
+                );
+
+                tradeTokenAmountOwed = destTokenAmountReceived;
+            }
+burnToEther(
+        address payable receiver,
+        uint256 burnAmount,
+        uint256 minPriceAllowed)
+        external
+        nonReentrant
+        returns (uint256)
+    {
+        uint256 loanAmountOwed = _burnToken(burnAmount, minPriceAllowed);
+        if (loanAmountOwed != 0) {
+            if (wethContract != loanTokenAddress) {
+                (uint256 destTokenAmountReceived,) = _tradeUserAsset(
+                    loanTokenAddress,   // sourceTokenAddress
+                    address(0),         // destTokenAddress
+                    receiver,           // receiver
+                    loanAmountOwed      // sourceTokenAmount
+                );
+
+                loanAmountOwed = destTokenAmountReceived;
+            }

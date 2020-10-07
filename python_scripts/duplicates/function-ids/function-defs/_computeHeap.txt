@@ -1,0 +1,28 @@
+_computeHeap(address _addr, uint256 _new) internal {
+        uint256 size = heap.size();
+        if (size == 0) {
+            emit JoinHeap(_addr, _new, 0);
+            heap.insert(_addr, _new);
+            return;
+        }
+_computeHeap(address _addr, uint256 _new) internal {
+        uint256 size = heap.size();
+        if (size == 0) {
+            emit JoinHeap(_addr, _new, 0);
+            heap.insert(_addr, _new);
+            return;
+        }
+_computeHeap(address _addr, uint256 _new) internal {
+        uint256 size = heap.size();
+        if (size == 0) {
+            emit JoinHeap(_addr, _new, 0);
+            heap.insert(_addr, _new);
+            return;
+        }
+_computeHeap(address _addr, uint256 _new) internal {
+        uint256 size = heap.size();
+        if (size == 0) {
+            emit JoinHeap(_addr, _new, 0);
+            heap.insert(_addr, _new);
+            return;
+        }

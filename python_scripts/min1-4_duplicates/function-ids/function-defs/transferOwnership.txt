@@ -1,0 +1,415 @@
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+
+        newOwner = _newOwner;
+
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+            newOwner = _newOwner;
+        }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+    _transferOwnership(newOwner);
+  }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+      _transferOwnership(newOwner);
+  }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        _transferOwnership(newOwner);
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        pendingOwner = newOwner;
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        pendingOwner = newOwner;
+    }
+transferOwnership(address newOwner) onlyOwner public {
+    owner = newOwner;
+  }
+transferOwnership(address newOwner) onlyOwner public {
+        owner = newOwner;
+    }
+transferOwnership(address newOwner) onlyOwner public {
+        owner = newOwner;
+    }
+transferOwnership(address newOwner) onlyOwner public {
+        owner = newOwner;
+    }
+transferOwnership(address newOwner) onlyOwner public {
+        owner = newOwner;
+    }
+transferOwnership(address newOwner) onlyOwner public {
+        owner = newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+    _transferOwnership(_newOwner);
+  }
+transferOwnership(address _newOwner) public onlyOwner {
+    _transferOwnership(_newOwner);
+  }
+transferOwnership(address _newOwner) public onlyOwner {
+    _transferOwnership(_newOwner);
+  }
+transferOwnership(address _newOwner) public onlyOwner {
+        _transferOwnership(_newOwner);
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+    _transferOwnership(_newOwner);
+  }
+transferOwnership(address _newOwner) public onlyOwner {
+    _transferOwnership(_newOwner);
+  }
+transferOwnership(address _newOwner) public onlyOwner {
+    _transferOwnership(_newOwner);
+  }
+transferOwnership(address _newOwner) public onlyOwner {
+    _transferOwnership(_newOwner);
+  }
+transferOwnership(address _newOwner) public onlyOwner {
+        _transferOwnership(_newOwner);
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        _transferOwnership(_newOwner);
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+    _transferOwnership(_newOwner);
+  }
+transferOwnership(address payable _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address payable _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        pendingOwner = newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address newOwner) onlyOwner public {
+        owner = newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address newOwner) onlyOwner public {
+        owner = newOwner;
+    }
+transferOwnership(address _newOwner) public only_owner {
+        owner = _newOwner;
+    }
+transferOwnership(address newOwner) onlyOwner public {
+        owner = newOwner;
+    }
+transferOwnership(address newOwner) onlyOwner public {
+        owner = newOwner;
+    }
+transferOwnership(address newOwner) public onlyOwner {
+            owner = newOwner;
+        }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) external onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+
+        newOwner = _newOwner;
+
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+            newOwner = _newOwner;
+        }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address newOwner) public onlyOwner {
+        pendingOwner = newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address newOwner) onlyOwner public {
+        owner = newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address newOwner) onlyOwner public {
+    owner = newOwner;
+  }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }

@@ -1,0 +1,18 @@
+	1. function getParentBlockInterval() public view returns (uint256) 
+	2. function setParentBlockInterval(uint256 _parentBlockInterval) public ifAdmin 
+	3. function submitPeriod(
+	    bytes32 _prevHash,
+	    bytes32 _root)
+	4. function allowance(address _owner, address _spender) constant returns (uint) 
+	5. function transferFrom(address _from, address _to, uint _value)
+	        public
+	        returns (bool)
+	6. function getNowTime() public view returns(uint256) 
+	7. function autoUnlock(address _holder) internal returns (bool) 
+	8. function releaseTimeLock(address _holder) internal returns(bool) 
+	9. function openingTime() public view returns (uint256) 
+	10. function closingTime() public view returns (uint256) 
+	11. function isOpen() public view returns (bool) 
+	12. function hasClosed() public view returns (bool) 
+	13. function setStartsAt(uint time) onlyOwner 
+function setEndsAt(uint time) public onlyOwner

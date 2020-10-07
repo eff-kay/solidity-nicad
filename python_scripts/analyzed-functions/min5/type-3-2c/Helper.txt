@@ -1,0 +1,2 @@
+	1. function safeToNextIdx() internal
+2. function () public payable

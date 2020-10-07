@@ -1,0 +1,585 @@
+() external payable {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() external payable {
+		revert();
+	}
+() external payable {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() public payable {
+
+        revert();
+
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable{
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() public payable {
+    }
+() public payable {
+    }
+() public payable {
+    }
+() public payable {
+       
+    }
+() payable external {
+        revert();
+    }
+() payable external {
+        revert();
+    }
+() payable external {
+        revert();
+    }
+() external payable {
+        buyTokens(msg.sender);
+    }
+() external payable {
+        buyTokens(msg.sender);
+    }
+() external payable {
+        buyTokens(msg.sender);
+    }
+() external payable {
+        buyTokens(msg.sender);
+    }
+() external payable
+    {
+                
+        
+        
+           
+    }
+() external payable {}
+() external payable {
+        revert();
+    }
+() external payable {
+        getTokens();
+     }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() payable external {
+        _fallback();
+    }
+() public payable {
+
+        revert();
+
+    }
+() public payable {
+        revert();
+    }
+() external payable {
+        getTokens();
+     }
+() public payable {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() external payable {
+        getTokens();
+     }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() payable public {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        revert();
+    }
+() payable external {
+        revert();
+    }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() external payable {
+        getTokens();
+     }
+() payable external {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable{
+        revert();
+    }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() public payable {
+        revert();
+    }
+() external payable {
+        getTokens();
+     }
+() public payable {
+        revert();
+    }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        revert();
+    }
+() payable external {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() external payable {
+		revert();
+	}
+() external payable
+    {
+                
+        
+        
+           
+    }
+() public payable {
+    }
+() external payable {}
+() public payable {
+    }
+() public payable {
+       
+    }
+() public payable {
+    }
+() external payable {
+        buyTokens(msg.sender);
+    }
+() external payable {
+        buyTokens(msg.sender);
+    }
+() external payable {
+        buyTokens(msg.sender);
+    }
+() external payable {
+        buyTokens(msg.sender);
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+    }
+() public payable {
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+    }
+() public payable {
+       
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+
+        revert();
+
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable{
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() public payable {
+        revert();
+    }
+() payable external {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() external payable {
+		revert();
+	}
+() external payable {
+        revert();
+    }
+() payable external {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() payable public {
+        revert();
+    }
+() payable external {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() external payable {
+        revert();
+    }
+() payable external {
+        emit Deposit(msg.value);
+    }
+() payable external {
+        _fallback();
+    }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        buyTokens(msg.sender);
+    }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        emit Donate(msg.sender, msg.value);
+    }
+() external payable {
+        buyTokens(msg.sender);
+    }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        getTokens();
+     }
+() external payable {}
+() external payable
+    {
+                
+        
+        
+           
+    }
+() external payable {
+        getTokens();
+     }
+() external payable {
+    require(false);
+  }
+() external payable {
+        getTokens();
+     }
+() external payable {
+        buyTokens(msg.sender);
+    }
+() external payable {
+        revert("No fallback function defined!");
+    }
+() external payable {
+        buyTokens(msg.sender);
+    }
+() external payable {
+        getTokens();
+     }

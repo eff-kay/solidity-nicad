@@ -1,0 +1,144 @@
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns(string memory) {
+    return _symbol;
+  }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns(string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns(string memory) {
+    return _symbol;
+  }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns(string memory) {
+    return _symbol;
+  }
+symbol() public view returns(string memory) {
+    return _symbol;
+  }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns(string memory) {
+    return _symbol;
+  }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns(string memory) {
+    return _symbol;
+  }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns(string memory) {
+    return _symbol;
+  }
+symbol() public view returns(string memory) {
+    return _symbol;
+  }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns(string memory) {
+    return _symbol;
+  }
+symbol() public view returns(string memory) {
+    return _symbol;
+  }
+symbol() public view returns(string memory) {
+        return _symbol;
+    }
+symbol() public view returns(string memory) {
+    return _symbol;
+  }
+symbol() public view returns(string memory) {
+    return _symbol;
+  }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string memory) {
+        return _symbol;
+    }
+symbol() public view returns (string) {
+        return _symbol;
+    }
+symbol() public view returns (string) {
+        return _symbol;
+    }
+symbol() public view returns(string) {
+        return _symbol;
+    }
+symbol() public view returns(string) {
+    return _symbol;
+  }
+symbol() public view returns (string) {
+        return _symbol;
+    }
+symbol() public view returns(string) {
+    return _symbol;
+  }
+symbol() external view returns (string memory) {
+        return _symbol;
+    }
+symbol() external view returns (string memory) {
+        return _symbol;
+    }
+symbol() external view returns (string memory) {
+        return _symbol;
+    }
+symbol() external view returns (string memory) {
+        return _symbol;
+    }

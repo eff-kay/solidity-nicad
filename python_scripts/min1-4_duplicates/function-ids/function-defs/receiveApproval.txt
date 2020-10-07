@@ -1,0 +1,149 @@
+receiveApproval(address _from, uint256 _value, address _token, bytes calldata _extraData) external; 
+}
+</source>
+<source file="systems/smart_contracts/GEF.sol" startline="8" endline="9" pcid="4059">
+    function receiveApproval(address _from, uint256 _value, address _token, bytes calldata _extraData) external; 
+}
+</source>
+<source file="systems/smart_contracts/GBE.sol" startline="8" endline="9" pcid="4053">
+    function receiveApproval(address _from, uint256 _value, address _token, bytes calldata _extraData) external; 
+}
+</source>
+<source file="systems/smart_contracts/TAIHUITOKEN.sol" startline="9" endline="9" pcid="6967">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes calldata _extraData) external; }
+receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; 
+}
+</source>
+<source file="systems/smart_contracts/CLCTokenERC20.sol" startline="7" endline="7" pcid="1736">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
+receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
+</source>
+<source file="systems/smart_contracts/TokenERC20.sol" startline="7" endline="7" pcid="7302">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
+receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
+</source>
+<source file="systems/smart_contracts/MyAdvancedToken.sol" startline="24" endline="24" pcid="5261">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
+receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
+</source>
+<source file="systems/smart_contracts/DDPC.sol" startline="6" endline="6" pcid="2375">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
+receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
+</source>
+<source file="systems/smart_contracts/Rabbit.sol" startline="6" endline="6" pcid="5939">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
+receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+
+}
+</source>
+<source file="systems/smart_contracts/TournamentGameToken.sol" startline="48" endline="49" pcid="7434">
+    function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/UTRAToken.sol" startline="7" endline="7" pcid="7598">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
+receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
+</source>
+<source file="systems/smart_contracts/TokenERC20.sol" startline="7" endline="7" pcid="7302">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
+receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/ThpToken.sol" startline="28" endline="28" pcid="7157">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
+receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/VOTENOmodumtokenswapdotcom.sol" startline="68" endline="69" pcid="7839">
+    function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/WanCoinSupplyToken.sol" startline="53" endline="54" pcid="7861">
+    function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/Exzie.sol" startline="55" endline="56" pcid="3416">
+    function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/RanchChain.sol" startline="7" endline="7" pcid="5975">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
+receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
+</source>
+<source file="systems/smart_contracts/Perlin.sol" startline="68" endline="69" pcid="5644">
+    function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/WanCoinToken.sol" startline="53" endline="54" pcid="7883">
+    function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/byzbit.sol" startline="11" endline="11" pcid="1592">
+interface tokenRecepient { function recieveApproval (address _from, uint256 _value, address _token, bytes _extradata) external;	}
+receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/PAYCASH.sol" startline="67" endline="68" pcid="5615">
+    function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/OSManagerToken.sol" startline="40" endline="41" pcid="5553">
+    function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/MyAdvancedToken.sol" startline="24" endline="24" pcid="5261">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
+receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/MiniMeTokenFactory.sol" startline="76" endline="82" pcid="4805">
+    function receiveApproval(
+        address from,
+        uint256 _amount,
+        address _token,
+        bytes _data
+    ) public;
+}
+</source>
+<source file="systems/smart_contracts/BIBCOINID.sol" startline="68" endline="69" pcid="1205">
+    function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/Melodic.sol" startline="68" endline="69" pcid="4788">
+    function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/LanceToken.sol" startline="68" endline="69" pcid="4520">
+    function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/KAKITOKEN.sol" startline="113" endline="114" pcid="4388">
+    function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; 
+}
+</source>
+<source file="systems/smart_contracts/JUNDCOIN.sol" startline="64" endline="65" pcid="4362">
+    function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/CLCTokenERC20.sol" startline="7" endline="7" pcid="1736">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
+receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/ICBB.sol" startline="28" endline="28" pcid="4264">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes calldata_extraData) external; }
+receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/GNB.sol" startline="57" endline="58" pcid="4128">
+    function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
+</source>
+<source file="systems/smart_contracts/DDPC.sol" startline="6" endline="6" pcid="2375">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
+receiveApproval(address _from, uint256 _value, address _token, bytes calldata data) external;
+    
+}
+</source>
+<source file="systems/smart_contracts/TAIHUITOKEN.sol" startline="9" endline="9" pcid="6967">
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes calldata _extraData) external; }

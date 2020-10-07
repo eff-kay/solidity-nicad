@@ -1,0 +1,78 @@
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        _token.safeTransfer(beneficiary, tokenAmount);
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        _token.safeTransfer(beneficiary, tokenAmount);
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        _token.safeTransfer(beneficiary, tokenAmount);
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        _token.safeTransfer(beneficiary, tokenAmount);
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        // Potentially dangerous assumption about the type of the token.
+        require(
+            ERC20Mintable(address(token())).mint(beneficiary, tokenAmount),
+                "MintedCrowdsale: minting failed"
+        );
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        // Potentially dangerous assumption about the type of the token.
+        require(
+            ERC20Mintable(address(token())).mint(beneficiary, tokenAmount),
+                "MintedCrowdsale: minting failed"
+        );
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        // Potentially dangerous assumption about the type of the token.
+        require(
+            ERC20Mintable(address(token())).mint(beneficiary, tokenAmount),
+                "MintedCrowdsale: minting failed"
+        );
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        token().safeTransferFrom(_tokenWallet, beneficiary, tokenAmount);
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        token().safeTransferFrom(_tokenWallet, beneficiary, tokenAmount);
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        _token.safeTransfer(beneficiary, tokenAmount);
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        _token.safeTransfer(beneficiary, tokenAmount);
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        _token.safeTransfer(beneficiary, tokenAmount);
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        // Potentially dangerous assumption about the type of the token.
+        require(
+            ERC20Mintable(address(token())).mint(beneficiary, tokenAmount),
+                "MintedCrowdsale: minting failed"
+        );
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        // Potentially dangerous assumption about the type of the token.
+        require(
+            ERC20Mintable(address(token())).mint(beneficiary, tokenAmount),
+                "MintedCrowdsale: minting failed"
+        );
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        _token.safeTransfer(beneficiary, tokenAmount);
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        token().safeTransferFrom(_tokenWallet, beneficiary, tokenAmount);
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        // Potentially dangerous assumption about the type of the token.
+        require(
+            ERC20Mintable(address(token())).mint(beneficiary, tokenAmount),
+                "MintedCrowdsale: minting failed"
+        );
+    }
+_deliverTokens(address beneficiary, uint256 tokenAmount) internal {
+        token().safeTransferFrom(_tokenWallet, beneficiary, tokenAmount);
+    }

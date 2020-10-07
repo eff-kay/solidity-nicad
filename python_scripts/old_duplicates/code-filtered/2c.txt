@@ -1,0 +1,29 @@
+function calledUpdate(address _oldCalled, address _newCalled) public ownerOnly 
+function tokenLike(address _token) public 
+function transferOwnership(address newOwner) onlyOwner public 
+function getTokens() payable canDistr  public 
+function callOptionalReturn(IERC20 token, bytes memory data) private 
+function metaIncreaseAllowance(bytes memory _signature, uint _nonce, address _spender, uint256 _addedValue, uint _reward) 
+    public returns (bool) 
+    
+function releaseOnce() public 
+function mul(uint256 a, uint256 b) internal pure returns (uint256) 
+function transfer(address to, uint256 value) public returns (bool) 
+function transferFrom(address from, address to, uint256 value) public returns (bool) 
+function decreaseApproval(address agent, uint value) public returns (bool) 
+function approveAndCall (address _spender, uint256 _value, bytes _extradata) public 
+	returns(bool success)
+function giveBountyTokens(address _newInvestor, uint256 _value) public onlyOwner 
+function getOpenedLotteries() public view returns (uint256[] memory) 
+function addressToPass(address[] memory target, bool status)
+  public
+  onlyOwner
+  
+function transfer(address to, uint256 value) public returns (bool) 
+function ratesForCurrencies(bytes4[] currencyKeys)
+        public
+        view
+        returns (uint[])
+    
+function allowAccess(address _address) ownership public 
+function removeFromSendAllowed(address _to) public onlyManager 

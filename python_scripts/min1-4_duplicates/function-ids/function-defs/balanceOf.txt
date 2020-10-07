@@ -1,0 +1,2205 @@
+balanceOf(address tokenOwner) public view returns(uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance){
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+		return balances[tokenOwner];
+	}
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+            return balances[tokenOwner];
+        }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+
+        return balances[tokenOwner];
+
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner)public constant returns (uint balance) {
+		return balances[tokenOwner];
+	}
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer}
+balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/AkropolisTimeLock.sol" startline="22" endline="31" pcid="476">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/ZPayToken.sol" startline="24" endline="33" pcid="8225">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/YottaBytes.sol" startline="126" endline="135" pcid="8191">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/WTA.sol" startline="62" endline="63" pcid="8046">
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/WantMarketplacesUtilityTokenCrowdsale.sol" startline="127" endline="136" pcid="7901">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/VokenShareholders.sol" startline="214" endline="215" pcid="7794">
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/KGCMortage.sol" startline="132" endline="141" pcid="4421">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/GAToken.sol" startline="126" endline="135" pcid="4032">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/MultipleArbitrableTokenTransaction.sol" startline="266" endline="275" pcid="5157">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/FPDeployer.sol" startline="251" endline="260" pcid="3805">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/AkropolisTokenVesting.sol" startline="22" endline="31" pcid="516">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/VokenShareholders.sol" startline="191" endline="192" pcid="7788">
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/NewVoken.sol" startline="149" endline="150" pcid="5344">
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/NibiruGovernanceToken.sol" startline="168" endline="177" pcid="5417">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer}
+balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer}
+balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer}
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+    return _balances[account];
+  }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+    return _balances[account];
+  }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+	    return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+	    return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner)
+        constant
+        public
+        returns (uint256)
+    {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner)
+        constant
+        public
+        returns (uint256)
+    {
+        return balances[_owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return super.balanceOf(_owner) + freezingBalance[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return super.balanceOf(_owner) + freezingBalance[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public constant returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public constant returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+		return balances[_owner];
+	}
+balanceOf(address _owner) public view returns (uint256) 
+    {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+	    return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint balance) {}
+balanceOf(address _owner) constant returns (uint balance) {}
+balanceOf(address _owner) constant returns (uint balance) {}
+balanceOf(address _owner) constant returns (uint) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint) {
+        return balances[_owner];
+    }
+balanceOf(address _holder) public view returns (uint256 balance) {
+        return balances[_holder] + lockupInfo[_holder].lockupBalance;
+    }
+balanceOf(address _holder) public view returns (uint256 balance) {
+        return balances[_holder] + lockupInfo[_holder].lockupBalance;
+    }
+balanceOf(address _owner) constant returns (uint balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant returns (uint balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant returns (uint balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant returns (uint balance) {
+    return balances[_owner];
+  }
+balanceOf(address _holder) public view returns (uint256);
+
+    function transfer(address _to, uint256 _value) public returns (bool success);
+</source>
+<source file="systems/smart_contracts/Stakeo.sol" startline="59" endline="60" pcid="6678">
+    function balanceOf(address _owner) constant public returns (uint256);
+    function transfer(address _to, uint256 _value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/Stakeo.sol" startline="65" endline="66" pcid="6680">
+    function balanceOf(address who) public constant returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/STPCToken.sol" startline="181" endline="183" pcid="6725">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender)
+</source>
+<source file="systems/smart_contracts/SparksterTokenSwap.sol" startline="422" endline="423" pcid="6614">
+	function balanceOf(address who) public view returns (uint256);
+	function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/SuperMarket.sol" startline="16" endline="18" pcid="6757">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/PPLL.sol" startline="16" endline="25" pcid="5770">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer}
+balanceOf(address who) public view returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/Synthetix.sol" startline="2681" endline="2682" pcid="6931">
+    function balanceOf(address account) public view returns (uint);
+    function appendVestingEntry(address account, uint quantity) public;
+</source>
+<source file="systems/smart_contracts/SmokeCoinV_2.sol" startline="60" endline="61" pcid="6548">
+    function balanceOf(address who) public constant returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/BKN.sol" startline="16" endline="17" pcid="1319">
+    function balanceOf(address who) public constant returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/TDCToken.sol" startline="76" endline="77" pcid="6980">
+    function balanceOf(address owner) external view returns (uint256);
+    function transfer(address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/TDeployer.sol" startline="25" endline="34" pcid="7012">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/tharDex.sol" startline="14" endline="15" pcid="7142">
+     function balanceOf(address account) external view returns(uint256);
+     function allowance(address _owner, address _spender)external view returns(uint256);
+</source>
+<source file="systems/smart_contracts/PositionTokenV2.sol" startline="20" endline="21" pcid="5744">
+  function balanceOf(address _who) public view returns (uint256);
+  function transfer(address _to, uint256 _value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/TigerCash.sol" startline="193" endline="202" pcid="7178">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/SmokeCoinV_2.sol" startline="54" endline="55" pcid="6546">
+    function balanceOf(address _owner) constant public returns (uint256);
+    function transfer(address _to, uint256 _value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/TimeLockedTokenStorage.sol" startline="66" endline="67" pcid="7225">
+    function balanceOf(address _owner) public view returns (uint256);
+    function approveForOtherContracts(address _sender, address _spender, uint256 _value) external;
+</source>
+<source file="systems/smart_contracts/DummyToken.sol" startline="62" endline="63" pcid="2827">
+    function balanceOf(address _holder) public view returns (uint256);
+    function allowance(address _from, address _spender) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Airdropper.sol" startline="21" endline="22" pcid="471">
+  function balanceOf(address _owner) public constant returns (uint256 );
+  function transfer(address _to, uint256 _value) public ;
+</source>
+<source file="systems/smart_contracts/FMT.sol" startline="11" endline="12" pcid="3646">
+  function balanceOf(address who) public view returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/SistContract.sol" startline="37" endline="38" pcid="6516">
+  function balanceOf(address who) public view returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/$martFund.sol" startline="65" endline="66" pcid="21">
+    function balanceOf(address _holder) public view returns (uint256);
+    function allowance(address _from, address _spender) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/CASTWEETTOKEN.sol" startline="100" endline="101" pcid="1629">
+    function balanceOf(address who) public view returns (uint256);
+    function allowance(address owner, address spender) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/ShekzCoin.sol" startline="63" endline="64" pcid="6482">
+    function balanceOf(address who) public constant returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/ShekzCoin.sol" startline="57" endline="58" pcid="6480">
+    function balanceOf(address _owner) constant public returns (uint256);
+    function transfer(address _to, uint256 _value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/TokenBank.sol" startline="234" endline="236" pcid="7283">
+  function balanceOf(address who) external view returns (uint256);
+
+  function allowance(address owner, address spender)
+</source>
+<source file="systems/smart_contracts/TokenBank.sol" startline="268" endline="270" pcid="7289">
+  function balanceOf(address who) external view returns (uint256);
+
+  function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/AkropolisTokenVesting.sol" startline="22" endline="31" pcid="516">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/SellableToken.sol" startline="36" endline="37" pcid="6459">
+  function balanceOf(address who) public view returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/CMRPDCrowdsale.sol" startline="1246" endline="1248" pcid="1816">
+    function withdrawalAllowed(address payee) public view returns (bool);
+
+    function withdraw(address payable payee) public {
+</source>
+<source file="systems/smart_contracts/Tokeniso.sol" startline="9" endline="10" pcid="7311">
+  function balanceOf(address who) external view returns (uint256);
+  function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Factory.sol" startline="197" endline="198" pcid="3444">
+    function balanceOf(address owner) external view returns (uint256);
+    function transfer(address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/TokenSale.sol" startline="280" endline="281" pcid="7358">
+    function balanceOf(address who) public view returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/SeedDex.sol" startline="25" endline="27" pcid="6409">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TokenSwap.sol" startline="156" endline="158" pcid="7399">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/SBC.sol" startline="291" endline="293" pcid="6333">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/TorexToken.sol" startline="68" endline="69" pcid="7408">
+  function balanceOf(address who) public view returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/TRT_Token.sol" startline="61" endline="62" pcid="7453">
+    function balanceOf(address who) public view returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/DigitalBitsToken.sol" startline="16" endline="18" pcid="2734">
+  function balanceOf(address who) external view returns (uint256);
+
+  function allowance(address owner, address spender)
+</source>
+<source file="systems/smart_contracts/UGCoin.sol" startline="33" endline="34" pcid="7527">
+    function balanceOf(address who) public constant returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/ESTATERO.sol" startline="30" endline="31" pcid="3162">
+  function balanceOf(address who) external view returns (uint256);
+  function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/UTC.sol" startline="64" endline="65" pcid="7576">
+  function balanceOf(address who) public view returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/VantaToken.sol" startline="36" endline="38" pcid="7639">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Fair7Token.sol" startline="50" endline="51" pcid="3516">
+    function balanceOf(address _owner) constant public returns (uint256);
+    function transfer(address _to, uint256 _value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/Fair7Token.sol" startline="56" endline="57" pcid="3518">
+    function balanceOf(address who) public constant returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/VictorToken.sol" startline="181" endline="183" pcid="7712">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender)
+</source>
+<source file="systems/smart_contracts/ROCKEX.sol" startline="9" endline="10" pcid="6196">
+  function balanceOf(address who) external view returns (uint256);
+  function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/CustomToken.sol" startline="181" endline="183" pcid="2239">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender)
+</source>
+<source file="systems/smart_contracts/VisionBitcoinCash.sol" startline="14" endline="15" pcid="7740">
+  function balanceOf(address who) public view returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/RETC.sol" startline="33" endline="34" pcid="6178">
+    function balanceOf(address who) public constant returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/VokenShareholders.sol" startline="191" endline="192" pcid="7788">
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/Faireum.sol" startline="251" endline="253" pcid="3565">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/ReservedTokensFinalizeAgent.sol" startline="16" endline="17" pcid="6068">
+  function balanceOf(address who) public constant returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/VokenShareholders.sol" startline="206" endline="207" pcid="7793">
+    function reservedOf(address account) external view returns (uint256);
+}
+balanceOf(address who) external view returns (uint256);
+  function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/VokenShareholders.sol" startline="214" endline="215" pcid="7794">
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/DummyToken.sol" startline="97" endline="98" pcid="2844">
+    function token_balanceOf(address _owner) public view returns (uint256);
+    function token_allowance(address _from, address _spender) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/WantMarketplacesUtilityTokenCrowdsale.sol" startline="127" endline="136" pcid="7901">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/Comet.sol" startline="9" endline="10" pcid="1913">
+  function balanceOf(address who) external view returns (uint256);
+  function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/ReferralTracker.sol" startline="100" endline="109" pcid="6018">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/Aigopay.sol" startline="72" endline="73" pcid="446">
+    function balanceOf(address who) public constant returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/RDTv1.sol" startline="11" endline="12" pcid="5985">
+  function balanceOf(address who) external view returns (uint256);
+  function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/DepositRegistry.sol" startline="100" endline="109" pcid="2459">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/PokaToken.sol" startline="16" endline="18" pcid="5729">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Wisdom.sol" startline="82" endline="84" pcid="7983">
+  function balanceOf(address who) external view returns (uint256);
+
+  event Transfer(
+</source>
+<source file="systems/smart_contracts/RaffleTicket.sol" startline="150" endline="159" pcid="5955">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/WizardCashCoin.sol" startline="31" endline="32" pcid="8010">
+    function balanceOf(address _owner) constant public returns (uint256);
+    function transfer(address _to, uint256 _value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/WizardCashCoin.sol" startline="37" endline="38" pcid="8012">
+    function balanceOf(address who) public constant returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/WTA.sol" startline="62" endline="63" pcid="8046">
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/QTChain.sol" startline="22" endline="31" pcid="5903">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer}
+balanceOf(address who) public view returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/XGP.sol" startline="66" endline="67" pcid="8101">
+    function balanceOf(address _owner) constant public returns (uint256);
+    function transfer(address _to, uint256 _value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/BlockPoolToken.sol" startline="14" endline="15" pcid="1406">
+    function balanceOf(address who) public view returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/XGP.sol" startline="72" endline="73" pcid="8103">
+    function balanceOf(address who) public constant returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/DABANKING_SWAP.sol" startline="18" endline="20" pcid="2270">
+    function balanceOf(address who) public view returns (uint256);
+
+    function allowance(address owner, address spender) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/$martFund.sol" startline="554" endline="555" pcid="134">
+    function balanceOf(address _addr)public view returns(uint256);
+    function price() view public returns(uint256);
+</source>
+<source file="systems/smart_contracts/ERC20TOKEN.sol" startline="25" endline="27" pcid="3013">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/ProxyERC20.sol" startline="332" endline="334" pcid="5885">
+    function balanceOf(address owner) public view returns (uint);
+
+    function allowance(address owner, address spender) public view returns (uint);
+</source>
+<source file="systems/smart_contracts/YottaBytes.sol" startline="126" endline="135" pcid="8191">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/PropertyToken.sol" startline="80" endline="82" pcid="5838">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender)
+</source>
+<source file="systems/smart_contracts/ZPayToken.sol" startline="24" endline="33" pcid="8225">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/BountyBoard.sol" startline="115" endline="116" pcid="1492">
+  function balanceOf(address who) public view returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/EnergiPlus.sol" startline="54" endline="55" pcid="2949">
+    function balanceOf(address _owner) constant public returns (uint256);
+    function transfer(address _to, uint256 _value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/DcorpDissolvementProposal.sol" startline="430" endline="438" pcid="2355">
+    function isOwner(address _account) public view returns (bool);
+
+
+    /**
+     * Returns the amount of owners
+     *
+     * @return The amount of owners
+     */
+    function getOwnerCount() public view returns (uint);
+</source>
+<source file="systems/smart_contracts/ERC20.sol" startline="86" endline="88" pcid="2982">
+  function balanceOf(address who) external view returns (uint256);
+
+  event Transfer(
+</source>
+<source file="systems/smart_contracts/CRUSH.sol" startline="9" endline="10" pcid="2145">
+  function balanceOf(address who) external view returns (uint256);
+  function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/Cholyz.sol" startline="54" endline="56" pcid="1711">
+    function balanceOf(address who) public view returns (uint256);
+
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/BoleToken.sol" startline="67" endline="68" pcid="1434">
+    function balanceOf(address who) public constant returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/EnergiPlus.sol" startline="60" endline="61" pcid="2951">
+    function balanceOf(address who) public constant returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/Authorization.sol" startline="100" endline="109" pcid="946">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/CRYPTOMZ.sol" startline="85" endline="86" pcid="2178">
+  function balanceOf(address who) public constant returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/BoleToken.sol" startline="61" endline="62" pcid="1432">
+    function balanceOf(address _owner) constant public returns (uint256);
+    function transfer(address _to, uint256 _value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/DcorpDissolvementProposal.sol" startline="485" endline="486" pcid="2360">
+    function authenticate(address _account) public view returns (bool);
+}
+</source>
+<source file="systems/smart_contracts/PoaOperator.sol" startline="315" endline="317" pcid="5686">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/CST_TOKEN.sol" startline="8" endline="9" pcid="2192">
+  function balanceOf(address _owner) external view returns (uint256);
+  function allowance(address _owner, address _spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/DAITOKEN.sol" startline="11" endline="13" pcid="2297">
+  function balanceOf(address who) external view returns (uint256);
+
+  function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/AoraCoin.sol" startline="18" endline="20" pcid="725">
+  function balanceOf(address who) external view returns (uint256);
+
+  function allowance(address owner, address spender)
+</source>
+<source file="systems/smart_contracts/DcorpDissolvementProposal.sol" startline="32" endline="42" pcid="2329">
+    function balanceOf(address _owner) external view returns (uint);
+
+
+    /** 
+     * Send `_value` token to `_to` from `msg.sender`
+     * 
+     * @param _to The address of the recipient
+     * @param _value The amount of token to be transferred
+     * @return Whether the transfer was successful or not
+     */
+    function transfer(address _to, uint _value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/Deflacoin.sol" startline="13" endline="14" pcid="2387">
+  function balanceOf(address who) external view returns (uint256);
+  function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/PDataToSHFund.sol" startline="19" endline="20" pcid="5629">
+  function balanceOf(address who) public view returns (uint256);
+}
+</source>
+<source file="systems/smart_contracts/CoinDumper.sol" startline="194" endline="195" pcid="1890">
+    function balanceOf(address who) constant external returns (uint256);
+    function transfer(address to, uint256 value) external returns (bool);
+</source>
+<source file="systems/smart_contracts/ankara.sol" startline="27" endline="29" pcid="679">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/CMRPDCrowdsale.sol" startline="22" endline="31" pcid="1745">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/GoldenRings.sol" startline="44" endline="45" pcid="4170">
+    function balanceOf(address who) public view returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/HupayX.sol" startline="88" endline="90" pcid="4235">
+  function balanceOf(address who) external view returns (uint256);
+
+  function allowance(address owner, address spender)
+</source>
+<source file="systems/smart_contracts/ILLUSION.sol" startline="65" endline="66" pcid="4297">
+    function balanceOf(address _owner) constant public returns (uint256);
+    function transfer(address _to, uint256 _value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/BFGToken.sol" startline="44" endline="45" pcid="1182">
+  function balanceOf(address addr) public view returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/DiamondChain.sol" startline="13" endline="14" pcid="2547">
+  function balanceOf(address who) external view returns (uint256);
+  function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/ILLUSION.sol" startline="71" endline="72" pcid="4299">
+    function balanceOf(address who) public constant returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/ITVR.sol" startline="19" endline="20" pcid="4325">
+  function balanceOf(address who) public view returns (uint256);
+}
+</source>
+<source file="systems/smart_contracts/GFNX.sol" startline="13" endline="15" pcid="4093">
+  function balanceOf(address who) external view returns (uint256);
+
+  function allowance(address owner, address spender)
+</source>
+<source file="systems/smart_contracts/Oracle.sol" startline="164" endline="165" pcid="5519">
+  function getAuthorizationStatus(address node) external view returns (bool);
+  function setFulfillmentPermission(address node, bool allowed) external;
+</source>
+<source file="systems/smart_contracts/AronCoin.sol" startline="14" endline="15" pcid="756">
+  function balanceOf(address who) public view returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/EducationLibra.sol" startline="31" endline="32" pcid="2876">
+    function balanceOf(address _owner) constant public returns (uint256);
+    function transfer(address _to, uint256 _value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/DcorpDissolvementProposal.sol" startline="257" endline="265" pcid="2344">
+    function isObserver(address _account) external view returns (bool);
+
+
+    /**
+     * Gets the amount of registered observers
+     * 
+     * @return The amount of registered observers
+     */
+    function getObserverCount() external view returns (uint);
+</source>
+<source file="systems/smart_contracts/ABCToken.sol" startline="20" endline="29" pcid="300">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer}
+balanceOf(address who) public constant returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/Aigopay.sol" startline="66" endline="67" pcid="444">
+    function balanceOf(address _owner) constant public returns (uint256);
+    function transfer(address _to, uint256 _value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/KAKITOKEN.sol" startline="101" endline="102" pcid="4383">
+    function balanceOf(address who) public view returns (uint256);
+    function allowance(address owner, address spender) public view returns (uint256);
+</source>
+<source file="systems/smart_contracts/DcorpDissolvementProposal.sol" startline="309" endline="317" pcid="2349">
+    function isOwner(address _account) public view returns (bool);
+
+
+    /**
+     * Gets the current owner
+     *
+     * @return address The current owner
+     */
+    function getOwner() public view returns (address);
+</source>
+<source file="systems/smart_contracts/KGCMortage.sol" startline="132" endline="141" pcid="4421">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/CNG.sol" startline="14" endline="16" pcid="1841">
+  function balanceOf(address who) external view returns (uint256);
+
+  function allowance(address owner, address spender)
+</source>
+<source file="systems/smart_contracts/LBBT.sol" startline="41" endline="42" pcid="4537">
+  function balanceOf(address who) public view returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/BANG.sol" startline="13" endline="14" pcid="1036">
+  function balanceOf(address who) external view returns (uint256);
+  function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/DNP.sol" startline="18" endline="19" pcid="2782">
+    function balanceOf(address who) public view returns (uint256);
+    function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/GAToken.sol" startline="126" endline="135" pcid="4032">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a `Transfer` event.
+     */
+    function transfer(address recipient, uint256 amount) external returns (bool);
+</source>
+<source file="systems/smart_contracts/BlockbidLiquidity.sol" startline="22" endline="24" pcid="1363">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/BDAM.sol" startline="96" endline="97" pcid="1114">
+  function balanceOf(address who) public constant returns (uint256);
+  function transfer(address to, uint256 value) public returns (bool);
+</source>
+<source file="systems/smart_contracts/LuckyAdvcedWoken.sol" startline="17" endline="19" pcid="4552">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/MAdvcedWoken.sol" startline="17" endline="19" pcid="4591">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/magesh.sol" startline="83" endline="85" pcid="4616">
+    function balanceOf(address who) external view returns (uint256);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/NSTTeamLock.sol" startline="19" endline="20" pcid="5455">
+    function balanceOf(address owner) external view returns (uint256);
+    function allowance(address owner, address spender) external view returns (uint256);
+</source>
+<source file="systems/smart_contracts/NibiruGovernanceToken.sol" startline="168" endline="177" pcid="5417">
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer}
+balanceOf(address tokenOwner) public view returns(uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+
+        return balances[tokenOwner];
+
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+            return balances[tokenOwner];
+        }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance){
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner)public constant returns (uint balance) {
+		return balances[tokenOwner];
+	}
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+		return balances[tokenOwner];
+	}
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return _balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public view returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256) 
+    {
+        return balances[_owner];
+    }
+balanceOf(address src) public constant returns (uint256) {
+        return _balances[src];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+		return balances[_owner];
+	}
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+	    return balances[_owner];
+    }
+balanceOf(address _owner)
+        constant
+        public
+        returns (uint256)
+    {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address account) public view returns (uint256) {
+    return _balances[account];
+  }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return balances[owner];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address tokenOwner) public view returns (uint) {
+        return balances[tokenOwner];
+    }
+balanceOf(address _addr)
+        public
+        constant
+        returns (uint256) {
+        return balances[_addr];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _ByteBalances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+    return _balances[account];
+  }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf( address _addr ) public view returns ( uint )
+    {
+        return balances[_addr];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address _owner)
+        constant
+        public
+        returns (uint256)
+    {
+        return balances[_owner];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _FOMOTokenBalances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address _owner) constant public returns (uint256) {
+	    return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address _addr) public view returns (uint256) {
+        return balances[_addr];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address account) public view returns (uint256) {
+        return _balances[account];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address _owner) constant public returns (uint256) {
+	    return balances[_owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return getBalance( _owner );
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner)
+        constant
+        public
+        returns (uint256)
+    {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+		return balances[_owner];
+	}
+balanceOf(address _owner) public constant returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public constant returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner)
+        constant
+        public
+        returns (uint256)
+    {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant public returns (uint256) {
+	    return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256) {
+	    return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+	    return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256) 
+    {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant public returns (uint256) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256) {
+    return balances[_owner];
+  }
+balanceOf(
+        address _owner)
+        public
+        view
+        returns (uint256)
+    {
+        return denormalize(balances[_owner]);
+    }
+balanceOf(address _owner) constant returns (uint256 balance) {}
+balanceOf(address _owner) constant returns (uint balance) {}
+balanceOf(address _owner) constant returns (uint balance) {}
+balanceOf(address _owner) constant returns (uint balance) {}
+balanceOf(address _owner) public view returns (uint256 balance) {}
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return super.balanceOf(_owner) + freezingBalance[_owner];
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return _balances[_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return getBalance( _owner );
+    }
+balanceOf(address _owner) public view returns (uint256 balance) {
+    return accounts [_owner];
+  }
+balanceOf(address _owner) public view returns (uint256 balance) {
+        return super.balanceOf(_owner) + freezingBalance[_owner];
+    }
+balanceOf(address _owner) public constant returns (uint256 balance) {
+        return balanceOfAt(_owner, block.number);
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _FOMOTokenBalances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+    return _balances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        // Immutable static call from target contract
+        return IERC20(target).balanceOf(owner);
+    }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address owner) public view returns (uint256) {
+    return _ByteBalances[owner];
+  }
+balanceOf(address owner) public view returns (uint256) {
+        return _balances[owner];
+    }
+balanceOf(address a) external returns (uint) {return 0;}
+balanceOf(address _owner) constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant returns (uint balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant returns (uint balance) {
+    return balances[_owner];
+  }
+balanceOf(address _owner) constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint256 balance) {}
+balanceOf(address _owner) constant returns (uint256 balance) {
+        return balances[_owner];
+    }
+balanceOf(address _owner) constant returns (uint balance) {}
+balanceOf(address _owner) constant returns (uint balance) {}
+balanceOf(address _owner) constant returns (uint balance) {}

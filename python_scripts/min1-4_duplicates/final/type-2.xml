@@ -1,0 +1,24 @@
+<clones>
+<systeminfo granularity="functions-blind" maxlines="4" minlines="1" processor="nicad5" system="smart_contracts" threshold="0%" />
+<cloneinfo npairs="190216" npcs="8259" />
+<runinfo cputime="817179" ncompares="4109771" />
+<classinfo nclasses="287" />
+
+<class classid="45" nclones="3" nlines="4" similarity="100">
+<source endline="870" file="systems/smart_contracts/$martFund.sol" pcid="191" startline="866" />
+</class>
+
+<class classid="162" nclones="8" nlines="4" similarity="100">
+<source endline="50" file="systems/smart_contracts/ESCHToken.sol" pcid="3042" startline="46" />
+</class>
+
+<class classid="206" nclones="2" nlines="4" similarity="100">
+<source endline="190" file="systems/smart_contracts/DummyToken.sol" pcid="2862" startline="186" />
+<source endline="1104" file="systems/smart_contracts/Synthetix.sol" pcid="6858" startline="1093" />
+</class>
+
+<class classid="273" nclones="3" nlines="4" similarity="100">
+<source endline="88" file="systems/smart_contracts/UtilityTokenFactory.sol" pcid="7597" startline="85" />
+</class>
+
+</clones>

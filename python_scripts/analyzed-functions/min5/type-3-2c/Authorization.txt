@@ -1,0 +1,6 @@
+	1. function changeOwner(address _newOwner) public 
+	2. function clearApproval(address _owner, uint256 _tokenId) internal 
+	3. function _clearApproval(uint256 tokenId) private 
+	4. function checkIsAdmin(address addr) private view returns (bool) 
+	5. function isAddressWhitelisted(address addr) public constant returns(bool) 
+function addAddressToGovernanceContract(address addr) onlyOwner public returns(bool success) 

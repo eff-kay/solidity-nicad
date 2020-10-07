@@ -1,0 +1,86 @@
+<clones>
+<systeminfo granularity="functions-blind" maxlines="4" minlines="1" processor="nicad5" system="smart_contracts" threshold="30%" />
+<cloneinfo npairs="741482" npcs="8259" />
+<runinfo cputime="9509896" ncompares="17225651" />
+<classinfo nclasses="197" />
+
+<class classid="7" nclones="3717" nlines="3" similarity="75">
+<source endline="801" file="systems/smart_contracts/SparksterTokenSwap.sol" pcid="6631" startline="786" />
+<source endline="276" file="systems/smart_contracts/TrueProfileLogic.sol" pcid="7521" startline="272" />
+<source endline="1207" file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" pcid="4909" startline="1203" />
+<source endline="3662" file="systems/smart_contracts/Synthetix.sol" pcid="6964" startline="3632" />
+<source endline="869" file="systems/smart_contracts/DcorpDissolvementProposal.sol" pcid="2373" startline="859" />
+<source endline="505" file="systems/smart_contracts/Factory.sol" pcid="3511" startline="501" />
+<source endline="73" file="systems/smart_contracts/ParkingResolver.sol" pcid="5600" startline="69" />
+<source endline="1335" file="systems/smart_contracts/EstateRegistry.sol" pcid="3142" startline="1316" />
+<source endline="623" file="systems/smart_contracts/Fortune999.sol" pcid="3750" startline="616" />
+<source endline="38" file="systems/smart_contracts/RestrictedTransferAgent.sol" pcid="6172" startline="26" />
+<source endline="1198" file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" pcid="4908" startline="1183" />
+<source endline="1024" file="systems/smart_contracts/SparksterTokenSwap.sol" pcid="6650" startline="1019" />
+<source endline="407" file="systems/smart_contracts/Oracle.sol" pcid="5540" startline="393" />
+<source endline="200" file="systems/smart_contracts/ICOImplementation.sol" pcid="4277" startline="182" />
+<source endline="61" file="systems/smart_contracts/RegulatedToken.sol" pcid="6064" startline="51" />
+<source endline="261" file="systems/smart_contracts/GoaToken.sol" pcid="4161" startline="244" />
+<source endline="521" file="systems/smart_contracts/AkropolisTokenVesting.sol" pcid="546" startline="501" />
+<source endline="315" file="systems/smart_contracts/TimeLockedTokenStorage.sol" pcid="7240" startline="296" />
+<source endline="296" file="systems/smart_contracts/BlackJack.sol" pcid="1349" startline="279" />
+<source endline="162" file="systems/smart_contracts/Deflacoin.sol" pcid="2406" startline="145" />
+<source endline="407" file="systems/smart_contracts/MULTIFOMO.sol" pcid="5107" startline="393" />
+<source endline="95" file="systems/smart_contracts/RegulatedToken.sol" pcid="6067" startline="79" />
+<source endline="1156" file="systems/smart_contracts/SparksterTokenSwap.sol" pcid="6662" startline="1150" />
+<source endline="82" file="systems/smart_contracts/UTRAToken.sol" pcid="7600" startline="75" />
+<source endline="1242" file="systems/smart_contracts/SparksterTokenSwap.sol" pcid="6672" startline="1238" />
+<source endline="79" file="systems/smart_contracts/ParkingResolver.sol" pcid="5601" startline="73" />
+<source endline="193" file="systems/smart_contracts/MultiSigWallet.sol" pcid="5246" startline="179" />
+<source endline="1497" file="systems/smart_contracts/CMRPDCrowdsale.sol" pcid="1833" startline="1494" />
+<source endline="71" file="systems/smart_contracts/RegulatedToken.sol" pcid="6065" startline="61" />
+<source endline="791" file="systems/smart_contracts/MultipleArbitrableTokenTransaction.sol" pcid="5183" startline="775" />
+<source endline="244" file="systems/smart_contracts/SeedDex.sol" pcid="6442" startline="229" />
+</class>
+
+<class classid="33" nclones="646" nlines="4" similarity="75">
+<source endline="871" file="systems/smart_contracts/SparksterTokenSwap.sol" pcid="6637" startline="863" />
+<source endline="1603" file="systems/smart_contracts/Synthetix.sol" pcid="6876" startline="1587" />
+</class>
+
+<class classid="43" nclones="210" nlines="4" similarity="75">
+<source endline="215" file="systems/smart_contracts/DNP.sol" pcid="2801" startline="192" />
+<source endline="96" file="systems/smart_contracts/CST_TOKEN.sol" pcid="2204" startline="83" />
+<source endline="589" file="systems/smart_contracts/SparksterTokenSwap.sol" pcid="6625" startline="561" />
+<source endline="277" file="systems/smart_contracts/XCToken.sol" pcid="8087" startline="252" />
+<source endline="270" file="systems/smart_contracts/GameGold.sol" pcid="4002" startline="255" />
+</class>
+
+<class classid="45" nclones="17" nlines="4" similarity="75">
+<source endline="199" file="systems/smart_contracts/LuckyStrikeTokens.sol" pcid="4576" startline="177" />
+<source endline="263" file="systems/smart_contracts/DNP.sol" pcid="2805" startline="247" />
+</class>
+
+<class classid="55" nclones="37" nlines="4" similarity="75">
+<source endline="377" file="systems/smart_contracts/_0xSatoshi.sol" pcid="247" startline="360" />
+</class>
+
+<class classid="84" nclones="12" nlines="4" similarity="75">
+<source endline="200" file="systems/smart_contracts/NewVoken.sol" pcid="5350" startline="192" />
+<source endline="1573" file="systems/smart_contracts/ReservedTokensFinalizeAgent.sol" pcid="6166" startline="1567" />
+</class>
+
+<class classid="90" nclones="3" nlines="4" similarity="75">
+<source endline="71" file="systems/smart_contracts/CouncilVesting.sol" pcid="2029" startline="70" />
+</class>
+
+<class classid="148" nclones="4" nlines="4" similarity="75">
+<source endline="501" file="systems/smart_contracts/EstateRegistry.sol" pcid="3090" startline="480" />
+</class>
+
+<class classid="150" nclones="2" nlines="4" similarity="75">
+<source endline="1499" file="systems/smart_contracts/EstateRegistry.sol" pcid="3154" startline="1479" />
+<source endline="214" file="systems/smart_contracts/Exchange.sol" pcid="3373" startline="202" />
+</class>
+
+<class classid="171" nclones="2" nlines="4" similarity="75">
+<source endline="1040" file="systems/smart_contracts/FPDeployer.sol" pcid="3897" startline="1033" />
+<source endline="250" file="systems/smart_contracts/VokenShareholders.sol" pcid="7797" startline="243" />
+</class>
+
+</clones>

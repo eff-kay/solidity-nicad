@@ -1,0 +1,574 @@
+totalSupply() public view returns(uint) {
+        return _totalSupply - balances[address(0)];
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+
+        return _totalSupply  - balances[address(0)];
+
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+    return _totalSupply;
+  }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+		return _totalSupply.sub(balances[address(0)]);
+	}
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint256) {
+        return totalSupply_;
+    }
+totalSupply() public view returns (uint256) {
+        return totalSupply_;
+    }
+totalSupply() public view returns (uint256) {
+    return totalSupply_;
+  }
+totalSupply() public view returns (uint256) {
+        return totalSupply_;
+    }
+totalSupply() public view returns (uint256) {
+    return totalSupply_;
+  }
+totalSupply() public view returns (uint256) {
+    return totalSupply_;
+  }
+totalSupply() public view returns (uint256) {
+        return totalSupply_;
+    }
+totalSupply() public view returns (uint256) {
+        return totalSupply_;
+    }
+totalSupply() public view returns (uint256) {
+		return totalSupply_;
+	}
+totalSupply() public view returns (uint256) {
+        return totalSupply_;
+    }
+totalSupply() public view returns (uint256) {
+    return totalSupply_;
+  }
+totalSupply() public view returns (uint256) {
+    return totalSupply_;
+  }
+totalSupply() public view returns (uint256) {
+        return totalSupply_;
+    }
+totalSupply() public view returns (uint256) {
+    return totalSupply_;
+  }
+totalSupply() public view returns (uint256) {
+        return totalSupply_;
+    }
+totalSupply() public view returns (uint256) {
+    return totalSupply_;
+  }
+totalSupply() public view returns (uint256) {
+    return totalSupply_;
+  }
+totalSupply() public view returns (uint256) 
+    {
+        return totalSupply_;
+    }
+totalSupply()
+        public
+        constant
+        returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() public constant returns (uint256) {
+        return _totalSupply;
+    }
+totalSupply() constant returns (uint supply) {}
+totalSupply() constant returns (uint supply) {}
+totalSupply() constant returns (uint supply) {}
+totalSupply() constant returns (uint256 totalSupply) {}
+totalSupply() constant returns (uint256 totalSupply) {}
+totalSupply() constant returns (uint256 totalSupply) {}
+totalSupply() public view returns (uint) {
+        return supply;
+    }
+totalSupply() public view returns (uint){
+        return supply;
+    }
+totalSupply()
+        public
+        view
+        returns (uint256)
+    {
+        return denormalize(totalSupply_);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+		return _totalSupply.sub(balances[address(0)]);
+	}
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() external view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint256 supply) {
+    return tokenCount;
+  }
+totalSupply() public constant returns (uint256) {
+        return totalSupply;
+    }
+totalSupply() public view returns (uint256) {
+        return totalSupply;
+    }
+totalSupply()
+        public
+        view
+        returns (uint256)
+    {
+        return denormalize(totalSupply_);
+    }
+totalSupply() public view returns(uint) {
+        return _totalSupply - balances[address(0)];
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+
+        return _totalSupply  - balances[address(0)];
+
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint){
+        return supply;
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint){
+        return _totalSupply * 10**uint(decimals);
+        }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint) {
+        return supply;
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint) {
+		return _totalSupply.sub(balances[address(0)]);
+	}
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+totalSupply() external view returns (uint) {
+        return _totalSupply.sub(balances[address(0)]);
+    }
+totalSupply()public constant returns (uint) {
+		return totalBEXSupply;
+	}
+totalSupply() public constant returns (uint) {
+        return totalSupplyAt(block.number);
+    }
+totalSupply() public view returns (uint256 supply) {
+    return tokenCount;
+  }
+totalSupply()  constant returns (uint ) {
+        return _totalSupply;
+    }

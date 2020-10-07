@@ -1,0 +1,187 @@
+	1. function _transferOwnership(address newOwner) internal 
+	2. function acceptOwnership() public 
+	3. function changename(string memory _newName) public onlyAttributesPermission 
+	4. function safeApprove(IERC20 token, address spender, uint256 value) internal 
+	5. function transfer(address _to, uint256 _value)
+	        public
+	        returns (bool)
+	6. function transferOwnership(address _newOwner) public 
+	7. function isApprovedForAll(address owner, address operator) public view returns (bool) 
+	8. function _clearApproval(uint256 tokenId) private 
+	9. function transferOwnership(address newOwner) public onlyOwner 
+	10. function approve(address _spender, uint256 _value) public returns (bool success)
+	11. function transferOwnership(address newOwner) onlyOwner public
+	12. function setMigrateContract(address _newContractAddr) isOwner external 
+	13. function changeOwner(address _newFundDeposit) isOwner() external 
+	14. function migrate() external 
+	15. function remove(Role storage role, address account) internal 
+	16. function has(Role storage role, address account) internal view returns (bool) 
+	17. function increaseAllowance(address spender, uint addedValue) public whenNotPaused returns (bool success) 
+	18. function decreaseAllowance(address spender, uint subtractedValue) public whenNotPaused returns (bool success) 
+	19. function approve(address _spender, uint256 _value) public returns (bool) 
+	20. function admin() external view returns (address) 
+	21. function approve(address _spender, uint _value) returns (bool) 
+	22. function transferOwnership (address newOwner) public onlyOwner 
+	23. function transferOwnership(address _newOwner) public onlyOwner 
+	24. function acceptOwnership() public onlyNewOwner returns(bool) 
+	25. function approve(address _spender, uint256 _value) public whenNotPaused returns (bool) 
+	26. function approveAndCall(address _spender, uint256 _value, bytes _extraData) public returns (bool success) 
+	27. function lock(address _holder, uint256 _amount, uint256 _releaseStart, uint256 _releaseRate) public onlyOwner returns (bool) 
+	28. function unlock(address _holder) public onlyOwner returns (bool) 
+	29. function transferOwnership(address _newOwner) public onlyOwner 
+	30. function _transferOwnership(address _newOwner) internal 
+	31. function approve(address _spender, uint256 _value) public
+	        returns (bool success) 
+	32. function approveAndCall(address _spender, uint256 _value, bytes _extraData)
+	        public
+	        returns (bool success) 
+	33. function _preValidatePurchase(address beneficiary, uint256 weiAmount) internal onlyWhileOpen view
+	34. function safeApprove(ERC20 token, address spender, uint256 value) internal 
+	35. function approve(address _spender, uint _value) returns (bool success) 
+	36. function allowance(address _owner, address _spender) constant returns (uint remaining) 
+	37. function isUpgradeAgent() public constant returns (bool) 
+	38. function UpgradeableToken(address _upgradeMaster) 
+	39. function upgrade(uint256 value) public 
+	40. function setUpgradeAgent(address agent) external 
+	41. function getUpgradeState() public constant returns(UpgradeState) 
+	42. function setUpgradeMaster(address master) public 
+	43. function canUpgrade() public constant returns(bool) 
+	44. function setReleaseAgent(address addr) onlyOwner inReleaseState(false) public 
+	45. function setTransferAgent(address addr, bool state) onlyOwner inReleaseState(false) public
+	46. function setMintAgent(address addr, bool state) onlyOwner canMint public 
+	47. function setReservedTokensList(address addr, uint inTokens, uint inPercentageUnit, uint inPercentageDecimals) private canMint onlyOwner 
+	48. function canUpgrade() public constant returns(bool) 
+	49. function setTokenInformation(string _name, string _symbol) onlyOwner 
+	50. function claimTokens(address _token) public onlyOwner 
+	51. function transferOwnership(address newOwner) onlyOwner public 
+	52. function okToTransferTokens(address _holder, uint256 _amountToAdd) public view returns (bool)
+	53. function checkTransferAllowed (address _sender, address _receiver, uint256 _amount) public view returns (byte) 
+	54. function checkTransferFromAllowed (address _sender, address _receiver, uint256 _amount) public view returns (byte) 
+	55. function checkMintAllowed (address, uint256) public pure returns (byte) 
+	56. function checkBurnAllowed (address, uint256) public pure returns (byte) 
+	57. function approve(address _spender, uint256 _value) public
+	        returns (bool success) 
+	58. function increaseApproval (address _spender, uint _addedValue) public
+	    returns (bool success) 
+	59. function decreaseApproval (address _spender, uint _subtractedValue) public
+	    returns (bool success) 
+	60. function setController(address _controller) public onlyOwner 
+	61. function _setController(address _controller) internal 
+	62. function renounceController() public onlyOwner 
+	63. function renounceOwnership() public onlyOwner 
+	64. function freezeAccount(address target, bool freeze) onlyController public 
+	65. function isFrozenAccount(address target) onlyController public view returns (bool) 
+	66. function allowance(
+	        address owner,
+	        address spender
+	    )
+	    public
+	    view
+	    returns (uint256)
+	67. function addAdmin(address somebody) public onlyOwner 
+	68. function removeAdmin(address somebody) public onlyOwner 
+	69. function setOwner(address _owner) 
+	    public 
+	    onlyOwner 
+	70. function _approve(address owner, address spender, uint256 value) internal 
+	71. function transfercheck(address check) internal returns(bool) 
+	72. function approve(address spender, uint256 _value) public returns(bool)
+	73. function lock(address lockee) public 
+	74. function unlock(address unlockee) public 
+	75. function lockcheck(address checkee) public view returns (bool)
+	76. function isFinalizeAgent() public constant returns(bool) 
+	77. function canDistributeReservedTokens() public constant returns(bool) 
+	78. function finalize() public inState(State.Success) onlyOwner stopInEmergency 
+	79. function setFinalizeAgent(FinalizeAgent addr) public onlyOwner 
+	80. function setEarlyParticipantWhitelist(address addr, bool status, uint minCap, uint maxCap) public onlyOwner 
+	81. function setEarlyParticipantWhitelistMultiple(address[] addrs, bool[] statuses, uint[] minCaps, uint[] maxCaps) public onlyOwner 
+	82. function updateInheritedEarlyParticipantWhitelist(address reciever, uint tokensBought) private 
+	83. function updateEarlyParticipantWhitelist(address addr, uint tokensBought) public 
+	84. function isAddressWhitelisted(address addr) public constant returns(bool) 
+	85. function whitelistedParticipantsLength() public constant returns (uint) 
+	86. function isTierJoined(address addr) public constant returns(bool) 
+	87. function getTierPosition(address addr) public constant returns(uint8) 
+	88. function getLastTier() public constant returns(address) 
+	89. function setJoinedCrowdsales(address addr) private onlyOwner 
+	90. function updateJoinedCrowdsalesMultiple(address[] addrs) public onlyOwner 
+	91. function acceptOwnership()
+	        external
+	92. function nominateNewOwner(address _owner)
+	        external
+	        onlyOwner
+	93. function approve(address _spender, uint256 _value) public returns (bool success)
+	94. function registerReferral(address referrer, address user) public onlyRegistry whenNotPaused 
+	95. function isConfirmed(address addr) public view returns (bool) 
+	96. function removeAddressFromKYC(address addr) public onlyAdmin 
+	97. function addAddressToKYC(address addr) public onlyAdmin 
+	98. function setReferralTracker(address contractAddress) public onlyOwner 
+	99. function depositFor(address from) public 
+	100. function depositForWithReferral(address from, address referrer) public 
+	101. function _approve(address owner, address spender, uint256 value) internal 
+	102. function approve(address _spender, uint256 _value)
+	        returns (bool success) 
+	103. function setAdministrator(address _admin) public onlyOwner 
+	104. function increaseApproval(address _spender, uint _addedValue) public returns (bool) 
+	105. function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) 
+	106. function transferOwnership(address newOwner) public onlyOwner
+	107. function _transferOwnership(address newOwner) internal 
+	108. function transferOwnership(address newOwner) public onlyOwner 
+	109. function claimOwnership() public onlyPendingOwner 
+	110. function transferBeneficiaryShip(address[] memory newBeneficiaries) public 
+	111. function transferBeneficiaryShipWithHowMany(address[] memory newBeneficiaries, uint256 newHowManyBeneficiariesDecide) public onlyManyBeneficiaries 
+	112. function pendingBeneficiary() public view returns (address) 
+	113. function transferBeneficiaryShipWithHowMany(address[] memory _newBeneficiaries, uint256 _newHowManyBeneficiariesDecide) public 
+	114. function transferBeneficiaryShip(address[] memory _newBeneficiaries) public 
+	115. function changeBeneficiary(address _newBeneficiary) public onlyManyBeneficiaries 
+	116. function claimBeneficiary() public onlyPendingBeneficiary 
+	117. function _setPendingBeneficiary(address _newBeneficiary) internal onlyExistingBeneficiary(_newBeneficiary) 
+	118. function owner() public view returns (address) 
+	119. function isOwner() public view returns (bool) 
+	120. function renounceOwnership() public onlyOwner 
+	121. function transferOwnership(address newOwner) public onlyOwner 
+	122. function _transferOwnership(address newOwner) internal 
+	123. function checkHowManyBeneficiaries(uint howMany) internal returns(bool) 
+	124. function beneficiary() public view returns (address) 
+	125. function _changeBeneficiary(address _newBeneficiary) internal 
+	126. function isExistBeneficiary(address wallet) public view returns(bool) 
+	127. function beneficiariesCount() public view returns(uint) 
+	128. function safeApprove(IERC20 token, address spender, uint256 value) internal 
+	129. function Ownable() public 
+	130. function approve(address _spender, uint256 _value) public returns (bool success) 
+	131. function allowance(address _owner, address _spender) constant public returns (uint256) 
+	132. function adminClaimAirdrop(address _participant, uint _amount) public onlyOwner 
+	133. function adminClaimAirdropMultiple(address[] _addresses, uint _amount) public onlyOwner 
+	134. function transferOwnership(address newOwner) onlyOwner public 
+	135. function Owned2() public 
+	136. function isMinter(address account) public view returns (bool) 
+	137. function addMinter(address account) public onlyMinter 
+	138. function renounceMinter() public 
+	139. function _addMinter(address account) internal 
+	140. function _removeMinter(address account) internal 
+	141. function approve(address spender, uint256 value) public whenNotPaused returns (bool) 
+	142. function add(Role storage role, address account) internal 
+	143. function remove(Role storage role, address account) internal 
+	144. function has(Role storage role, address account) internal view returns (bool) 
+	145. function _approve(address owner, address spender, uint256 value) internal 
+	146. function approve(address spender, uint256 value) public returns (bool) 
+	147. function approve(address _spender, uint256 _value)public returns (bool success) 
+	148. function acceptOwnership() public 
+	149. function approve(address spender, uint tokens) public returns(bool success) 
+	150. function approveAndCall(address spender, uint tokens, bytes memory data) public returns(bool success) 
+	151. function transferOwnership(address _newOwner) public ownerOnly 
+	152. function acceptOwnership() public 
+	153. function transferOwnership(address _newOwner) public onlyOwner 
+	154. function acceptOwnership() public 
+	155. function Owned() public
+	156. function approve(address spender, uint tokens) public returns (bool success) 
+	157. function allowance(address tokenOwner, address spender) public constant returns (uint remaining) 
+	158. function approveAndCall(address spender, uint tokens, bytes data) public returns (bool success) 
+	159. function () public payable 
+	160. function isPauser(address account) public view returns (bool) 
+	161. function addPauser(address account) public onlyPauser 
+	162. function renouncePauser() public 
+	163. function _addPauser(address account) internal 
+	164. function _removePauser(address account) internal 
+	165. function approve(address _spender, uint256 _value) public returns (bool) 
+	166. function approve(address _spender, uint256 _value) public whenNotPaused returns (bool) 
+function changeAdmin(address newAdmin) onlyOwner 

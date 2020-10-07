@@ -1,0 +1,5 @@
+	1. function changeOwner(address _newOwner) public 
+	2. function approve(address _spender, uint256 _value) public returns (bool success) 
+	3. function checkIsAdmin(address addr) private view returns (bool) 
+	4. function removeAdmin(address addr) private
+5. function approveAndCall(address _spender, uint256 _value, bytes _extraData) public returns (bool)  
