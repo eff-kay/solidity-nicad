@@ -10,3 +10,4 @@ include
 python_scripts/smart_contracts/
 *.pyc
 *.log
+*.x
