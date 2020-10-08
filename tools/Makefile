@@ -39,29 +39,29 @@ streamprocess.x: TLI.c TLS.c TLglob.h UNIX/cinterface main.c streamprocess.c
 splitclasses.x: TLI.c TLS.c TLglob.h UNIX/cinterface main.c splitclasses.c
 	gcc -w -O $(MACHINESIZE) -I . -o splitclasses.x main.c TLI.c TLS.c splitclasses.c
 
-cloneclasses.c: cloneclasses.t linetable.i nicadsize.i
-	tpc $(TURINGSIZE) -O -A -q4 cloneclasses.t
-
-clonepairs.c: clonepairs.t linetable.i nicadsize.i
-	tpc $(TURINGSIZE) -O -A -q4 clonepairs.t
-
-crossclones.c: crossclones.t linetable.i nicadsize.i
-	tpc $(TURINGSIZE) -O -A -q4 crossclones.t
-
-getsource.c: getsource.t nicadsize.i
-	tpc $(TURINGSIZE) -O -A -q4 getsource.t
-
-getnormsource.c: getnormsource.t nicadsize.i
-	tpc $(TURINGSIZE) -O -A -q4 getnormsource.t
-
-tohtmlpairs.c: tohtmlpairs.t nicadsize.i
-	tpc $(TURINGSIZE) -O -A -q4 tohtmlpairs.t
-
-streamprocess.c: streamprocess.t nicadsize.i
-	tpc $(TURINGSIZE) -O -A -q4 streamprocess.t
-
-splitclasses.c: splitclasses.t nicadsize.i
-	tpc $(TURINGSIZE) -O -A -q4 splitclasses.t
+#cloneclasses.c: cloneclasses.t linetable.i nicadsize.i
+#	tpc $(TURINGSIZE) -O -A -q4 cloneclasses.t
+#
+#clonepairs.c: clonepairs.t linetable.i nicadsize.i
+#	tpc $(TURINGSIZE) -O -A -q4 clonepairs.t
+#
+#crossclones.c: crossclones.t linetable.i nicadsize.i
+#	tpc $(TURINGSIZE) -O -A -q4 crossclones.t
+#
+#getsource.c: getsource.t nicadsize.i
+#	tpc $(TURINGSIZE) -O -A -q4 getsource.t
+#
+#getnormsource.c: getnormsource.t nicadsize.i
+#	tpc $(TURINGSIZE) -O -A -q4 getnormsource.t
+#
+#tohtmlpairs.c: tohtmlpairs.t nicadsize.i
+#	tpc $(TURINGSIZE) -O -A -q4 tohtmlpairs.t
+#
+#streamprocess.c: streamprocess.t nicadsize.i
+#	tpc $(TURINGSIZE) -O -A -q4 streamprocess.t
+#
+#splitclasses.c: splitclasses.t nicadsize.i
+#	tpc $(TURINGSIZE) -O -A -q4 splitclasses.t
 
 clean:
 	/bin/rm -f clonepairs.x cloneclasses.x crossclones.x getsource.x getnormsource.x tohtmlpairs.x streamprocess.x splitclasses.x
