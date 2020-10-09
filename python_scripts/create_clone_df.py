@@ -19,7 +19,7 @@ clone_types = ['type-1', 'type-3-1', 'type-2', 'type-3-2', 'type-2c', 'type-3-2c
 
 def run_nicad(config_name):
     for i,name in enumerate(REPORT_NAMES):
-        nicad_cmd = './nicad6 functions sol systems/smart_contracts {}'.format(name)
+        nicad_cmd = './nicad6 functions sol systems/smart_contracts {}-{}'.format(name, config_name)
         sp.run(nicad_cmd.split(' '))
         print('{} done'.format(name))
     os.makedirs('systems/{}'.format(config_name), exist_ok=True)
@@ -40,12 +40,22 @@ def take_diff(from_path, to_path):
  
 
 if __name__=='__main__':
-    config = 'min10'
+    config = 'macro'
     run_nicad(config)
+    # create a data folder if it does not exists
+    os.makedirs(f'python_scripts/data', exist_ok=True)
+
+    # delete the config folder if it exists
+    shutil.rmtree(f'python_scripts/data/{config}', ignore_errors=True)
     shutil.move(f'systems/{config}', f'python_scripts/data/{config}')
+    
+    # now we are in the manipulation domain
     os.chdir('python_scripts')
     print("REMOVING DUPLICATES")
+    
+    shutil.rmtree('duplicates', ignore_errors=True)
     remove_all_duplicates(config)
+
     print("EXTRACTING FUNCTION IDS")
     extract_functions_ids(config)
     get_top_function_ids('duplicates')

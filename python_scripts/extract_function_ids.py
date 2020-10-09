@@ -122,22 +122,23 @@ def get_top_function_ids(path):
     for file in original_paths:
         # ids = file.read().split('\n')
         file_data = open(f'{path}/function-ids/{file}.txt').read()
+        # print(f'{file}', file_data)
         save_path.write(file_data)
     save_path.flush()
 
-    top20_functions = pd.Series(open(f'{path}/function-ids/all-ids.txt', 'r').read().split('\n')).value_counts()[:20]
+    top20_functions = pd.Series(open(f'{path}/function-ids/all-ids.txt', 'r').read().split('\n')[:-1]).value_counts()[:20]
 
-    print(top20_functions.to_latex(),pd.Series(open(f'{path}/function-ids/all-ids.txt', 'r').read().split('\n')).value_counts().shape)
+    print(top20_functions.to_latex())
     top20_path = open(f'{path}/function-ids/top20.txt', 'w')
     
     [top20_path.write(f'{x}\n') for x in top20_functions.index]
     return top20_functions
 
 if __name__ == "__main__":
-    # print(get_top_function_ids('duplicates'))
-    top20_fids = open(f'duplicates/function-ids/top20.txt', 'r').read()
-    fids:list = [l for l in top20_fids.split('\n')]
-    extract_function_bodies(fids, 'min10')
-    # extract_functions_ids('min4')
+    print(get_top_function_ids('duplicates'))
+    # top20_fids = open(f'duplicates/function-ids/top20.txt', 'r').read()
+    # fids:list = [l for l in top20_fids.split('\n')]
+    # extract_function_bodies(fids, 'micro')
+    # # extract_functions_ids('min4')
     # convert_to_combined_csv()
     # print('done')

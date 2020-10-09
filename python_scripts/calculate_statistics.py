@@ -34,9 +34,7 @@ def combine_dfs():
     print(list(a_df[4]))
 
 
-
-
 if __name__ == "__main__":
-    # file_path = gg'duplicates/merged_df.p'
-    # calculate_statistics(file_path)
-    combine_dfs()
+    file_path = 'duplicates/merged_df.p'
+    calculate_statistics(file_path)
+    # combine_dfs()
