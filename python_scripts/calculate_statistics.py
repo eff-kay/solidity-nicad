@@ -7,13 +7,13 @@ def calculate_statistics(file_path):
 
     d=[]
 
-    file_pairs = ['type-1', 'type-2', 'type-2c', 'type-3', 'type-3-2', 'type-3-2c']
+    file_pairs = ['type-1', 'type-2c','type-2', 'type-3', 'type-3-2c','type-3-2']
     for ctype in file_pairs:
         fr = m[m['type']==ctype].count()[0]
         cl = m[m['type']==ctype]['classid'].unique().size
         fi = m[m['type']==ctype]['file'].unique().size 
         loc = m[m['type']==ctype]['nlines'].sum() 
-        per = (loc/74529)*100
+        per = (loc/2798100)*100
         d.append([cl,fr,fi,loc,'{:.2f}'.format(per)])
         # print(cl,fr,fi,loc,'{:.2f}'.format(per))
 
@@ -22,6 +22,8 @@ def calculate_statistics(file_path):
     total = d_df.sum()
     total.name = 6
     d_df = d_df.append(total)
+    d_df.columns = ['clone classes', 'clone fragments', 'files', 'cloned lines', 'cloned % ']
+    d_df.index = file_pairs+['total']
     print(d_df.to_latex())
 
     return d_df
@@ -35,6 +37,6 @@ def combine_dfs():
 
 
 if __name__ == "__main__":
-    file_path = 'duplicates/merged_df.p'
+    file_path = 'macro-duplicates/merged_df.p'
     calculate_statistics(file_path)
     # combine_dfs()

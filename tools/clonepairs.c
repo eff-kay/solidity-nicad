@@ -293,7 +293,7 @@ struct	CP {
     TLint4	nlines;
     TLint1	similarity;
 };
-typedef	struct CP	__x254[20000000];
+typedef	struct CP	__x254[43000000];
 static __x254	clonepairs;
 static TLint4	npairs;
 static TLint4	ncompares;
@@ -649,7 +649,7 @@ static void findclones () {
 				    if (similarity != 0) {
 					TLBIND((*cp), struct CP);
 					npairs += 1;
-					if (npairs > 20000000) {
+					if (npairs > 43000000) {
 					    TL_TLI_TLISS ((TLint4) 0, (TLint2) 2);
 					    TL_TLI_TLIPS ((TLint4) 0, "*** Error: too many clone pairs", (TLint2) 0);
 					    TL_TLI_TLIPK ((TLint2) 0);
@@ -674,7 +674,7 @@ static void findclones () {
 	};
     };
 }
-typedef	TLint4	__x269[20000000];
+typedef	TLint4	__x269[43000000];
 static __x269	clonepairmap;
 
 static void swapclonepairmap (i, j)

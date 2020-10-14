@@ -40,7 +40,7 @@ def take_diff(from_path, to_path):
  
 
 if __name__=='__main__':
-    config = 'macro'
+    config = 'micro'
     run_nicad(config)
     # create a data folder if it does not exists
     os.makedirs(f'python_scripts/data', exist_ok=True)

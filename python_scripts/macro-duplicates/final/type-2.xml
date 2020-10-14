@@ -1,0 +1,149 @@
+<clones>
+<systeminfo granularity="functions-blind" maxlines="2500" minlines="10" processor="nicad6" system="smart_contracts" threshold="0%" />
+<cloneinfo npairs="11205360" npcs="465122" />
+<runinfo cputime="72820000" ncompares="270047642" />
+<classinfo nclasses="6989" />
+
+<class classid="196" nclones="2" nlines="19" similarity="100">
+<source endline="371" file="systems/smart_contracts/0xd02675f786cfd9e665d6d4c725e5ada529493063.sol" pcid="2616" startline="353" />
+<source endline="395" file="systems/smart_contracts/0xd02675f786cfd9e665d6d4c725e5ada529493063.sol" pcid="2618" startline="377" />
+</class>
+
+<class classid="216" nclones="325" nlines="10" similarity="100">
+<source endline="835" file="systems/smart_contracts/0x235dcf36b309ea22d00903c28534e0e34a42e90b.sol" pcid="143463" startline="820" />
+</class>
+
+<class classid="832" nclones="7" nlines="14" similarity="100">
+<source endline="274" file="systems/smart_contracts/0x24c902e7a920ca8176848a7c70ad04988a5c25cb.sol" pcid="341035" startline="263" />
+</class>
+
+<class classid="923" nclones="2" nlines="12" similarity="100">
+<source endline="1241" file="systems/smart_contracts/0x03e0f73a93993e5101362656af1162ed80fb54f2.sol" pcid="16886" startline="1186" />
+<source endline="1145" file="systems/smart_contracts/0xaD111a1D34045dF921259FF91F8096EeC1afD7A9.sol" pcid="333152" startline="1089" />
+</class>
+
+<class classid="1019" nclones="2" nlines="17" similarity="100">
+<source endline="192" file="systems/smart_contracts/0xccaf7B08a3AF4a5cCB7226C7BcddE917764e2d13.sol" pcid="19317" startline="156" />
+<source endline="192" file="systems/smart_contracts/0xdd9b54d1dd185f9302e24dd3ae9e652453f74705.sol" pcid="139502" startline="156" />
+</class>
+
+<class classid="1495" nclones="4" nlines="25" similarity="100">
+<source endline="237" file="systems/smart_contracts/0x0BB622A8C564BDc98e8F40F23e5077CD4a8699Ea.sol" pcid="31371" startline="197" />
+</class>
+
+<class classid="1852" nclones="4" nlines="20" similarity="100">
+<source endline="301" file="systems/smart_contracts/0x8BF1E43e3Ca6f5c25C380803154aE687D682Ad32.sol" pcid="349528" startline="271" />
+</class>
+
+<class classid="1853" nclones="4" nlines="18" similarity="100">
+<source endline="333" file="systems/smart_contracts/0x8BF1E43e3Ca6f5c25C380803154aE687D682Ad32.sol" pcid="349529" startline="305" />
+</class>
+
+<class classid="1991" nclones="3" nlines="19" similarity="100">
+<source endline="664" file="systems/smart_contracts/0xc43eae20ae38d1e11bab5b57178777096908dbd6.sol" pcid="331728" startline="638" />
+</class>
+
+<class classid="2068" nclones="4" nlines="10" similarity="100">
+<source endline="180" file="systems/smart_contracts/0x683e3dfb9354f1a2e491ad23c57304b647f8d693.sol" pcid="44900" startline="167" />
+</class>
+
+<class classid="4024" nclones="2" nlines="25" similarity="100">
+<source endline="614" file="systems/smart_contracts/0x95bE22039DA3114d17A38b9E7CD9b3576dE83924.sol" pcid="113436" startline="577" />
+<source endline="654" file="systems/smart_contracts/0x95bE22039DA3114d17A38b9E7CD9b3576dE83924.sol" pcid="113437" startline="617" />
+</class>
+
+<class classid="4025" nclones="2" nlines="14" similarity="100">
+<source endline="678" file="systems/smart_contracts/0x95bE22039DA3114d17A38b9E7CD9b3576dE83924.sol" pcid="113438" startline="657" />
+<source endline="702" file="systems/smart_contracts/0x95bE22039DA3114d17A38b9E7CD9b3576dE83924.sol" pcid="113439" startline="681" />
+</class>
+
+<class classid="4132" nclones="2" nlines="29" similarity="100">
+<source endline="2065" file="systems/smart_contracts/0xb8bf73550f251562d308882e032225a700a7b9bc.sol" pcid="117739" startline="2012" />
+<source endline="2065" file="systems/smart_contracts/0x752c4e4e90846c5673c3791b9809f71b7d4a638a.sol" pcid="159165" startline="2012" />
+</class>
+
+<class classid="4342" nclones="2" nlines="27" similarity="100">
+<source endline="323" file="systems/smart_contracts/0xdb5e04dc9c94bc8310e8885c85a4d0666ccaecae.sol" pcid="127540" startline="295" />
+<source endline="331" file="systems/smart_contracts/0xe6101e8f83a0ab40fa228d6f4136a80d734055b3.sol" pcid="355384" startline="303" />
+</class>
+
+<class classid="4528" nclones="3" nlines="12" similarity="100">
+<source endline="772" file="systems/smart_contracts/0xca53e73938b5a3c484331b50d9f67aa7c878ac76.sol" pcid="139367" startline="752" />
+</class>
+
+<class classid="4773" nclones="4" nlines="10" similarity="100">
+<source endline="405" file="systems/smart_contracts/0xd6b4f27f4d0227e8a8dc96ff29d47a7aa88a47d7.sol" pcid="339490" startline="388" />
+</class>
+
+<class classid="5326" nclones="3" nlines="12" similarity="100">
+<source endline="312" file="systems/smart_contracts/0x4b24f0c8230c06e0d7caf722ace3f22ba5b80c33.sol" pcid="415199" startline="281" />
+</class>
+
+<class classid="5576" nclones="2" nlines="11" similarity="100">
+<source endline="131" file="systems/smart_contracts/0x0f690a76ad438222ce694d84b2902b0ee2270e69.sol" pcid="210928" startline="113" />
+<source endline="164" file="systems/smart_contracts/0xf937b0e645f789aac4c75749fb291c9bc37a92b2.sol" pcid="283844" startline="146" />
+</class>
+
+<class classid="5752" nclones="4" nlines="16" similarity="100">
+<source endline="252" file="systems/smart_contracts/0x38e2cfa5627b2fef3d0556638b13ea6bf6a5e34d.sol" pcid="342082" startline="235" />
+</class>
+
+<class classid="5753" nclones="4" nlines="11" similarity="100">
+<source endline="267" file="systems/smart_contracts/0x38e2cfa5627b2fef3d0556638b13ea6bf6a5e34d.sol" pcid="342083" startline="254" />
+</class>
+
+<class classid="6168" nclones="2" nlines="22" similarity="100">
+<source endline="247" file="systems/smart_contracts/0x5d818363b3f083d0262d5a213725636110e89f5d.sol" pcid="264736" startline="201" />
+<source endline="231" file="systems/smart_contracts/0xce1055db80ab8e5d218bc4be427ce35a80622dcd.sol" pcid="264754" startline="185" />
+</class>
+
+<class classid="6338" nclones="3" nlines="20" similarity="100">
+<source endline="349" file="systems/smart_contracts/0x7c32DB0645A259FaE61353c1f891151A2e7f8c1e.sol" pcid="417800" startline="330" />
+</class>
+
+<class classid="6379" nclones="2" nlines="10" similarity="100">
+<source endline="214" file="systems/smart_contracts/0x19cf8481ea15427a98ba3cdd6d9e14690011ab10.sol" pcid="288914" startline="203" />
+<source endline="226" file="systems/smart_contracts/0x19cf8481ea15427a98ba3cdd6d9e14690011ab10.sol" pcid="288915" startline="215" />
+</class>
+
+<class classid="6482" nclones="2" nlines="25" similarity="100">
+<source endline="184" file="systems/smart_contracts/0x839c52cB18B02F2Af31Ad50070D6A9ea71aFDf79.sol" pcid="307101" startline="155" />
+<source endline="184" file="systems/smart_contracts/0xf28a521cc13f6698DDCF9B197608052632fC3ea3.sol" pcid="319173" startline="155" />
+</class>
+
+<class classid="6483" nclones="2" nlines="10" similarity="100">
+<source endline="198" file="systems/smart_contracts/0x839c52cB18B02F2Af31Ad50070D6A9ea71aFDf79.sol" pcid="307102" startline="186" />
+<source endline="198" file="systems/smart_contracts/0xf28a521cc13f6698DDCF9B197608052632fC3ea3.sol" pcid="319174" startline="186" />
+</class>
+
+<class classid="6539" nclones="3" nlines="20" similarity="100">
+<source endline="98" file="systems/smart_contracts/0x0ba0d4399c80fa14a25f91b1584ba59823b12c2a.sol" pcid="433475" startline="73" />
+</class>
+
+<class classid="6699" nclones="4" nlines="15" similarity="100">
+<source endline="96" file="systems/smart_contracts/0xe4ff39460ba2662f5c9b0264b17f5985ec79cd06.sol" pcid="374691" startline="77" />
+</class>
+
+<class classid="6796" nclones="2" nlines="11" similarity="100">
+<source endline="528" file="systems/smart_contracts/0xdcb04b55b15121bc84a57edbd2ed328137b7534c.sol" pcid="367807" startline="518" />
+<source endline="543" file="systems/smart_contracts/0xdcb04b55b15121bc84a57edbd2ed328137b7534c.sol" pcid="367808" startline="533" />
+</class>
+
+<class classid="6815" nclones="2" nlines="21" similarity="100">
+<source endline="86" file="systems/smart_contracts/0x6e94097454e55a5e90c71d41efcf36378d053dca.sol" pcid="376239" startline="63" />
+<source endline="125" file="systems/smart_contracts/0x6e94097454e55a5e90c71d41efcf36378d053dca.sol" pcid="376241" startline="102" />
+</class>
+
+<class classid="6868" nclones="5" nlines="18" similarity="100">
+<source endline="499" file="systems/smart_contracts/0xdda9bcd985b1169607546b52910a0269dff5baf1.sol" pcid="452059" startline="471" />
+</class>
+
+<class classid="6871" nclones="3" nlines="32" similarity="100">
+<source endline="555" file="systems/smart_contracts/0xdda9bcd985b1169607546b52910a0269dff5baf1.sol" pcid="452061" startline="517" />
+</class>
+
+<class classid="6881" nclones="5" nlines="12" similarity="100">
+<source endline="787" file="systems/smart_contracts/0xdda9bcd985b1169607546b52910a0269dff5baf1.sol" pcid="452076" startline="773" />
+</class>
+
+</clones>
