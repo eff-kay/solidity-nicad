@@ -13,3 +13,4 @@ python_scripts/duplicates/
 *.pyc
 *.log
 *.x
+tmp/*.in
