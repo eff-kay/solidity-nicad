@@ -26,9 +26,11 @@ echo "Removing extracted potential clone files ..."
 find "${dir}" | grep '_functions.*.xml$' | tr '\n' '\0' | xargs -0 /bin/rm -f
 find "${dir}" | grep '_blocks.*.xml$' | tr '\n' '\0' | xargs -0 /bin/rm -f
 find "${dir}" | grep '_files.*.xml$' | tr '\n' '\0' | xargs -0 /bin/rm -f
+find "${dir}" | grep '_contracts.*.xml$' | tr '\n' '\0' | xargs -0 /bin/rm -f
 find "${dir}" | grep '_classes.*.xml$' | tr '\n' '\0' | xargs -0 /bin/rm -f
 find "${dir}" | grep '_systems.*.xml$' | tr '\n' '\0' | xargs -0 /bin/rm -f
 find "${dir}" | grep '_models.*.xml$' | tr '\n' '\0' | xargs -0 /bin/rm -f
+find "${dir}" | grep '_contracts$' | tr '\n' '\0' | xargs -0 /bin/rm -rf
 find "${dir}" | grep '_functions$' | tr '\n' '\0' | xargs -0 /bin/rm -rf
 find "${dir}" | grep '_blocks$' | tr '\n' '\0' | xargs -0 /bin/rm -rf
 find "${dir}" | grep '_files$' | tr '\n' '\0' | xargs -0 /bin/rm -rf
@@ -37,6 +39,7 @@ find "${dir}" | grep '_systems$' | tr '\n' '\0' | xargs -0 /bin/rm -rf
 find "${dir}" | grep '_models$' | tr '\n' '\0' | xargs -0 /bin/rm -rf
 
 echo "Removing previous clone detection results ..."
+find "${dir}" | grep '_contracts.*-clones$' | tr '\n' '\0' | xargs -0 /bin/rm -rf
 find "${dir}" | grep '_functions.*-clones$' | tr '\n' '\0' | xargs -0 /bin/rm -rf
 find "${dir}" | grep '_blocks.*-clones$' | tr '\n' '\0' | xargs -0 /bin/rm -rf
 find "${dir}" | grep '_files.*-clones$' | tr '\n' '\0' | xargs -0 /bin/rm -rf

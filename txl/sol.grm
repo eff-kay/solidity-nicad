@@ -259,7 +259,7 @@ define LessThanInternal
 end define
 
 define IndexAccess
-    [Expression] '[ [opt Expression] ']
+    [Expression]'[[opt Expression]']
 end define
 
 define ExpressionWithParenthesis
@@ -279,11 +279,11 @@ define MemberAccess
 end define
 
 define post_inc_dec
-    '++ | '--
+    '++|'--
 end define
 
 define ExpressionPostIncrement
-    [Expression] [post_inc_dec]
+    [Expression][post_inc_dec]
 end define
 
 define AssignmentOptions
@@ -429,7 +429,7 @@ define ContractBody
 end define
 
 define StateVariableDeclaration
-    [TypeName] [StateKeywords*] [id] [opt ExpressionWithEqualSign] ';
+    [TypeName] [StateKeywords*] [id] [opt ExpressionWithEqualSign] '; [NL]
 end define
 
 define StateKeywords
@@ -437,7 +437,7 @@ define StateKeywords
 end define
 
 define UsingForDeclaration
-    'using [id] 'for [StericTypeName] ';
+    'using [id] 'for [StericTypeName] '; [NL]
 end define
 
 define StericTypeName
@@ -445,7 +445,10 @@ define StericTypeName
 end define
 
 define StructDefinition
-    'struct [id] '{ [VariableDeclarationMeta+] '}
+    'struct [id] 
+    '{ [NL] [IN]
+        [VariableDeclarationMeta+] [EX]
+    '} [NL]
 end define
 
 define ConstructorDefinition
@@ -453,7 +456,7 @@ define ConstructorDefinition
 end define
 
 define VariableDeclarationMeta
-    [VariableDeclaration] ';
+    [VariableDeclaration] '; [NL]
 end define
 
 define VariableDeclaration
@@ -483,7 +486,7 @@ define FunctionalDefinitionInternalModifiers
 end define 
 
 define EventDefinition
-    'event [id] [EventParameterList] [opt 'anonymous] ';
+    'event [id] [EventParameterList] [opt 'anonymous] '; [NL]
 end define
 
 define EventParameterList
@@ -499,11 +502,11 @@ define TypedEventParameter
 end define
 
 define EnumDefinition
-    'enum [id] '{ [opt CommaSeparatedEnumValues] '}
+    'enum [id] '{ [opt CommaSeparatedEnumValues] '} 
 end define
 
 define CommaSeparatedEnumValues
-    [EnumValue,+]
+    [EnumValue,+] 
 end define
 
 define EnumValue
