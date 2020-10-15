@@ -122,8 +122,8 @@ def remove_all_duplicates(config):
     shutil.move('duplicates/'+type3c_filtered_type2b_type3, 'duplicates/final/type-3-2c.xml')
     shutil.move('duplicates/'+type3b_filtered_type2b_type3_type3c, 'duplicates/final/type-3-2.xml')
     
-
-    created_merged_df()
+    # TODO: enable this when we want to do the correlation calculation from scratch
+    #created_merged_df()
 
 if __name__=="__main__":
     remove_all_duplicates('baseline')
