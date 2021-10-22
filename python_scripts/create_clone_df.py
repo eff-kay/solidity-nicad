@@ -40,7 +40,7 @@ def take_diff(from_path, to_path):
  
 
 if __name__=='__main__':
-    config = 'micro'
+    config = 'macro'
     run_nicad(config)
     # create a data folder if it does not exists
     os.makedirs(f'python_scripts/data', exist_ok=True)
@@ -56,9 +56,9 @@ if __name__=='__main__':
     shutil.rmtree('duplicates', ignore_errors=True)
     remove_all_duplicates(config)
 
-    print("EXTRACTING FUNCTION IDS")
-    extract_functions_ids(config)
-    get_top_function_ids('duplicates')
+    # print("EXTRACTING FUNCTION IDS")
+    # extract_functions_ids(config)
+    # get_top_function_ids('duplicates')
     # take_diff('systems/baseline', 'systems/min5')
     print('done')
 

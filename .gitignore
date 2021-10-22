@@ -8,7 +8,7 @@ bin
 pyvenv.cfg
 include
 python_scripts/smart_contracts/
-python_scripts/data/
+python_scripts/data/*/*/*.xml
 python_scripts/duplicates/
 *.pyc
 *.log

@@ -59,7 +59,7 @@ def extract_lines_occupied(path):
 
 if __name__=="__main__":
 
-    path = "data/smart_contracts_functions.xml"
+    path = "systems/smart_contracts_functions.xml"
     # path = "data/min1/type-1.xml"
     print(extract_lines_occupied(path))
 

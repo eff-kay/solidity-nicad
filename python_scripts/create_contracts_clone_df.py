@@ -18,7 +18,7 @@ for n in folder_names:
 clone_types = ['type-1', 'type-3-1', 'type-2', 'type-3-2', 'type-2c', 'type-3-2c']
 
 def run_nicad(config_name):
-    for i,name in enumerate(REPORT_NAMES):
+    for i, name in enumerate(REPORT_NAMES):
         nicad_cmd = './nicad6 contracts sol systems/corpus {}-{}'.format(name, config_name)
         sp.run(nicad_cmd.split(' '))
         print('{} done'.format(name))
