@@ -56,38 +56,34 @@ def move_and_rename_files(config_name):
 
 if __name__=='__main__':
     config = 'macro'
-    # run_nicad(config)
-
+    run_nicad(config)
+    move_and_rename_files(config)
 
     print("EXTRACT TOTAL FUNCTION LINES: use this numeber in calculating statistics")
     functions_path =  'systems/source-code_functions.xml'
     total_lines = extract_lines_occupied(functions_path)
     print('total_lines = ', total_lines)
 
-    # move_and_rename_files(config)
-    # # create a data folder if it does not exists
-    # os.makedirs(f'python_scripts/data', exist_ok=True)
+    # create a data folder if it does not exists
+    os.makedirs(f'python_scripts/data', exist_ok=True)
 
-    # # delete the config folder if it exists
-    # shutil.rmtree(f'python_scripts/data/{config}', ignore_errors=True)
-    # shutil.move(f'systems/{config}', f'python_scripts/data/{config}')
+    # delete the config folder if it exists
+    shutil.rmtree(f'python_scripts/data/{config}', ignore_errors=True)
+    shutil.move(f'systems/{config}', f'python_scripts/data/{config}')
     
     # now we are in the manipulation domain
     print("CHANGING DIRs")
     os.chdir('python_scripts')
     print("REMOVING DUPLICATES")
     
-    # shutil.rmtree('duplicates', ignore_errors=True)
-    # remove_all_duplicates(config)
+    shutil.rmtree('duplicates', ignore_errors=True)
+    remove_all_duplicates(config)
 
-    # # print("EXTRACTING FUNCTION IDS")
-    # # extract_functions_ids(config)
-    # # get_top_function_ids('duplicates')
-    # # take_diff('systems/baseline', 'systems/min5')
-
-
-    # created_merged_df()
-
+    # print("EXTRACTING FUNCTION IDS")
+    # extract_functions_ids(config)
+    # get_top_function_ids('duplicates')
+    # take_diff('systems/baseline', 'systems/min5')
+    created_merged_df()
     file_path = 'duplicates'
     # calculate_statistics()
     calculate_statistics('duplicates/merged_df.p', total_loc = total_lines)
