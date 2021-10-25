@@ -2,7 +2,7 @@
 import pickle
 import pandas as pd
 
-def calculate_statistics(file_path):
+def calculate_statistics(file_path, total_loc=1):
     m = pickle.load(open(file_path, 'rb'))
 
     d=[]
@@ -13,7 +13,7 @@ def calculate_statistics(file_path):
         cl = m[m['type']==ctype]['classid'].unique().size
         fi = m[m['type']==ctype]['file'].unique().size 
         loc = m[m['type']==ctype]['nlines'].sum() 
-        per = (loc/2798100)*100
+        per = (loc/total_loc)*100
         d.append([cl,fr,fi,loc,'{:.2f}'.format(per)])
         # print(cl,fr,fi,loc,'{:.2f}'.format(per))
 

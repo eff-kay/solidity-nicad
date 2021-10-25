@@ -20,7 +20,7 @@ def remove_type1(type1_path, dirty_path, new_path):
     dirty_tree = ET.parse(f)
     dirty_root = dirty_tree.getroot()
  
-    #create a list of sources
+    # create a list of sources
     sources = []
     for elem in root[4:]:
         sources.extend(elem[:])

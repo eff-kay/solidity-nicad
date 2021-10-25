@@ -29,7 +29,6 @@ def convert_file_with_subelem(clone_type, xml_file, df_file):
             d['endline'] = source.attrib['endline']
             d['file'] = source.attrib['file']
             d['type'] = clone_type
-            
             elements.append(d)
         
     df = pd.DataFrame(elements)
@@ -50,8 +49,8 @@ def convert_file(xml_file, df_file):
         d['classid'] = elem.attrib['classid']
         d['nclones'] = int(len(elem[:]))
         d['nlines'] = 0
-        for source in elem[:]:
-            d['nlines'] += int(source.attrib['endline']) - int(source.attrib['startline'])
+        # for source in elem[:]:
+        #     d['nlines'] += int(source.attrib['endline']) - int(source.attrib['startline'])
         d['nlines']= int(elem.attrib['nlines'])* int(len(elem[:])) 
         d['similarity'] = elem.attrib['similarity']
         elements.append(d)
@@ -105,7 +104,6 @@ def created_merged_df():
     merged_df = pd.concat([pickle.load(open('duplicates/subelem_final/'+x, 'rb')) for x in fs])
     
     pickle.dump(merged_df, open('duplicates/merged_df.p', 'wb'))
-    calculate_statistics('duplicates/merged_df.p')
 
 if __name__ == "__main__":
     created_merged_df()
