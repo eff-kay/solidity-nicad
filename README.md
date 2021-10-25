@@ -8,14 +8,18 @@ The grammar and normalizers have been validated against a large corpus of 22,181
 All of the files have been merged upstream and are part of the official NiCad (v6.2 onwards).
 The latest release of NiCad can be found at https://www.txl.ca/txl-nicaddownload.html
 
-### Steps
+## Script
 
-1.  Make sure you have Txl downloaded and added to path. You can find the latest version at [this](https://www.txl.ca/txl-download.html) link.
+1. Simply run `./clone_runner.sh`. It will validate whether the code works or not. Alternatively read it to understand the steps involved in actually conducting the anlysis. This should print a latex table with the actual results
 
-2.  Make sure you run `make` command at the root of your project. This makes sure that the grammars are compiled correctly.
+#### Steps
 
-3.  Create a folder at the root named `systems/source-code`. Copy your corpus of smart contracts to this systems folder. At the end of this step the root should contain `systems/source-code/\*.sol` (where \*.sol represents all of the smart contracts)
+1. Make sure you have Txl downloaded and added to path. You can find the latest version at [this](https://www.txl.ca/txl-download.html) link.
 
-4.  All of the important scripts are in the `python_scripts` folder. The main scripts that creates functional clones is `create_clone_df.py`, whereas `create_contracts_clone_df.py` creates clones at the contract level. The `data` folder and the `duplicates` folder contains the results of the clones.
+2. Make sure you run `make` command at the root of your project. This makes sure that the grammars are compiled correctly.
 
-5.  To create clones, simply run `python python_scripts/create_clone_df.py` from the root of the project. If everything is succesful . You should see a latex table printed with the actual results.
+3. Create a folder at the root named `systems/source-code`. Copy your corpus of smart contracts to this systems folder. At the end of this step the root should contain `systems/source-code/\*.sol` (where \*.sol represents all of the smart contracts)
+
+4. All of the important scripts are in the `python_scripts` folder. The main scripts that creates functional clones is `create_clone_df.py`, whereas `create_contracts_clone_df.py` creates clones at the contract level. The `data` folder and the `duplicates` folder contains the results of the clones.
+
+5. To create clones, simply run `python python_scripts/create_clone_df.py` from the root of the project. If everything is succesful . You should see a latex table printed with the actual results.
