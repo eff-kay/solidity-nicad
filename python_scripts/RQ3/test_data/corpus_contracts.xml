@@ -1,0 +1,44 @@
+<source file="systems/source-code/61/61064912b20c0cc0af50384c0f17f148f4857f96.sol" startline="59" endline="82">
+function Contest () payable {
+    c4c = 0x87b0de512502f3e86fd22654b72a640c8e0f59cc;
+    c4cfee = 1000;
+    owner = msg.sender;
+    deadlineParticipation = 1501036140;
+    deadlineVoting = 1504319340;
+    participationFee = 15000000000000000;
+    votingFee = 3000000000000000;
+    prizeOwner = 400;
+    prizeReferee = 0;
+    prizeWinners.push (6045);
+    nLuckyVoters = 3;
+    uint16 sumPrizes = prizeOwner;
+    for (uint i = 0; i < prizeWinners.length; i + +) {
+        sumPrizes + = prizeWinners [i];
+    }
+    if (sumPrizes > 10000) throw;
+    else if (sumPrizes < 10000 & & nLuckyVoters = = 0) throw;
+}
+</source>
+<source file="systems/source-code/61/61064912b20c0cc0af50384c0f17f148f4857f96.sol" startline="87" endline="102">
+contract TokenTimelock {
+    ERC20Basic token;
+    address beneficiary;
+    uint releaseTime;
+    function TokenTimelock (ERC20Basic _token, address _beneficiary, uint _releaseTime) {
+        require (_releaseTime > now);
+        token = _token;
+        beneficiary = _beneficiary;
+        releaseTime = _releaseTime;
+    }
+    function claim () {
+        require (msg.sender = = beneficiary);
+        release ();
+    }
+    function release () {
+        require (now > = releaseTime);
+        uint amount = token.balanceOf (this);
+        require (amount > 0);
+        token.transfer (beneficiary, amount);
+    }
+}
+</source>

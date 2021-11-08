@@ -1,0 +1,45 @@
+<source file="systems/source-code/openzeppelin-contracts-1.2.0/contracts/token/StandardToken.sol" startline="15" endline="67">
+contract x is x, x {
+    mapping (address = > mapping (address = > uint256)) x;
+    function x (address x, address x, uint256 x) x (x) {
+        x x = x [x] [x.x];
+        x [x] = x [x].x (x);
+        x [x] = x [x].x (x);
+        x [x] [x.x] = x.x (x);
+        x (x, x, x);
+        return true;
+    }
+    function x (address x, uint256 x) x (x) {
+        require ((x = = 0) | | (x [x.x] [x] = = 0));
+        x [x.x] [x] = x;
+        x (x.x, x, x);
+        return true;
+    }
+    function x (address x, address x) x returns (uint256 x) {
+        return x [x] [x];
+    }
+}
+</source>
+<source file="systems/source-code/openzeppelin-contracts-1.2.0/contracts/token/TokenTimelock.sol" startline="11" endline="49">
+contract x {
+    x x;
+    address x;
+    uint x;
+    function x (x x, address x, uint x) {
+        require (x > x);
+        x = x;
+        x = x;
+        x = x;
+    }
+    function x () {
+        require (x.x = = x);
+        x ();
+    }
+    function x () {
+        require (x > = x);
+        uint x = x.x (x);
+        require (x > 0);
+        x.x (x, x);
+    }
+}
+</source>

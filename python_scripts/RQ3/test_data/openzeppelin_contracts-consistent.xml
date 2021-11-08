@@ -1,0 +1,45 @@
+<source file="systems/source-code/openzeppelin-contracts-1.2.0/contracts/token/StandardToken.sol" startline="15" endline="67">
+contract x1 is x2, x3 {
+    mapping (address = > mapping (address = > uint256)) x4;
+    function x5 (address x6, address x7, uint256 x8) x9 (x10) {
+        x11 x12 = x4 [x6] [x13.x14];
+        x15 [x7] = x15 [x7].x16 (x8);
+        x15 [x6] = x15 [x6].x17 (x8);
+        x4 [x6] [x13.x14] = x12.x17 (x8);
+        x18 (x6, x7, x8);
+        return true;
+    }
+    function x19 (address x20, uint256 x8) x9 (x10) {
+        require ((x8 = = 0) | | (x4 [x13.x14] [x20] = = 0));
+        x4 [x13.x14] [x20] = x8;
+        x21 (x13.x14, x20, x8);
+        return true;
+    }
+    function x22 (address x23, address x20) x24 returns (uint256 x25) {
+        return x4 [x23] [x20];
+    }
+}
+</source>
+<source file="systems/source-code/openzeppelin-contracts-1.2.0/contracts/token/TokenTimelock.sol" startline="11" endline="49">
+contract x1 {
+    x2 x3;
+    address x4;
+    uint x5;
+    function x1 (x2 x6, address x7, uint x8) {
+        require (x8 > x9);
+        x3 = x6;
+        x4 = x7;
+        x5 = x8;
+    }
+    function x10 () {
+        require (x11.x12 = = x4);
+        x13 ();
+    }
+    function x13 () {
+        require (x9 > = x5);
+        uint x14 = x3.x15 (x16);
+        require (x14 > 0);
+        x3.x17 (x4, x14);
+    }
+}
+</source>

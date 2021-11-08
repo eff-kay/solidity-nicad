@@ -1,0 +1,41 @@
+<source file="systems/source-code/61/61d900fffb8e8fe88f57f96c860ed94aa903e412.sol" startline="4" endline="23">
+contract x {
+    address public x;
+    event x (address indexed x, address indexed x);
+    function x () x {
+        x = x.x;
+    }
+    modifier x () {
+        require (x.x = = x);
+        _;
+    }
+    function x (address x) x x {
+        require (x ! = x (0));
+        x (x, x);
+        x = x;
+    }
+}
+</source>
+<source file="systems/source-code/61/61d900fffb8e8fe88f57f96c860ed94aa903e412.sol" startline="11" endline="23">
+contract x {
+    x x;
+    address x;
+    uint x;
+    function x (x x, address x, uint x) {
+        require (x > x);
+        x = x;
+        x = x;
+        x = x;
+    }
+    function x () {
+        require (x.x = = x);
+        x ();
+    }
+    function x () {
+        require (x > = x);
+        uint x = x.x (x);
+        require (x > 0);
+        x.x (x, x);
+    }
+}
+</source>

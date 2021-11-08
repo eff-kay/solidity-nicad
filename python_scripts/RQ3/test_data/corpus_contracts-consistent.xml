@@ -1,0 +1,158 @@
+<source file="systems/source-code/61/61064912b20c0cc0af50384c0f17f148f4857f96.sol" startline="11" endline="230">
+contract x1 {
+    uint public x2;
+    address x3;
+    address public x4;
+    address public x5;
+    address [] public x6;
+    address [] public x7;
+    address [] public x8;
+    address [] public x9;
+    uint public x10;
+    mapping (address = > bool) public x11;
+    mapping (address = > bool) public x12;
+    mapping (address = > uint) public x13;
+    mapping (address = > bool) public x14;
+    uint public x15;
+    uint public x16;
+    uint128 public x17;
+    uint128 public x18;
+    uint16 public x19;
+    uint16 public x20;
+    uint16 public x21;
+    uint16 [] public x22;
+    uint8 public x23;
+    event x24 (uint x25, address [] x8, address [] x26);
+    function x1 () x27 {
+        x5 = 0x87b0de512502f3e86fd22654b72a640c8e0f59cc;
+        x19 = 1000;
+        x3 = x28.x29;
+        x15 = 1501036140;
+        x16 = 1504319340;
+        x17 = 15000000000000000;
+        x18 = 3000000000000000;
+        x20 = 400;
+        x21 = 0;
+        x22.x30 (6045);
+        x23 = 3;
+        uint16 x31 = x20;
+        for (uint x32 = 0; x32 < x22.x33; x32 + +) {
+            x31 + = x22 [x32];
+        }
+        if (x31 > 10000) x34;
+        else if (x31 < 10000 & & x23 = = 0) x34;
+    }
+    function x35 () x27 {
+        if (x28.x36 < x17) x34;
+        else if (x37 > = x15) x34;
+        else if (x11 [x28.x29]) x34;
+        else if (x28.x29 ! = x38.x39) x34;
+        else {
+            x6.x30 (x28.x29);
+            x11 [x28.x29] = true;
+            if (x8.x33 < x22.x33) x8.x30 (x28.x29);
+        }
+    }
+    function x40 (address x41) x27 {
+        if (x28.x36 < x18) x34;
+        else if (x37 < x15 | | x37 > = x16) x34;
+        else if (x12 [x28.x29]) x34;
+        else if (x28.x29 ! = x38.x39) x34;
+        else if (! x11 [x41]) x34;
+        else {
+            x7.x30 (x28.x29);
+            x12 [x28.x29] = true;
+            x13 [x41] + +;
+            for (x42 x32 = 0; x32 < x8.x33; x32 + +) {
+                if (x8 [x32] = = x41) break;
+                if (x13 [x41] > x13 [x8 [x32]]) {
+                    for (x42 x43 = x44 (x41, x32 + 1); x43 > x32; x43 - -) {
+                        x8 [x43] = x8 [x43 - 1];
+                    }
+                    x8 [x32] = x41;
+                    break;
+                }
+            }
+        }
+    }
+    function x44 (address x41, uint x45) x46 x47 (x48) {
+        for (uint x32 = x45; x32 < x8.x33; x32 + +) {
+            if (x8 [x32] = = x41) return x32;
+        }
+        return x8.x33 - 1;
+    }
+    function x49 (address x41) {
+        if (x28.x29 = = x4) x14 [x41] = true;
+    }
+    function x50 (address x41) {
+        if (x28.x29 = = x4) x14 [x41] = false;
+    }
+    function x51 () {
+        if (x37 > = x16 & & x10 = = 0) {
+            x52 ();
+            if (x53.x54 > 10000) x55 ();
+            x24 (x10, x8, x9);
+        }
+    }
+    function x52 () x56 {
+        if (x23 > = x7.x33) x9 = x7;
+        else {
+            mapping (uint = > bool) x57;
+            uint x58 = 1;
+            uint x59;
+            for (uint x32 = 0; x32 < x23; x32 + +) {
+                do {
+                    x59 = x60 (x58, x7.x33);
+                    x58 + +;
+                }
+                while (x57 [x59]);
+                x57 [x59] = true;
+                x9.x30 (x7 [x59]);
+            }
+        }
+    }
+    function x60 (uint x58, uint x61) x46 x56 x47 (x48) {
+        return x48 (x62.x63 (x62.x64 - x58)) % x61;
+    }
+    function x55 () x46 {
+        if (! x5.x65 (x53.x54 / 10000 * x19)) x34;
+        x10 = x53.x54;
+        if (x20 ! = 0 & & ! x3.x65 (x10 / 10000 * x20)) x34;
+        if (x21 ! = 0 & & ! x4.x65 (x10 / 10000 * x21)) x34;
+        for (uint8 x32 = 0; x32 < x8.x33; x32 + +) if (x22 [x32] ! = 0 & & ! x8 [x32].x65 (x10 / 10000 * x22 [x32])) x34;
+        if (x9.x33 > 0) {
+            if (x53.x54 > x9.x33) {
+                uint x66 = x53.x54 / x9.x33;
+                for (uint8 x43 = 0; x43 < x9.x33; x43 + +) if (! x9 [x43].x65 (x66)) x34;
+            }
+        }
+        else if (! x3.x65 (x53.x54)) x34;
+    }
+    function x67 () x56 x47 (x48) {
+        return x7.x33;
+    }
+}
+</source>
+<source file="systems/source-code/openzeppelin-contracts-1.2.0/contracts/token/TokenTimelock.sol" startline="11" endline="49">
+contract x1 {
+    x2 x3;
+    address x4;
+    uint x5;
+    function x1 (x2 x6, address x7, uint x8) {
+        require (x8 > x9);
+        x3 = x6;
+        x4 = x7;
+        x5 = x8;
+    }
+    function x10 () {
+        require (x11.x12 = = x4);
+        x13 ();
+    }
+    function x13 () {
+        require (x9 > = x5);
+        uint x14 = x3.x15 (x16);
+        require (x14 > 0);
+        x3.x17 (x4, x14);
+    }
+}
+</source>
