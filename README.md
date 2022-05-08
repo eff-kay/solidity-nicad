@@ -26,4 +26,4 @@ The grammar and normalizers have been validated against a large corpus of 33,073
 
 ## NOTE:
 
-These changes were adopted for the study titled [code-cloning in solidity smart contracts: a replication](). The extended replication package of the paper can be found at (https://github.com/david-istvan/ethereum-cloning-tse-replication-package)[https://github.com/david-istvan/ethereum-cloning-tse-replication-package]
+These changes were adopted for the study titled [code-cloning in solidity smart contracts: a replication](). The extended replication package of the paper can be found at https://github.com/david-istvan/ethereum-cloning-tse-replication-package
