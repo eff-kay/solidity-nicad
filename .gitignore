@@ -14,3 +14,4 @@ python_scripts/duplicates/
 *.log
 *.x
 tmp/*.in
+*.vscode
