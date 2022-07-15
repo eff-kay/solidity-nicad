@@ -2,8 +2,8 @@
 % Faizan Khan, September 2020
 % Version 1.1, October 2020
 
-% Copyright 2020 Faizan Khan 
-% after the Antlr grammar by Federico Bond <federicobond@gmail.com> 
+% Copyright 2020 Faizan Khan
+% after the Antlr grammar by Federico Bond <federicobond@gmail.com>
 % https://github.com/solidityj/solidity-antlr4
 
 % Report all problems to Faizan Khan, <faizan10114@gmail.com>
@@ -11,7 +11,7 @@
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions are met:
 %
-%    Redistributions of source code must retain the above copyright notice, 
+%    Redistributions of source code must retain the above copyright notice,
 %    this list of conditions and the following disclaimer.
 %    Redistributions in binary form must reproduce the above copyright notice,
 %    this list of conditions and the following disclaimer in the documentation
@@ -30,6 +30,8 @@
 
 % Modification Log:
 
+% v1.2, Yinghang Ma, July 2022.
+%    Update solidity grammar to v0.8.15.
 % v1.1, Jim Cordy, October 2020.
 %    Checked, cleaned up and reformatted grammar to NiCad standard.
 %    Added character literals.
@@ -43,7 +45,7 @@ include "bom.grm"        % don't ever edit that file!
 
 tokens
     solidity_hex_number  "0[xX][0123456789abcdefABCDEF]+"
-    number      "\d[\d_]*(.[\d_]*)?([eE][+-]?\d+)?" 
+    number      "\d[\d_]*(.[\d_]*)?([eE][+-]?\d+)?"
             |   ".\d[\d_]*([eE][+-]?\d+)?"
     id          "[$\u][$\i]*"
 end tokens
@@ -62,12 +64,24 @@ define sourceFile
 end define
 
 define sourceUnit
-    [pragmaDirective] | [ImportDirective] | [ContractDefinition]
+    [pragmaDirective]
+    | [ImportDirective]
+    | [UsingDirective]
+    | [ContractDefinition]
+    | [InterfaceDefinition]
+    | [LibraryDefinition]
+    | [FunctionDefinition]
+    | [ConstantVariableDeclaration]
+    | [StructDefinition]
+    | [EnumDefinition]
+    | [UserDefinedValueTypeDefinition]
+    | [ErrorDefinition]
 end define
 
 define pragmaDirective
     	'pragma 'solidity [pragmaValue] ';
     |	'pragma 'experimental [pragmaValue] ';
+    |   'pragma 'abicoder [pragmaValue] ';
 end define
 
 define pragmaValue
@@ -76,7 +90,7 @@ end define
 
 define AttributeOrVersion
 	[version]
-    |	[PrimaryExpression]
+    | [PrimaryExpression]
 end define
 
 define version
@@ -84,7 +98,7 @@ define version
 end define
 
 define versionOperator
-    '^ | '~ | '>= | '> | '< | '<= | '=
+    '^ | '~ | '>= | '> | '< | '<= | '= | 'v
 end define
 
 define versionConstraint
@@ -96,9 +110,9 @@ define VersionLiteral
 end define
 
 define ImportDirective
-        [ImportLine1]
-    |   [ImportLine2]
-    |   [ImportLine3]
+    [ImportLine1]
+    | [ImportLine2]
+    | [ImportLine3]
 end define
 
 define ImportLine1
@@ -114,23 +128,23 @@ define ImportLine3
 end define
 
 define IdOptAsIdentifier
-    [id] [opt asIdentifier]
+    [Identifier] [opt asIdentifier]
 end define
 
 define asIdentifier
-    'as [id]
+    'as [Identifier]
 end define
 
 define stericIdentifier
-    '* | [id]
+    '* | [Identifier]
 end define
 
 define OptionalIdentifer
-    'as [id]
+    'as [Identifier]
 end define
 
 define ContractDefinition
-    [ContractKeywords] [id] [opt IsInheritenceSpecifier] 
+    [opt Abstract] 'contract [Identifier] [opt IsInheritenceSpecifier]
     '{ [NL][IN]
         [ContractBody*] [EX]
     '} [NL]
@@ -140,42 +154,62 @@ define ContractKeywords
     'contract | 'library | 'interface
 end define
 
+define Abstract
+    'abstract
+end define
+
+define InterfaceDefinition
+    'interface [Identifier] [opt IsInheritenceSpecifier]
+    '{ [NL][IN]
+        [ContractBody*] [EX]
+    '} [NL]
+end define
+
+define LibraryDefinition
+    'library [Identifier]
+    '{ [NL][IN]
+        [ContractBody*] [EX]
+    '} [NL]
+end define
+
 define IsInheritenceSpecifier
     'is [InheritanceSpecifier,+]
 end define
 
 define InheritanceSpecifier
-    [UserDefinedTypeName] [opt InternalInheritenceSpecifier]
+    [IdentifierPath] [opt CallArgumentList]
 end define
 
-define InternalInheritenceSpecifier
-    '( [Expression,] ')
-end define
-
-define UserDefinedTypeName
-    [id] [IdWithDot*]
+define IdentifierPath
+    [Identifier] [IdWithDot*]
 end define
 
 define IdWithDot
-    '. [id]
+    '. [Identifier]
+end define
+
+define ConstantVariableDeclaration
+    [TypeName] 'constant [Identifier] '= [Expression] ';
 end define
 
 % TODO: Complete expressions
 % TODO: Left factor for TXL parser, this is wildly ambiguous - JRC
 define Expression
-        [PrimaryExpression] 
-    |   [ExpressionPostIncrement] 
-    |  [NewExpression] 
-    |  [IndexAccess] 
-    |  [MemberAccess] 
-    |  [FunctionCall] 
+        [PrimaryExpression]
+    |  [ExpressionPostIncrement]
+    |  [NewExpression]
+    |  [IndexAccess]
+    |  [ColonIndexAccess]
+    |  [MemberAccess]
+    |  [FunctionCall]
+    |  [PayableFunctionCall]
     |  [ExpressionWithParenthesis]
-    |  [UnaryExpression] 
+    |  [UnaryExpression]
     |  [DoublePointerExpression]
     |  [MultiplicationDivision]
-    |  [PlusMinusExpression] 
+    |  [PlusMinusExpression]
     |  [ShiftLeftShiftRight]
-    |  [AndExpression] 
+    |  [AndExpression]
     |  [XorExpression]
     |  [OrExpression]
     |  [LessThanGreaterThan]
@@ -184,6 +218,27 @@ define Expression
     |  [LogicalOrExpression]
     |  [QuestionSelectExpression]
     |  [AssignmentOptions]
+    |  [CurlyBracketsExpression]
+end define
+
+define CurlyBracketsExpression
+    [Expression] [IdentifierExpression] [opt ParenthesesQuotation]
+end define
+
+define ParenthesesQuotation
+    [Punctuation*]
+end define
+
+define Punctuation
+    '( | ') | '" | ';
+end define
+
+define Identifier
+    [id]
+    | 'from
+    | 'error
+    | 'revert
+    | 'global
 end define
 
 define NewExpression
@@ -208,7 +263,7 @@ end define
 
 define AndExpression
     [Expression] '& [Expression]
-end define 
+end define
 
 define LogicalOrExpression
     [Expression] '|'| [Expression]
@@ -219,7 +274,7 @@ define ShiftLeftShiftRight
 end define
 
 define ShiftLeftShiftRightInternal
-    '<< | '>> 
+    '<< | '>>
 end define
 
 define PlusMinusExpression
@@ -230,8 +285,14 @@ define PlusMinusInternal
     '+ | '-
 end define
 
+% TODO: Uncertain issue. This is not in the v0.8.15
 define MultiplicationDivision
-    [Expression] [MultiplcationDivisionInternal] [Expression]
+    [Expression] [MultiplcationDivisionInternal] [Expression] [opt Gwei]
+end define
+
+% TODO: Find more about cases that use this expression.
+define Gwei
+    'gwei
 end define
 
 define MultiplcationDivisionInternal
@@ -259,7 +320,11 @@ define LessThanInternal
 end define
 
 define IndexAccess
-    [Expression]'[[opt Expression]']
+    [Expression] '[ [opt Expression] ']
+end define
+
+define ColonIndexAccess
+    [Expression] '[ [opt Expression] ': [opt Expression] ']
 end define
 
 define ExpressionWithParenthesis
@@ -275,15 +340,19 @@ define internalEqualNotEqual
 end define
 
 define MemberAccess
-    [Expression] '. [id]
+    [Expression] '. [MemberAccessList]
+end define
+
+define MemberAccessList
+    [Identifier] | [Expression] | 'address
 end define
 
 define post_inc_dec
-    '++|'--
+    '++ | '--
 end define
 
 define ExpressionPostIncrement
-    [Expression][post_inc_dec]
+    [Expression] [post_inc_dec]
 end define
 
 define AssignmentOptions
@@ -299,8 +368,9 @@ define PrimaryExpression
     |  [NumberLiteral]
     |  [HexLiteral]
     |  [StringLiteral]
+    |  [UnicodeStringLiteral]
     |  [TupleExpression]
-    |  [id] 
+    |  [Identifier]
     |  [ElementaryTypeNameExpression]
 end define
 
@@ -322,7 +392,19 @@ define NumberLiteral
 end define
 
 define HexLiteral
+    [HexLit*]
+end define
+
+define HexLit
     'hex [StringLiteral]
+end define
+
+define UnicodeStringLiteral
+    [UniStringLiteral*]
+end define
+
+define UniStringLiteral
+    'unicode [StringLiteral]
 end define
 
 define ElementaryTypeNameExpression
@@ -340,11 +422,10 @@ end define
 
 define TypeName
        [ElementaryTypeName]
-    |  [UserDefinedTypeName]
+    |  [IdentifierPath]
     |  [Mapping]
     |  [ArrayTypeName]
     |  [FunctionTypeName]
-    |  [AddressPayable]
 end define
 
 
@@ -353,11 +434,15 @@ define AddressPayable
 end define
 
 define ElementaryTypeName
-    'address | 'bool | 'string | [Int] | [Uint] | [Byte] | [Fixed] | [Ufixed]
+    'address | 'bool | 'string | [Int] | [Uint] | [Byte] | [Fixed] | [Ufixed] | [AddressPayable]
 end define
 
 define Mapping
-    'mapping '( [ElementaryTypeName] '=> [TypeName] ')
+    'mapping '( [MappingTypeName] '=> [TypeName] ')
+end define
+
+define MappingTypeName
+    [ElementaryTypeName] | [IdentifierPath]
 end define
 
 define ArrayTypeName
@@ -365,7 +450,15 @@ define ArrayTypeName
 end define
 
 define FunctionTypeName
-    'function [FunctionTypeParameterList] [FunctionExposure*] [opt FunctionReturn]
+    'function [FuncTypeParaList] [FunctionExposure*] [opt FunctionReturn]
+end define
+
+define FuncTypeParaList
+    '( [FunctionTP*] ')
+end define
+
+define FunctionTP
+    [FunctionTypeParameter,+]
 end define
 
 define FunctionReturn
@@ -385,7 +478,7 @@ define StorageLocation
 end define
 
 define FunctionExposure
-    'internal | 'external | StateMutability
+    'internal | 'external | StateMutability | 'view
 end define
 
 define StateMutability
@@ -394,23 +487,23 @@ end define
 
 
 define Int
-        'int | 'int8 | 'int16 | 'int24 | 'int32 | 'int40 | 'int48 | 'int56 | 'int64 
-    |   'int72 | 'int80 | 'int88 | 'int96 | 'int104 | 'int112 | 'int120 | 'int128 
-    |   'int136 | 'int144 | 'int152 | 'int160 | 'int168 | 'int176 | 'int184 | 'int192 
+        'int | 'int8 | 'int16 | 'int24 | 'int32 | 'int40 | 'int48 | 'int56 | 'int64
+    |   'int72 | 'int80 | 'int88 | 'int96 | 'int104 | 'int112 | 'int120 | 'int128
+    |   'int136 | 'int144 | 'int152 | 'int160 | 'int168 | 'int176 | 'int184 | 'int192
     |   'int200 | 'int208 | 'int216 | 'int224 | 'int232 | 'int240 | 'int248 | 'int256
 end define
 
 define Uint
-        'uint | 'uint8 | 'uint16 | 'uint24 | 'uint32 | 'uint40 | 'uint48 | 'uint56 | 'uint64 
-    |   'uint72 | 'uint80 | 'uint88 | 'uint96 | 'uint104 | 'uint112 | 'uint120 | 'uint128 
-    |   'uint136 | 'uint144 | 'uint152 | 'uint160 | 'uint168 | 'uint176 | 'uint184 | 'uint192 
+        'uint | 'uint8 | 'uint16 | 'uint24 | 'uint32 | 'uint40 | 'uint48 | 'uint56 | 'uint64
+    |   'uint72 | 'uint80 | 'uint88 | 'uint96 | 'uint104 | 'uint112 | 'uint120 | 'uint128
+    |   'uint136 | 'uint144 | 'uint152 | 'uint160 | 'uint168 | 'uint176 | 'uint184 | 'uint192
     |   'uint200 | 'uint208 | 'uint216 | 'uint224 | 'uint232 | 'uint240 | 'uint248 | 'uint256
 end define
 
 define Byte
-        'byte | 'bytes | 'bytes1 | 'bytes2 | 'bytes3 | 'bytes4 | 'bytes5 | 'bytes6 | 'bytes7 | 'bytes8 
-    |   'bytes9 | 'bytes10 | 'bytes11 | 'bytes12 | 'bytes13 | 'bytes14 | 'bytes15 | 'bytes16 
-    |   'bytes17 | 'bytes18 | 'bytes19 | 'bytes20 | 'bytes21 | 'bytes22 | 'bytes23 | 'bytes24 
+        'byte | 'bytes | 'bytes1 | 'bytes2 | 'bytes3 | 'bytes4 | 'bytes5 | 'bytes6 | 'bytes7 | 'bytes8
+    |   'bytes9 | 'bytes10 | 'bytes11 | 'bytes12 | 'bytes13 | 'bytes14 | 'bytes15 | 'bytes16
+    |   'bytes17 | 'bytes18 | 'bytes19 | 'bytes20 | 'bytes21 | 'bytes22 | 'bytes23 | 'bytes24
     |   'bytes25 | 'bytes26 | 'bytes27 | 'bytes28 | 'bytes29 | 'bytes30 | 'bytes31 | 'bytes32
 end define
 
@@ -423,58 +516,93 @@ define Ufixed
 end define
 
 define ContractBody
-        [StateVariableDeclaration] | [UsingForDeclaration]
-    |   [StructDefinition] | [ConstructorDefinition] | [ModifierDefinition] | [FunctionDefinition] 
-    |   [EventDefinition] | [EnumDefinition]
+      [ConstructorDefinition]
+    | [FunctionDefinition]
+    | [ModifierDefinition]
+    | [FallbackFunctionDefinition]
+    | [ReceiveFunctionDefinition]
+    | [StructDefinition]
+    | [EnumDefinition]
+    | [UserDefinedValueTypeDefinition]
+    | [StateVariableDeclaration]
+    | [EventDefinition]
+    | [ErrorDefinition]
+    | [UsingDirective]
 end define
 
 define StateVariableDeclaration
-    [TypeName] [StateKeywords*] [id] [opt ExpressionWithEqualSign] '; [NL]
+    [TypeName] [StateKeywords*] [Identifier] [opt ExpressionWithEqualSign] ';
 end define
 
 define StateKeywords
-    'public | 'internal | 'private | 'constant
+    'public | 'internal | 'private | 'constant | 'immutable | [OverrideSpecifier]
 end define
 
-define UsingForDeclaration
-    'using [id] 'for [StericTypeName] '; [NL]
+define UsingDirective
+    'using [UsingIdentifierPath] 'for [StericTypeName] [opt Global] ';
+end define
+
+define Global
+    'global
+end define
+
+define UsingIdentifierPath
+    [IdentifierPath]
+    | [CurlyBracketsIdentifierPath]
+end define
+
+define CurlyBracketsIdentifierPath
+    '{ [IdentifierPath,+] '}
+end define
+
+define ErrorDefinition
+    'error [Identifier] '( [opt ErrorParameterList] ') ';
+end define
+
+define ErrorParameterList
+    [ErrorParameter,+]
+end define
+
+define ErrorParameter
+    [TypeName] [opt Identifier]
 end define
 
 define StericTypeName
-    '* | [TypeName] 
+    '* | [TypeName]
 end define
 
 define StructDefinition
-    'struct [id] 
-    '{ [NL] [IN]
-        [VariableDeclarationMeta+] [EX]
-    '} [NL]
+    'struct [Identifier] '{ [VariableDeclarationMeta+] '}
 end define
 
 define ConstructorDefinition
-    'constructor [ParameterList] [FunctionalDefinitionInternalModifiers*] [Block]
+    'constructor [opt ParameterList] [FunctionalDefinitionInternalModifiers*] [Block]
 end define
 
 define VariableDeclarationMeta
-    [VariableDeclaration] '; [NL]
+    [VariableDeclaration] ';
 end define
 
 define VariableDeclaration
-    [TypeName] [opt StorageLocation] [id]
+    [TypeName] [opt StorageLocation] [Identifier]
 end define
 
 define ModifierDefinition
-    'modifier [id] [opt ParameterList] [Block]
+    'modifier [Identifier] [opt ParameterList] [Block]
 end define
 
 define FunctionDefinition
-    'function [opt id] [ParameterList]
+    'function [opt FuncIdentifier] [ParameterList]
     [FunctionalDefinitionInternalModifiers*]
     [opt OptionalReturnBlock] [FunctionInternalEndBlock]
 end define
 
+define FuncIdentifier
+    [Identifier] | 'fallback | 'receive
+end define
+
 define FunctionInternalEndBlock
-    '; [NL] | [Block]
+    '; [NL] | [Block] | [UncheckedBlock]
 end define
 
 define OptionalReturnBlock
@@ -482,11 +610,34 @@ define OptionalReturnBlock
 end define
 
 define FunctionalDefinitionInternalModifiers
-    [ModifierInvocation] | [StateMutability] | 'external | 'public | 'internal | 'private
-end define 
+    [ModifierInvocation] | [StateMutability] | [visibility] | [OverrideSpecifier] | 'virtual
+end define
+
+define visibility
+    'internal | 'external | 'private | 'public
+end define
+
+define OverrideSpecifier
+    'override [opt OverrideIdentifierPath]
+end define
+
+define OverrideIdentifierPath
+    '( [IdentifierPath,+] ')
+end define
+
+define FallbackFunctionDefinition
+    'fallback [ParameterList]
+    [FunctionalDefinitionInternalModifiers*]
+    [opt OptionalReturnBlock] [FunctionInternalEndBlock]
+end define
+
+define ReceiveFunctionDefinition
+    'receive '( ') [FunctionalDefinitionInternalModifiers*]
+    [FunctionInternalEndBlock]
+end define
 
 define EventDefinition
-    'event [id] [EventParameterList] [opt 'anonymous] '; [NL]
+    'event [Identifier] [EventParameterList] [opt 'anonymous] ';
 end define
 
 define EventParameterList
@@ -498,27 +649,48 @@ define EventParameter
 end define
 
 define TypedEventParameter
-    [TypeName] [opt 'indexed] [opt id]
+    [TypeName] [opt 'indexed] [opt Identifier]
 end define
 
 define EnumDefinition
-    'enum [id] '{ [opt CommaSeparatedEnumValues] '} 
+    'enum [Identifier] '{ [opt CommaSeparatedEnumValues] '}
+end define
+
+define UserDefinedValueTypeDefinition
+    'type [Identifier] 'is [ElementaryTypeName] ';
 end define
 
 define CommaSeparatedEnumValues
-    [EnumValue,+] 
+    [EnumValue,+]
 end define
 
 define EnumValue
-    [id]
+    [Identifier]
 end define
 
 define ModifierInvocation
-    [id] [opt OptionalModifierInvocation]
+    [IdentifierPath] [opt CallArgumentList]
 end define
 
-define OptionalModifierInvocation
-    '( [opt ExpressionList] ')
+define CallArgumentList
+   '( [opt CallArgumentListList] ')
+end define
+
+define CallArgumentListList
+    [ExpressionList]
+    | [IdentifierExpression]
+end define
+
+define IdentifierExpression
+    '{ [opt IdExpression] '}
+end define
+
+define IdExpression
+    [IdExp,+]
+end define
+
+define IdExp
+    [Identifier] ': [Expression]
 end define
 
 define ParameterList
@@ -530,18 +702,29 @@ define Parameter
 end define
 
 define TypedParameter
-    [TypeName] [opt StorageLocation] [opt id]
+    [TypeName] [opt StorageLocation] [opt Identifier]
 end define
 
 define Block
-    '{  [NL][IN]  
+    '{  [NL][IN]
         [Statement*] [EX]
     '} [NL]
 end define
 
+define UncheckedBlock
+    'unchecked [Block]
+end define
+
 define Statement
-        [IfStatement] | [WhileStatement] | [ForStatement] | [Block] | [InlineAssemblyStatement] 
-    |   [CombineSemicolon]
+    [IfStatement]
+    | [WhileStatement]
+    | [ForStatement]
+    | [Block]
+    | [InlineAssemblyStatement]
+    | [CombineSemicolon]
+    | [TryStatement]
+    | [RevertStatement]
+    | [UncheckedBlock]
 end define
 
 define CombineSemicolon
@@ -549,8 +732,15 @@ define CombineSemicolon
 end define
 
 define StatementThatNeedSemicolon
-        [Require] | [DoWhileStatement] | [PlaceholderStatement] | [Continue] | [Break] 
-    |   [Return] | [EmitStatement] | [SimpleStatement] | [Throw]
+    [Require]
+    | [DoWhileStatement]
+    | [PlaceholderStatement]
+    | [Continue]
+    | [Break]
+    | [Return]
+    | [EmitStatement]
+    | [SimpleStatement]
+    | [Throw]
 end define
 
 define IfStatement
@@ -574,7 +764,7 @@ define SimpleStatement
 end define
 
 define VariableDefinition
-    [InternatlVariableDefinition] [opt ExpressionWithEqualSign] 
+    [InternatlVariableDefinition] [opt ExpressionWithEqualSign]
 end define
 
 define ExpressionWithEqualSign
@@ -602,14 +792,38 @@ define DoWhileStatement
 end define
 
 define InlineAssemblyStatement
-    'assembly [opt StringLiteral] [AssemblyBlock]
+    'assembly [opt StringLiteral] [opt AssemblyFlags] [AssemblyBlock]
+end define
+
+define AssemblyFlags
+    '( [StringLiteral,+] ')
+end define
+
+define TryStatement
+    'try [Expression] [opt ReturnsParameterList] [Block] [CatchClause*]
+end define
+
+define ReturnsParameterList
+    'returns [ParameterList]
+end define
+
+define CatchClause
+    'catch [opt IdentifierParameterList] [Block]
+end define
+
+define IdentifierParameterList
+    [opt Identifier] [ParameterList]
+end define
+
+define RevertStatement
+    'revert [opt FunctionCall] ';
 end define
 
 define PlaceholderStatement
     '_
 end define
 
-define Continue 
+define Continue
     'continue
 end define
 
@@ -619,7 +833,7 @@ end define
 
 define Require
     'require [Expression]
-end define 
+end define
 
 define Return
     'return [opt Expression]
@@ -630,11 +844,15 @@ define Throw
 end define
 
 define EmitStatement
-    'emit [opt FunctionCall]
+    'emit [Expression] [CallArgumentList]
 end define
 
 define FunctionCall
-    [Expression] '( [FunctionCallArguments] ')
+    [Expression] [CallArgumentList]
+end define
+
+define PayableFunctionCall
+    'payable [CallArgumentList]
 end define
 
 define FunctionCallArguments
@@ -642,7 +860,7 @@ define FunctionCallArguments
 end define
 
 define NamedValueWithBraces
-    '{ [opt NameValueList] '} 
+    '{ [opt NameValueList] '}
 end define
 
 define NameValueList
@@ -650,7 +868,7 @@ define NameValueList
 end define
 
 define InlineNamedValue
-    [id] ': [Expression] 
+    [Identifier] ': [Expression]
 end define
 
 define ExpressionList
@@ -658,24 +876,28 @@ define ExpressionList
 end define
 
 define AssemblyBlock
-    '{ [NL] [IN]
-        [AssemblyStatement*] [EX] 
-    '} [NL]
+    '{ [AssemblyStatement*] '}
 end define
 
+% Renamed to YulStatement at v0.8.15
 define AssemblyStatement
-       [AssemblyFunctionDefinition] 
-    |  [AssemblyVariableDeclaration] [NL]
-    |  [AssemblyAssignment] [NL]
-    |  [AssemblyIf] 
-    |  [AssemblyFunctionCall] [NL]
-    |  [AssemblySwitch] 
-    |  [AssemblyForLoop] 
-    |  [AssemblyBreakContinue] | [AssemblyBlock] 
+       [AssemblyFunctionDefinition]
+    |  [AssemblyVariableDeclaration]
+    |  [AssemblyAssignment]
+    |  [AssemblyIf]
+    |  [AssemblyExpression]
+    |  [AssemblySwitch]
+    |  [AssemblyForLoop]
+    |  [AssemblyBreakContinue]
+    |  [AssemblyBlock]
+    |  [AssemblyFunctionCall]
+    |  'leave
+    |  'break
+    |  'continue
 end define
 
 define AssemblyFunctionDefinition
-    'function [id] '( [opt AssemblyIdentifierList] ')
+    'function [Identifier] '( [opt AssemblyIdentifierList] ')
     [opt OptionlInlineAssembly] [AssemblyBlock]
 end define
 
@@ -684,35 +906,47 @@ define OptionlInlineAssembly
 end define
 
 define AssemblyVariableDeclaration
-    'let [AssemblyIdentifierList] [opt OptionalAssemblyVaribale] 
-end define 
+    [AssemblyVariableDeclarationSingle] | [AssemblyVariableDeclarationMulti]
+end define
+
+define AssemblyVariableDeclarationSingle
+    'let [AssemblyIdentifierList] [opt OptionalAssemblyVaribale]
+end define
+
+define AssemblyVariableDeclarationMulti
+    'let [AssemblyIdentifierList] [opt OptionalAssemblyFunctionCall]
+end define
 
 define OptionalAssemblyVaribale
     ':= [AssemblyExpression]
 end define
 
+define OptionalAssemblyFunctionCall
+    ':= [AssemblyFunctionCall]
+end define
+
 define AssemblyAssignment
-    [AssemblyIdentifierList] ':= [AssemblyExpression] 
+    [AssemblyAssignmentSingle] | [AssemblyAssignmentMulti]
+end define
+
+define AssemblyAssignmentSingle
+    [AssemblyIdentifierList] [opt OptionalAssemblyVaribale]
+end define
+
+define AssemblyAssignmentMulti
+    [AssemblyIdentifierList] [opt OptionalAssemblyFunctionCall]
 end define
 
 define AssemblyExpression
-    [AssemblyFunctionCall] | [id] | [Literal]
+    [AssemblyFunctionCall] | [Identifier] | [Literal]
 end define
 
 define AssemblyIf
-    'if [AssemblyIfConditions] [AssemblyBlock]
-end define
-
-define AssemblyIfConditions
-    [id] | [Literal]
+    'if [AssemblyExpression] [AssemblyBlock]
 end define
 
 define AssemblySwitch
-    'switch [AssemblySwitchConditions] [NL] [InlineAssemblySwitch]
-end define
-
-define AssemblySwitchConditions
-  [id] | [Literal] 
+    'switch [AssemblyExpression] [InlineAssemblySwitch]
 end define
 
 define InlineAssemblySwitch
@@ -740,7 +974,11 @@ define AssemblyBreakContinue
 end define
 
 define AssemblyFunctionCall
-    [id]'( [opt InlineOptinonalAssemblyFunctionCall] ') 
+    [YulEvmIdentifier] '( [opt InlineOptinonalAssemblyFunctionCall] ')
+end define
+
+define YulEvmIdentifier
+    [Identifier] | [YulEvmBuiltin]
 end define
 
 define InlineOptinonalAssemblyFunctionCall
@@ -748,7 +986,15 @@ define InlineOptinonalAssemblyFunctionCall
 end define
 
 define AssemblyIdentifierList
-    [id,+]
+    [Identifier,+] [opt IdentifierEvm]
+end define
+
+define IdentifierEvm
+    [PointIdentifier*]
+end define
+
+define PointIdentifier
+    '. [Identifier]
 end define
 
 define StringLiteral
@@ -760,4 +1006,20 @@ define Literal
         [NumberLiteral]
     |   [HexLiteral]
     |   [StringLiteral]
+end define
+
+% Builtin functions in the EVM Yul dialect.
+% Need to be more precise.
+define YulEvmBuiltin
+    'stop | 'add | 'sub | 'mul | 'div | 'sdiv | 'mod | 'smod | 'exp
+    | 'not | 'lt | 'gt | 'slt | 'sgt | 'eq | 'iszero | 'and | 'or
+    | 'xor | 'byte | 'shl | 'shr | 'sar | 'addmod | 'mulmod | 'signextend
+    | 'keccak256 | 'pop | 'mload | 'mstore | 'mstore8 | 'sload | 'sstore
+    | 'msize | 'gas | 'address | 'balance | 'selfbalance | 'caller | 'callvalue
+    | 'calldataload | 'calldatasize | 'calldatacopy | 'extcodesize | 'extcodecopy
+    | 'returndatasize | 'returndatacopy | 'extcodehash | 'create | 'create2
+    | 'call | 'callcode | 'delegatecall | 'staticcall | 'return | 'revert
+    | 'selfdestruct | 'invalid | 'log0 | 'log1 | 'log2 | 'log3 | 'log4
+    | 'chainid | 'origin | 'gasprice | 'blockhash | 'coinbase | 'timestamp
+    | 'number | 'difficulty | 'gaslimit | 'basefee
 end define

@@ -10,7 +10,7 @@ include "nicad.grm"
 include "sol.grm"
 
 define function_header
-    'function [opt id] [ParameterList]
+    'function [opt FuncIdentifier] [ParameterList]
     [FunctionalDefinitionInternalModifiers*]
     [opt OptionalReturnBlock] 
 end define

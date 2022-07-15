@@ -21,7 +21,7 @@ redefine FunctionDefinition
 end redefine
 
 define FunctionHeader
-    'function [opt id] [ParameterList]
+    'function [opt FuncIdentifier] [ParameterList]
     [FunctionalDefinitionInternalModifiers*]
     [opt OptionalReturnBlock] 
 end define

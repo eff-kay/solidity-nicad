@@ -10,7 +10,7 @@ include "nicad.grm"
 include "sol.grm"
 
 define ContractHeader
-    [ContractKeywords] [id] [opt IsInheritenceSpecifier] 
+    [opt Abstract] [ContractKeywords] [id] [opt IsInheritenceSpecifier]
 end define
 
 redefine ContractDefinition
