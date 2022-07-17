@@ -63,13 +63,12 @@ define sourceFile
     [sourceUnit*]
 end define
 
+% Interface and Library is in ContractDefinition
 define sourceUnit
     [pragmaDirective]
     | [ImportDirective]
     | [UsingDirective]
     | [ContractDefinition]
-    | [InterfaceDefinition]
-    | [LibraryDefinition]
     | [FunctionDefinition]
     | [ConstantVariableDeclaration]
     | [StructDefinition]
@@ -144,7 +143,7 @@ define OptionalIdentifer
 end define
 
 define ContractDefinition
-    [opt Abstract] 'contract [Identifier] [opt IsInheritenceSpecifier]
+    [opt Abstract] [ContractKeywords] [Identifier] [opt IsInheritenceSpecifier]
     '{ [NL][IN]
         [ContractBody*] [EX]
     '} [NL]
@@ -156,20 +155,6 @@ end define
 
 define Abstract
     'abstract
-end define
-
-define InterfaceDefinition
-    'interface [Identifier] [opt IsInheritenceSpecifier]
-    '{ [NL][IN]
-        [ContractBody*] [EX]
-    '} [NL]
-end define
-
-define LibraryDefinition
-    'library [Identifier]
-    '{ [NL][IN]
-        [ContractBody*] [EX]
-    '} [NL]
 end define
 
 define IsInheritenceSpecifier
@@ -285,14 +270,8 @@ define PlusMinusInternal
     '+ | '-
 end define
 
-% TODO: Uncertain issue. This is not in the v0.8.15
 define MultiplicationDivision
-    [Expression] [MultiplcationDivisionInternal] [Expression] [opt Gwei]
-end define
-
-% TODO: Find more about cases that use this expression.
-define Gwei
-    'gwei
+    [Expression] [MultiplcationDivisionInternal] [Expression]
 end define
 
 define MultiplcationDivisionInternal
@@ -413,7 +392,7 @@ end define
 
 define NumberUnit
         'wei | 'szabo | 'finney | 'ether
-    |   'seconds | 'minutes | 'hours | 'days | 'weeks | 'years
+    |   'seconds | 'minutes | 'hours | 'days | 'weeks | 'years | 'gwei
 end define
 
 define NumberInternal
