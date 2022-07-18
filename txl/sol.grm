@@ -204,11 +204,6 @@ define Expression
     |  [QuestionSelectExpression]
     |  [AssignmentOptions]
     |  [CurlyBracketsExpression]
-    |  [MultiVariableExpression]
-end define
-
-define MultiVariableExpression
-    [Expression] ', [Expression]
 end define
 
 define CurlyBracketsExpression
@@ -572,7 +567,7 @@ define VariableDeclaration
 end define
 
 define ModifierDefinition
-    'modifier [Identifier] [ModifierDefinitionInternalModifiers*] [opt ParameterList] [Block]
+    'modifier [Identifier] [opt ParameterList] [ModifierDefinitionInternalModifiers*] [Block]
 end define
 
 define ModifierDefinitionInternalModifiers
