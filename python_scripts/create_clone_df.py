@@ -76,17 +76,17 @@ if __name__=='__main__':
     os.chdir('python_scripts')
     print("REMOVING DUPLICATES")
     
-    shutil.rmtree('duplicates', ignore_errors=True)
-    remove_all_duplicates(config)
+    # shutil.rmtree('duplicates', ignore_errors=True)
+    # remove_all_duplicates(config)
 
     # print("EXTRACTING FUNCTION IDS")
     # extract_functions_ids(config)
     # get_top_function_ids('duplicates')
     # take_diff('systems/baseline', 'systems/min5')
-    created_merged_df()
+    # created_merged_df()
     file_path = 'duplicates'
     # calculate_statistics()
-    calculate_statistics('duplicates/merged_df.p', total_loc = total_lines)
+    # calculate_statistics('duplicates/merged_df.p', total_loc = total_lines)
 
     print('done')
 

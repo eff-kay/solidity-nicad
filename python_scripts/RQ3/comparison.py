@@ -4,16 +4,23 @@ import pandas as pd
 from numpy import source
 from hashlib import sha256
 
+def extract_function_id(source_code):
+    id = ''
+    p = r'function ([\s\S]*?)\{[\s\S]*\}'
+    matches = re.findall(p, source_code, re.MULTILINE)
+    id = matches[0]
+    return id
 
 def extract_contracts(path):
     xml = open(path).read()
     p = r'^<source file=([\s\S]*?) startline=([\s\S]*?) endline=([\s\S]*?)>$([\s\S]*?)^<\/source>$'
     matches = re.findall(p, xml, re.MULTILINE)
-    matches = [(m[0], m[1], m[2], sha256(m[3].encode()).hexdigest()) for m in matches]
+    # print([extract_function_id(m[3]) for m in matches])
+    matches = [(m[0], m[1], m[2], extract_function_id(m[3]), sha256(m[3].encode()).hexdigest()) for m in matches]
     df = pd.DataFrame(matches)
     filename = path.split('.')[0]
     print('saving file', filename)
-    df.columns = ['filename', 'startline', 'endline', 'hash']
+    df.columns = ['filename', 'startline', 'endline', 'function_id', 'hash']
     df.to_csv(open(filename + ".csv", 'w+'))
 
 
@@ -34,21 +41,24 @@ def comparison(result, corpus_contracts, openzeppelin_contracts):
 if __name__=="__main__":
     # path = 'test_data/openzeppelin_contracts.xml'
     base_path = 'data'
-    corpus_contracts = [f'corpus_contracts{x}.xml' for x in ('', '-consistent', '-blind')]
-    openzeppelin_contracts = [f'openzeppelin_contracts{x}.xml' for x in ('', '-consistent', '-blind')]
+    code_block = 'functions' #functions| contracts
+
+    corpus_contracts = [f'corpus_{code_block}{x}.xml' for x in ('', '-consistent', '-blind')]
+    openzeppelin_contracts = [f'openzeppelin_{code_block}{x}.xml' for x in ('', '-consistent', '-blind')]
 
     corpus_contracts = [f'{base_path}/{path}' for path in corpus_contracts]
     openzeppelin_contracts = [f'{base_path}/{path}' for path in  openzeppelin_contracts]
-    paths = corpus_contracts + openzeppelin_contracts
+    paths = corpus_contracts[:1] + openzeppelin_contracts[:1]
     print(create_dfs(paths))
 
-    corpus_contracts = [f'corpus_contracts{x}.csv' for x in ('', '-consistent', '-blind')]
-    openzeppelin_contracts = [f'openzeppelin_contracts{x}.csv' for x in ('', '-consistent', '-blind')]
+    corpus_contracts = [f'corpus_{code_block}{x}.csv' for x in ('', '-consistent', '-blind')]
+    openzeppelin_contracts = [f'openzeppelin_{code_block}{x}.csv' for x in ('', '-consistent', '-blind')]
 
     corpus_contracts = [f'{base_path}/{path}' for path in corpus_contracts]
     openzeppelin_contracts = [f'{base_path}/{path}' for path in  openzeppelin_contracts]
-    paths = corpus_contracts + openzeppelin_contracts
-    result = [f'result_csv/{x}' for x in ('type-1', 'type-2c', 'type-2b')]
+    paths = corpus_contracts[:1] + openzeppelin_contracts[:1]
+    result = [f'result_csv_1/{x}' for x in ('type-1', 'type-2c', 'type-2b')]
+    result = result[:1]
 
     print(comparison(result, corpus_contracts, openzeppelin_contracts))
 
