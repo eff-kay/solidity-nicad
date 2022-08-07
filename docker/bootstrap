@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+docker build -t nicad-image . -f docker/Dockerfile --platform linux/x86_64

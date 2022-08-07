@@ -15,3 +15,11 @@ python_scripts/duplicates/
 *.x
 tmp/*.in
 *.vscode
+01_data/*
+python_scripts/data/*
+python_scripts/macro-duplicates/*
+txl10.8b.linux64/
+all_functions_line_counted.p
+python_scripts/RQ3/data
+python_scripts/RQ3/old_data
+python_scripts/RQ3/results_csv_1

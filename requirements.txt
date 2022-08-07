@@ -1,3 +1,6 @@
+numpy
+pandas
+typed-ast
 appnope==0.1.0
 backcall==0.1.0
 beautifulsoup4==4.8.2
@@ -18,8 +21,6 @@ MarkupSafe==1.1.1
 mypy==0.740
 mypy-extensions==0.4.3
 NewlineJSON==1.0
-numpy==1.17.4
-pandas==0.25.3
 parso==0.5.1
 pexpect==4.7.0
 pickleshare==0.7.5
@@ -34,7 +35,6 @@ six==1.13.0
 soupsieve==1.9.5
 sqlalchemy-stubs==0.3
 traitlets==4.3.3
-typed-ast==1.4.0
 typing-extensions==3.7.4
 urllib3==1.25.7
 wcwidth==0.1.7

@@ -8,21 +8,57 @@ The relevant solidity normalizers/extractors can be found at [txl/sol\*.txl](htt
 
 The grammar and normalizers have been validated against a large corpus of 33,073 smart contracts extracted from Etherscan.io. This is the same corpus used in [_Code cloning in smart contracts: a case study on verified contracts from the Ethereum blockchain platform_](https://link.springer.com/article/10.1007/s10664-020-09852-5) by M. Kondo, G. Oliva, Z.M. Jiang, A. Hassan, and O. Mizuno. To get the corpus, please visit [https://github.com/SAILResearch/suppmaterial-18-masanari-smart_contract_cloning](https://github.com/SAILResearch/suppmaterial-18-masanari-smart_contract_cloning).
 
-## Script
+## QUICK START
 
-1. Simply run `./clone_runner.sh`. It will validate whether the code works or not. Alternatively read it to understand the steps involved in actually conducting the anlysis. This should print a latex table with the actual results
+If this is your first time reading this, we recommend skipping this section and reading the following sections.
 
-#### Steps
+The commands below assume that you have [docker](https://docs.docker.com/get-started/) installed.
 
-1. Make sure you have Txl downloaded and added to path. You can find the latest version at [this](https://www.txl.ca/txl-download.html) link.
+```
+git clone git@github.com:eff-kay/solidity-nicad.git
+cd solidity-nicad
 
-2. Make sure you run `make` command at the root of your project. This makes sure that the grammars are compiled correctly.
+# this will build the docker image locally and run it, which also runs the clone detection on a sample data, and copies the results at a new folder 01_clonedata/raw
+docker/setup
 
-3. Create a folder at the root named `systems/source-code`. Copy your corpus of smart contracts to this systems folder. At the end of this step the root should contain `systems/source-code/\*.sol` (where \*.sol represents all of the smart contracts)
+# this script will drop you into the console with nicad enabled, were you can run the nicad commands
+docker/console
 
-4. All of the important scripts are in the `python_scripts` folder. The main scripts that creates functional clones is `create_clone_df.py`, whereas `create_contracts_clone_df.py` creates clones at the contract level. The `data` folder and the `duplicates` folder contains the results of the clones.
+# once inside the container, verify that nicad works and all dependencies are correctly installed by running the following once inside the docker console
+bash docker/execute_cloning
+```
 
-5. To create clones, simply run `python python_scripts/create_clone_df.py` from the root of the project. If everything is succesful . You should see a latex table printed with the actual results.
+## SETUP
+
+1. Clone this repository.
+2. Due to the complexity of installing all dependencies, we prepared Docker containers to run this code. Therefore you need to have docker installed on your system. You can find instructions on how to install Docker in the [official](https://docs.docker.com/get-started/) docs.
+3. To run nicad on your custom dataset, place the dataset inside the `systems/source-code` folder. The scripts in our containers execute nicad cloning on the dataset available in the `systems/source-code` folder. If it doesn't find the `systems` folder then it will use the sample data attached withh this repo. Detailed of the clone executeion steps can be find in the `python_scripts/create_clone_df.py` file.
+
+   **NOTE:** At the end of this step the root should contain `systems/source-code/\*.sol` (where \*.sol represents all of the smart contracts)
+
+4. Then simply execute `docker/setup` from the root of this repository. This script will first build the docker container. Then run it. The container first runs nicad on the dataset, and then generates assets that are easy for consumption.
+
+   **NOTE:** At the end of this step, a new folder `01_clonedata/raw` should contain the assets needed for the study [clone cloning in smart contracts](https://github.com/david-istvan/ethereum-cloning-tse-replication-package)
+
+## CONSOLE
+
+1. You can also just play around with the nicad tool by running `docker/console` which will drop you inside a docker container that will have a working setup of nicad.
+
+## LOCAL NICAD
+
+1. You can also run nicad locally on your own computer.
+2. You don't need to download the nicad6 because this repository contains that relevant binaries.
+3. However, you do need to download TXL for nicad to work. You can find the latest version at [this](https://www.txl.ca/txl-download.html) link. Once downloaded, go to the unzipped folder and execute the `InstallTxl` script. It should copy the relevant binaries to your path.
+
+   **NOTE:** If you are on linux, you can use the txl tar file located inside the `docker` folder in this repository.
+
+4. Then you run `make` command at the root of your project. This makes sure that the grammars are compiled correctly.
+
+### PYTHON_SCRIPTS
+
+2. The scripts inside `python_scripts` folder are for extra anlaysis of the clone artefacts generated by the nicad tool. The main scripts that creates functional clones is `create_clone_df.py`, whereas `create_contracts_clone_df.py` creates clones at the contract level. The `data` folder and the `duplicates` folder contains the results of the clones.
+
+3. To create clones, simply run `python python_scripts/create_clone_df.py` from the root of the project. If everything is succesful . You should see a latex table printed with the actual results.
 
 ## NOTE:
 

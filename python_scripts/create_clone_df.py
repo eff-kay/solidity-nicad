@@ -3,10 +3,11 @@ import subprocess as sp
 import os
 import shutil
 from extract_functions_from_corpus import extract_lines_occupied
-from convert_xml_to_df import created_merged_df
-from calculate_statistics import calculate_statistics
-from remove_duplicates import remove_all_duplicates
+# from convert_xml_to_df import created_merged_df
+# from calculate_statistics import calculate_statistics
+# from remove_duplicates import remove_all_duplicates
 from extract_function_ids import extract_functions_ids, get_top_function_ids
+from pathlib import Path
 
 REPORT_NAMES = ['type1-report', 'type2-report', 'type2c-report', 'type3-1-report', 'type3-2-report', 'type3-2c-report']
 folder_names = ['smart_contracts_functions-clones', 'smart_contracts_functions-blind-clones', 'smart_contracts_functions-consistent-clones']
@@ -55,37 +56,43 @@ def move_and_rename_files(config_name):
 
 
 if __name__=='__main__':
+    if not Path('systems').exists():
+        # IF SYSTEMS IS NOT PROVIDED THEN USE THE EXAMPLES
+        os.makedirs('systems/source-code')
+        shutil.copytree('data/smart_contracts', 'systems/source-code', dirs_exist_ok=True)
+
     config = 'macro'
     run_nicad(config)
     move_and_rename_files(config)
 
-    print("EXTRACT TOTAL FUNCTION LINES: use this numeber in calculating statistics")
-    functions_path =  'systems/source-code_functions.xml'
-    total_lines = extract_lines_occupied(functions_path)
-    print('total_lines = ', total_lines)
+    # TODO: move the rest of these outside of this file
+    # print("EXTRACT TOTAL FUNCTION LINES: use this number in calculating statistics")
+    # functions_path =  'systems/source-code_functions.xml'
+    # total_lines = extract_lines_occupied(functions_path)
+    # print('total_lines = ', total_lines)
 
     # create a data folder if it does not exists
-    os.makedirs(f'python_scripts/data', exist_ok=True)
+    # os.makedirs(f'python_scripts/data', exist_ok=True)
 
     # delete the config folder if it exists
-    shutil.rmtree(f'python_scripts/data/{config}', ignore_errors=True)
-    shutil.move(f'systems/{config}', f'python_scripts/data/{config}')
+    # shutil.rmtree(f'python_scripts/data/{config}', ignore_errors=True)
+    # shutil.move(f'systems/{config}', f'python_scripts/data/{config}')
     
     # now we are in the manipulation domain
-    print("CHANGING DIRs")
-    os.chdir('python_scripts')
-    print("REMOVING DUPLICATES")
-    
-    # shutil.rmtree('duplicates', ignore_errors=True)
+    # print("CHANGING DIRs")
+    # os.chdir('python_scripts')
+
+    # print("REMOVING DUPLICATES")
+    # creates final/type-1.xml, final/type-2b.xml, ... final/type-3.xml
     # remove_all_duplicates(config)
 
     # print("EXTRACTING FUNCTION IDS")
     # extract_functions_ids(config)
     # get_top_function_ids('duplicates')
     # take_diff('systems/baseline', 'systems/min5')
+
     # created_merged_df()
-    file_path = 'duplicates'
-    # calculate_statistics()
+    # file_path = 'duplicates'
     # calculate_statistics('duplicates/merged_df.p', total_loc = total_lines)
 
     print('done')

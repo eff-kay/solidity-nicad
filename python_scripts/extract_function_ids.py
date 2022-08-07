@@ -135,10 +135,10 @@ def get_top_function_ids(path):
     return top20_functions
 
 if __name__ == "__main__":
-    #get_top_function_ids('macro-duplicates')
-    top20_fids = open(f'duplicates/function-ids/top20.txt', 'r').read()
-    fids:list = [l for l in top20_fids.split('\n')]
-    extract_function_bodies(fids, 'macro')
-    # # extract_functions_ids('min4')
+    # top20_fids = open(f'duplicates/function-ids/top20.txt', 'r').read()
+    # fids:list = [l for l in top20_fids.split('\n')]
+    # extract_function_bodies(fids, 'macro')
+    extract_functions_ids('macro')
+    get_top_function_ids('duplicates')
     # convert_to_combined_csv()
     # print('done')

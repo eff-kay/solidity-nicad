@@ -2,7 +2,7 @@
 import pickle
 import pandas as pd
 
-def calculate_statistics(file_path, total_loc=1):
+def calculate_statistics(file_path, total_loc=42793):
     m = pickle.load(open(file_path, 'rb'))
 
     d=[]
@@ -37,6 +37,6 @@ def combine_dfs():
 
 
 if __name__ == "__main__":
-    file_path = 'macro-duplicates/merged_df.p'
+    file_path = 'duplicates/merged_df.p'
     calculate_statistics(file_path)
     # combine_dfs()
