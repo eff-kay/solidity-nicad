@@ -16,7 +16,7 @@ The latest image of this repository is pushed to https://hub.docker.com/reposito
 
 ```
 # this downloads the image
-docker pull faizank/nicad6
+docker pull faizank/nicad6:TSE
 
 
 # this runs clone detection on the corpus inside `systems/source-code` folder and generates output inside the output folder
