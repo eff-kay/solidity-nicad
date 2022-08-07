@@ -2,11 +2,11 @@
 import subprocess as sp
 import os
 import shutil
-from extract_functions_from_corpus import extract_lines_occupied
+# from extract_functions_from_corpus import extract_lines_occupied
 # from convert_xml_to_df import created_merged_df
 # from calculate_statistics import calculate_statistics
 # from remove_duplicates import remove_all_duplicates
-from extract_function_ids import extract_functions_ids, get_top_function_ids
+# from extract_function_ids import extract_functions_ids, get_top_function_ids
 from pathlib import Path
 
 REPORT_NAMES = ['type1-report', 'type2-report', 'type2c-report', 'type3-1-report', 'type3-2-report', 'type3-2c-report']
