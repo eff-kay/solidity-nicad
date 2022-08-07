@@ -6,6 +6,6 @@ cd /nicad6
 python python_scripts/create_clone_df.py
 mkdir -p 01_data/clonedata/raw
 # assuming macro is still the config in create_clone_df
-mv systems/macro/ 01_data/clonedata/raw
+mv systems/macro/* 01_data/clonedata/raw
 
 echo "YOU CAN FIND THE FINAL CLONE RESULTS AT 01_data/clonedata/raw"

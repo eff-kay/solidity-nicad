@@ -58,6 +58,7 @@ def move_and_rename_files(config_name):
 if __name__=='__main__':
     if not Path('systems').exists():
         # IF SYSTEMS IS NOT PROVIDED THEN USE THE EXAMPLES
+        check = input('We didnt detect any systems folder. We will use the sample dataset to execute cloning on. Are you sure you want to continue')
         os.makedirs('systems/source-code')
         shutil.copytree('data/smart_contracts', 'systems/source-code', dirs_exist_ok=True)
 

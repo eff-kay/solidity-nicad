@@ -1,5 +1,7 @@
 systems
 duplicates
+01_data/
+txl10.8b.linux64/
 .DS_Store
 .goo.swp
 .*out
