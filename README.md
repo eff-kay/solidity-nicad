@@ -8,9 +8,29 @@ The relevant solidity normalizers/extractors can be found at [txl/sol\*.txl](htt
 
 The grammar and normalizers have been validated against a large corpus of 33,073 smart contracts extracted from Etherscan.io. This is the same corpus used in [_Code cloning in smart contracts: a case study on verified contracts from the Ethereum blockchain platform_](https://link.springer.com/article/10.1007/s10664-020-09852-5) by M. Kondo, G. Oliva, Z.M. Jiang, A. Hassan, and O. Mizuno. To get the corpus, please visit [https://github.com/SAILResearch/suppmaterial-18-masanari-smart_contract_cloning](https://github.com/SAILResearch/suppmaterial-18-masanari-smart_contract_cloning).
 
-## QUICK START
+## QUICKER START
 
 If this is your first time reading this, we recommend skipping this section and reading the following sections.
+
+The latest image of this repository is pushed to https://hub.docker.com/repository/docker/faizank/nicad6. Just run the following commands to get the clone detection resulting artefacts from NiCad.
+
+```
+# this downloads the image
+docker pull faizank/nicad6
+
+
+# this runs clone detection on the corpus inside `systems/source-code` folder and generates output inside the output folder
+
+docker run --platform linux/x86_64 -v $(pwd)/output:/nicad6/01_data -v $(pwd)/systems:/nicad6/systems faizank/nicad6
+
+# this will drop you in a docker console with working nicad
+docker run --platform linux/x86_64 -v $(pwd)/output:/nicad6/01_data -v $(pwd)/systems:/nicad6/systems  -it faizank/nicad6 bash
+
+```
+
+## QUICK START
+
+If this is your first time reading this, we recommend skipping this section as well and reading the following sections.
 
 The commands below assume that you have [docker](https://docs.docker.com/get-started/) installed.
 
@@ -18,7 +38,7 @@ The commands below assume that you have [docker](https://docs.docker.com/get-sta
 git clone git@github.com:eff-kay/solidity-nicad.git
 cd solidity-nicad
 
-# this will build the docker image locally and run it, which also runs the clone detection on a sample data, and copies the results at a new folder 01_clonedata/raw
+# this will build the docker image locally and run it, which also runs the clone detection on a sample data, and copies the results at a new folder 01_data/clonedata/raw
 docker/setup
 
 # this script will drop you into the console with nicad enabled, were you can run the nicad commands
@@ -38,7 +58,7 @@ bash docker/execute_cloning
 
 4. Then simply execute `docker/setup` from the root of this repository. This script will first build the docker container. Then run it. The container first runs nicad on the dataset, and then generates assets that are easy for consumption.
 
-   **NOTE:** At the end of this step, a new folder `01_clonedata/raw` should contain the assets needed for the study [clone cloning in smart contracts](https://github.com/david-istvan/ethereum-cloning-tse-replication-package)
+   **NOTE:** At the end of this step, a new folder `01_data/clonedata/raw` should contain the assets needed for the study [clone cloning in smart contracts](https://github.com/david-istvan/ethereum-cloning-tse-replication-package)
 
 ## CONSOLE
 
