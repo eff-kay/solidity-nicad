@@ -2,6 +2,6 @@
 set -e
 cd $(dirname "$0")/..
 
-bash docker/bootstrap
+docker/bootstrap
 
 docker run --platform linux/x86_64 -v $(pwd):/nicad6 nicad-image
