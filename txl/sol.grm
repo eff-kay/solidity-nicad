@@ -551,7 +551,10 @@ define StericTypeName
 end define
 
 define StructDefinition
-    'struct [Identifier] '{ [VariableDeclarationMeta+] '}
+    'struct [Identifier] 
+    '{ [NL] [IN]
+        [VariableDeclarationMeta+] [EX]
+    '} [NL]
 end define
 
 define ConstructorDefinition
@@ -620,7 +623,7 @@ define ReceiveFunctionDefinition
 end define
 
 define EventDefinition
-    'event [Identifier] [EventParameterList] [opt 'anonymous] ';
+    'event [Identifier] [EventParameterList] [opt 'anonymous] '; [NL]
 end define
 
 define EventParameterList
