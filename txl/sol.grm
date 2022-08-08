@@ -984,6 +984,10 @@ define PointIdentifier
 end define
 
 define StringLiteral
+        [StrLit*]
+end define
+
+define StrLit
         [stringlit]
     |   [charlit]
 end define
