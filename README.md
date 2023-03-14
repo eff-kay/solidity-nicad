@@ -84,4 +84,4 @@ bash docker/execute_cloning
 
 ## NOTE:
 
-These changes were adopted for the study titled [code-cloning in solidity smart contracts: a replication](). The extended replication package of the paper can be found at https://github.com/david-istvan/ethereum-cloning-tse-replication-package
+These changes were adopted for the study titled [code-cloning in solidity smart contracts: a replication](https://ieeexplore.ieee.org/document/9894714). The extended replication package of the paper can be found at https://github.com/david-istvan/ethereum-cloning-tse-replication-package
